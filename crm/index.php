@@ -1,3 +1,3 @@
 <?php
-    require "./crm/templates/Main/main.php"
+    require "./templates/Main/main.php";
 ?>

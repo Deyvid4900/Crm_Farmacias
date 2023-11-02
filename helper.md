@@ -32,13 +32,3 @@ public/
     Esta pasta deve ser a raiz do seu servidor web e conter o arquivo de entrada principal, como index.php. É a partir daqui que seu aplicativo será acessado pelos usuários. Você também pode colocar arquivos de recurso público, como imagens de perfil de usuário, nesta pasta.
 
 
-logs/
-    Seu CRM pode gerar logs para rastrear eventos e erros. Você pode armazenar esses logs nesta pasta.
-
-
-tests/
-    Se você está seguindo as práticas de desenvolvimento orientado a testes (TDD), você pode ter testes automatizados nesta pasta.
-
-
-docs/
-    Se você deseja documentar seu código, esta é a pasta para armazenar documentos, como manuais de usuário, documentação de API, etc.
