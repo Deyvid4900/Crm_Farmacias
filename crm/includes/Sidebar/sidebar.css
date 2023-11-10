@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.sideBar-bg{
+    width: 90px;
+    height: 100vh;
+    background: linear-gradient(180deg, #5BD650 28.62%, #22791A 69.14%)
+}
+
+
+.Cadastro, .Servicos, .Consultorio, .Marketing, .lastPad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 5px;
+    gap: 4px;
+    cursor: pointer; 
+}
+
+.teste{
+    padding-top: 90px;
+    padding-bottom: 10px;
+}
+.testeDown{
+    padding-bottom: 16px;
+}
+.Cadastro:hover{
+    background-color: #52be48;
+}
+.Servicos:hover{
+    background-color: #52be48;
+}
+.Consultorio:hover{
+    background-color: #44a73b;
+}
+.Marketing:hover{
+    background-color: #2e8326;
+}
+.lastPad:hover{
+    background-color: #186112;
+}
+.settings{
+    padding-top: 90px;
+}
+
+.Cadastro img, .Servicos img, .Consultorio img, .Marketing img, .lastPad img{
+    width: 32px;
+}
+.Cadastro p, .Servicos p, .Consultorio p, .Marketing p, .lastPad p{
+    font-size: 15px;
+    color: white;
+}
+

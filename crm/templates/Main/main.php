@@ -11,7 +11,8 @@
 </head>
 <body>
     <?php
-        include './includes/Header/header.php'
+        include '../crm/includes/Header/header.php';
+        include '../crm/includes/Sidebar/sidebar.php';
     ?>
     <h1 class="bg-primary">L.</h1>
     <script src="./main.js"></script>
