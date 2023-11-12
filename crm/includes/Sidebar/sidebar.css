@@ -7,8 +7,8 @@
 
 .sideBar-bg{
     width: 90px;
-    height: 100vh;
-    background: linear-gradient(180deg, #5BD650 28.62%, #22791A 69.14%)
+    /* height: 100vh; */
+    background: linear-gradient(180deg, #247158 28.62%, #073929 69.14%)
 }
 
 
@@ -23,36 +23,103 @@
 }
 
 .teste{
-    padding-top: 90px;
+    padding-top: 50px;
     padding-bottom: 10px;
 }
 .testeDown{
     padding-bottom: 16px;
 }
 .Cadastro:hover{
-    background-color: #52be48;
+    background-color: #225e4b;
 }
 .Servicos:hover{
-    background-color: #52be48;
+    background-color: #225e4b;
 }
 .Consultorio:hover{
-    background-color: #44a73b;
+    background-color: #144e3c;
 }
 .Marketing:hover{
-    background-color: #2e8326;
+    background-color: #0c382a;
 }
 .lastPad:hover{
-    background-color: #186112;
+    background-color: #09291f;
 }
 .settings{
-    padding-top: 90px;
+    padding-top: 72px;
+    
 }
 
 .Cadastro img, .Servicos img, .Consultorio img, .Marketing img, .lastPad img{
     width: 32px;
 }
-.Cadastro p, .Servicos p, .Consultorio p, .Marketing p, .lastPad p{
-    font-size: 15px;
+.Cadastro p, .Servicos p, .Consultorio p, .Marketing p{
+    font-size: 14px;
+    color: white;
+}
+.lastPad p{
+    font-size: 14px;
     color: white;
 }
 
+.lastPad{
+    position: relative;
+    bottom: 28px;
+}
+
+/* focus (quando clicar)*/
+
+.Cadastro.ativo::after{
+    content: "";
+    display: inline-block;
+    height: 75px;
+    width: 5px;
+    background-color: #16503c;
+    position: absolute;
+    left: 85px;
+    top: 122px;
+}
+
+.Servicos.ativo::after{
+    content: "";
+    display: inline-block;
+    height: 75px;
+    width: 5px;
+    background-color: #16503c;
+    position: absolute;
+    left: 85px;
+    top: 207px;
+}
+
+
+.Consultorio.ativo::after{
+    content: "";
+    display: inline-block;
+    height: 77px;
+    width: 5px;
+    background-color: #0e3628;
+    position: absolute;
+    left: 85px;
+    top: 298px;
+}
+
+.Marketing.ativo::after{
+    content: "";
+    display: inline-block;
+    height: 75px;
+    width: 5px;
+    background-color: #07241a;
+    position: absolute;
+    left: 85px;
+    top: 389px;
+}
+
+.lastPad.ativo::after{
+    content: "";
+    display: inline-block;
+    height: 75px;
+    width: 5px;
+    background-color: #041f15;
+    position: absolute;
+    left: 85px;
+    top: 0px;
+}

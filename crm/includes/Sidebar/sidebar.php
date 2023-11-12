@@ -7,35 +7,36 @@
 <section class="sideBar-bg">
     <div class="sideBar">
         <div class="teste">
-            <div class="Cadastro">
-                <img src="../../assets/icons/person-fill-add.svg" alt="">
+            <div class="Cadastro" data-menu>
+                <a href=""><img src="../../assets/icons/person-fill-add.svg" alt=""></a>
                 <p>Cadastro</p>
             </div>
         </div>
 
-        <div class="testeDown">
-            <div class="Servicos">
-                <img src="../../assets/icons/wrench-adjustable.svg" alt="">
+        <div class="testeDown" >
+            <div class="Servicos" data-menu>
+                <a href=""><img src="../../assets/icons/wrench-adjustable.svg" alt=""></a>
                 <p>Serviços</p>
             </div>
         </div>
 
         <div class="testeDown">
-            <div class="Consultorio">
-                <img src="../../assets/icons/clipboard2-pulse-fill.svg" alt="">
+            <div class="Consultorio" data-menu>
+                <a href=""><img src="../../assets/icons/clipboard2-pulse-fill.svg" alt=""></a>
                 <p>Consultorio</p>
             </div>
         </div>
 
-        <div class="Marketing">
-            <img src="../../assets/icons/megaphone-fill.svg" alt="">
+        <div class="Marketing" data-menu>
+            <a href=""><img src="../../assets/icons/megaphone-fill.svg" alt=""></a>
             <p>Marketing</p>
         </div>
     </div>
-    <div class="settings">
-        <div class="lastPad">
-            <img src="../../assets/icons/gear-wide-connected.svg" alt="">
+    <div class="settings" >
+        <div class="lastPad" data-menu>
+            <a href=""><img src="../../assets/icons/gear-wide-connected.svg" alt=""></a>
             <p>Configuração</p>
         </div>
     </div>
 </section>
+<script src="../Sidebar/sidebar.js"></script>
