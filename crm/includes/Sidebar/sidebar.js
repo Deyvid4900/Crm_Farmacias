@@ -35,16 +35,9 @@ const clickFunction = document.querySelectorAll('[data-menu]')
 clickFunction.forEach((event) =>{
     event.addEventListener('click', (index) =>{
         index.preventDefault()
-        if(event.classList.contains('Cadastro')){
-            event.classList.add('ativo')
-        }else if(event.classList.contains('Servicos')){
-            event.classList.add('ativo')
-        }else if(event.classList.contains('Consultorio')){
-            event.classList.add('ativo')
-        }else if(event.classList.contains('Marketing')){
-            event.classList.add('ativo')
-        }else{
-            event.classList.add('ativo')
+        if(!event.classList.contains('sd')){
+            event.classList.toggle('ativo')
         }
+        
     })
 })

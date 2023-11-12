@@ -1,3 +1,9 @@
+
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -73,7 +79,7 @@
     display: inline-block;
     height: 75px;
     width: 5px;
-    background-color: #16503c;
+    background-color: #90aaa2;
     position: absolute;
     left: 85px;
     top: 122px;
@@ -84,7 +90,7 @@
     display: inline-block;
     height: 75px;
     width: 5px;
-    background-color: #16503c;
+    background-color: #90aaa2;
     position: absolute;
     left: 85px;
     top: 207px;
@@ -96,7 +102,7 @@
     display: inline-block;
     height: 77px;
     width: 5px;
-    background-color: #0e3628;
+    background-color: #90aaa2;
     position: absolute;
     left: 85px;
     top: 298px;
@@ -107,7 +113,7 @@
     display: inline-block;
     height: 75px;
     width: 5px;
-    background-color: #07241a;
+    background-color: #90aaa2;
     position: absolute;
     left: 85px;
     top: 389px;
@@ -118,8 +124,12 @@
     display: inline-block;
     height: 75px;
     width: 5px;
-    background-color: #041f15;
+    background-color: #90aaa2;
     position: absolute;
     left: 85px;
     top: 0px;
 }
+
+
+
+/*  */
