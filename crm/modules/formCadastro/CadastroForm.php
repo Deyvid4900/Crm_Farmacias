@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../modules/formCadastro/formcadastro.css">
+<link rel="stylesheet" href="../crm/modules/formCadastro/formcadastro.css">
 
 <section class="formInit-bg">
     <div class="form-bg">

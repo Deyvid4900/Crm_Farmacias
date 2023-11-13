@@ -9,7 +9,7 @@
     <!-- <link rel="stylesheet" href="../../../crm/includes/Sidebar/sidebar.css">  -->
     
     <style>
-        main{width: calc(100%-90px); height: auto;float: right;}
+        /* main{width: calc(100%-90px); height: auto;float: right; margin: auto;} */
     </style>
 </head>
 <body>
@@ -19,7 +19,9 @@
     ?>
     <main>
         <!-- aqui vem o conteudo dessa pagina(Main/Principal)-->
-        
+        <?php
+            include '../../Crm_Farmacias/crm/modules/formCadastro/CadastroForm.php'
+        ?>
 
     </main>
     <script src="../../../crm/templates/Main/main.js"></script>
