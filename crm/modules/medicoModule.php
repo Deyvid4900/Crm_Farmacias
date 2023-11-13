@@ -29,26 +29,23 @@ getEmail - Retorna o email do cliente
 
 setIdade - Atribui uma idade ao cliente
 getIdade - Retorn a idade do cliente
-*************************************************************/
+ *************************************************************/
 
-class Medicos extends CRUD{
-	use Pessoa , Funcionario; 
-	
-	
-	protected $table ='Medicos';
-	
-	//Pessoais/proficionais
+class Medicos extends CRUD
+{
+	use Pessoa, Funcionario;
+
+
+	protected $table = 'Medicos';
+
+
 	private $nome;
 	private $sexo;
 	private $dataNasc;
-    private $cpf;
-
-    private $hospitalAtual;
-    private $especialidade; 
-    private $atuacao ; 
-
-	//Endereço do hospital
-
+	private $cpf;
+	private $hospitalAtual;
+	private $especialidade;
+	private $atuacao;
 	private $logradouro;
 	private $numeroCasa;
 	private $bairro;
@@ -56,218 +53,318 @@ class Medicos extends CRUD{
 	private $cidade;
 	private $uf;
 	private $referencia;
-
-	//Contato
 	private $celular1;
 	private $celular2;
 	private $telFixo;
 	private $email;
-	
-	
 
-	
+
+
+
 	/********Início dos métodos sets e gets*********/
-	
-		public function setNome($nome){
-			$this->nome = $nome;
-		}
-		public function getNome(){
-			return $this->nome;
-		}
-        public function setHospitalAtual($hospitalAtual){
-			$this->hospitalAtual = $hospitalAtual;
-		}
-		public function getHospitalAtual(){
-			return $this->hospitalAtual;
-		}
 
-        public function setEspecialidade($especialidade){
-			$this->especialidade = $especialidade;
-		}
-		public function getEspecialidade(){
-			return $this->hospitalAtual;
-		}
-        public function setAtuacao($atuacao){
-			$this->atuacao = $atuacao;
-		}
-		public function getaAtuacao(){
-			return $this->atuacao;
-		}
-		
-		public function setEmail($email){
-			$this->email = $email;
-		}
-		
-		public function getEmail(){
-			return $this->email;
-		}
-		
-		
-		// Sexo
-		public function getSexo() {
-			return $this->sexo;
-		}
+	public function setNome($nome)
+	{
+		$this->nome = $nome;
+	}
+	public function getNome()
+	{
+		return $this->nome;
+	}
+	public function setHospitalAtual($hospitalAtual)
+	{
+		$this->hospitalAtual = $hospitalAtual;
+	}
+	public function getHospitalAtual()
+	{
+		return $this->hospitalAtual;
+	}
 
-		public function setSexo($sexo) {
-			$this->sexo = $sexo;
-		}
+	public function setEspecialidade($especialidade)
+	{
+		$this->especialidade = $especialidade;
+	}
+	public function getEspecialidade()
+	{
+		return $this->hospitalAtual;
+	}
+	public function setAtuacao($atuacao)
+	{
+		$this->atuacao = $atuacao;
+	}
+	public function getaAtuacao()
+	{
+		return $this->atuacao;
+	}
 
-	
-		// Data de Nascimento
-		public function getDataNasc() {
-			return $this->dataNasc;
-		}
+	public function setEmail($email)
+	{
+		$this->email = $email;
+	}
 
-		public function setDataNasc($dataNasc) {
-			$this->dataNasc = $dataNasc;
-		}
+	public function getEmail()
+	{
+		return $this->email;
+	}
 
 
+	// Sexo
+	public function getSexo()
+	{
+		return $this->sexo;
+	}
 
-		// CPF
-		public function getCpf() {
-			return $this->cpf;
-		}
+	public function setSexo($sexo)
+	{
+		$this->sexo = $sexo;
+	}
 
-		public function setCpf($cpf) {
-			$this->cpf = $cpf;
-		}
 
-	
-		// Getters e Setters para Endereço
+	// Data de Nascimento
+	public function getDataNasc()
+	{
+		return $this->dataNasc;
+	}
 
-		// Logradouro
-		public function getLogradouro() {
-			return $this->logradouro;
-		}
+	public function setDataNasc($dataNasc)
+	{
+		$this->dataNasc = $dataNasc;
+	}
 
-		public function setLogradouro($logradouro) {
-			$this->logradouro = $logradouro;
-		}
 
-		// Número da Casa
-		public function getNumeroCasa() {
-			return $this->numeroCasa;
-		}
 
-		public function setNumeroCasa($numeroCasa) {
-			$this->numeroCasa = $numeroCasa;
-		}
+	// CPF
+	public function getCpf()
+	{
+		return $this->cpf;
+	}
 
-		// Bairro
-		public function getBairro() {
-			return $this->bairro;
-		}
+	public function setCpf($cpf)
+	{
+		$this->cpf = $cpf;
+	}
 
-		public function setBairro($bairro) {
-			$this->bairro = $bairro;
-		}
 
-		// Complemento
-		public function getComplemento() {
-			return $this->complemento;
-		}
+	// Getters e Setters para Endereço
 
-		public function setComplemento($complemento) {
-			$this->complemento = $complemento;
-		}
+	// Logradouro
+	public function getLogradouro()
+	{
+		return $this->logradouro;
+	}
 
-		// Cidade
-		public function getCidade() {
-			return $this->cidade;
-		}
+	public function setLogradouro($logradouro)
+	{
+		$this->logradouro = $logradouro;
+	}
 
-		public function setCidade($cidade) {
-			$this->cidade = $cidade;
-		}
+	// Número da Casa
+	public function getNumeroCasa()
+	{
+		return $this->numeroCasa;
+	}
 
-		// UF
-		public function getUf() {
-			return $this->uf;
-		}
+	public function setNumeroCasa($numeroCasa)
+	{
+		$this->numeroCasa = $numeroCasa;
+	}
 
-		public function setUf($uf) {
-			$this->uf = $uf;
-		}
+	// Bairro
+	public function getBairro()
+	{
+		return $this->bairro;
+	}
 
-		// Referência
-		public function getReferencia() {
-			return $this->referencia;
-		}
+	public function setBairro($bairro)
+	{
+		$this->bairro = $bairro;
+	}
 
-		public function setReferencia($referencia) {
-			$this->referencia = $referencia;
-		}
+	// Complemento
+	public function getComplemento()
+	{
+		return $this->complemento;
+	}
 
-		// Getters e Setters para Contato
+	public function setComplemento($complemento)
+	{
+		$this->complemento = $complemento;
+	}
 
-		// Celular 1
-		public function getCelular1() {
-			return $this->celular1;
-		}
+	// Cidade
+	public function getCidade()
+	{
+		return $this->cidade;
+	}
 
-		public function setCelular1($celular1) {
-			$this->celular1 = $celular1;
-		}
+	public function setCidade($cidade)
+	{
+		$this->cidade = $cidade;
+	}
 
-		// Celular 2
-		public function getCelular2() {
-			return $this->celular2;
-		}
+	// UF
+	public function getUf()
+	{
+		return $this->uf;
+	}
 
-		public function setCelular2($celular2) {
-			$this->celular2 = $celular2;
-		}
+	public function setUf($uf)
+	{
+		$this->uf = $uf;
+	}
 
-		// Telefone Fixo
-		public function getTelFixo() {
-			return $this->telFixo;
-		}
+	// Referência
+	public function getReferencia()
+	{
+		return $this->referencia;
+	}
 
-		public function setTelFixo($telFixo) {
-			$this->telFixo = $telFixo;
-		}
+	public function setReferencia($referencia)
+	{
+		$this->referencia = $referencia;
+	}
+
+	// Getters e Setters para Contato
+
+	// Celular 1
+	public function getCelular1()
+	{
+		return $this->celular1;
+	}
+
+	public function setCelular1($celular1)
+	{
+		$this->celular1 = $celular1;
+	}
+
+	// Celular 2
+	public function getCelular2()
+	{
+		return $this->celular2;
+	}
+
+	public function setCelular2($celular2)
+	{
+		$this->celular2 = $celular2;
+	}
+
+	// Telefone Fixo
+	public function getTelFixo()
+	{
+		return $this->telFixo;
+	}
+
+	public function setTelFixo($telFixo)
+	{
+		$this->telFixo = $telFixo;
+	}
 
 	/********Fim dos métodos sets e gets*********/
-	
-	
+
+
 	/***************
 	Objetivo: Método que insere um cliente
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
-	***************/
-	public function insert(){
-		$sql="INSERT INTO $this->table (nome,sobrenome,email,idade,tipocliente) VALUES (:nome,:sobrenome,:email,:idade,:tipocliente)";
+	 ***************/
+	public function insert()
+	{
+		$sql = "INSERT INTO $this->table (nome, sexo, dataNasc, cpf, hospitalAtual, especialidade, atuacao, logradouro, numeroCasa, bairro, complemento, cidade, uf, referencia, celular1, celular2, telFixo, email) 
+				VALUES (:nome, :sexo, :dataNasc, :cpf, :hospitalAtual, :especialidade, :atuacao, :logradouro, :numeroCasa, :bairro, :complemento, :cidade, :uf, :referencia, :celular1, :celular2, :telFixo, :email)";
+
 		$stmt = Database::prepare($sql);
+
 		$stmt->bindParam(':nome', $this->nome);
-		
+		$stmt->bindParam(':sexo', $this->sexo);
+		$stmt->bindParam(':dataNasc', $this->dataNasc);
+		$stmt->bindParam(':cpf', $this->cpf);
+		$stmt->bindParam(':hospitalAtual', $this->hospitalAtual);
+		$stmt->bindParam(':especialidade', $this->especialidade);
+		$stmt->bindParam(':atuacao', $this->atuacao);
+		$stmt->bindParam(':logradouro', $this->logradouro);
+		$stmt->bindParam(':numeroCasa', $this->numeroCasa);
+		$stmt->bindParam(':bairro', $this->bairro);
+		$stmt->bindParam(':complemento', $this->complemento);
+		$stmt->bindParam(':cidade', $this->cidade);
+		$stmt->bindParam(':uf', $this->uf);
+		$stmt->bindParam(':referencia', $this->referencia);
+		$stmt->bindParam(':celular1', $this->celular1);
+		$stmt->bindParam(':celular2', $this->celular2);
+		$stmt->bindParam(':telFixo', $this->telFixo);
 		$stmt->bindParam(':email', $this->email);
 
-		
 		return $stmt->execute();
-		
 	}
-	
+
+
 	/***************
 	Objetivo: Atuliza um cliente pelo id
 	Parâmetro de entrada: $id - id do cliente
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
-	***************/
-	public function update($id){
-		$sql="UPDATE $this->table SET nome = :nome, sobrenome = :sobrenome, email = :email , idade = :idade  WHERE id = :id ";
-		$stmt = Database::prepare($sql);
-		$stmt->bindParam(':nome', $this->nome);
+	 ***************/
+	public function update($id)
+	{
+		$sql = "UPDATE $this->table SET nome = :nome, 
+										sexo = :sexo, 
+										dataNasc = :dataNasc, 
+										cpf = :cpf, 
+										hospitalAtual = :hospitalAtual, 
+										especialidade = :especialidade, 
+										atuacao = :atuacao, 
+										logradouro = :logradouro, 
+										numeroCasa = :numeroCasa, 
+										bairro = :bairro, 
+										complemento = :complemento, 
+										cidade = :cidade, 
+										uf = :uf, 
+										referencia = :referencia, 
+										celular1 = :celular1, 
+										celular2 = :celular2, 
+										telFixo = :telFixo, 
+										email = :email 
+				WHERE id = :id";
 
-		$stmt->bindParam(':email', $this->email);
+		$stmt = Database::prepare($sql);
+
+		$stmt->bindParam(':nome', $this->nome);
+		$stmt->bindParam(':sexo', $this->sexo);
+		$stmt->bindParam(':dataNasc', $this->dataNasc);
+		$stmt->bindParam(':cpf', $this->cpf);
+		$stmt->bindParam(':hospitalAtual', $this->hospitalAtual);
+		$stmt->bindParam(':especialidade', $this->especialidade);
+		$stmt->bindParam(':atuacao', $this->atuacao);
+		$stmt->bindParam(':logradouro', $this->logradouro);
+		$stmt->bindParam(':numeroCasa', $this->numeroCasa);
+		$stmt->bindParam(':bairro', $this->bairro);
+		$stmt->bindParam(':complemento', $this->complemento);
+		$stmt->bindParam(':cidade', $this->cidade);
+		$stmt->bindParam(':uf', $this->uf);
+		$stmt->bindParam(':referencia', $this->referencia);
+		$stmt->bindParam(':celular1', $this->celular1);
+		$stmt->bindParam(':celular2', $this->celular2);
+	}
+
+	public function  findAll()
+	{
+		$sql = "SELECT * FROM $this->table ";
+		$stmt = Database::prepare($sql);
+		$stmt->execute();
+		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
+		return $stmt->fetchAll(PDO::FETCH_BOTH);
+	}
+
+	public function  find($id)
+	{
+		$sql = "SELECT * FROM $this->table WHERE id = :id";
+		$stmt = Database::prepare($sql);
 		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
-		// $stmt->bindParam(':tipocliente', 1, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetch(PDO::FETCH_BOTH);
+	}
+	public function delete($id)
+	{
+		$sql = "DELETE FROM $this->table WHERE id = :id";
+		$stmt = Database::prepare($sql);
+		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 		return $stmt->execute();
 	}
-	
-	
-	
-	
-		
-	
 }
-
-?>

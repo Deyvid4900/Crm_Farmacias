@@ -1,3 +1,14 @@
+const clickFunction = document.querySelectorAll('[data-menu]')
+
+clickFunction.forEach((event) =>{
+    event.addEventListener('click', (index) =>{
+        index.preventDefault()
+        if(!event.classList.contains('sd')){
+            event.classList.toggle('ativo')
+        }
+        
+    })
+})
 // const clickCadas = document.querySelector('.Cadastro')
 // const clickServico = document.querySelector('.Servicos')
 // const clickConsultorio = document.querySelector('.Consultorio')
@@ -29,15 +40,3 @@
 //     event.preventDefault()
 //     clickSettings.classList.add('ativo')
 // })
-
-const clickFunction = document.querySelectorAll('[data-menu]')
-
-clickFunction.forEach((event) =>{
-    event.addEventListener('click', (index) =>{
-        index.preventDefault()
-        if(!event.classList.contains('sd')){
-            event.classList.toggle('ativo')
-        }
-        
-    })
-})

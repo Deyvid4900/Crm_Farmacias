@@ -13,7 +13,7 @@
 
 .sideBar-bg{
     width: 90px;
-    /* height: 100vh; */
+    height: calc(100vh - 72px);
     background: linear-gradient(180deg, #247158 28.62%, #073929 69.14%)
 }
 
