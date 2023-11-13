@@ -29,9 +29,11 @@
             </div>
         </div>
 
-        <div class="Marketing sd" data-menu>
-            <a href=""><img src="../../../crm/assets/icons/megaphone-fill.svg" alt=""></a>
-            <p>Marketing</p>
+        <div class="sd">
+            <div class="Marketing" data-menu>
+                <a href=""><img src="../../../crm/assets/icons/megaphone-fill.svg" alt=""></a>
+                <p>Marketing</p>
+            </div>
         </div>
     </div>
     <div class="settings sd" >
