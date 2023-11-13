@@ -16,12 +16,12 @@
 }
 
 
-.inputText{
+.cao .inputText{
     display: flex;
     justify-content: center;
     
 }
-[type="text"] {
+.cao [type="text"] {
     padding: 4px 12px;
     width: 240px;
     border: none;
@@ -30,7 +30,7 @@
     margin-top: 12px;
     position: relative;
 }
-[type="text"]:focus{
+#a [type="text"]:focus{
     outline: none;
 }
 .btn-search{

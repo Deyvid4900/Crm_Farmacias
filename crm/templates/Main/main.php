@@ -7,6 +7,7 @@
     <!-- <link rel="stylesheet" href="./main.css"> -->
     <link rel="stylesheet" href="../../includes/Header/header.css"> 
     <link rel="stylesheet" href="../../includes/Sidebar/sidebar.css"> 
+    <link rel="stylesheet" href="../../modules/formCadastro/formcadastro.css"> 
     <?php
         // include "../../includes/Imports/Imports.php";
     ?>
@@ -15,6 +16,7 @@
     <?php
         include '../../includes/Header/header.php';
         include '../../includes/Sidebar/sidebar.php';
+        include '../../modules/formCadastro/CadastroForm.php';
     ?>
 
     <script src="./main.js"></script>

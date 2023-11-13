@@ -4,14 +4,14 @@
 
 <link rel="stylesheet" href="./header.css">
 
-<header>
-    <div class="header-bg">
+<header id="a">
+    <div class="header-bg cao" id="cao">
         <form class="formInput">
-         <div class="inputText">
-            <input type="text" placeholder="Pesquisar">
-            <button class="btn-search" ><img class="img-search" src="../../assets/icons/search.svg" alt=""></button>
-        </div>
-    </form>
+            <div class="inputText">
+                <input type="text" placeholder="Pesquisar">
+                <button class="btn-search" ><img class="img-search" src="../../assets/icons/search.svg" alt=""></button>
+            </div>
+        </form>
         <div class="bellImg">
             <img src="../../assets/icons/bell-fill.svg" alt="">
         </div>

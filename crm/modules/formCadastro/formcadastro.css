@@ -1,0 +1,74 @@
+*{
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.padDown{
+    margin-bottom: 1.1px;
+}
+.formInit-bg{
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+
+.form-bg{
+    background-color: #ccc;
+    width: 850px;
+    height: 402px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 70px;
+}
+.form-bg h1{
+    display: flex;
+    justify-content: center;
+    border-radius: 8px 8px 0 0;
+    padding-top: 6px;
+    background-color: #247158;
+    color: white;
+}
+
+/* form css */
+
+.flexForm{
+    display: flex;
+    justify-content: center;
+    margin-left: -20px;
+    margin-top: 14px;
+}
+
+#nome, #numero, #cpf{
+    margin-left: 8px;
+}
+
+
+#nome{
+    width: 260px;
+    margin-right: 12px;
+}
+#numero{
+    margin-right: 14px;
+}
+
+.flexCol1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    align-items: self-start;
+}
+
+#sx{
+    width: 141px;
+    margin-left: 0px;
+}
+.aaaa{
+    margin-left: 65px;
+}
+.aprof{
+    margin-left: 34px;
+}
+.arelig{
+    margin-left: 42px;
+}
