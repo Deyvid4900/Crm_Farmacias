@@ -1,0 +1,18 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.cont {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.sideLogin{
+    height: 100vh;
+}
+.sideText{
+    background-color: #247158;
+    height: 100vh;
+}
