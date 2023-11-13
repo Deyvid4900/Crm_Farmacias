@@ -45,3 +45,21 @@ public/
 //Na aba consultorio é para guardar informações sobre o cliente que faz uma queixa de dor ou algo com o balconista e o balconista prescreve algum medicamento, essa aba quarda essas informações sobre o paciente, para posteriormente possa perguntar um feedback 
 
 //Na aba marketing será a parte das mensagens, filtros para mensagens e pesquisas em geral.
+
+colors
+
+0 darkgreen = #0c271e
+1 darkgreen = #164435
+2 darkgreen = #1b5341
+
+cor padrão = #247158
+
+0 lightgreen = #2d8f6f
+1 lightgreen = #37ad86
+2 lightgreen = #3cbb92
+
+mais claro
+
+01-#46c49b
+02-#64ceab
+03-#91dcc4

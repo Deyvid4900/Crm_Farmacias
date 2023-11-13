@@ -7,12 +7,14 @@
 
 .header-bg{
     background-color: #247158;
+    box-shadow: 3px -2px 20px 3px rgb(192, 192, 192);
     height: 72px;
     display: flex;
     justify-content: end;
     padding-right: 80px;
     padding-top: 4px;
     gap: 10px;
+    
 }
 
 

@@ -1,4 +1,3 @@
-
 const clickFunction = document.querySelectorAll('[data-menu]')
 
 clickFunction.forEach((event) =>{
