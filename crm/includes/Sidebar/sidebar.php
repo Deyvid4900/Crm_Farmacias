@@ -3,6 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../../../crm/includes/Sidebar/sidebar.css">
+<link rel="stylesheet" href="../../../crm/modules/formCadastro/formcadastro.css">
 
 <section class="sideBar-bg">
     <div class="sideBar">
