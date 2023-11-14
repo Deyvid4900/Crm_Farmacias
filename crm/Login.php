@@ -11,15 +11,38 @@
 </head>
 
 <body>
-    <div class="cont">
-        <div class="sideLogin">
-
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class=" col-8">
+                <div class="d-flex justify-content-center">
+                    <div  id="formContent" class="mt-5">
+                       <form class="mt-5">
+                           <h1>Entrar</h1>
+                           <input type="text" id="nomeUsuario" class="fadeIn second my-2" name="nomeUsuario" placeholder="Nome do Usuario">
+                           <input type="text" id="senhaUsuario" class="fadeIn third my-2" name="senhaUsuario" placeholder="Senha">
+                           <input type="text" id="Acesso" class="fadeIn third my-2" name="ID" placeholder="ID de Acesso">
+                           <input type="submit" class="fadeIn fourth my-2" value="Entrar">
+                       </form>
+                       <!-- Remind Passowrd -->
+                       <div id="formFooter">
+                           <a class="underlineHover" href="../crm/templates/main/main.php">Quero adquirir uma conta</a>
+                       </div>
+</div>
+                </div>
+            </div>
+            <div class=" col-4 bg-success pt-2">
+                <div class="d-flex justify-content-center text-white gap-3 w-100 flex-column text-center mt-5">
+                    <h1>Marketing Pharma</h1>
+                    <h3 class="my-3">
+                        O seu sistema de fidelização do cliente.  
+                    </h3>
+                    <img src="./assets/img/frame.png" class="m-auto rounded" alt="" width="200px">
+                    <p>Sobre nós</p>
+                </div>
+            </div>
         </div>
-        <div class="sideText">
 
-        </div>
-       
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 

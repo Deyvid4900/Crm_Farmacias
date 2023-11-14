@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../crm/modules/formCadastro/formcadastro.css">
+<link rel="stylesheet" href="../../../../Crm_Farmacias/crm/modules/formCadastro/formcadastro.css">
 <link rel="stylesheet" href="../../../crm/includes/Sidebar/sidebar.css">
 <section class="formInit-bg aala" id="b" >
     <div class="form-bg">
@@ -8,7 +8,7 @@
             <div class="flexForm">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" autocomplete="off" required>
-                <label class="nCliente for="numero">N° Cliente</label>
+                <label class="nCliente" for="numero">N° Cliente</label>
                 <input type="text" name="numero" id="numero" autocomplete="off" required>
                 <label class="cPf" for="cpf">CPF</label>
                 <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required>
@@ -178,7 +178,7 @@
                 <div class="lado">
                     <label class="textareaa" for="textArea">Informações Adicionais</label>
                     <div>
-                        <textarea name="textArea" id="textArea" cols="122.9" rows="3" autocomplete="off" required></textarea>
+                        <textarea name="textArea" id="textArea" cols="100" rows="3" autocomplete="off" required></textarea>
                     </div>
                 </div>
             </div>
