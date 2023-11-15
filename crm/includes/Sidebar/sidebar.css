@@ -7,6 +7,13 @@
     box-sizing: border-box;
     font-family: 'Inria Sans', sans-serif;
 }
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/* form ativo mostrar */
 .aala{
     display: none;
 }
@@ -30,6 +37,8 @@
     gap: 4px;
     cursor: pointer; 
 }
+
+
 
 .teste{
     padding-top: 50px;
@@ -65,6 +74,7 @@
     font-size: 14px;
     color: white;
 }
+
 .lastPad p{
     font-size: 14px;
     color: white;
@@ -76,11 +86,20 @@
 }
 
 /* focus (quando clicar)*/
-
+.Cadastro::after{
+    content: '';
+    display: inline;
+    background-image: url('../../../crm/assets/icons/seta.svg');
+    width: 18px;
+    height: 18px;
+    left: 68px;
+    top: 147px;
+    position: absolute;
+}
 .Cadastro.ativo::after{
     content: "";
     display: inline-block;
-    height: 73px;
+    height: 75px;
     width: 5px;
     background-color: #46c49b;
     position: absolute;
@@ -96,20 +115,42 @@
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 202px;
+    top: 207px;
+}
+.Servicos::after{
+    content: '';
+    display: inline;
+    background-image: url('../../../crm/assets/icons/seta.svg');
+    width: 18px;
+    height: 18px;
+    left: 68px;
+    top: 231px;
+    position: absolute;
 }
 
 
 .Consultorio.ativo::after{
     content: "";
     display: inline-block;
-    height: 77px;
+    height: 75px;
     width: 5px;
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 288px;
+    top: 298px;
 }
+
+.Consultorio::after{
+    content: '';
+    display: inline;
+    background-image: url('../../../crm/assets/icons/seta.svg');
+    width: 18px;
+    height: 18px;
+    left: 68px;
+    top: 320px;
+    position: absolute;
+}
+
 
 .Marketing.ativo::after{
     content: "";
@@ -119,7 +160,18 @@
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 375px;
+    top: 389px;
+}
+
+.Marketing::after{
+    content: '';
+    display: inline;
+    background-image: url('../../../crm/assets/icons/seta.svg');
+    width: 18px;
+    height: 18px;
+    left: 68px;
+    top: 410px;
+    position: absolute;
 }
 
 .lastPad.ativo::after{
@@ -135,4 +187,216 @@
 
 
 
-/*  */
+/* outras side Bar Info */
+.active{
+    display: none;
+}
+.active.mostrar{
+    display: block;
+}
+
+.sideBar-info{
+    display: none;
+}
+
+.sideBar-info.mostrar{
+    display: flex;
+    top: 122px;
+    left: 91px;
+    position: absolute;
+}
+
+
+.boxClientes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #247158;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .5s forwards;
+}
+
+
+.boxMedico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #114735;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .6s forwards;
+}
+
+.boxAgenda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #093326;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .7s forwards;
+}
+
+/* box Serviços */
+
+.sideBarInfoServicos{
+    display: none;
+}
+.sideBarInfoServicos.mostrar{
+    display: flex;
+    top: 207px;
+    left: 91px;
+    position: absolute;
+}
+
+.boxPressao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #247158;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .6s forwards;
+}
+
+.boxGlicemia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #114735;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .7s forwards;
+}
+
+.boxColesterol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #093326;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .8s forwards;
+}
+
+.boxAplicacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #031811;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .9s forwards;
+}
+
+.passaLado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 75px;
+    background-color: #010f0b;
+    color: white;
+    font-size: 18px;
+    animation: slideLado .10s forwards;
+}
+.passaLado a{
+    padding: 20px 1px;
+}
+
+/* box markenting */
+
+.sideBar-infoMarketing{
+    display: none;
+}
+
+.sideBar-infoMarketing.mostrar{
+    display: flex;
+    top: 389px;
+    left: 91px;
+    position: absolute;
+}
+
+.boxFiltros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #247158;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .5s forwards;
+
+}
+
+.boxSMS{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #114735;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .6s forwards;
+
+}
+
+.boxEmails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #093326;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .7s forwards;
+}
+
+.boxCorrespondencia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #031811;
+    color: white;
+    font-size: 17px;
+    animation: slideLado .8s forwards;
+
+}
+
+
+
+
+
+/* Keyframes */
+
+@keyframes slideLado {
+    from{
+        opacity: 0;
+        margin-left: -8px;
+    }
+
+    to{
+        opacity: 1;
+        margin-left: 2.2px;
+    }
+}
