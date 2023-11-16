@@ -6,7 +6,7 @@
     <title>Marketing Pharma</title>
     <!-- <link rel="stylesheet" href="./main.css"> -->
     <style>
-        /* main{width: calc(100%-90px); height: auto;float: right; margin: auto;} */
+        main{width: calc(100%-90px); height: auto;float: right; margin: auto;}
     </style>
 </head>
 <body>
@@ -16,9 +16,7 @@
     ?>
     <main>
         <!-- aqui vem o conteudo dessa pagina(Main/Principal)-->
-        <?php
-            require '../../../crm/modules/formCadastro/cadastroForm.php';
-        ?>
+        
     </main>
     <script src="../../../crm/templates/Main/main.js"></script>
 </body>

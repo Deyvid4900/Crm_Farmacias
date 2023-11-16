@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,25 +6,29 @@
     <title>Marketing Pharma</title>
     <!-- <link rel="stylesheet" href="./main.css"> -->
     <link rel="stylesheet" href="../../../includes/Header/header.css" >
-    <link rel="stylesheet" href="../../../includes/Sidebar/sidebar.css" >
-    <link rel="stylesheet" href="../../../../crm//modules/formCadastro/formcadastro.css">
-    <style>
-        /* main{width: calc(100%-90px); height: auto;float: right; margin: auto;} */
-    </style>
+    <script src="../../../includes/Header/header.js"></script>
+
+    <link rel="stylesheet" href="../../../includes/Sidebar/sidebar.css">
+    <script src="../../../../crm/includes/Sidebar/sidebar.js"></script>
+
+    <link rel="stylesheet" href="../../../modules/formCadastro/formcadastro.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+   
 </head>
 <body>
     <?php
-    require '../../../../../Crm_Farmacias/crm/includes/Header/header.php';
-    require '../../../../../Crm_Farmacias/crm/includes/Sidebar/sidebar.php';
-    
+    include '../../../includes/Header/header.php';
+    include '../../../includes/Sidebar/sidebar.php';
     ?>
     <main>
-        <!-- aqui vem o conteudo dessa pagina(Main/Principal)-->
         <?php
-            require '../../../../../Crm_Farmacias/crm/modules/formCadastro/cadastroForm.php';
+            include '../../../../crm/modules/formCadastro/CadastroForm.php';
         ?>
     </main>
-    <script src="../../../../../Crm_Farmacias/crm/templates/Main/main.js"></script>
+    <script src="../../../templates/Main/main.js"></script>
 </body>
 
 </html>

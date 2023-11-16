@@ -16,7 +16,7 @@
             <div class=" col-8">
                 <div class="d-flex justify-content-center">
                     <div  id="formContent" class="mt-5">
-                       <form class="mt-5">
+                       <form class="mt-5" method="POST" action="">
                            <h1>Entrar</h1>
                            <input type="text" id="nomeUsuario" class="fadeIn second my-2" name="nomeUsuario" placeholder="Nome do Usuario">
                            <input type="text" id="senhaUsuario" class="fadeIn third my-2" name="senhaUsuario" placeholder="Senha">

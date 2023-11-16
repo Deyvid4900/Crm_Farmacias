@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../../../../Crm_Farmacias/crm/modules/formCadastro/formcadastro.css">
 <link rel="stylesheet" href="../../../crm/includes/Sidebar/sidebar.css">
 <!-- class ativo mostra o form -->
-<section class="formInit-bg aala " id="b" >
+<section class="formInit-bg aala ativo " id="b" >
     <div class="form-bg">
         <h1>Clientes</h1>
         <form>
