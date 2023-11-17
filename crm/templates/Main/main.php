@@ -13,6 +13,7 @@
     <?php
     include '../../../crm/includes/Header/header.php';
     include '../../../crm/includes/Sidebar/sidebar.php';
+    include '../../../crm/modules/formMedico/formMedicos.php';
     ?>
     <main>
         <!-- aqui vem o conteudo dessa pagina(Main/Principal)-->

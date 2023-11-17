@@ -16,10 +16,14 @@ a{
 }
 
 /* form ativo mostrar */
-.aala{
+/* .aala{
     display: none;
 }
 .aala.ativo{
+    display: flex;
+} */
+
+.ativo{
     display: flex;
 }
 
@@ -35,7 +39,7 @@ a{
 }
 
 
-.Cadastro, .Servicos, .Consultorio, .Marketing, .lastPad{
+.Cadastro, .Consultorio, .Marketing, .lastPad{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +49,18 @@ a{
     cursor: pointer; 
 }
 
+.Servicos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 5px;
+    gap: 8px;
+    cursor: pointer; 
+}
+.Servicos p{
+    padding-bottom: 4px;
+}
 
 
 .teste{
@@ -122,7 +138,7 @@ a{
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 134px;
+    top: 135px;
 }
 .Servicos::after{
     content: '';
@@ -144,7 +160,7 @@ a{
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 223px;
+    top: 222px;
 }
 
 .Consultorio::after{
@@ -167,7 +183,7 @@ a{
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 312px;
+    top: 313px;
 }
 
 .Marketing::after{
@@ -231,7 +247,7 @@ a{
 
 .carrossel{
     display: flex;
-    width: 800px;
+    width: 380px;
    
 }
 .sideBarInfoServicos{
@@ -251,14 +267,17 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 90px;
     height: 75px;
     background-color: #247158;
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     animation: slideLado .6s forwards;
 }
 
+.marginBox{
+    margin-left: 0px !important;
+}
 
 .voltarLado{
     display: flex;

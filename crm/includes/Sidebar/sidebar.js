@@ -1,3 +1,5 @@
+
+
 window.addEventListener('load', () => {
 
 // cada link tem q fazer isso para que não passe url
@@ -10,8 +12,6 @@ linkCLiente.addEventListener("click",()=>{
         alert("Você ja está na pagina de clientes")
     }
 })
-
-
 
 
     const clickFunction = document.querySelectorAll('[data-menu]')
@@ -71,7 +71,7 @@ linkCLiente.addEventListener("click",()=>{
     function moveCarrossel(direction) {
         const carrosselWidth = carrossel.offsetWidth;
         currentIndex += direction;
-
+        console.log(direction, carrossel, carrosselWidth, currentIndex)
         if (currentIndex < 0) {
             currentIndex = carrossel.childElementCount - 1;
         } else if (currentIndex >= carrossel.childElementCount) {
@@ -82,7 +82,7 @@ linkCLiente.addEventListener("click",()=>{
         carrossel.style.transform = `translateX(${newTransformValue}px)`;
     }
 
-    prevButton.addEventListener('click', () => moveCarrossel(-0.3));
+    // prevButton.addEventListener('click', () => moveCarrossel(-0.3));
     nextButton.addEventListener('click', () => moveCarrossel(0.3));
 
     
