@@ -1,11 +1,9 @@
 <?php
     define("TEST_API_KEY","");
-	define("BASE_DIR",'../../../../../Crm_Farmacias/crm/');
-	
 	//Configurações do banco de dados.
-	define('DB_HOST','localhost');
-	define('DB_NAME','crud');
+	define('DB_HOST','127.0.0.1');  
+	define('DB_NAME','crm_farmacias');
 	define('DB_USER','root');
-	define('DB_PASS','usbw');
+	define('DB_PASS','');
 
 ?>
