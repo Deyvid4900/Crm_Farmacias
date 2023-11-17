@@ -28,6 +28,7 @@
             include '../../../../crm/modules/formCadastro/CadastroForm.php';
         ?>
     </main>
+    <script src="../../../crm/includes/Sidebar/sidebar.js"></script>
     <script src="../../../templates/Main/main.js"></script>
 </body>
 

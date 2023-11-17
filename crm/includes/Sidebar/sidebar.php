@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="../../../crm/includes/Sidebar/sidebar.css">
 <link rel="stylesheet" href="../../../crm/modules/formCadastro/formcadastro.css">
+<link rel="stylesheet" href="../../../crm/modules/formMedico/medicosForm.css">
 <style>
 
 </style>
@@ -86,14 +87,14 @@
 
 <section>
     <div class="sideBarInfoServicos">
-        <div class="voltarLado">
+        <!-- <div class="voltarLado">
             <span class="material-symbols-outlined">
                 arrow_back_ios
             </span>
-        </div>
+        </div> -->
         <div class="carrossel">
 
-            <div class="boxServico">
+            <div class="boxServico marginBox">
                 <p><a href="">Pressão <br> Arterial</a></p>
             </div>
             <div class="boxServico">
@@ -105,7 +106,7 @@
             <div class="boxServico">
                 <p><a href="">Aplicação <br> de Injetável</a></p>
             </div>
-            <div class="boxServico">
+            <!-- <div class="boxServico">
                 <p><a href="">Aplicação <br> de Injetável</a></p>
             </div>
             <div class="boxServico">
@@ -119,7 +120,7 @@
             </div>
             <div class="boxServico">
                 <p><a href="">Aplicação <br> de Injetável</a></p>
-            </div>
+            </div> -->
         </div>
         <div class="passaLado arrowR">
             <span class="material-symbols-outlined">

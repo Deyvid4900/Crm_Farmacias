@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="../../../../Crm_Farmacias/crm/modules/formCadastro/formcadastro.css">
+<link rel="stylesheet" href="../../../../Crm_Farmacias/crm/modules/formMedico/medicosForm.css">
 <link rel="stylesheet" href="../../../crm/includes/Sidebar/sidebar.css">
 <!-- class ativo mostra o form -->
-<section class="formInit-bg ativo " id="b" >
+<section class="formInit-bg aala ativo" id="b" >
     <div class="form-bg">
-        <h1>Clientes</h1>
+        <h1>Médicos</h1>
         <form>
         <div id="styleForm">
             <div class="flexForm">
@@ -18,77 +18,21 @@
             <div class="formAlinhado">
                 <div class="flexCol1">
                     <div class="padDown">
-                        <label for="sx" class="aaaa">Sexo</label>
-                        <select name="sx" id="sx">
-                            <option value=""></option>
-                            <option
-                            value="masculino">Masculino</option>
-                            <option value="feminino">Feminino</option>
-                        </select>
+                        <label for="hospitalAtual" class="aaaa">Hospital Atual</label>
+                        <input type="text" name="hospitalAtual" id="hospitalAtual">
                     </div>
-                    <div class="padDown">
-                        <label for="profissao" class="aprof">Profissão</label>
-                        <input type="text" name="profissao" id="profissao" autocomplete="off" required>
-                    </div>
-                    <div>
-                        <label for="religiao" class="arelig">Religião</label>
-                        <input type="text" name="religiao" id="religiao" autocomplete="off" required>
-                    </div>
+                   
                 </div>
                 <div class="flexCol2">
                     <div class="padDown">
-                        <label class="estadoCivil" for="estado-civil">Estado Civil</label>
-                        <select name="estado-civil" id="estado-civil">
-                            <option value="vazio"></option>
-                            <option value="solteiro">Solteiro</option>
-                            <option value="casado">Casado</option>
-                            <option value="separado">Separado</option>
-                            <option value="divorciado">Divorciado</option>
-                            <option value="viuvo">Viúvo</option>
-                        </select>
+                        <label class="estadoCivil" for="especiaLidade">Especialidade</label>
+                        <input type="text" name="especiaLidade" id="especiaLidade">
                     </div>
-                        <div class="padDown">
-                            <label for="faixaSalarial">Faixa Salarial</label>
-                            <select name="faixaSalarial" id="faixaSalarial">
-                                <option value="empty"></option>
-                                <option value="mil">R$1000 à R$3000</option>
-                                <option value="mil3">R$3000 à R$5000</option>
-                                <option value="mil5">R$5000 à R$10Mil</option>
-                                <option value="maxSalario">Acima de R$10Mil</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="escolaridadee" for="escolaridade">Escolaridade</label>
-                            <select name="escolaridade" id="escolaridade">
-                                <option value=""></option>
-                                <option value="ensinoFundInc">Ensino Fundamental Incompleto</option>
-                                <option value="ensinoFundComp">Ensino Fundamental Completo</option>
-                                <option value="ensinoMedInc">Ensino Médio Incompleto</option>
-                                <option value="ensinoMedComp">Ensino Médio Completo</option>
-                                <option value="superiorInc">Superior Incompleto</option>
-                                <option value="superiorCom">Superior Completo</option>
-                            </select>
-                        </div>
                 </div>
                     <div class="flexCol2">
                         <div class="padDown">
-                            <label for="dataNascimento">Data de Nascimento</label>
-                            <input type="date" name="dataNascimento" id="dataNascimento"required>
-                        </div>
-                        <div class="padDown">
-                            <label class="inputIden" for="identidade">Identidade</label>
-                            <input type="text" name="identidade" id="identidade" autocomplete="off" required>
-                        </div>
-                        <div>
-                            <label class="racaLabel" for="raca">Raça</label>
-                            <select name="raca" id="raca" class="raCaa">
-                                <option value="vaziu"></option>
-                                <option value="branco">Branco</option>
-                                <option value="preto">Preto</option>
-                                <option value="pardo">Pardo</option>
-                                <option value="amarelo">Amarelo</option>
-                                <option value="indigena">Indígena</option>
-                            </select>
+                            <label for="atuacao">Atuação</label>
+                            <input type="text" name="atuacao" id="atuacao"required>
                         </div>
                     </div>
             </div>
@@ -176,12 +120,7 @@
                     <label for="mail">Email</label>
                     <input type="text" name="mail" id="mail" autocomplete="off" required>
                 </div>
-                <div class="lado">
-                    <label class="textareaa" for="textArea">Informações Adicionais</label>
-                    <div>
-                        <textarea name="textArea" id="textArea" cols="100" rows="3" autocomplete="off" required></textarea>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <button type="submit">Cadastrar</button>
