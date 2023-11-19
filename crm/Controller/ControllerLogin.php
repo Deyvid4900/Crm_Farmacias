@@ -19,24 +19,27 @@ $farmaciaObj->setSenhaFarmacia($senha);
 $farmaciaObj->setCodigo($codigo);
 
 $nomeFarmaciaDesejada = $nomeFarmacia;
+$senhaFarmaciaDesejada = $senha;
+$codigoFarmaciaDesejada = $codigo;
 
-$resultado = $farmaciaObj->findName($nomeFarmaciaDesejada);
+$farmaciaObj->findName($nomeFarmaciaDesejada);
 
 
-if ($resultado != false) {
-    echo 'ok' ;
-}else{
-   echo 'deu ruim' ;
+if ($farmaciaObj->findName($nomeFarmaciaDesejada) != false) {
+    if ($farmaciaObj->findPass($senhaFarmaciaDesejada) != false) {
+        if ($farmaciaObj->findAcessPass($codigoFarmaciaDesejada) != false) {
+            // login feito
+            session_start();
+            $_SESSION['user_id'] = $farmaciaObj->getCodigo();
+            $_SESSION['username'] = $farmaciaObj->getNomeFarmacia();
+
+            header('Location:../templates/Main/main.php');
+        } else {
+            echo "codigo incorreta";
+        }
+    } else {
+        echo "senha incorreta";
+    }
+} else {
+    echo 'Nome incorreto';
 }
-// // Verifique se a consulta retornou resultados
-// if ($resultado) {
-//     // Faça algo com os resultados, por exemplo, imprima os dados
-//     echo "ID: " . $resultado[0] . "<br>";
-//     echo "Nome da Farmácia: " . $resultado['nomeFarmacia'] . "<br>";
-//     // Adicione mais campos conforme necessário
-// } else {
-//     // Se não houver resultados, exiba uma mensagem ou execute a lógica desejada
-//     echo "Nenhuma farmácia encontrada com o nome: $nomeFarmaciaDesejada";
-// }
-
-

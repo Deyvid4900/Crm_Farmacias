@@ -160,18 +160,7 @@ a{
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 222px;
-}
-
-.Consultorio::after{
-    content: '';
-    display: inline;
-    background-image: url('../../../crm/assets/icons/seta.svg');
-    width: 18px;
-    height: 18px;
-    left: 68px;
-    top: 245px;
-    position: absolute;
+    top: 230px;
 }
 
 
@@ -183,7 +172,7 @@ a{
     background-color: #46c49b;
     position: absolute;
     left: 85px;
-    top: 313px;
+    top: 321px;
 }
 
 .Marketing::after{
@@ -224,9 +213,13 @@ a{
 
 .sideBar-info.mostrar{
     display: flex;
-    top: 122px;
+    top: 112px;
     left: 91px;
     position: absolute;
+    z-index: 20;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.534);
 }
 
 
@@ -243,23 +236,75 @@ a{
 }
 
 
+
+
+/* box markenting */
+
+
+.sideBar-infoMarketing{
+    display: none;
+}
+
+.sideBar-infoMarketing.mostrar{
+    display: flex;
+    top: 383px;
+    left: 91px;
+    position: absolute;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0.534);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.boxMarketing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 75px;
+    background-color: #247158;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    animation: slideLado .5s forwards;
+
+}
+
+
+/* Keyframes */
+
+@keyframes slideLado {
+    from{
+        opacity: 0;
+        margin-left: -8px;
+    }
+
+    to{
+        opacity: 1;
+        margin-left: 2.2px;
+    }
+}
+
+
+
 /* box Serviços */
 
-.carrossel{
-    display: flex;
-    width: 380px;
-   
-}
+
 .sideBarInfoServicos{
     display: none;
 }
 .sideBarInfoServicos.mostrar{
     display: flex;
-    top: 206px;
-    left: 93px;
+    top: 198px;
+    left: 91px;
     position: absolute;
     overflow: hidden;
     transition: transform 0.5s ease-in-out;
+    
+    z-index: 20;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.534);
+    border-radius: 10px;
 }
 
 
@@ -310,86 +355,65 @@ a{
     padding: 20px 1px;
 }
 
-/* box markenting */
-
-
-.sideBar-infoMarketing{
-    display: none;
-}
-
-.sideBar-infoMarketing.mostrar{
-    display: flex;
-    top: 383px;
-    left: 91px;
-    position: absolute;
-}
-
-.boxMarketing {
+#wrapper {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+  }
+  
+  #carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  
+  #carousel::-webkit-scrollbar {
+    height: 0;
+  }
+  
+  #prev,
+  #next {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 90px;
-    height: 75px;
-    background-color: #247158;
-    color: white;
-    font-size: 17px;
-    animation: slideLado .5s forwards;
-
-}
-
-
-/* Keyframes */
-
-@keyframes slideLado {
-    from{
-        opacity: 0;
-        margin-left: -8px;
-    }
-
-    to{
-        opacity: 1;
-        margin-left: 2.2px;
-    }
-}
-
-
-
-
-.carrossel-container {
-    position: relative;
-    width: 300px; /* Defina a largura do seu carrossel */
-    overflow: hidden;
-}
-
-.carrossel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.item {
-    min-width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-}
-
-.prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
+    align-content: center;
+    background:#f0f0f0;
     border: none;
+    border-radius: 50%;
+    padding: 8px;
+    outline: 0;
     cursor: pointer;
-}
-
-.prev-button {
+    position: absolute;
+    /* height: 100%; */
+  }
+  
+  #prev {
+    top: 50%;
     left: 0;
-}
-
-.next-button {
+    transform: translate(50%, -50%);
+    display: none;
+    align-items: center;
+    z-index: 25;
+  }
+  
+  #next {
+    top: 50%;
     right: 0;
-}
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+  }
+  
+  #content {
+    display: grid;
+    grid-gap: 8px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  
+  .item {
+    width: 89px;
+    height: 78px;
+    background: #247158;
+  }
+  

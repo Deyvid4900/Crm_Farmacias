@@ -26,9 +26,9 @@
         <div class="testeDown sd">
             <div class="Servicos" data-menu>
                 <a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bandaid" viewBox="0 0 16 16">
-                        <path d="M14.121 1.879a3 3 0 0 0-4.242 0L8.733 3.026l4.261 4.26 1.127-1.165a3 3 0 0 0 0-4.242ZM12.293 8 8.027 3.734 3.738 8.031 8 12.293 12.293 8Zm-5.006 4.994L3.03 8.737 1.879 9.88a3 3 0 0 0 4.241 4.24l.006-.006 1.16-1.121ZM2.679 7.676l6.492-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Z" />
-                        <path d="M5.56 7.646a.5.5 0 1 1-.706.708.5.5 0 0 1 .707-.708Zm1.415-1.414a.5.5 0 1 1-.707.707.5.5 0 0 1 .707-.707ZM8.39 4.818a.5.5 0 1 1-.708.707.5.5 0 0 1 .707-.707Zm0 5.657a.5.5 0 1 1-.708.707.5.5 0 0 1 .707-.707ZM9.803 9.06a.5.5 0 1 1-.707.708.5.5 0 0 1 .707-.707Zm1.414-1.414a.5.5 0 1 1-.706.708.5.5 0 0 1 .707-.708ZM6.975 9.06a.5.5 0 1 1-.707.708.5.5 0 0 1 .707-.707ZM8.39 7.646a.5.5 0 1 1-.708.708.5.5 0 0 1 .707-.708Zm1.413-1.414a.5.5 0 1 1-.707.707.5.5 0 0 1 .707-.707Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-heart-pulse" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Z" />
+                        <path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z" />
                     </svg>
                 </a>
                 <p>Serviços</p>
@@ -77,7 +77,9 @@
             </p>
         </div>
         <div class="boxCadastro">
-            <p><a href="">CRM <br> Médico</a> </p>
+            <div id="linkMedico">
+                <p><i href="">CRM <br> Médico</i> </p>
+            </div>
         </div>
         <div class="boxCadastro">
             <p><a href="">Eventos <br> Agenda</a></p>
@@ -87,46 +89,115 @@
 
 <section>
     <div class="sideBarInfoServicos">
-        <!-- <div class="voltarLado">
-            <span class="material-symbols-outlined">
-                arrow_back_ios
-            </span>
-        </div> -->
-        <div class="carrossel">
+        <button id="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="none" d="M0 0h24v24H0V0z" />
+                <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+            </svg>
+        </button>
+        <div id="wrapper">
+            <div id="carousel">
+                <div id="content">
+                    <div style="display: flex;">
+                        <div class="boxServico  item">
+                            <p><a href="">Pressão <br> Arterial</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Glicemia <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Colesterol <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                        </div>
+                        <div class="boxServico  item">
+                            <p><a href="">Pressão <br> Arterial</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Glicemia <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Colesterol <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                        </div>
+                        <div class="boxServico  item">
+                            <p><a href="">Pressão <br> Arterial</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Glicemia <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Colesterol <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                        </div>
+                        <div class="boxServico  item">
+                            <p><a href="">Pressão <br> Arterial</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Glicemia <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Colesterol <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                        </div>
+                        <div class="boxServico  item">
+                            <p><a href="">Pressão <br> Arterial</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Glicemia <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Colesterol <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                        </div>
+                        <div class="boxServico  item">
+                            <p><a href="">Pressão <br> Arterial</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Glicemia <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Colesterol <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                        </div>
+                        <div class="boxServico  item">
+                            <p><a href="">Pressão <br> Arterial</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Glicemia <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Colesterol <br> Capilar</a></p>
+                        </div>
+                        <div class="boxServico item">
+                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                        </div>
 
-            <div class="boxServico marginBox">
-                <p><a href="">Pressão <br> Arterial</a></p>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="boxServico">
-                <p><a href="">Glicemia <br> Capilar</a></p>
-            </div>
-            <div class="boxServico">
-                <p><a href="">Colesterol <br> Capilar</a></p>
-            </div>
-            <div class="boxServico">
-                <p><a href="">Aplicação <br> de Injetável</a></p>
-            </div>
-            <!-- <div class="boxServico">
-                <p><a href="">Aplicação <br> de Injetável</a></p>
-            </div>
-            <div class="boxServico">
-                <p><a href="">Aplicação <br> de Injetável</a></p>
-            </div>
-            <div class="boxServico">
-                <p><a href="">Aplicação <br> de Injetável</a></p>
-            </div>
-            <div class="boxServico">
-                <p><a href="">Aplicação <br> de Injetável</a></p>
-            </div>
-            <div class="boxServico">
-                <p><a href="">Aplicação <br> de Injetável</a></p>
-            </div> -->
+            
+            
         </div>
-        <div class="passaLado arrowR">
-            <span class="material-symbols-outlined">
-                arrow_forward_ios
-            </span>
-        </div>
+        <button id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                </svg>
+            </button>
+
     </div>
 </section>
 

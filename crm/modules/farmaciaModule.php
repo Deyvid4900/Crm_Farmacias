@@ -96,15 +96,15 @@ class Farmacia extends CRUD
     {
         $sql = "SELECT * FROM $this->table WHERE senhaFarmacia = :senhaFarmacia";
         $stmt = Database::prepare($sql);
-        $stmt->bindParam(':nomeFarmacia', $senhaFarmacia, PDO::PARAM_STR);
+        $stmt->bindParam(':senhaFarmacia', $senhaFarmacia);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_BOTH);
     }
     public function findAcessPass($Acess)
     {
-        $sql = "SELECT * FROM $this->table WHERE senhaFarmacia = :senhaFarmacia";
+        $sql = "SELECT * FROM $this->table WHERE acessoCodigo = :acessoCodigo";
         $stmt = Database::prepare($sql);
-        $stmt->bindParam(':nomeFarmacia', $Acess, PDO::PARAM_STR);
+        $stmt->bindParam(':acessoCodigo', $Acess);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_BOTH);
     }
