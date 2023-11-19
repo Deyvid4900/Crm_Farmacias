@@ -9,7 +9,9 @@
     <div class="content_header">
         <div class="header-bg cao" id="cao">
             <div class="nomeFarmacia">
-                <h1>Nome da Farmacia</h1>
+                <?php
+                echo '<h1>' . $username . '</h1>';
+                ?>
             </div>
             <div class="formHeader">
                 <form class="formInput">
@@ -28,15 +30,39 @@
                     </svg>
                 </div>
                 <div>
-                    <button class="btnList">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="white" class="bi bi-list" viewBox="0 0 16 16" >
+                    <button class="btnList" onclick="openNav()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="white" class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                         </svg>
                     </button>
                 </div>
             </div>
+            <div id="mySidebar" class="sidebar">
+                <div class="headerSidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                </div>
+                <div class="contentSidebar">
+                    <a href="#">Sobre</a>
+                    <a href="#">Ultimos Serviços</a>
+                    <a href="#">Clientes</a>
+                    <a href="#">Médicos</a>
+                    <a href="#">Contatos</a>
+                    <a href="#">Suporte</a>
+                </div>
+            </div>
+
 
         </div>
     </div>
+    <script>
+        const mySideBar = document.getElementById("mySidebar")
+        function openNav() {
+                mySideBar.style.width = "400px";
+            }
+
+            function closeNav() {
+                mySideBar.style.width = "0";
+            }
+    </script>
     <script src="../../../crm/includes/Header/header.js"></script>
 </header>

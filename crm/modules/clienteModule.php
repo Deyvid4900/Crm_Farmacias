@@ -3,6 +3,7 @@
 require_once '../config/config_Bd.php';
 require_once '../includes/Especializacao/pessoasModule.php';
 require_once '../includes/Especializacao/funcionarioModule.php';
+require_once '../Controller/controllerCrud.php';
 
 /*************************************************************
 Objetivo: Classe responsável por representar todas as operações com o cliente do negócio.
