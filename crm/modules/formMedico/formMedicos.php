@@ -9,32 +9,42 @@
             <div class="flexForm">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" autocomplete="off" required>
-                <label class="nCliente" for="numero">N° Cliente</label>
-                <input type="text" name="numero" id="numero" autocomplete="off" required>
-                <label class="cPf" for="cpf">CPF</label>
-                <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required>
+                    <label class="cPf" for="cpf">CPF</label>
+                    <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required>
+                
+                <label for="sx" class="aaaa">Sexo</label>
+                        <select name="sx" id="sx">
+                            <option value=""></option>
+                            <option
+                            value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>
             <!-- mexer cpf validar formato -->
             </div>
-            <div class="formAlinhado">
-                <div class="flexCol1">
-                    <div class="padDown">
-                        <label for="hospitalAtual" class="aaaa">Hospital Atual</label>
-                        <input type="text" name="hospitalAtual" id="hospitalAtual">
-                    </div>
-                   
-                </div>
-                <div class="flexCol2">
-                    <div class="padDown">
-                        <label class="estadoCivil" for="especiaLidade">Especialidade</label>
-                        <input type="text" name="especiaLidade" id="especiaLidade">
-                    </div>
-                </div>
-                    <div class="flexCol2">
+            <div class="flexultimo">
+                <div class="aakka">
                         <div class="padDown">
-                            <label for="atuacao">Atuação</label>
-                            <input type="text" name="atuacao" id="atuacao"required>
+                            <label for="profissao" id="aalaaa" class="aprof">Especialidade</label>
+                            <input type="text" name="profissao" id="profissao" autocomplete="off" required>
+                        </div>
+                
+                    <div class="flexCol2">
+                        <div class="padDown aop">
+                            <label class="estadoCivil" for="estado-civil">Atuação</label>
+                            <input type="text" name="estado-civil" id="estado-civil">
                         </div>
                     </div>
+                </div>
+                <div class="aaako">
+                    <div class=" aew">
+                        <label for="faixaSalarial">Hospital Atual</label>
+                        <input type="text" name="faixaSalarialHospital" id="faixaSalarial">
+                    </div>
+                        <div class="flexCol2">
+                                <label class="sakdo" for="dataNascimento">Data de Nascimento</label>
+                                <input type="date" name="dataNascimento" id="dataNascimento"required>
+                        </div>
+                </div>
             </div>
 
         </div>
@@ -120,7 +130,12 @@
                     <label for="mail">Email</label>
                     <input type="text" name="mail" id="mail" autocomplete="off" required>
                 </div>
-                
+                <div class="lado">
+                    <label class="textareaa" for="textArea">Informações Adicionais</label>
+                    <div>
+                        <textarea name="textArea" id="textArea" cols="100" rows="3" autocomplete="off" required></textarea>
+                    </div>
+                </div>
             </div>
         </div>
         <button type="submit">Cadastrar</button>
