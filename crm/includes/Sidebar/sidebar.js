@@ -2,6 +2,23 @@
 
 window.addEventListener('load', () => {
     // cada link tem q fazer isso para que não passe url
+    const LinkEvento = document.getElementById("LinkEvento")
+    LinkEvento.addEventListener("click", () => {
+        var urlAtual = window.location.href;
+        if (!urlAtual.includes("EventosAgendas/Eventos.php")) {
+            window.location.href = "../Cadastro/EventosAgendas/Eventos.php"
+        }else {
+            alert("Você ja está na pagina de Evento")
+        }
+        if (urlAtual.includes("Cadastro/CRM_Medicos/medicos.php")) {
+            window.location.href = "../EventosAgendas/Eventos.php"
+        }
+        if (urlAtual.includes("Clientes/clientes.php")) {
+            window.location.href = "../EventosAgendas/Eventos.php"
+        }
+        
+    })
+
     const linkCLiente = document.getElementById("linkCLiente")
     linkCLiente.addEventListener("click", () => {
         var urlAtual = window.location.href;
@@ -11,6 +28,9 @@ window.addEventListener('load', () => {
             alert("Você ja está na pagina de clientes")
         }
         if (urlAtual.includes("Cadastro/CRM_Medicos/medicos.php")) {
+            window.location.href = "../Clientes/clientes.php"
+        }
+        if (urlAtual.includes("Cadastro/EventosAgendas/Eventos.php")) {
             window.location.href = "../Clientes/clientes.php"
         }
     })
@@ -27,6 +47,10 @@ window.addEventListener('load', () => {
         if (urlAtual.includes("Cadastro/Clientes/clientes.php")) {
             window.location.href = "../CRM_Medicos/medicos.php"
         }
+        if (urlAtual.includes("Cadastro/EventosAgendas/Eventos.php")) {
+            window.location.href = "../CRM_Medicos/medicos.php"
+        }
+
     })
 
 

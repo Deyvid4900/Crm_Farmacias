@@ -82,7 +82,9 @@
             </div>
         </div>
         <div class="boxCadastro">
-            <p><a href="">Eventos <br> Agenda</a></p>
+            <div id="LinkEvento">
+                <p><i href="">Eventos <br> Agenda</i></p>
+            </div>
         </div>
     </div>
 </section>
@@ -111,77 +113,25 @@
                         <div class="boxServico item">
                             <p><a href="">Aplicação <br> de Injetável</a></p>
                         </div>
-                        <div class="boxServico  item">
-                            <p><a href="">Pressão <br> Arterial</a></p>
+                        <div class="boxServico item">
+                            <p><a href="">Nebulização</a></p>
                         </div>
                         <div class="boxServico item">
-                            <p><a href="">Glicemia <br> Capilar</a></p>
+                            <p><a href="">Risco Cardiaco</a></p>
                         </div>
                         <div class="boxServico item">
-                            <p><a href="">Colesterol <br> Capilar</a></p>
+                            <p><a href="">Emagrecimento</a></p>
                         </div>
                         <div class="boxServico item">
-                            <p><a href="">Aplicação <br> de Injetável</a></p>
-                        </div>
-                        <div class="boxServico  item">
-                            <p><a href="">Pressão <br> Arterial</a></p>
+                            <p><a href="">Avaliação de Saude</a></p>
                         </div>
                         <div class="boxServico item">
-                            <p><a href="">Glicemia <br> Capilar</a></p>
+                            <p><a href="">Dependência de Nicotina</a></p>
                         </div>
                         <div class="boxServico item">
-                            <p><a href="">Colesterol <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Aplicação <br> de Injetável</a></p>
-                        </div>
-                        <div class="boxServico  item">
-                            <p><a href="">Pressão <br> Arterial</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Glicemia <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Colesterol <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Aplicação <br> de Injetável</a></p>
-                        </div>
-                        <div class="boxServico  item">
-                            <p><a href="">Pressão <br> Arterial</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Glicemia <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Colesterol <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Aplicação <br> de Injetável</a></p>
-                        </div>
-                        <div class="boxServico  item">
-                            <p><a href="">Pressão <br> Arterial</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Glicemia <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Colesterol <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Aplicação <br> de Injetável</a></p>
-                        </div>
-                        <div class="boxServico  item">
-                            <p><a href="">Pressão <br> Arterial</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Glicemia <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Colesterol <br> Capilar</a></p>
-                        </div>
-                        <div class="boxServico item">
-                            <p><a href="">Aplicação <br> de Injetável</a></p>
+                            <p><a href="">Monitor TSH e T4 Livre</a></p>
+                        </div><div class="boxServico item">
+                            <p><a href="">Aplicação de Brincos</a></p>
                         </div>
 
                     </div>

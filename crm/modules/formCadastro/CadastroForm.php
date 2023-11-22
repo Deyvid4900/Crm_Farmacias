@@ -4,15 +4,15 @@
 <section class="formInit-bg ativo " id="b" >
     <div class="form-bg">
         <h1>Clientes</h1>
-        <form>
+        <form action="../../../../../../../Projetos/Crm_Farmacias/crm/Controller/controllerCadastroCliente.php" method="POST">
         <div id="styleForm">
             <div class="flexForm">
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" autocomplete="off" required>
+                <input type="text" name="nome" id="nome" autocomplete="off" >
                 <label class="nCliente" for="numero">N° Cliente</label>
-                <input type="text" name="numero" id="numero" autocomplete="off" required>
+                <input type="text" name="numero" id="numero" autocomplete="off" >
                 <label class="cPf" for="cpf">CPF</label>
-                <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required>
+                <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" >
             <!-- mexer cpf validar formato -->
             </div>
             <div class="formAlinhado">
@@ -28,11 +28,11 @@
                     </div>
                     <div class="padDown">
                         <label for="profissao" class="aprof">Profissão</label>
-                        <input type="text" name="profissao" id="profissao" autocomplete="off" required>
+                        <input type="text" name="profissao" id="profissao" autocomplete="off" >
                     </div>
                     <div>
                         <label for="religiao" class="arelig">Religião</label>
-                        <input type="text" name="religiao" id="religiao" autocomplete="off" required>
+                        <input type="text" name="religiao" id="religiao" autocomplete="off" >
                     </div>
                 </div>
                 <div class="flexCol2">
@@ -73,11 +73,11 @@
                     <div class="flexCol2">
                         <div class="padDown">
                             <label for="dataNascimento">Data de Nascimento</label>
-                            <input type="date" name="dataNascimento" id="dataNascimento"required>
+                            <input type="date" name="dataNascimento" id="dataNascimento">
                         </div>
                         <div class="padDown">
                             <label class="inputIden" for="identidade">Identidade</label>
-                            <input type="text" name="identidade" id="identidade" autocomplete="off" required>
+                            <input type="text" name="identidade" id="identidade" autocomplete="off" >
                         </div>
                         <div>
                             <label class="racaLabel" for="raca">Raça</label>
@@ -99,17 +99,17 @@
             <div id="styleForm1">
                 <div class="padDown1">
                     <label class="logra" for="logradouro">Logradouro</label>
-                    <input type="text" name="logradouro" id="logradouro" autocomplete="off" required>
+                    <input type="text" name="logradouro" id="logradouro" autocomplete="off" >
                     <label class="cepNumber" for="numeroCep">Número</label>
-                    <input type="text" name="numeroCep" id="numeroCep" autocomplete="off" required>
+                    <input type="text" name="numeroCep" id="numeroCep" autocomplete="off" >
                     <label class="bairroStyle" for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="bairro" autocomplete="off" required>
+                    <input type="text" name="bairro" id="bairro" autocomplete="off" >
                 </div>
                 <div class="padDown1">
                     <label class="comple"  for="complemento">Complemento</label>
-                    <input type="text" name="complemento" id="complemento" autocomplete="off" required>
+                    <input type="text" name="complemento" id="complemento" autocomplete="off" >
                     <label class="cidad" for="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" autocomplete="off" required>
+                    <input type="text" name="cidade" id="cidade" autocomplete="off" >
                     <label for="uf">UF</label>
                     <select name="uf" id="uf">
                         <option value=""></option>
@@ -144,7 +144,7 @@
                 </div>
                 <div>
                     <label class="referenStyle" for="referencia">Referência</label>
-                    <input type="text" name="referencia" id="referencia" autocomplete="off" required>
+                    <input type="text" name="referencia" id="referencia" autocomplete="off" >
                 </div>
             </div>
         </div>
@@ -152,13 +152,13 @@
             <div id="styleForm2">
                 <div class="padDown1">
                     <label class="Cel1" for="cel1">Celular 1</label>
-                    <input type="text" name="cel1" id="cel1" placeholder=" (DDD) 99999-9999" autocomplete="off" required>
+                    <input type="text" name="cel1" id="cel1" placeholder=" (DDD) 99999-9999" autocomplete="off" >
                     <label for="cel2">Celular 2</label>
-                    <input type="text" name="cel2" id="cel2" placeholder=" (DDD) 99999-9999" autocomplete="off" required>
+                    <input type="text" name="cel2" id="cel2" placeholder=" (DDD) 99999-9999" autocomplete="off" >
                     <label for="tel1">Tel Fixo 1</label>
-                    <input type="text" name="tel1" id="tel1" placeholder=" (DDD) 3500-0000" autocomplete="off" required>
+                    <input type="text" name="tel1" id="tel1" placeholder=" (DDD) 3500-0000" autocomplete="off" >
                     <label for="tel2">Tel Fixo 2</label>
-                    <input type="text" name="tel2" id="tel2" placeholder=" (DDD) 3500-0000" autocomplete="off" required>
+                    <input type="text" name="tel2" id="tel2" placeholder=" (DDD) 3500-0000" autocomplete="off" >
                 </div>
                 <div class="padDown1">
                     <label class="zap1" for="possuiZap">Possui Whatsapp</label>
@@ -174,12 +174,12 @@
                         <option value="nn">Não</option>
                     </select>
                     <label for="mail">Email</label>
-                    <input type="text" name="mail" id="mail" autocomplete="off" required>
+                    <input type="text" name="mail" id="mail" autocomplete="off" >
                 </div>
                 <div class="lado">
                     <label class="textareaa" for="textArea">Informações Adicionais</label>
                     <div>
-                        <textarea name="textArea" id="textArea" cols="100" rows="3" autocomplete="off" required></textarea>
+                        <textarea name="textArea" id="textArea" cols="100" rows="3" autocomplete="off" ></textarea>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ include_once '../modules/clienteModule.php';
 
 
 //verifica se o botão editar foi acionado
-if(isset($_POST['btn-editar'])):
+
 
 	//sanitiza os campos do formulário
 	$nome=filter_var($_POST['nome'], FILTER_SANITIZE_STRING,0);
@@ -26,7 +26,6 @@ if(isset($_POST['btn-editar'])):
 	$cliente->setNome($nome);
 	
 	$cliente->setEmail($email);
-	$cliente->setIdade($idade);
 	
 	
 	//atualiza o cliente
@@ -37,7 +36,7 @@ if(isset($_POST['btn-editar'])):
 		$_SESSION['mensagem'] = "Erro ao atualizar!";
 		header('Location: ');//envia quando da errado a atualização
 	endif;
-endif;	
+
 
 
 

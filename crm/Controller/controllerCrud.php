@@ -1,5 +1,5 @@
 <?php
-	require_once '../config/config_Bd.php';
+	require_once '../../config/config_Bd.php';
 	
 /*************************************************************
 Objetivo: Classe responsável por representar uma tabela genérica do banco de dados.

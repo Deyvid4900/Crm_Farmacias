@@ -4,6 +4,7 @@ require_once '../config/config_Bd.php';
 require_once '../includes/Especializacao/pessoasModule.php';
 require_once '../includes/Especializacao/funcionarioModule.php';
 require_once '../Controller/controllerCrud.php';
+require_once '../modules/enderecoCLiente.php';
 
 /*************************************************************
 Objetivo: Classe responsável por representar todas as operações com o cliente do negócio.
@@ -41,7 +42,6 @@ class Cliente extends CRUD
 
 	//Pessoais
 	private $nome;
-	private $idade;
 	private $sexo;
 	private $estadoCivil;
 	private $dataNasc;
@@ -56,13 +56,7 @@ class Cliente extends CRUD
 	private $infoAdic;
 
 	//Endereço
-	private $logradouro;
-	private $numeroCasa;
-	private $bairro;
-	private $complemento;
-	private $cidade;
-	private $uf;
-	private $referencia;
+
 
 	//Contato
 	private $celular1;
@@ -92,15 +86,6 @@ class Cliente extends CRUD
 	public function getEmail()
 	{
 		return $this->email;
-	}
-	public function setIdade($idade)
-	{
-		$this->idade = $idade;
-	}
-
-	public function getIdade()
-	{
-		return $this->idade;
 	}
 
 	// Sexo
@@ -229,82 +214,7 @@ class Cliente extends CRUD
 
 	// Getters e Setters para Endereço
 
-	// Logradouro
-	public function getLogradouro()
-	{
-		return $this->logradouro;
-	}
 
-	public function setLogradouro($logradouro)
-	{
-		$this->logradouro = $logradouro;
-	}
-
-	// Número da Casa
-	public function getNumeroCasa()
-	{
-		return $this->numeroCasa;
-	}
-
-	public function setNumeroCasa($numeroCasa)
-	{
-		$this->numeroCasa = $numeroCasa;
-	}
-
-	// Bairro
-	public function getBairro()
-	{
-		return $this->bairro;
-	}
-
-	public function setBairro($bairro)
-	{
-		$this->bairro = $bairro;
-	}
-
-	// Complemento
-	public function getComplemento()
-	{
-		return $this->complemento;
-	}
-
-	public function setComplemento($complemento)
-	{
-		$this->complemento = $complemento;
-	}
-
-	// Cidade
-	public function getCidade()
-	{
-		return $this->cidade;
-	}
-
-	public function setCidade($cidade)
-	{
-		$this->cidade = $cidade;
-	}
-
-	// UF
-	public function getUf()
-	{
-		return $this->uf;
-	}
-
-	public function setUf($uf)
-	{
-		$this->uf = $uf;
-	}
-
-	// Referência
-	public function getReferencia()
-	{
-		return $this->referencia;
-	}
-
-	public function setReferencia($referencia)
-	{
-		$this->referencia = $referencia;
-	}
 
 	// Getters e Setters para Contato
 
@@ -373,13 +283,12 @@ class Cliente extends CRUD
 		$stmt = Database::prepare($sql);
 
 		$stmt->bindParam(':nome', $this->nome);
-		$stmt->bindParam(':idade', $this->idade, PDO::PARAM_INT);
 		$stmt->bindParam(':sexo', $this->sexo);
 		$stmt->bindParam(':estadoCivil', $this->estadoCivil);
 		$stmt->bindParam(':dataNasc', $this->dataNasc);
 		$stmt->bindParam(':profissao', $this->profissao);
-		$stmt->bindParam(':faixaSalarial', $this->faixaSalarial,PDO::PARAM_BOOL);
-		$stmt->bindParam(':cpf', $this->cpf,PDO::PARAM_INT);
+		$stmt->bindParam(':faixaSalarial', $this->faixaSalarial, PDO::PARAM_BOOL);
+		$stmt->bindParam(':cpf', $this->cpf, PDO::PARAM_INT);
 		$stmt->bindParam(':escolaridade', $this->escolaridade);
 		$stmt->bindParam(':religiao', $this->religiao);
 		$stmt->bindParam(':timeFut', $this->timeFut);
@@ -387,19 +296,12 @@ class Cliente extends CRUD
 		$stmt->bindParam(':tipocliente', $this->tipocliente);
 		$stmt->bindParam(':infoAdic', $this->infoAdic);
 
-		$stmt->bindParam(':logradouro', $this->logradouro);
-		$stmt->bindParam(':numeroCasa', $this->numeroCasa);
-		$stmt->bindParam(':bairro', $this->bairro);
-		$stmt->bindParam(':complemento', $this->complemento);
-		$stmt->bindParam(':cidade', $this->cidade);
-		$stmt->bindParam(':uf', $this->uf);
-		$stmt->bindParam(':referencia', $this->referencia);
 
 		$stmt->bindParam(':celular1', $this->celular1);
 		$stmt->bindParam(':celular2', $this->celular2);
 		$stmt->bindParam(':telFixo', $this->telFixo);
 		$stmt->bindParam(':email', $this->email);
-
+		
 		return $stmt->execute();
 	}
 
@@ -442,7 +344,6 @@ class Cliente extends CRUD
 		$stmt = Database::prepare($sql);
 
 		$stmt->bindParam(':nome', $this->nome);
-		$stmt->bindParam(':idade', $this->idade, PDO::PARAM_INT);
 		$stmt->bindParam(':sexo', $this->sexo);
 		$stmt->bindParam(':estadoCivil', $this->estadoCivil);
 		$stmt->bindParam(':dataNasc', $this->dataNasc);
@@ -456,13 +357,6 @@ class Cliente extends CRUD
 		$stmt->bindParam(':tipocliente', $this->tipocliente, PDO::PARAM_INT);
 		$stmt->bindParam(':infoAdic', $this->infoAdic);
 
-		$stmt->bindParam(':logradouro', $this->logradouro);
-		$stmt->bindParam(':numeroCasa', $this->numeroCasa);
-		$stmt->bindParam(':bairro', $this->bairro);
-		$stmt->bindParam(':complemento', $this->complemento);
-		$stmt->bindParam(':cidade', $this->cidade);
-		$stmt->bindParam(':uf', $this->uf);
-		$stmt->bindParam(':referencia', $this->referencia);
 
 		$stmt->bindParam(':celular1', $this->celular1);
 		$stmt->bindParam(':celular2', $this->celular2);
@@ -496,5 +390,8 @@ class Cliente extends CRUD
 		$stmt = Database::prepare($sql);
 		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 		return $stmt->execute();
+	}
+	public function adicionarEnderco($cliente_Id)
+	{
 	}
 }

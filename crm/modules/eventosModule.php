@@ -1,8 +1,8 @@
 <?php
 
-require_once '../config/config_Bd.php';
-require_once '../includes/Especializacao/pessoasModule.php';
-require_once '../includes/Especializacao/funcionarioModule.php';
+require_once '../../config/config_Bd.php';
+require_once '../../includes/Especializacao/pessoasModule.php';
+require_once '../../includes/Especializacao/funcionarioModule.php';
 
 /*************************************************************
 Objetivo: Classe responsável por representar todas as operações com o eventos.
@@ -17,7 +17,7 @@ update - atualiza um evento na tabela evento
 
 *************************************************************/
 
-class Cliente extends CRUD{
+class Eventos extends CRUD{
 	
 
 	protected $table ='eventos';
