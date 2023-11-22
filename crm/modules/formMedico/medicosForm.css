@@ -15,14 +15,38 @@
 
 }
 
+.aakka, .aaako{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.padDown{
+    margin-left: 40px;
+}
+.flexultimo{
+    display: flex;
+}
 
+.aop{
+    margin-left: 88px;
+}
+
+.aew{
+    margin-left: 11px;
+}
+.sakdo{
+    margin-left: 1px;
+}
+#dataNascimento{
+    width: 121px;
+}
 .form-bg{
     background-color: #f0f0f0;
     width: 850px;
-    height: 372px;
+    height: 490px;
     border-radius: 8px;
     position: absolute;
-    bottom: 110px;
+    bottom: 20px;
 }
 .form-bg h1{
     display: flex;
@@ -38,17 +62,27 @@
 .flexForm{
     display: flex;
     justify-content: center;
-    margin-left: -20px;
+    margin-left: -14px;
     margin-top: 14px;
 }
 
+.flexflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.caunho{
+    margin-left: -148px;
+}
 #nome, #numero, #cpf{
     margin-left: 8px;
 }
 
-
+#faixaSalarialHospital{
+    width: 210px;
+}
 #nome{
-    width: 260px;
+    width: 261px;
     margin-right: 12px;
 }
 #numero{
@@ -62,29 +96,33 @@
     align-items: self-start;
 }
 
-#hospitalAtual, #especiaLidade{
-    width: 160px;
+#sx{
+    width: 143px;
     margin-left: 0px;
 }
-#atuacao{
-    width: 172px;
-}
 .aaaa{
-    margin-left: 9px;
+    margin-left: 14px;
+    margin-right: 3px;
 }
 .aprof{
     margin-left: 34px;
 }
+#aalaaa{
+    margin-left: -14px;
+}
+#profissao{
+    margin-right: 28px;
+}
 .arelig{
     margin-left: 42px;
 }
-
 /* alinhamento do form e etc */
 .cPf{
-    margin-left: 18px
+    margin-left: 18px;
+    margin-left: 30px;
 }
 #cpf{
-    width: 172px;
+    width: 178px;
 }
 .nCliente{
     margin-left: 1px;
@@ -92,6 +130,9 @@
 
 .formAlinhado{
     display: flex;
+    /* justify-content: center; */
+    margin-left: 40px;
+    gap: 13px;
 }
 
 .flexCol2{
@@ -100,13 +141,13 @@
 }
 
 #estado-civil{
-    width: 174px;
+    width: 212px;
 }
 .estadoCivil{
-    margin-left: 10px;
+    margin-left: -34px;
 }
 #faixaSalarial{
-    width: 174px;
+    width: 162px;
 }  
 #escolaridade{
     width: 174px;
@@ -118,6 +159,9 @@
 
 .marginLeft{
     margin-left: 12px;
+}
+#profissao{
+    width: 213px;
 }
 
 .inputIden{
