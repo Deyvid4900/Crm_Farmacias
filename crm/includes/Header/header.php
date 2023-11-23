@@ -8,10 +8,13 @@
 <header id="a">
     <div class="content_header">
         <div class="header-bg cao" id="cao">
-            <div class="nomeFarmacia">
+            <div class="nomeFarmacia" style="color: #ffff;">
                 <?php
                 echo '<h1>' . $username . '</h1>';
                 ?>
+            </div>
+            <div style="color: white;">
+                <h1><span style="color: #84f284;">Markting</span> pharma</h1>
             </div>
             <div class="formHeader">
                 <form class="formInput">
@@ -48,6 +51,7 @@
                     <a href="#">Médicos</a>
                     <a href="#">Contatos</a>
                     <a href="#">Suporte</a>
+                    <a href="#" id="LogOut">Sair</a>
                 </div>
             </div>
 

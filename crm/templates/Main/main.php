@@ -14,10 +14,11 @@ if (isset($_SESSION['username'])) {
         <!-- <link rel="stylesheet" href="./main.css"> -->
         <style>
             main {
-                width: calc(100%-90px);
+                width: calc(90%-100px);
                 height: auto;
                 float: right;
                 margin: auto;
+                
             }
         </style>
     </head>
@@ -28,6 +29,7 @@ if (isset($_SESSION['username'])) {
         include '../../../crm/includes/Sidebar/sidebar.php';
         ?>
         <main>
+            
             <!-- aqui vem o conteudo dessa pagina(Main/Principal)-->
             <div>
                 <?php

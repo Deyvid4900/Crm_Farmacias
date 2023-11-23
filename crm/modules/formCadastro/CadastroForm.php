@@ -19,7 +19,7 @@
                 <div class="flexCol1">
                     <div class="padDown">
                         <label for="sx" class="aaaa">Sexo</label>
-                        <select name="sx" id="sx">
+                        <select name="sexo" id="sx">
                             <option value=""></option>
                             <option
                             value="masculino">Masculino</option>
@@ -34,11 +34,16 @@
                         <label for="religiao" class="arelig">Religião</label>
                         <input type="text" name="religiao" id="religiao" autocomplete="off" >
                     </div>
+                    <div style="display: flex; height: 21px; width: 100%;justify-content: end;">
+                    
+                        <label for="timeFut" class="arelig" style="margin-right:6px;">Time</label>
+                        <input type="text" name="timeFut" id="timeFut" autocomplete="off" >
+                    </div>
                 </div>
                 <div class="flexCol2">
                     <div class="padDown">
                         <label class="estadoCivil" for="estado-civil">Estado Civil</label>
-                        <select name="estado-civil" id="estado-civil">
+                        <select name="estadoCivil" id="estado-civil">
                             <option value="vazio"></option>
                             <option value="solteiro">Solteiro</option>
                             <option value="casado">Casado</option>
@@ -73,7 +78,7 @@
                     <div class="flexCol2">
                         <div class="padDown">
                             <label for="dataNascimento">Data de Nascimento</label>
-                            <input type="date" name="dataNascimento" id="dataNascimento">
+                            <input type="date" name="dataNasc" id="dataNascimento">
                         </div>
                         <div class="padDown">
                             <label class="inputIden" for="identidade">Identidade</label>
@@ -82,7 +87,7 @@
                         <div>
                             <label class="racaLabel" for="raca">Raça</label>
                             <select name="raca" id="raca" class="raCaa">
-                                <option value="vaziu"></option>
+                                <option value="vazio"></option>
                                 <option value="branco">Branco</option>
                                 <option value="preto">Preto</option>
                                 <option value="pardo">Pardo</option>
@@ -101,7 +106,7 @@
                     <label class="logra" for="logradouro">Logradouro</label>
                     <input type="text" name="logradouro" id="logradouro" autocomplete="off" >
                     <label class="cepNumber" for="numeroCep">Número</label>
-                    <input type="text" name="numeroCep" id="numeroCep" autocomplete="off" >
+                    <input type="number" name="numeroCasa" id="numeroCep" autocomplete="off" >
                     <label class="bairroStyle" for="bairro">Bairro</label>
                     <input type="text" name="bairro" id="bairro" autocomplete="off" >
                 </div>
@@ -152,34 +157,21 @@
             <div id="styleForm2">
                 <div class="padDown1">
                     <label class="Cel1" for="cel1">Celular 1</label>
-                    <input type="text" name="cel1" id="cel1" placeholder=" (DDD) 99999-9999" autocomplete="off" >
+                    <input type="text" name="celular1" id="cel1" placeholder=" (DDD) 99999-9999" autocomplete="off" >
                     <label for="cel2">Celular 2</label>
-                    <input type="text" name="cel2" id="cel2" placeholder=" (DDD) 99999-9999" autocomplete="off" >
+                    <input type="text" name="celular2" id="cel2" placeholder=" (DDD) 99999-9999" autocomplete="off" >
                     <label for="tel1">Tel Fixo 1</label>
-                    <input type="text" name="tel1" id="tel1" placeholder=" (DDD) 3500-0000" autocomplete="off" >
-                    <label for="tel2">Tel Fixo 2</label>
-                    <input type="text" name="tel2" id="tel2" placeholder=" (DDD) 3500-0000" autocomplete="off" >
+                    <input type="text" name="telFixo" id="tel1" placeholder=" (DDD) 3500-0000" autocomplete="off" >
+                    
                 </div>
-                <div class="padDown1">
-                    <label class="zap1" for="possuiZap">Possui Whatsapp</label>
-                    <select name="possuiZap" id="possuiZap">
-                        <option value=""></option>
-                        <option value="sim">Sim</option>
-                        <option value="nao">Não</option>
-                    </select>
-                    <label class="zap2" for="possuiZapi">Possui Whatsapp</label>
-                    <select name="possuiZapi" id="possuiZapi">
-                        <option value=""></option>
-                        <option value="ss">Sim</option>
-                        <option value="nn">Não</option>
-                    </select>
+                <div class="padDown1 " style="    margin-left: 28px;">
                     <label for="mail">Email</label>
-                    <input type="text" name="mail" id="mail" autocomplete="off" >
+                    <input type="text" name="email" id="mail" autocomplete="off" >
                 </div>
                 <div class="lado">
                     <label class="textareaa" for="textArea">Informações Adicionais</label>
                     <div>
-                        <textarea name="textArea" id="textArea" cols="100" rows="3" autocomplete="off" ></textarea>
+                        <textarea name="infoAdic" id="textArea" cols="100" rows="3" autocomplete="off" ></textarea>
                     </div>
                 </div>
             </div>

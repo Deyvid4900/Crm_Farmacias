@@ -1,6 +1,7 @@
 <?php
-
-require_once '../config/config_Bd.php';
+// echo getcwd();
+// C:\xampp\htdocs\Projetos\Crm_Farmacias\crm\modules
+require_once 'C:\xampp\htdocs\Projetos\Crm_Farmacias\crm\config\config_Bd.php';
 require_once '../includes/Especializacao/pessoasModule.php';
 require_once '../includes/Especializacao/funcionarioModule.php';
 require_once '../Controller/controllerCrud.php';
@@ -54,10 +55,6 @@ class Cliente extends CRUD
 	private $raca;
 	private $tipocliente;
 	private $infoAdic;
-
-	//Endereço
-
-
 	//Contato
 	private $celular1;
 	private $celular2;
@@ -269,14 +266,33 @@ class Cliente extends CRUD
 	Objetivo: Método que insere um cliente
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	 ***************/
+	public function insertArray(array $data)
+	{
+		$sql = "INSERT INTO $this->table 
+      (nome, sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, infoAdic,
+      celular1, celular2, telFixo, email) 
+      VALUES 
+      (:nome, :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :infoAdic,
+      :celular1, :celular2, :telFixo, :email)";
+
+		$stmt = Database::prepare($sql);
+
+		foreach ($data as $key => $value) {
+			$stmt->bindValue(':' . $key, $value);
+		}
+
+		return $stmt->execute();
+	}
+
+
 	public function insert()
 	{
 		$sql = "INSERT INTO $this->table 
-				(nome, idade, sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, tipocliente, infoAdic,
+				(nome,  sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, infoAdic,
 				logradouro, numeroCasa, bairro, complemento, cidade, uf, referencia,
 				celular1, celular2, telFixo, email) 
 				VALUES 
-				(:nome, :idade, :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :tipocliente, :infoAdic,
+				(:nome,  :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :infoAdic,
 				:logradouro, :numeroCasa, :bairro, :complemento, :cidade, :uf, :referencia,
 				:celular1, :celular2, :telFixo, :email)";
 
@@ -287,8 +303,8 @@ class Cliente extends CRUD
 		$stmt->bindParam(':estadoCivil', $this->estadoCivil);
 		$stmt->bindParam(':dataNasc', $this->dataNasc);
 		$stmt->bindParam(':profissao', $this->profissao);
-		$stmt->bindParam(':faixaSalarial', $this->faixaSalarial, PDO::PARAM_BOOL);
-		$stmt->bindParam(':cpf', $this->cpf, PDO::PARAM_INT);
+		$stmt->bindParam(':faixaSalarial', $this->faixaSalarial);
+		$stmt->bindParam(':cpf', $this->cpf);
 		$stmt->bindParam(':escolaridade', $this->escolaridade);
 		$stmt->bindParam(':religiao', $this->religiao);
 		$stmt->bindParam(':timeFut', $this->timeFut);
@@ -301,7 +317,7 @@ class Cliente extends CRUD
 		$stmt->bindParam(':celular2', $this->celular2);
 		$stmt->bindParam(':telFixo', $this->telFixo);
 		$stmt->bindParam(':email', $this->email);
-		
+
 		return $stmt->execute();
 	}
 
@@ -366,6 +382,14 @@ class Cliente extends CRUD
 
 		return $stmt->execute();
 	}
+	public function getIdByName($name){
+		$sql = 'SELECT id FROM clientes WHERE nome = :nome';
+		$stmt = Database::prepare($sql);
+		$stmt->execute(['nome'=>$name]);
+		$result = $stmt->fetch();
+		return $result ? $result->id : null;
+	 }
+	 
 
 	public function  findAll()
 	{
