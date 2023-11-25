@@ -7,122 +7,35 @@
         <form>
         <div id="styleForm">
             <div class="flexForm">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" autocomplete="off" required>
-                <label class="nCliente" for="numero">N° Cliente</label>
-                <input type="text" name="numero" id="numero" autocomplete="off" required>
-                <label class="cPf" for="cpf">CPF</label>
-                <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required>
+                <label for="nome">Nome </label>
+                <input type="text" name="nomeEvento" placeholder="Nome do Evento" id="nome" autocomplete="off" required>
+                <label class="nCliente" for="numero">Data</label>
+                <input type="date" name="dataEvento" id="numero" autocomplete="off" required>
+                <label class="cPf" for="cpf">Horas</label>
+                <input type="number" placeholder="horario" name="cpf" id="cpf" maxlength="11" autocomplete="off" required>
             <!-- mexer cpf validar formato -->
             </div>
             <div class="formAlinhado">
                 <div class="flexCol1">
                     <div class="padDown">
-                        <label for="hospitalAtual" class="aaaa">Hospital Atual</label>
-                        <input type="text" name="hospitalAtual" id="hospitalAtual">
+                        <label for="hospitalAtual" class="aaaa">Descrição</label>
+                        <input type="text" name="hospitalAtual" placeholder="Descrição" id="hospitalAtual">
                     </div>
                    
                 </div>
                 <div class="flexCol2">
                     <div class="padDown">
-                        <label class="estadoCivil" for="especiaLidade">Especialidade</label>
-                        <input type="text" name="especiaLidade" id="especiaLidade">
+                        <label class="estadoCivil" for="especiaLidade">Tipo de Evento</label>
+                        <input type="text" name="especiaLidade" placeholder="Tipo do evento" id="especiaLidade">
                     </div>
-                </div>
-                    <div class="flexCol2">
-                        <div class="padDown">
-                            <label for="atuacao">Atuação</label>
-                            <input type="text" name="atuacao" id="atuacao"required>
-                        </div>
-                    </div>
-            </div>
-
-        </div>
-
-        <div>
-            <div id="styleForm1">
-                <div class="padDown1">
-                    <label class="logra" for="logradouro">Logradouro</label>
-                    <input type="text" name="logradouro" id="logradouro" autocomplete="off" required>
-                    <label class="cepNumber" for="numeroCep">Número</label>
-                    <input type="text" name="numeroCep" id="numeroCep" autocomplete="off" required>
-                    <label class="bairroStyle" for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="bairro" autocomplete="off" required>
-                </div>
-                <div class="padDown1">
-                    <label class="comple"  for="complemento">Complemento</label>
-                    <input type="text" name="complemento" id="complemento" autocomplete="off" required>
-                    <label class="cidad" for="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" autocomplete="off" required>
-                    <label for="uf">UF</label>
-                    <select name="uf" id="uf">
-                        <option value=""></option>
-                        <option value="ac">AC</option>
-                        <option value="al">AL</option>
-                        <option value="ap">AP</option>
-                        <option value="am">AM</option>
-                        <option value="ba">BA</option>
-                        <option value="ce">CE</option>
-                        <option value="df">DF</option>
-                        <option value="es">ES</option>
-                        <option value="go">GO</option>
-                        <option value="ma">MA</option>
-                        <option value="mt">MT</option>
-                        <option value="ms">MS</option>
-                        <option value="mg">MG</option>
-                        <option value="pa">PA</option>
-                        <option value="pb">PB</option>
-                        <option value="pr">PR</option>
-                        <option value="pe">PE</option>
-                        <option value="pi">PI</option>
-                        <option value="rj">RJ</option>
-                        <option value="rn">RN</option>
-                        <option value="rs">RS</option>
-                        <option value="ro">RO</option>
-                        <option value="rr">RR</option>
-                        <option value="sc">SC</option>
-                        <option value="sp">SP</option>
-                        <option value="se">SE</option>
-                        <option value="to">TO</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="referenStyle" for="referencia">Referência</label>
-                    <input type="text" name="referencia" id="referencia" autocomplete="off" required>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div id="styleForm2">
-                <div class="padDown1">
-                    <label class="Cel1" for="cel1">Celular 1</label>
-                    <input type="text" name="cel1" id="cel1" placeholder=" (DDD) 99999-9999" autocomplete="off" required>
-                    <label for="cel2">Celular 2</label>
-                    <input type="text" name="cel2" id="cel2" placeholder=" (DDD) 99999-9999" autocomplete="off" required>
-                    <label for="tel1">Tel Fixo 1</label>
-                    <input type="text" name="tel1" id="tel1" placeholder=" (DDD) 3500-0000" autocomplete="off" required>
-                    <label for="tel2">Tel Fixo 2</label>
-                    <input type="text" name="tel2" id="tel2" placeholder=" (DDD) 3500-0000" autocomplete="off" required>
-                </div>
-                <div class="padDown1">
-                    <label class="zap1" for="possuiZap">Possui Whatsapp</label>
-                    <select name="possuiZap" id="possuiZap">
-                        <option value=""></option>
-                        <option value="sim">Sim</option>
-                        <option value="nao">Não</option>
-                    </select>
-                    <label class="zap2" for="possuiZapi">Possui Whatsapp</label>
-                    <select name="possuiZapi" id="possuiZapi">
-                        <option value=""></option>
-                        <option value="ss">Sim</option>
-                        <option value="nn">Não</option>
-                    </select>
-                    <label for="mail">Email</label>
-                    <input type="text" name="mail" id="mail" autocomplete="off" required>
                 </div>
                 
             </div>
+
         </div>
+
+        
+          
         <button type="submit">Cadastrar</button>
         </form>
     </div>

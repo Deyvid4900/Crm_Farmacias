@@ -19,10 +19,10 @@
 .form-bg{
     background-color: #f0f0f0;
     width: 850px;
-    height: 372px;
+    height: 205px;
     border-radius: 8px;
     position: absolute;
-    bottom: -445px;
+    bottom: -305px;
 }
 .form-bg h1{
     display: flex;
@@ -84,7 +84,8 @@
     margin-left: 18px
 }
 #cpf{
-    width: 172px;
+    width: 80px;
+    text-align: end;
 }
 .nCliente{
     margin-left: 1px;
@@ -92,6 +93,7 @@
 
 .formAlinhado{
     display: flex;
+    margin: 0px 70px;
 }
 
 .flexCol2{
@@ -282,6 +284,6 @@ button[type="submit"]{
     border: none;
     border-radius: 4px;
     margin-left: 730px;
-    margin-top: -8px;
+    margin-top: 5px;
     cursor: pointer;
 }

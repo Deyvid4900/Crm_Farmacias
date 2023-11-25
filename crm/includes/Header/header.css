@@ -89,7 +89,7 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background-image: linear-gradient(to right, #247158, #0dcc8f);
+    background-image: linear-gradient(to right, #247158, #073929 );
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;

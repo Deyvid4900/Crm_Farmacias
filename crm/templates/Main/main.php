@@ -11,16 +11,7 @@ if (isset($_SESSION['username'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Marketing Pharma</title>
-        <!-- <link rel="stylesheet" href="./main.css"> -->
-        <style>
-            main {
-                width: calc(90%-100px);
-                height: auto;
-                float: right;
-                margin: auto;
-                
-            }
-        </style>
+        <link rel="stylesheet" href="./main.css">
     </head>
 
     <body>
@@ -29,34 +20,9 @@ if (isset($_SESSION['username'])) {
         include '../../../crm/includes/Sidebar/sidebar.php';
         ?>
         <main>
-            
-            <!-- aqui vem o conteudo dessa pagina(Main/Principal)-->
-            <div>
-                <?php
-                require_once '../../../../Crm_Farmacias/crm/config/config_Bd.php';
-                require_once '../../../crm/config/configs.php';
-                require_once '../../../crm/Controller/controllerCrud.php';
-                require_once '../../../crm/modules/eventosModule.php';
-
-                // Cria uma instância da classe Eventos
-                $eventos = new Eventos();
-
-                // Usa o método findAll() para obter todos os registros
-                $registros = $eventos->findAll();
-
-                // Agora você pode iterar sobre o array $registros para acessar cada registro
-                foreach ($registros as $registro) {
-                    echo $registro['nomeEvento'] . "<br>";
-                    echo $registro['dataEvento'] . "<br>";
-                    echo $registro['descricao'] . "\n";
-                    echo "<br>";
-                }
-
-
-
-                ?>
-            </div>
+            <?php require_once './tabelaEvento.php' ?>
         </main>
+        
         <script src="../../../crm/templates/Main/main.js"></script>
     </body>
 

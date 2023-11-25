@@ -14,7 +14,9 @@
                 ?>
             </div>
             <div style="color: white;">
-                <h1><span style="color: #84f284;">Markting</span> pharma</h1>
+                <b id="linkMain" href="../../../../../Crm_Farmacias/crm/templates/Main/main.php">
+                    <h1><span style="color: #84f284;">Markting</span> pharma</h1>
+                </b>
             </div>
             <div class="formHeader">
                 <form class="formInput">
