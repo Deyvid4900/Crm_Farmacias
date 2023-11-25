@@ -1,9 +1,9 @@
 <?php
     define("TEST_API_KEY","");
 	//Configurações do banco de dados.
-	define('DB_HOST','127.0.0.1');  
-	define('DB_NAME','crm_farmacias');
-	define('DB_USER','root');
-	define('DB_PASS','');
+	define('DB_HOST','sql.freedb.tech');  
+	define('DB_NAME','freedb_Crm_Farmacias');
+	define('DB_USER','freedb_Deydey123');
+	define('DB_PASS','m#nU!2q6U!3@ZvH');
 
 ?>
