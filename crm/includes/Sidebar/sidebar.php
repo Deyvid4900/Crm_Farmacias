@@ -83,7 +83,7 @@
         </div>
         <div class="boxCadastro">
             <div id="LinkEvento">
-                <p><i href="">Eventos <br> Agenda</i></p>
+                <p><i href=""><i>Eventos</i> <br> Agenda</i></p>
             </div>
         </div>
     </div>

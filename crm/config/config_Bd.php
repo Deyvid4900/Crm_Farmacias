@@ -1,6 +1,6 @@
 <?php
 
-	require_once  realpath('C:\xampp\htdocs\Projetos\Crm_Farmacias\crm\config\configs.php'); 
+	require_once  realpath('C:\xampp\htdocs\Alo\Crm_Farmacias\crm\config\configs.php'); 
 
 	/*************************************************************
 	Objetivo: Classe responsável por representar a conexão com o banco de dados.

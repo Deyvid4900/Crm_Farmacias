@@ -93,7 +93,7 @@
     <div class="modal-content">
         <span class="close" id="closeModalBtn">&times;</span>
         
-        <form action="">
+        <form method="post">
             <i><h1>Editar dados</h1></i>
             <br>
             <div style="display: flex;justify-content:space-between;align-items: center;">
@@ -102,23 +102,23 @@
                     <input type="text" name="nome">
                 </div>
                 <div class="modalAjuste">
-                    <label for="nome"><h3>nome</h3></label>
+                    <label for="nome"><h3>Data</h3></label>
+                    <input type="text" name="nome" placeholder="01/01/2023">
+                </div>
+                <div class="modalAjuste">
+                    <label for="nome"><h3>Hora</h3></label>
+                    <input type="text" name="nome" placeholder="12:00">
+                </div>
+                <div class="modalAjuste">
+                    <label for="nome"><h3>Descrição</h3></label>
                     <input type="text" name="nome">
                 </div>
                 <div class="modalAjuste">
-                    <label for="nome"><h3>nome</h3></label>
-                    <input type="text" name="nome">
-                </div>
-                <div class="modalAjuste">
-                    <label for="nome"><h3>nome</h3></label>
-                    <input type="text" name="nome">
-                </div>
-                <div class="modalAjuste">
-                    <label for="nome"><h3>nome</h3></label>
+                    <label for="nome"><h3>Evento</h3></label>
                     <input type="text" name="nome">
                 </div>
                 <div class="btnDivModalAlterar">
-                    <button>Alterar</button>
+                    <button class="btn-Alt">Alterar</button>
                 </div>
             </div>
 
