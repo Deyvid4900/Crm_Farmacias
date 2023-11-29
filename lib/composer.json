@@ -1,0 +1,21 @@
+{
+    "name": "deyvid/lib",
+    "autoload": {
+        "psr-4": {
+        "Classes\\":"../classes/",
+        "Models\\":"../models/",
+        "Traits\\":"../traits/",
+        "controllers\\":"../Controllers/"
+
+        },"files":[
+            "config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Deyvid Oliveira Silva",
+            "email": "94657946+Deyvid4900@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

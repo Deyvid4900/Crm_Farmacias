@@ -1,0 +1,9 @@
+# Ativa a reescrita de URL
+RewriteEngine On
+
+# Condição para garantir que não reescreva diretórios ou arquivos reais
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Regra de reescrita: redireciona todas as requisições para o arquivo index.php
+RewriteRule ^(.+)$ $1.php [L,QSA,]

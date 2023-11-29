@@ -1,0 +1,270 @@
+<?php namespace Classes;
+
+class ClassLayout
+{
+    public static function setHeadDefault($title)
+    {
+        $html = "<!DOCTYPE html>\n";
+        $html .= "<html lang='pt-br'>\n";
+        $html .= "<head>\n";
+        $html .= "<meta charset='UTF-8'>\n";
+        $html .= "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+        $html .= "<meta name='format-detection' content='telephone=no'>\n";
+        $html .= "<title>$title</title>\n";
+        //  Favicon 
+        //  CSS 
+        $html  .= "<link  href='" . DIRPAGE . "lib/CSS/sideBarStyles.css" . "'>\n";
+        $html .= "</head>\n";
+        $html .= "<body>\n";
+        echo $html;
+    }
+    public static function setHeadBootstrap($title)
+    {
+        $html = "<!DOCTYPE html>\n";
+        $html .= "<html lang='pt-br'>\n";
+        $html .= "<head>\n";
+        $html .= "<meta charset='UTF-8'>\n";
+        $html .= "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+        $html .= "<meta name='format-detection' content='telephone=no'>\n";
+
+        $html .= "<title>$title</title>\n";
+        $html .= "<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>\n";
+
+        //  Favicon 
+        //  CSS
+
+        $html .= "</head>\n";
+        $html .= "<body>\n";
+        echo $html;
+    }
+
+    public static function setHeaderComponente($farmaciaNome = "farmacia", $urlImg = "null",)
+    {
+
+        $head  = "<header id='a'>\n\n";
+        $head .= "<div class='content_header'>\n";
+        $head .= "<div class='header-bg cao' id='cao'>\n";
+        $head .= "<div class='nomeFarmacia' style='color: #ffff;'>\n";
+        $head .= "<h1>" . $farmaciaNome . " </h1>\n";
+        $head .= "</div>\n";
+        $head .= "<div style='color: white;'>\n";
+        $head .= " <a id='linkMain' href='" . DIRPAGE . "views/home.php" . "'>\n";
+        $head .= "     <h1><span style='color: #84f284;'>Markting</span> pharma</h1>\n";
+        $head .= " </a>\n";
+        $head .= " </div>\n";
+        $head .=  " <div class='formHeader'>\n";
+        $head .= " <form class='formInput'>\n";
+        $head .= " <div class='inputText'>\n";
+        $head .= "  <input type='text' placeholder='Pesquisar'>\n";
+        $head .= " <button class='btn-search'>\n";
+        $head .= "  <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-search img-search' viewBox='0 0 16 16'>
+                          <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />\n";
+        $head .= "  </svg>\n";
+        $head .= " </button>\n";
+        $head .= " </div>\n";
+        $head .= "</form>\n";
+        $head .= "<div class='bellImg'>\n";
+        $head .= " <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-bell-fill' viewBox='0 0 16 16' style='margin-right: 30px;'>
+                     <path d='M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z' />\n";
+        $head .=  " </svg>\n";
+        $head .= " </div>\n";
+        $head .=  " <div>\n";
+        $head .= "<button class='btnList' onclick='openNav()'>\n";
+        $head .=  "<svg xmlns='http://www.w3.org/2000/svg' width='34' height='34' fill='white' class='bi bi-list' viewBox='0 0 16 16'>
+        <path fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'/>
+      </svg>\n";
+        $head .= "</button>\n";
+        $head .=  " </div>\n";
+        $head .=  " </div>\n";
+        $head .=  " <div id='mySidebar' class='sidebar'>\n";
+        $head .=  "  <div class='headerSidebar'>\n";
+        $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
+        $head .=  " </div>\n";
+        $head .=  " <div class='contentSidebar'>\n";
+        $head .=  "  <a href='#'>Sobre</a>\n";
+        $head .=  "  <a href='#'>Ultimos Serviços</a>\n";
+        $head .=  "  <a href='#'>Clientes</a>\n";
+        $head .=  "  <a href='#'>Médicos</a>\n";
+        $head .= "   <a href='#'>Contatos</a>\n";
+        $head .=  "   <a href='#'>Suporte</a>\n";
+        $head .=  "   <a href='#' id='LogOut'>Sair</a>\n";
+        $head .=  "</div>\n";
+        $head .=  " </div>\n";
+
+
+        $head .=  "</div>\n";
+        $head .=  " </div>\n";
+        $head .=  "</header>\n";
+        echo $head;
+    }
+    public static function setSideComponente()
+    {
+
+        $side = "<section class='sideBar-bg'>\n";
+        $side .= "   <div class='childSidebar-bg'>\n";
+        $side .= "  <div class='teste sd'>\n";
+        $side .= "    <div class='Cadastro testi ' data-menu>\n";
+        $side .= "    <a href='' class='addSeta'>\n";
+        $side .= "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='currentColor' class='bi bi-person-fill-add' viewBox='0 0 16 16'>
+        <path d='M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0'/>
+        <path d='M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4'/>
+      </svg>\n";
+        $side .= "   </a>\n";
+        $side .= " <p>Cadastros</p>\n";
+        $side .= " </div>\n";
+        $side .= "  </div>\n";
+
+        $side .= "   <div class='testeDown sd'>\n";
+        $side .= "  <div class='Servicos' data-menu>\n";
+        $side .= "  <a href=''>\n";
+        $side .= "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='white' class='bi bi-heart-pulse' viewBox='0 0 16 16'>
+        <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Z'/>
+        <path d='M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z'/>
+      </svg>\n";
+        $side .= "  </a>\n";
+        $side .= "  <p>Serviços</p>\n";
+        $side .= " </div>\n";
+        $side .= "  </div>\n";
+
+        $side .= " <div class='testeDown sd'>\n";
+        $side .= "  <div class='Consultorio' data-menu>\n";
+        $side .= " <a href=''>\n";
+        $side .=   "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='currentColor' class='bi bi-clipboard-pulse' viewBox='0 0 16 16'>
+                <path fill-rule='evenodd' d='M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2m6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128z'/>
+              </svg>\n";
+        $side .= "  </a>\n";
+        $side .= "  <p>Consultorio</p>\n";
+        $side .= "  </div>\n";
+        $side .= " </div>\n";
+
+        $side .= "  <div class='sd'>\n";
+        $side .= "  <div class='Marketing' data-menu>\n";
+        $side .= " <a href=''>\n";
+        $side .= "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='currentColor' class='bi bi-megaphone' viewBox='0 0 16 16'>
+  <path d='M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065m-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z'/>
+</svg>\n";
+        $side .= "  </a>\n";
+        $side .= "  <p>Marketing</p>\n";
+        $side .= " </div>\n";
+        $side .= " </div>\n";
+        $side .= " </div>\n";
+        $side .= " <div class='settings sd'>\n";
+        $side .= "  <div class='lastPad' data-menu>\n";
+        $side .= "  <a href=''>\n";
+        $side .=  "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='currentColor' class='bi bi-gear-wide-connected' viewBox='0 0 16 16'>
+                <path d='M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z'/>
+              </svg>\n";
+        $side .= "  </a>\n";
+        $side .= "  <p>Configuração</p>\n";
+        $side .= "  </div>\n";
+        $side .= "  </div>\n";
+        $side .= "  </section>\n";
+
+        $side .= " <section>\n";
+        $side .= " <div class='sideBar-info'>\n";
+        $side .= " <div class='boxCadastro' id='linkCLiente'>\n";
+        $side .= "  <p>\n";
+        $side .= "    <a href='/views/cadastroCliente.php'>Clientes</a>\n";
+        $side .= " </p>\n";
+        $side .= "  </div>\n";
+        $side .= "  <div class='boxCadastro'>\n";
+        $side .= "  <div id='linkMedico'>\n";
+        $side .= "      <p><a href='/views/cadastroMedico.php'>CRM <br> Médico</a> </p>\n";
+        $side .= "  </div>\n";
+        $side .= "  </div>\n";
+        $side .= "  <div class='boxCadastro'>\n";
+        $side .= "  <div id='LinkEvento'>\n";
+        $side .= "      <p><a href='/views/cadastroEvento.php'>Eventos <br> Agenda</a></p>\n";
+        $side .= "   </div>\n";
+        $side .= "  </div>\n";
+        $side .= " </div>\n";
+        $side .= " </section>\n";
+
+        $side .= " <section>\n";
+        $side .= "  <div class='sideBarInfoServicos'>\n";
+        $side .= "  <button id='prev'>\n";
+        $side .="<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+        <path fill='none' d='M0 0h24v24H0V0z' />
+        <path d='M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z' />
+    </svg>\n";
+        $side .= "  </button>\n";
+        $side .= " <div id='wrapper'>\n";
+        $side .= " <div id='carousel'>\n";
+        $side .= "  <div id='content'>\n";
+        $side .= "  <div style='display: flex;'>\n";
+        $side .= "   <div class='boxServico  item'>\n";
+        $side .= "    <p><a href=''>Pressão <br> Arterial</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= "  <div class='boxServico item'>\n";
+        $side .= "    <p><a href=''>Glicemia <br> Capilar</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= "   <div class='boxServico item'>\n";
+        $side .= "   <p><a href=''>Colesterol <br> Capilar</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= "  <div class='boxServico item'>\n";
+        $side .= "    <p><a href=''>Aplicação <br> de Injetável</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= "  <div class='boxServico item'>\n";
+        $side .= "   <p><a href=''>Nebulização</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= "  <div class='boxServico item'>\n";
+        $side .= "    <p><a href=''>Risco Cardiaco</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= " <div class='boxServico item'>\n";
+        $side .= "  <p><a href=''>Emagrecimento</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= "  <div class='boxServico item'>\n";
+        $side .= "   <p><a href=''>Avaliação de Saude</a></p>\n";
+        $side .= " </div>\n";
+        $side .= " <div class='boxServico item'>\n";
+        $side .= " <p><a href=''>Dependência de Nicotina</a></p>\n";
+        $side .= "  </div>\n";
+        $side .= " <div class='boxServico item'>\n";
+        $side .= " <p><a href=''>Monitor TSH e T4 Livre</a></p>\n";
+        $side .= " </div><div class='boxServico item'>\n";
+        $side .= "  <p><a href=''>Aplicação de Brincos</a></p>\n";
+        $side .= "  </div>\n";
+
+        $side .= "  </div>\n";
+
+        $side .= " </div>\n";
+        $side .= " </div>\n";
+
+
+        $side .= " </div>\n";
+        $side .= " <button id='next'>\n";
+        $side .="<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+        <path fill='none' d='M0 0h24v24H0V0z' />
+        <path d='M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z' />
+    </svg>\n";
+        $side .= " </button>\n";
+
+        $side .= " </div>\n";
+        $side .= " </section>\n";
+
+        $side .= "  <section>\n";
+        $side .= "  <div class='sideBar-infoMarketing'>\n";
+        $side .= " <div class='boxMarketing'>\n";
+        $side .= "     <p><a href=''>Filtros <br> Livres</a></p>\n";
+        $side .= " </div>\n";
+        $side .= " <div class='boxMarketing'>\n";
+        $side .= "     <p><a href=''>SMS</a></p>\n";
+        $side .= " </div>\n";
+        $side .= " <div class='boxMarketing'>\n";
+        $side .= "     <p><a href=''>E-Mails</a></p>\n";
+        $side .= " </div>\n";
+        $side .= " <div class='boxMarketing'>";
+        $side .= " <p><a href=''> Corres-pondência</a></p>\n";
+        $side .= " </div>\n";
+        $side .= " </div>\n";
+        $side .= "  </section>\n";
+        echo $side;
+    }
+    public static function setFooter()
+    {
+        $html = " <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>\n";
+        $html .= "</body>\n";
+        $html .= "</html>";
+        echo $html;
+    }
+}
