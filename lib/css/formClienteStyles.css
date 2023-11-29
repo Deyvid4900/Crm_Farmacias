@@ -20,10 +20,10 @@
 .form-bg{
     background-color: #f0f0f0;
     width: 990px;
-    height: 608px;
+    height: 507px;
     border-radius: 8px;
     position: absolute;
-    bottom: -635px;
+    bottom: -565px;
 }
 .form-bg h1{
     display: flex;
@@ -253,8 +253,7 @@
 
 /* edit form input */
 input{
-    padding: 3px;
-    margin: 5px;
+
 }
 #b input[type="text"], input[type="date"] {
     outline: none;

@@ -180,67 +180,7 @@ class ClassLayout
         $side .= " </div>\n";
         $side .= " </section>\n";
 
-        $side .= " <section>\n";
-        $side .= "  <div class='sideBarInfoServicos'>\n";
-        $side .= "  <button id='prev'>\n";
-        $side .="<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-        <path fill='none' d='M0 0h24v24H0V0z' />
-        <path d='M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z' />
-    </svg>\n";
-        $side .= "  </button>\n";
-        $side .= " <div id='wrapper'>\n";
-        $side .= " <div id='carousel'>\n";
-        $side .= "  <div id='content'>\n";
-        $side .= "  <div style='display: flex;'>\n";
-        $side .= "   <div class='boxServico  item'>\n";
-        $side .= "    <p><a href=''>Pressão <br> Arterial</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= "  <div class='boxServico item'>\n";
-        $side .= "    <p><a href=''>Glicemia <br> Capilar</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= "   <div class='boxServico item'>\n";
-        $side .= "   <p><a href=''>Colesterol <br> Capilar</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= "  <div class='boxServico item'>\n";
-        $side .= "    <p><a href=''>Aplicação <br> de Injetável</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= "  <div class='boxServico item'>\n";
-        $side .= "   <p><a href=''>Nebulização</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= "  <div class='boxServico item'>\n";
-        $side .= "    <p><a href=''>Risco Cardiaco</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= " <div class='boxServico item'>\n";
-        $side .= "  <p><a href=''>Emagrecimento</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= "  <div class='boxServico item'>\n";
-        $side .= "   <p><a href=''>Avaliação de Saude</a></p>\n";
-        $side .= " </div>\n";
-        $side .= " <div class='boxServico item'>\n";
-        $side .= " <p><a href=''>Dependência de Nicotina</a></p>\n";
-        $side .= "  </div>\n";
-        $side .= " <div class='boxServico item'>\n";
-        $side .= " <p><a href=''>Monitor TSH e T4 Livre</a></p>\n";
-        $side .= " </div><div class='boxServico item'>\n";
-        $side .= "  <p><a href=''>Aplicação de Brincos</a></p>\n";
-        $side .= "  </div>\n";
-
-        $side .= "  </div>\n";
-
-        $side .= " </div>\n";
-        $side .= " </div>\n";
-
-
-        $side .= " </div>\n";
-        $side .= " <button id='next'>\n";
-        $side .="<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-        <path fill='none' d='M0 0h24v24H0V0z' />
-        <path d='M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z' />
-    </svg>\n";
-        $side .= " </button>\n";
-
-        $side .= " </div>\n";
-        $side .= " </section>\n";
+    
 
         $side .= "  <section>\n";
         $side .= "  <div class='sideBar-infoMarketing'>\n";

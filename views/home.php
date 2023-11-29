@@ -12,7 +12,7 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 
 <?php 
-\classes\ClassLayout::setHeaderComponente($_SESSION['username']); 
+\classes\ClassLayout::setHeaderComponente("Logo Cliente"); 
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->

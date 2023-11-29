@@ -6,7 +6,7 @@ main {
 }
 .container{
     overflow: auto;
-    margin-top: 22px ;
+    margin-top: 60px ;
     margin-left: auto;
     margin-right: auto;
     background-color: #f0f0f0;
@@ -23,9 +23,7 @@ main {
     color: white;
     height: 50px;
 }
-label{
-  font-size: 14pt;
-}
+
 
 .content{
     width: 100%;
