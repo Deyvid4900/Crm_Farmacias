@@ -123,7 +123,7 @@ class ClassLayout
     $side .= "  </div>\n";
 
     $side .= "   <div class='testeDown sd'>\n";
-    $side .= "  <div class='Servicos' data-menu>\n";
+    $side .= "  <div class='Servicos' id='linkServico' data-menu>\n";
     $side .= "  <a href='/views/cadastroServico.php'>\n";
     $side .= "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='white' class='bi bi-heart-pulse' viewBox='0 0 16 16'>
         <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Z'/>
@@ -135,8 +135,8 @@ class ClassLayout
     $side .= "  </div>\n";
 
     $side .= " <div class='testeDown sd'>\n";
-    $side .= "  <div class='Consultorio' data-menu>\n";
-    $side .= " <a href=''>\n";
+    $side .= "  <div class='Consultorio' id='linkConsultorio' data-menu>\n";
+    $side .= " <a href='/views/consultorio.php'>\n";
     $side .=   "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='currentColor' class='bi bi-clipboard-pulse' viewBox='0 0 16 16'>
                 <path fill-rule='evenodd' d='M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2m6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128z'/>
               </svg>\n";
@@ -193,13 +193,13 @@ class ClassLayout
     $side .= "  <section>\n";
     $side .= "  <div class='sideBar-infoMarketing'>\n";
     $side .= " <div class='boxMarketing'>\n";
-    $side .= "     <p><a href=''>Filtros <br> Livres</a></p>\n";
+    $side .= "     <p><a href='/views/marketingFiltros.php'>Filtros <br> Livres</a></p>\n";
     $side .= " </div>\n";
     $side .= " <div class='boxMarketing'>\n";
-    $side .= "     <p><a href=''>SMS</a></p>\n";
+    $side .= "     <p><a href='/views/marketingSms.php'>SMS</a></p>\n";
     $side .= " </div>\n";
     $side .= " <div class='boxMarketing'>\n";
-    $side .= "     <p><a href=''>E-Mails</a></p>\n";
+    $side .= "     <p><a href='/views/marketingEmails.php'>E-Mails</a></p>\n";
     $side .= " </div>\n";
     $side .= " <div class='boxMarketing'>";
     $side .= " <p><a href=''> Corres-pondência</a></p>\n";

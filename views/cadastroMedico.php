@@ -2,6 +2,9 @@
 session_start();
 include("../lib/vendor/autoload.php");
  \Classes\ClassLayout::setHeadDefault("Home"); 
+ if (!isset($_SESSION["username"]) ) {
+    header('Location: /');
+}
 ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

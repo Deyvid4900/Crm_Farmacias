@@ -2,6 +2,9 @@
 session_start();
 include("../lib/vendor/autoload.php");
  \Classes\ClassLayout::setHeadDefault("Home"); 
+ if (!isset($_SESSION["username"]) ) {
+    header('Location: /');
+}
 ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +15,7 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 
 <?php 
-\classes\ClassLayout::setHeaderComponente("Logo Cliente"); 
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"]); 
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
