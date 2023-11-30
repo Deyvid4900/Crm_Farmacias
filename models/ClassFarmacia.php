@@ -109,6 +109,14 @@ class Farmacia
         return $stmt->fetch(\PDO::FETCH_BOTH);
     }
 
+    public function getIdFromNome($nome) {
+        $sql = "SELECT id_PK FROM $this->table WHERE nomeFarmacia = :nomeFarmacia";
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':nomeFarmacia', $nome);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
     public function delete($id)
     {
         $sql = "DELETE FROM $this->table WHERE id = :id";

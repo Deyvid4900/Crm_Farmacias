@@ -2,6 +2,7 @@
 include("../lib/vendor/autoload.php");
 include '../models/ClassEvento.php';
 use \Models\Eventos;
+// session_start();
 ?>
 <link rel="stylesheet" href="style.css">
 <div class="container">
@@ -12,7 +13,7 @@ use \Models\Eventos;
         <?php
 
         $eventos = new Eventos;
-        $registros = $eventos->findAll();
+        $registros = $eventos->findAll($_SESSION['user_id']);
         function compararDatas($a, $b)
         {
             $dataA = strtotime($a['dataEvento']);

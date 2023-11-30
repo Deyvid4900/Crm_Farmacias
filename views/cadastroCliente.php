@@ -34,5 +34,5 @@ include("../lib/vendor/autoload.php");
         mySideBar.style.width = '0';
     }
 </script>
-<script src='<?php echo DIRPAGE . "lib/JS/sideBarStyles.js" ?>'></script>
+<script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>

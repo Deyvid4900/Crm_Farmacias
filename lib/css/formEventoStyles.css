@@ -2,7 +2,6 @@
     font-family: 'Inria Sans', sans-serif;
 }
 
-
 .padDown{
     margin-bottom: 1.1px;
 }
@@ -19,11 +18,11 @@
 
 .form-bg{
     background-color: #f0f0f0;
-    width: 990px;
-    height: 507px;
+    width: 850px;
+    height: 205px;
     border-radius: 8px;
     position: absolute;
-    bottom: -565px;
+    bottom: -305px;
 }
 .form-bg h1{
     display: flex;
@@ -63,12 +62,15 @@
     align-items: self-start;
 }
 
-#sx{
-    width: 143px;
+#hospitalAtual, #especiaLidade{
+    width: 160px;
     margin-left: 0px;
 }
+#atuacao{
+    width: 172px;
+}
 .aaaa{
-    margin-left: 65px;
+    margin-left: 9px;
 }
 .aprof{
     margin-left: 34px;
@@ -82,7 +84,8 @@
     margin-left: 18px
 }
 #cpf{
-    width: 172px;
+    width: 80px;
+    text-align: end;
 }
 .nCliente{
     margin-left: 1px;
@@ -90,6 +93,7 @@
 
 .formAlinhado{
     display: flex;
+    margin: 0px 70px;
 }
 
 .flexCol2{
@@ -251,6 +255,7 @@
 }
 
 
+
 /* edit form input */
 
 #b input[type="text"], input[type="date"] {
@@ -279,6 +284,6 @@ button[type="submit"]{
     border: none;
     border-radius: 4px;
     margin-left: 730px;
-    margin-top: -8px;
+    margin-top: 5px;
     cursor: pointer;
 }

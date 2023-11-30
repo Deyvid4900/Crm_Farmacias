@@ -12,11 +12,11 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 
 <?php 
-\classes\ClassLayout::setHeaderComponente("Logo Cliente"); 
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"]); 
 \classes\ClassLayout::setSideComponente();
+
 ?>
 <!-- conteudo interno da pagina  -->
-
 
 <?php include "subViews/tableEvento.php" ?>
 
@@ -34,5 +34,5 @@ include("../lib/vendor/autoload.php");
         mySideBar.style.width = '0';
     }
 </script>
-<script src='<?php echo DIRPAGE . "lib/JS/sideBarStyles.js" ?>'></script>
+<script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>

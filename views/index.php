@@ -1,12 +1,15 @@
 <?php
+session_start();
 $url = $_SERVER['REQUEST_URI'];
 if ($url != '/') {
     include("../lib/vendor/autoload.php");
 }
+if (isset($_SESSION["user_id"]) ) {
+    unset($_SESSION["user_id"]);
+    session_destroy();
+}
 
 Classes\ClassLayout::setHeadBootstrap("login");
-
-
 
 ?>
 
@@ -316,6 +319,7 @@ Classes\ClassLayout::setHeadBootstrap("login");
         width: 60%;
     }
 </style>
+
 <div class="container-fluid">
     <div class="row vh-100">
         <div class=" col-8">
