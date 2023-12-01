@@ -2,6 +2,7 @@
 
 namespace Models;
 
+
 abstract class DataBase {
     private static $instance;
 
