@@ -85,7 +85,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                 $filtro = $_POST['filtro'] ?? '';
 
                 $FiltroObj = new Filtros;
-                $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro);
+                $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro,$_SESSION["user_id"]);
 
                 if ($resultados !== false && !empty($resultados)) {
                     echo '<table >
@@ -94,7 +94,6 @@ if (isset($_POST['conteudoPesquisa'])) {
                                     <th>Nome</th>
                                     <th>Sexo</th>
                                     <th>celular1</th>
-                                    <th>celular2</th>
                                     <th>telFixo</th>
                                     <th>email</th>
 
@@ -107,7 +106,6 @@ if (isset($_POST['conteudoPesquisa'])) {
                         echo '<td>' . $pessoa['nome'] . '</td>';
                         echo '<td>' . $pessoa['sexo'] . '</td>';
                         echo '<td>' . $pessoa['celular1'] . '</td>';
-                        echo '<td>' . $pessoa['celular2'] . '</td>';
                         echo '<td>' . $pessoa['telFixo'] . '</td>';
                         echo '<td>' . $pessoa['email'] . '</td>';
                         echo '</tr>';

@@ -4,12 +4,13 @@ include '../models/ClassConexao.php';
 
 class Filtros extends DataBase{
     
-    public function buscarValoresSemelhantes($input, $selecao) {
+    public function buscarValoresSemelhantes($input, $selecao,$usuario_id) {
         try {
-            $query = "SELECT * FROM clientes WHERE LOWER($selecao) LIKE LOWER(:valorInput)";
+            $query = "SELECT * FROM clientes WHERE Id_Farmacia_FK = :user_id AND LOWER($selecao) LIKE LOWER(:valorInput)";
     
             $stmt = DataBase::prepare($query);
             $valorInput = '%' . strtolower($input) . '%'; // Converte para minúsculas para correspondência insensível a maiúsculas e minúsculas
+            $stmt->bindParam(':user_id', $usuario_id, \PDO::PARAM_INT);
             $stmt->bindParam(':valorInput', $valorInput);
             $stmt->execute();
     
