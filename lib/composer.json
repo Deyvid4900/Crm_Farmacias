@@ -4,6 +4,7 @@
         "psr-4": {
         "Classes\\":"../classes/",
         "Models\\":"../models/",
+        "ModelsSub\\":"../../models/",
         "Traits\\":"../traits/",
         "controllers\\":"../Controllers/"
 

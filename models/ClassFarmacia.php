@@ -1,9 +1,8 @@
 <?php
 namespace Models;
-include '../models/ClassConexao.php';
 
 
-class Farmacia 
+class Farmacia extends DataBase
 {   
     
     use Pessoa, Funcionario;

@@ -2,6 +2,8 @@
 include("../lib/vendor/autoload.php");
 include_once "../models/ClassFiltro.php";
 use \Models\Filtro;
+use Models\Filtros;
+
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -9,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = $_POST['conteudoPesquisa'] ?? '';
     $filtro = $_POST['filtro'] ?? '';
     
-    $FiltroObj = new Filtro;
+    $FiltroObj = new Filtros;
     $resultado = $FiltroObj->buscarValoresSemelhantes($input,$filtro);
 
     

@@ -30,10 +30,10 @@ a{
 .sideBar-bg{
     float: left;
     width: 90px;
-    height: calc(100vh - 72px);
+    height: 100vh;
     background: linear-gradient(180deg, #247158 28.62%, #073929 69.14%);
-    z-index:2;
-    position: relative;
+    z-index:4;
+    position: fixed;
 }
 .childSidebar-bg{
     width: auto;

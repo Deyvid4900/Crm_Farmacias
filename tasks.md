@@ -1,5 +1,6 @@
 
 ajustar para que quando clique as opções do side bar sumam;
+add controller e class para adicionar os clientes;
 tem que  ajustar os forms, botar placeholders ;
 fazer o controler/class Medico;
 fazer o form consultorio;

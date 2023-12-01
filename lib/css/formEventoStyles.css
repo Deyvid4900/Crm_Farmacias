@@ -23,6 +23,7 @@
     border-radius: 8px;
     position: absolute;
     bottom: -305px;
+    box-shadow:1px 1px 15px 3px #a0a0a0ee;
 }
 .form-bg h1{
     display: flex;

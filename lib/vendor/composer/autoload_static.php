@@ -22,6 +22,7 @@ class ComposerStaticInit38561576eb71beef9fec11ab97e3ba9b
         'M' => 
         array (
             'Models\\' => 7,
+            'ModelsSub\\' => 10,
         ),
         'C' => 
         array (
@@ -41,6 +42,10 @@ class ComposerStaticInit38561576eb71beef9fec11ab97e3ba9b
         'Models\\' => 
         array (
             0 => __DIR__ . '/../..' . '/../models',
+        ),
+        'ModelsSub\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/../../models',
         ),
         'Classes\\' => 
         array (

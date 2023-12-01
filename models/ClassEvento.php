@@ -3,7 +3,7 @@ namespace Models;
 
 include '../models/ClassConexao.php';
 
-class Eventos {
+class Eventos extends DataBase {
     protected $table = 'eventos';
 
     // Pessoais
