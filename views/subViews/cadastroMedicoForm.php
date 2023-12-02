@@ -3,7 +3,9 @@
 
 <section class="formInit-bg aala ativo" id="b" >
     <div class="form-bg">
-        <h1>Médicos</h1>
+        <div class="head">
+            <h1>Médicos</h1>
+        </div>
         <form>
         <div id="styleForm">
             <div class="flexForm">

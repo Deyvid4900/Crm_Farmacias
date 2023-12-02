@@ -91,10 +91,10 @@ class ClassLayout
     $head .=  " <div class='contentSidebar'>\n";
     $head .=  "  <a href='#'>Sobre</a>\n";
     $head .=  "  <a href='#'>Ultimos Serviços</a>\n";
-    $head .=  "  <a href='#'>Clientes</a>\n";
     $head .=  "  <a href='#'>Médicos</a>\n";
     $head .= "   <a href='#'>Contatos</a>\n";
     $head .=  "   <a href='#'>Suporte</a>\n";
+    $head .=  "   <a href='#'>Configurações</a>\n";
     $head .=  "   <a href='/' id='LogOut'>Sair</a>\n";
     $head .=  "</div>\n";
     $head .=  " </div>\n";

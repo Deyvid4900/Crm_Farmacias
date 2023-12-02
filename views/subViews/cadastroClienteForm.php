@@ -3,10 +3,13 @@
 <!-- class ativo mostra o form -->
 <section class="formInit-bg ativo " id="b">
     <div class="form-bg">
-        <h1>Clientes</h1>
-        <form action="../../../../../../../Projetos/Crm_Farmacias/crm/Controller/controllerCadastroCliente.php" method="POST">
+        <div class="head">
+            <h1>Clientes</h1>
+        </div>
+        <form action="../../controllers/controllerClienteCadastro.php" method="POST">
             <div id="styleForm">
                 <div class="flexForm">
+                    <input type="number" name='Id_Farmacia_FK ' value="<?php echo $_SESSION["user_id"] ?>" style="display: none;">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" placeholder="Nome do Cliente" id="nome" autocomplete="off">
                     <label class="nCliente" for="numero">N° Cliente</label>

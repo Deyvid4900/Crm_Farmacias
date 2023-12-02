@@ -4,8 +4,8 @@ use Models\Filtros;
 
 session_start();
 include("../lib/vendor/autoload.php");
- \Classes\ClassLayout::setHeadDefault("Home"); 
- if (!isset($_SESSION["username"]) ) {
+\Classes\ClassLayout::setHeadDefault("Home");
+if (!isset($_SESSION["username"])) {
     header('Location: /');
 }
 
@@ -18,8 +18,8 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 
-<?php 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"]); 
+<?php
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"]);
 \classes\ClassLayout::setSideComponente();
 
 ?>
@@ -49,8 +49,8 @@ if (isset($_POST['conteudoPesquisa'])) {
                 <div>
                     <label for="filtro">Filtrar por :</label>
                     <select name="filtro" id="filtro">
-                    <option value="id">Id</option>
-                        <option value="nome">nome</option>
+                        <option value="id">Id</option>
+                        <option value="nome" selected >nome</option>
                         <option value="sexo">sexo</option>
                         <option value="estadoCivil">estado Civil</option>
                         <option value="dataNasc">data Nascimento</option>
@@ -73,19 +73,30 @@ if (isset($_POST['conteudoPesquisa'])) {
                     <label class="cidad" for="conteudoPesquisa">Conteúdo </label>
                     <input type="text" name="conteudoPesquisa" id="conteudo" placeholder="conteúdo da pesquisa" autocomplete="off">
                 </div>
+                <div><button type="submit">Filtrar</button></div>
             </div>
-            <button type="submit">Filtrar</button>
+
         </form>
+        <div class="mensagemTipoDiv">
+            <div style="display:flex;gap: 20px;">
+                <button id="emailBtn" class="mensagemTipo btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" type="submit" >Email</button>
+                <button id="smsBtn"  title="Mande mensagem por SMS para todos os que estão marcado" class="mensagemTipo btnTipoMensagens" type="submit">SMS</button>
+                <button id="whatsBtn"  title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo btnTipoMensagens" type="submit">WhatsApp</button>
+            </div>
+            <div>
+                <button class="mensagemTipo" id="MaracarTodos" type="submit">Marcar Todos</button>
+            </div>
+        </div>
         <div class="styleForm">
             <?php
-            
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                include_once DIRREQ.'/models/ClassFiltro.php';    
+                include_once DIRREQ . '/models/ClassFiltro.php';
                 $input = $_POST['conteudoPesquisa'] ?? '';
                 $filtro = $_POST['filtro'] ?? '';
 
                 $FiltroObj = new Filtros;
-                $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro,$_SESSION["user_id"]);
+                $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro, $_SESSION["user_id"]);
 
                 if ($resultados !== false && !empty($resultados)) {
                     echo '<table >
@@ -96,6 +107,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                                     <th>celular1</th>
                                     <th>telFixo</th>
                                     <th>email</th>
+                                    <th>Selecionar</th>
 
                                     <!-- Adicione mais colunas conforme necessário -->
                                 </tr>';
@@ -108,6 +120,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                         echo '<td>' . $pessoa['celular1'] . '</td>';
                         echo '<td>' . $pessoa['telFixo'] . '</td>';
                         echo '<td>' . $pessoa['email'] . '</td>';
+                        echo '<td><input type="checkbox" class="checkboxFiltro" id=' . $pessoa['id'] . '></td>';
                         echo '</tr>';
                     }
 
@@ -120,6 +133,14 @@ if (isset($_POST['conteudoPesquisa'])) {
         </div>
     </div>
 </section>
+<div id="meuModal" class="modal">
+    <!-- Conteúdo do Modal -->
+    <div class="modal-conteudo">
+        <span class="fechar-modal" id="fecharModal">&times;</span>
+        <p>Conteúdo do modal aqui.</p>
+        <h1 id="content"></h1>
+    </div>
+</div>
 
 
 
@@ -135,4 +156,6 @@ if (isset($_POST['conteudoPesquisa'])) {
     }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
+<script src='<?php echo DIRPAGE . "lib/JS/filtro.js" ?>'></script>
+
 <?php \classes\ClassLayout::setFooter(); ?>
