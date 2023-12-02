@@ -1,7 +1,7 @@
 <?php
 namespace Models;
 include '../models/ClassConexao.php';
-
+include "../models/ClassTrait.php";
 
 class Farmacia extends DataBase
 {   
@@ -9,11 +9,9 @@ class Farmacia extends DataBase
     use Pessoa, Funcionario;
 
     protected $table = 'farmacia';
-
     private $nomeFarmacia;
     private $senhaFarmacia;
     private $codigo;
-
 
     public function setNomeFarmacia($nomeFarmacia)
     {
@@ -141,15 +139,8 @@ trait Funcionario {
 	/********Fim dos métodos sets e gets*********/
 	
 }
-
-
-//poderia ter usado interface, no entanto não é possível criar atributo, apenas MÉTODOS
-// Adiciona atributos ou metodos para a instancia
-trait Pessoa {
-	
-	private $cpf;
-		
-		
+trait Pessoa {	
+	private $cpf;		
 	/********Início dos métodos sets e gets*********/
 	public function setcpf($cpf){
 		$this->cpf = $cpf;
@@ -157,10 +148,9 @@ trait Pessoa {
 	public function getcpf(){
 		return $this->cpf;
 	}
-
 	/********Fim dos métodos sets e gets*********/
-	
 }
+
 
 
 ?>

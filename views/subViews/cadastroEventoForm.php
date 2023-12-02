@@ -3,7 +3,9 @@
 <!-- class ativo mostra o form -->
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">
-        <h1>Eventos</h1>
+        <div class="head">
+            <h1>Eventos</h1>
+        </div>
         <form action="../../controllers/controllerEvento.php" method="POST">
             <div id="styleForm">
                 <div class="flexForm">

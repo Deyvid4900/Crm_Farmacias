@@ -18,3 +18,4 @@ adicionar alertas no final dos cadastros;
 fazer o sistema de notificação no sistema;
 fazer o sistema de "lembretes por usuario";
 fazer a pagina sobre(essa pagina vai falar sobre a gente) no menu do header;
+adicionar a tabela endereço no filtro;

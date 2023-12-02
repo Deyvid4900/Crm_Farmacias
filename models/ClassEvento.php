@@ -6,7 +6,6 @@ include '../models/ClassConexao.php';
 class Eventos extends DataBase {
     protected $table = 'eventos';
 
-    // Pessoais
     private $nomeEvento;
     private $dataEvento;
     private $descricaoEvento;

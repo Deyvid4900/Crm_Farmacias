@@ -2,11 +2,11 @@
 include("../lib/vendor/autoload.php");
 include '../models/ClassEvento.php';
 use \Models\Eventos;
-// session_start();
+
 ?>
 <link rel="stylesheet" href="style.css">
 <div class="container">
-    <div class="head ">
+    <div class="head">
         <h1>Eventos Proximos</h1>
     </div>
     <div class="content">
