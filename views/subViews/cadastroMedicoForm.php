@@ -8,9 +8,9 @@
         <div id="styleForm">
             <div class="flexForm">
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" autocomplete="off" required>
+                <input type="text" name="nome" id="nome" autocomplete="off" required placeholder="Nome do médico">
                     <label class="cPf" for="cpf">CPF</label>
-                    <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required>
+                    <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required placeholder="000.000.000-00">
                 
                 <label for="sx" class="aaaa">Sexo</label>
                         <select name="sx" id="sx">
@@ -25,20 +25,20 @@
                 <div class="aakka">
                         <div class="padDown">
                             <label for="profissao" id="aalaaa" class="aprof">Especialidade</label>
-                            <input type="text" name="profissao" id="profissao" autocomplete="off" required>
+                            <input type="text" name="profissao" id="profissao" autocomplete="off" required placeholder='Especialidade do médico'>
                         </div>
                 
                     <div class="flexCol2">
                         <div class="padDown aop">
                             <label class="estadoCivil" for="estado-civil">Atuação</label>
-                            <input type="text" name="estado-civil" id="estado-civil">
+                            <input type="text" name="estado-civil" id="estado-civil" placeholder="Atuação do médico">
                         </div>
                     </div>
                 </div>
                 <div class="aaako">
                     <div class=" aew">
                         <label for="faixaSalarial">Hospital Atual</label>
-                        <input type="text" name="faixaSalarialHospital" id="faixaSalarial">
+                        <input type="text" name="faixaSalarialHospital" id="faixaSalarial" placeholder="Hospital que o médico está">
                     </div>
                         <div class="flexCol2">
                                 <label class="sakdo" for="dataNascimento">Data de Nascimento</label>
@@ -53,17 +53,17 @@
             <div id="styleForm1">
                 <div class="padDown1">
                     <label class="logra" for="logradouro">Logradouro</label>
-                    <input type="text" name="logradouro" id="logradouro" autocomplete="off" required>
+                    <input type="text" name="logradouro" id="logradouro" autocomplete="off" required placeholder="Rua,Avenida...">
                     <label class="cepNumber" for="numeroCep">Número</label>
-                    <input type="text" name="numeroCep" id="numeroCep" autocomplete="off" required>
+                    <input type="text" name="numeroCep" id="numeroCep" autocomplete="off" required placeholder="Número da casa">
                     <label class="bairroStyle" for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="bairro" autocomplete="off" required>
+                    <input type="text" name="bairro" id="bairro" autocomplete="off" required placeholder="Bairro">
                 </div>
                 <div class="padDown1">
                     <label class="comple"  for="complemento">Complemento</label>
-                    <input type="text" name="complemento" id="complemento" autocomplete="off" required>
+                    <input type="text" name="complemento" id="complemento" autocomplete="off" required placeholder="Complemento de onde mora">
                     <label class="cidad" for="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" autocomplete="off" required>
+                    <input type="text" name="cidade" id="cidade" autocomplete="off" required placeholder="Cidade">
                     <label for="uf">UF</label>
                     <select name="uf" id="uf">
                         <option value=""></option>
@@ -98,7 +98,7 @@
                 </div>
                 <div>
                     <label class="referenStyle" for="referencia">Referência</label>
-                    <input type="text" name="referencia" id="referencia" autocomplete="off" required>
+                    <input type="text" name="referencia" id="referencia" autocomplete="off" required placeholder="Próximo a.... , perto de...">
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
                         <option value="nn">Não</option>
                     </select>
                     <label for="mail">Email</label>
-                    <input type="text" name="mail" id="mail" autocomplete="off" required>
+                    <input type="text" name="mail" id="mail" autocomplete="off" required placeholder="meuemail@email.com">
                 </div>
                 <div class="lado">
                     <label class="textareaa" for="textArea">Informações Adicionais</label>

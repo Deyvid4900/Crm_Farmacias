@@ -43,10 +43,10 @@
 .form-bg{
     background-color: #f0f0f0;
     width: 850px;
-    height: 490px;
+    height: 472px;
     border-radius: 8px;
     position: absolute;
-    bottom: -565px;
+    bottom: -511px;
     box-shadow: 1px 1px 15px 3px #a0a0a0ee;
 }
 .form-bg h1{
