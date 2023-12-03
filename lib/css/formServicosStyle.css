@@ -1,0 +1,194 @@
+*{
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.molduraForm{
+    margin: auto;
+}
+
+.bg-antesForm{
+    overflow-y: scroll;
+}
+
+.bg-antesForm{
+    width: 800px;
+    height: 490px;
+    border: 2px solid rgb(43, 43, 43);
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.seila{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+    padding-bottom: 6px;
+    background-color: #247158;
+    color: white;
+}
+
+/* info do PDF */
+
+.spanInfo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+}
+.spanInfo span{
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* declaração */
+.tituloAntesForm h2{
+    font-size: 17px;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 16px;
+    border-bottom: 2px solid black;
+    
+}
+
+/* form */
+label{
+    font-weight: 600;
+}
+
+/* input nome */
+.inputNome{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+#nome{
+    width: 593px;
+}
+
+/* input abaixo do nome */
+.inputGenderOtherFlex{
+    display: flex;
+    align-items: center;
+}
+
+.inputGenderOther{
+    margin-left: 40px;
+    margin-top: 12px;
+}
+.inputAge, .inputPhone{
+    margin-top: 12px;
+    margin-left: 60px;
+}
+#gender{
+    width: 120px;
+}
+
+/* age */
+#age{
+    width: 80px;
+}
+
+/* phone */
+#phone{
+    width: 150px;
+}
+
+/* adress */
+.inputAdress{
+    margin-left: 40px;
+    margin-top: 12px;
+}
+#adress{
+    width: 569px;
+}
+
+/* city others */
+
+.cityOtherFlex{
+    display: flex;
+    align-items: center;
+}
+
+.cityOther{
+    margin-top: 12px;
+    margin-left: 40px;
+}
+
+.Uf, .inputEmail{
+    margin-top: 12px;
+    margin-left: 60px;
+}
+
+#email{
+    width: 214px;
+}
+
+/* ultimo de cima */
+.nomeRespon{
+    margin-left: 40px;
+    margin-top: 12px;
+}
+
+#respo{
+    width: 481px;
+}
+
+.bb{
+    margin-left: 20px;
+    margin-top: 14px;
+    width: 680px;
+    border-radius: 2px;
+    border: 2px solid #8B8B8B;
+}
+
+/* cuidados Farmaceuticos */
+
+.cuidadosFarm h2{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 16px;
+}
+.cuidadosFarm span{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.glicemiaOtherFlex, .pressaoArtFlex, .pressaoTempFlex{
+    display: flex; 
+    align-items: center;
+}
+.glicemia, .pressaoArt, .tempCorporal{
+    margin-left: 40px;
+    margin-top: 16px;
+}
+.pressao, .pressaoCheck, .tempCheck{
+    margin-left: 40px;
+    margin-top: 16px;
+}
+.instrGlic, .instrPre, .instrTemp{
+    margin-left: 30px;
+    margin-top: 16px;
+}
+.instrGlic p, .instrPre p, .instrTemp p{
+    color: #6F6F6F;
+    font-size: 15px;
+}
+
+#checkGi, #checkPre, #checkTemp{
+    margin-right: 6px;
+}
+
+#pressao{
+    width: 142px;
+}
+
+#temp{
+    width: 54px;
+}

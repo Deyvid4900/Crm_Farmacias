@@ -12,6 +12,7 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
+<link rel="stylesheet" href="../lib/css/formServicosStyle.css">
 <?php 
 \classes\ClassLayout::setHeaderComponente($_SESSION["username"]); 
 \classes\ClassLayout::setSideComponente();
@@ -19,7 +20,6 @@ include("../lib/vendor/autoload.php");
 <!-- conteudo interno da pagina  -->
 
 <?php include "../views/subViews/cadastroServicosssForm.php" ?>
-
 
 
 

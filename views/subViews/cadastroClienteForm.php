@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../../lib/CSS/formClienteStyles.css">
 
 <!-- class ativo mostra o form -->
-<section class="formInit-bg ativo " id="b">
+<section class="formInit-bg w ativo " id="b">
     <div class="form-bg">
         <div class="head">
             <h1>Clientes</h1>
