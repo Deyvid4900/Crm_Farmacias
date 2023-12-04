@@ -50,7 +50,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                     <label for="filtro">Filtrar por :</label>
                     <select name="filtro" id="filtro">
                         <option value="id">Id</option>
-                        <option value="nome" selected >nome</option>
+                        <option value="nome" selected>nome</option>
                         <option value="sexo">sexo</option>
                         <option value="estadoCivil">estado Civil</option>
                         <option value="dataNasc">data Nascimento</option>
@@ -61,7 +61,6 @@ if (isset($_POST['conteudoPesquisa'])) {
                         <option value="religiao">religião</option>
                         <option value="timeFut">time de Futebol</option>
                         <option value="raca">raça</option>
-                        <option value="tipocliente">tipocliente</option>
                         <option value="celular1">celular1</option>
                         <option value="celular2">celular2</option>
                         <option value="telFixo">telFixo</option>
@@ -70,36 +69,27 @@ if (isset($_POST['conteudoPesquisa'])) {
                     </select>
                 </div>
                 <div>
-                    <label class="cidad" for="conteudoPesquisa">Conteúdo </label>
+                    <label class="cidad" for="conteudoPesquisa">Conteúdo: </label>
                     <input type="text" name="conteudoPesquisa" id="conteudo" placeholder="conteúdo da pesquisa" autocomplete="off">
                 </div>
                 <div><button type="submit">Filtrar</button></div>
             </div>
 
         </form>
-        <div class="mensagemTipoDiv">
-            <div style="display:flex;gap: 20px;">
-                <button id="emailBtn" class="mensagemTipo btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" type="submit" >Email</button>
-                <button id="smsBtn"  title="Mande mensagem por SMS para todos os que estão marcado" class="mensagemTipo btnTipoMensagens" type="submit">SMS</button>
-                <button id="whatsBtn"  title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo btnTipoMensagens" type="submit">WhatsApp</button>
-            </div>
-            <div>
-                <button class="mensagemTipo" id="MaracarTodos" type="submit">Marcar Todos</button>
-            </div>
-        </div>
+
         <div class="styleForm">
-            <?php
+            <div class="tabela-container">
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    include_once DIRREQ . '/models/ClassFiltro.php';
+                    $input = $_POST['conteudoPesquisa'] ?? '';
+                    $filtro = $_POST['filtro'] ?? '';
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                include_once DIRREQ . '/models/ClassFiltro.php';
-                $input = $_POST['conteudoPesquisa'] ?? '';
-                $filtro = $_POST['filtro'] ?? '';
+                    $FiltroObj = new Filtros;
+                    $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro, $_SESSION["user_id"]);
 
-                $FiltroObj = new Filtros;
-                $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro, $_SESSION["user_id"]);
-
-                if ($resultados !== false && !empty($resultados)) {
-                    echo '<table >
+                    if ($resultados !== false && !empty($resultados)) {
+                        echo '<table >
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
@@ -112,24 +102,35 @@ if (isset($_POST['conteudoPesquisa'])) {
                                     <!-- Adicione mais colunas conforme necessário -->
                                 </tr>';
 
-                    foreach ($resultados as $pessoa) {
-                        echo '<tr>';
-                        echo '<td>' . $pessoa['id'] . '</td>';
-                        echo '<td>' . $pessoa['nome'] . '</td>';
-                        echo '<td>' . $pessoa['sexo'] . '</td>';
-                        echo '<td>' . $pessoa['celular1'] . '</td>';
-                        echo '<td>' . $pessoa['telFixo'] . '</td>';
-                        echo '<td>' . $pessoa['email'] . '</td>';
-                        echo '<td><input type="checkbox" class="checkboxFiltro" id=' . $pessoa['id'] . '></td>';
-                        echo '</tr>';
-                    }
+                        foreach ($resultados as $pessoa) {
+                            echo '<tr>';
+                            echo '<td>' . $pessoa['id'] . '</td>';
+                            echo '<td>' . $pessoa['nome'] . '</td>';
+                            echo '<td>' . $pessoa['sexo'] . '</td>';
+                            echo '<td>' . $pessoa['celular1'] . '</td>';
+                            echo '<td>' . $pessoa['telFixo'] . '</td>';
+                            echo '<td>' . $pessoa['email'] . '</td>';
+                            echo '<td><input type="checkbox" class="checkboxFiltro" id=' . $pessoa['id'] . '></td>';
+                            echo '</tr>';
+                        }
 
-                    echo '</table>';
-                } else {
-                    echo 'Nenhum resultado encontrado.';
+                        echo '</table>';
+                    } else {
+                        echo 'Nenhum resultado encontrado.';
+                    }
                 }
-            }
-            ?>
+                ?>
+            </div>
+        </div>
+        <div class="mensagemTipoDiv">
+            <div style="display:flex;gap: 20px;">
+                <button id="emailBtn" class="mensagemTipo title btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" type="submit">Email</button>
+                <button id="smsBtn" title="Mande mensagem por SMS para todos os que estão marcado" class="mensagemTipo title btnTipoMensagens" type="submit">SMS</button>
+                <button id="whatsBtn" title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo  title btnTipoMensagens" type="submit">WhatsApp</button>
+            </div>
+            <div>
+                <button class="mensagemTipo" id="MaracarTodos" type="submit">Marcar Todos</button>
+            </div>
         </div>
     </div>
 </section>
@@ -137,8 +138,38 @@ if (isset($_POST['conteudoPesquisa'])) {
     <!-- Conteúdo do Modal -->
     <div class="modal-conteudo">
         <span class="fechar-modal" id="fecharModal">&times;</span>
-        <p>Conteúdo do modal aqui.</p>
-        <h1 id="content"></h1>
+        <h2>Escreva a mensagem que deseja enviar para os clientes selecionados</h2>
+        <div class="mensagemTipoDiv">
+            <form id="formMensagem" action="../controllers/controllerMensagem.php" method="post" style="width: 100%;">
+                <div style="display: flex; padding: 20px; align-items: start; justify-content: space-around;">
+                    <div>
+                        <input id="content" name="id" type="hidden" value="">
+                        <input  id="tipo" name="tipo" type="hidden" value="">
+                    </div>
+                    <div class="boxInput">
+                        <label for="Assunto">
+                            <h3>Assunto:</h3>
+                        </label>
+                        <input type="text" name="Assunto" class="inputMensagemFiltro">
+                    </div>
+                    <div class="boxInput">
+                        <label for="Mensagem" class="title" title="Você pode aumentar a area de texto clicando e puxando o canto inferior da caixa de texto">
+                            <h3>Mensagem:</h3>
+                        </label>
+
+                        <textarea name="Mensagem" class="inputMensagemFiltro" style="height: 66px; width: 316px;" cols="30" rows="30">
+
+                        </textarea>
+                    </div>
+                    
+                    <div style="display: flex;justify-content: end;">
+
+                        <button id="btnEnviarFormMensagens" class="mensagemTipo btnTipoMensagens" type="submit">enviar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
 </div>
 

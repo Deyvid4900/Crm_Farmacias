@@ -19,6 +19,10 @@ class ComposerStaticInit38561576eb71beef9fec11ab97e3ba9b
         array (
             'Traits\\' => 7,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'M' => 
         array (
             'Models\\' => 7,
@@ -38,6 +42,10 @@ class ComposerStaticInit38561576eb71beef9fec11ab97e3ba9b
         'Traits\\' => 
         array (
             0 => __DIR__ . '/../..' . '/../traits',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Models\\' => 
         array (

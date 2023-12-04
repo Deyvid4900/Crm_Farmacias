@@ -1,6 +1,7 @@
 <?php
 include("../lib/vendor/autoload.php");
 include_once "../models/ClassFarmacia.php";
+
 use \Models\Farmacia;
 
 
@@ -24,15 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $farmaciaObj->getIdFromNome($nomeFarmacia);
 
 
-    if ($farmaciaObj->findName($nomeFarmaciaDesejada) &&
+    if (
+        $farmaciaObj->findName($nomeFarmaciaDesejada) &&
         $farmaciaObj->findPass($senhaFarmaciaDesejada) &&
         $farmaciaObj->findAcessPass($codigoFarmaciaDesejada)
     ) {
-        
+        $registro = $farmaciaObj->getRegistroFromNome($nomeFarmacia);
+        $email = $registro['emailFarmacia'];
         // Login bem-sucedido
-        $_SESSION['user_id'] = $id ;
+        $_SESSION['user_id'] = $id;
         $_SESSION['username'] = $farmaciaObj->getNomeFarmacia();
-        
+        $_SESSION['email'] = $email;
         header('Location: /views/home.php');
         exit();
     } else {
@@ -51,4 +54,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo 'Método não permitido.';
 }
-?>

@@ -114,6 +114,13 @@ class Farmacia extends DataBase
         $stmt->execute();
         return $stmt->fetchColumn();
     }
+    public function getRegistroFromNome($nome) {
+        $sql = "SELECT * FROM $this->table WHERE nomeFarmacia = :nomeFarmacia";
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':nomeFarmacia', $nome);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
 
     public function delete($id)
     {
