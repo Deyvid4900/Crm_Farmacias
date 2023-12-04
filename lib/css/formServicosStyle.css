@@ -192,3 +192,224 @@ label{
 #temp{
     width: 54px;
 }
+
+/* Injetaveis */
+
+.injetaveisFlex p, .inaloterapiaCheckFlex p, .colBrincoFlex p, .FlexInfoBrinco p, .FlexInfoBrincoE p {
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.injetaveisFlex, .inaloterapiaCheckFlex, .colBrincoFlex, .FlexInfoBrinco{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.FlexInfoBrincoE{
+    display: flex;
+    align-items: center;
+    margin-left: 28px;
+    margin-top: 20px;
+}
+
+#apliInjeta, #inaloCheck{
+    margin-right: 6px;
+}
+
+.othersInjetaveis, .othersInalo, .othersBrinco{
+    display: flex;
+    align-items: center;
+}
+
+.Flexteste, .FlextesteInalo, .FlextesteBrinco{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+
+.loteFlexBrinco{
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+
+
+.nomePres, .precritoIna{
+    margin-left: 40px;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+#medicamento, #medicamentoIna{
+    width: 206px;
+}
+
+#medicamentoIna{
+    margin-bottom: 1px;
+}
+.loteFlex, .valFlex, .posologiaFlex, .valFlexBrinco{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+/* inaloterapia */
+.loteFlexIna, .valFlexInalo, .posologiaFlexInalo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+.viaAdmFlex{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+#lote, #loteInalo, #loteBrinco{
+    width: 35px;
+}
+
+#loteInalo, #validadeInalo{
+    margin-bottom: 1px;
+}
+
+#validade, #validadeInalo{
+    width: 65px;
+}
+
+#posologia{
+    width: 75px;
+}
+
+#viaAdm{
+    width: 160px;
+}
+
+#precristor{
+    width: 200px;
+}
+
+#posologiaInalo{
+    width: 249px;
+    margin-bottom: 1px;
+}
+
+#prescritorIna{
+    width: 187px;
+}
+
+
+.precritoIna{
+    display: flex;
+    align-items: center;
+}
+
+.CRMCRO{
+    margin-left: 12px;
+}
+
+#crm{
+    width: 176px;
+}
+
+#medicamentoBrinco{
+    width: 206px;
+}
+
+#validadeBrinco{
+    width: 323px;
+}
+
+.ladoJogar{
+    margin-left: 141px;
+}
+
+.altura{
+    margin-top: -1px;
+}
+
+.colBrincoBg, .parteFora{
+    margin-top: 50px;
+}
+
+.checkLadoBrincoFlex{
+    display: flex;
+    align-items: center;
+}
+
+#ladoD, #ladoE{
+    margin-right: 6px;
+}
+
+.checkLadoBrincoFlex{
+    margin-top: -10px;
+}
+
+
+/* info */
+
+.envInfo{
+    margin-top: 40px;
+}
+.Assistencia, .acompanhamento, .indicacao{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.Assistencia p, .acompanhamento p, .indicacao p, .plano p{
+    font-weight: 600;
+    margin-right: 12px; 
+}
+
+#ficha{
+    width: 131px;
+}
+
+#assCheck, #acomCheck, #indiCheck{
+    margin-right: 6px;
+}
+
+.afastar{
+    margin-left: 10px;
+}
+
+/* sinais */
+
+.Sinais p{
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: -9px;
+}
+
+.Sinais, .plano{
+   margin-left: 40px; 
+}
+
+.plano{
+    display: flex;
+    align-items: center;
+}
+
+.afastrD{
+    margin-right: 8px;
+}
+
+button{
+    background-color: #247158;
+    color: white;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 544px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}

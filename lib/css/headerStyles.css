@@ -49,15 +49,20 @@
 
     }
 
+
     .cao [type="text"] {
         padding: 4px 12px;
         width: 240px;
+        height: 24px;
         border: none;
         border-radius: 4px;
         font-size: 15px;
         position: relative;
         display: flex;
         align-items: center;
+        left: 520px;
+        top: 22px;
+        max-width: max-content;
     }
 
     #a [type="text"]:focus {
