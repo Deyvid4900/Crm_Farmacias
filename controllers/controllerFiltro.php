@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $filtro = $_POST['filtro'] ?? '';
     
     $FiltroObj = new Filtros;
-    $resultado = $FiltroObj->buscarValoresSemelhantes($input,$filtro);
+    $resultado = $FiltroObj->buscarValoresSemelhantes($input,$filtro,$_SESSION('user_id'));
 
     
     // Verificar se a inserção foi bem-sucedida

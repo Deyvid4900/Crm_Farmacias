@@ -1,7 +1,7 @@
 <?php
 namespace Models;
 include '../models/ClassConexao.php';
-include "../models/ClassTrait.php";
+// include "../models/ClassTrait.php";
 
 class Farmacia extends DataBase
 {   
@@ -43,19 +43,23 @@ class Farmacia extends DataBase
         return $this->codigo;
     }
 
-    public function insert()
-    {
-        $sql = "INSERT INTO $this->table (nomeFarmacia, senhaFarmacia, codigo) 
-                VALUES (:nomeFarmacia, :senhaFarmacia, :codigo)";
+    public function insert($nomeFarmacia,$senhaFarmacia,$emailFarmacia,$numeroFarmacia)
+{
+    $sql = "INSERT INTO $this->table (nomeFarmacia, senhaFarmacia, emailFarmacia, numero) 
+            VALUES (:nomeFarmacia, :senhaFarmacia, :emailFarmacia, :numero)";
 
-        $stmt = DataBase::prepare($sql);
+    $stmt = DataBase::prepare($sql);
 
-        $stmt->bindParam(':nomeFarmacia', $this->nomeFarmacia);
-        $stmt->bindParam(':senhaFarmacia', $this->senhaFarmacia);
-        $stmt->bindParam(':codigo', $this->codigo);
+    $stmt->bindParam(':nomeFarmacia', $nomeFarmacia);
+    // Usando password_hash para criptografar a senha
+    $hashedSenhaFarmacia = password_hash($senhaFarmacia, PASSWORD_DEFAULT);
+    $stmt->bindParam(':senhaFarmacia', $hashedSenhaFarmacia);
+    $stmt->bindParam(':emailFarmacia', $emailFarmacia);
+    $stmt->bindParam(':numero', $numeroFarmacia);
 
-        return $stmt->execute();
-    }
+    return $stmt->execute();
+}
+
 
     public function update($id)
     {
@@ -91,7 +95,7 @@ class Farmacia extends DataBase
         return $stmt->fetch(\PDO::FETCH_BOTH);
     }
     public function findPass($senhaFarmacia)
-    {
+    {   
         $sql = "SELECT * FROM $this->table WHERE senhaFarmacia = :senhaFarmacia";
         $stmt = DataBase::prepare($sql);
         $stmt->bindParam(':senhaFarmacia', $senhaFarmacia);

@@ -47,6 +47,7 @@
     .cao .inputText {
         display: flex;
         justify-content: center;
+        align-items: center;
 
     }
 
@@ -61,8 +62,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        left: 520px;
-        top: 22px;
+        /* left: 520px;
+        top: 22px; */
         max-width: max-content;
     }
 
