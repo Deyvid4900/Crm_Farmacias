@@ -45,7 +45,7 @@ class Farmacia extends DataBase
 
     public function insert($nomeFarmacia,$senhaFarmacia,$emailFarmacia,$numeroFarmacia)
 {
-    $sql = "INSERT INTO $this->table (nomeFarmacia, senhaFarmacia, emailFarmacia, numero) 
+    $sql = "INSERT INTO $this->table (nomeFarmacia, senhaFarmacia, emailFarmacia, numeroFarmacia) 
             VALUES (:nomeFarmacia, :senhaFarmacia, :emailFarmacia, :numero)";
 
     $stmt = DataBase::prepare($sql);
@@ -102,6 +102,9 @@ class Farmacia extends DataBase
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_BOTH);
     }
+    public function validatePass($senhaInput,$hash){
+        return password_verify($senhaInput,$hash);
+    }
     public function findAcessPass($Acess)
     {
         $sql = "SELECT * FROM $this->table WHERE acessoCodigo = :acessoCodigo";
@@ -118,6 +121,14 @@ class Farmacia extends DataBase
         $stmt->execute();
         return $stmt->fetchColumn();
     }
+    public function getHashPassFromNome($nome) {
+        $sql = "SELECT senhaFarmacia FROM $this->table WHERE nomeFarmacia = :nomeFarmacia";
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':nomeFarmacia', $nome);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+    
     public function getRegistroFromNome($nome) {
         $sql = "SELECT * FROM $this->table WHERE nomeFarmacia = :nomeFarmacia";
         $stmt = Database::prepare($sql);
