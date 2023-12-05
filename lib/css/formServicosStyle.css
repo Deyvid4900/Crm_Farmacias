@@ -13,11 +13,10 @@
 
 .bg-antesForm{
     width: 765px;
-    height: 500px;
+    height: auto;
     /* border: 1px solid rgb(43, 43, 43); */
     border-radius: 8px;
-    margin: 20px auto;
-    margin-top: 20px;
+    margin: 40px auto;
     overflow: auto;
     box-shadow: 1px 1px 15px 3px #a0a0a0ee;
 
