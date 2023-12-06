@@ -78,10 +78,10 @@ function sanitize(array $inputs, array $fields, array $filters): array
 
 $sanitizedData = sanitize($selectedFields, $fields, $filtro);
 
-var_dump($_POST);
-
 $cliente = new Cliente;
 $cliente->insertArray($sanitizedData,$_SESSION["user_id"]);
+
+
 // echo $cliente->getIdByName($sanitizedData['nome']);
 $id = intval($cliente->getIdByName($sanitizedData['nome']));
 

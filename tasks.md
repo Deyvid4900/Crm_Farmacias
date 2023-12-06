@@ -16,12 +16,12 @@ tem que  ajustar os forms, botar placeholders ;
 <!-- Criar tabela serviços; -->
 <!-- ajustar o link serviços; -->
 <!-- começar o sistema de mensagens para os clientes; -->
-fazer o controler/class Medico;
+<!-- fazer o controler/class Medico; -->
 fazer o form consultorio;
 Criar tabela consultorio que vai armazenar as prescrições farmaceuticas e atendimentos;
 ajustar o update e delete da tabela eventos;
 <!-- ver como q faz pra saida de doc no bd; -->
-padronizar os dados do banco de dados e as entradas dos formularios para coerencia do sistema;
+
 adicionar alertas no final dos cadastros;
 fazer o sistema de notificação no sistema;
 fazer o sistema de "lembretes por usuario";
@@ -29,4 +29,7 @@ adicionar a tabela endereço no filtro;
 
 
 <!-- botar hash nas senhas das farmacias; -->
+
+<!-- Padronização -->
 documentar as classes para a manutenção posterior;
+padronizar os dados do banco de dados e as entradas dos formularios para coerencia do sistema;
