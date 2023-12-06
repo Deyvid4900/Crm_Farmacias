@@ -4,14 +4,13 @@ include_once "../models/ClassFarmacia.php";
 
 use \Models\Farmacia;
 
-
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nomeFarmacia = $_POST['nomeFarmacia'] ?? '';
     $senha = $_POST['senhaFarmacia'] ?? '';
     $codigo = $_POST['ID'] ?? '';
-
+    
     $farmaciaObj = new Farmacia;
 
     $farmaciaObj->setNomeFarmacia($nomeFarmacia);

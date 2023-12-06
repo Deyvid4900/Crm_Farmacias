@@ -1,7 +1,7 @@
 <?php
 namespace Models;
 
-include '../models/ClassConexao.php';
+include_once '../models/ClassConexao.php';
 
 class Eventos extends DataBase {
     protected $table = 'eventos';
@@ -118,6 +118,71 @@ class Eventos extends DataBase {
 	
 		return $stmt->execute();
 	}
+
+	public function getProximosEventos($usuario_id) {
+		$dataAtual = date('Y-m-d H:i:s'); // Obtém a data e hora atual no formato MySQL
+	
+		$sql = "SELECT * FROM $this->table WHERE Id_Farmacia_PK = :Id_Farmacia_PK AND dataEvento >= :dataAtual ORDER BY dataEvento ASC LIMIT 5";
+		$stmt = Database::prepare($sql);
+		$stmt->bindParam(':Id_Farmacia_PK', $usuario_id, \PDO::PARAM_INT);
+		$stmt->bindParam(':dataAtual', $dataAtual);
+	
+		$stmt->execute();
+	
+		return $stmt->fetchAll(\PDO::FETCH_BOTH);
+	}
+	public function getProximosEventosComTempoRestante($usuario_id) {
+		$retorno = [];
+	
+		$sql = "SELECT *, TIMESTAMPDIFF(SECOND, NOW(), CONCAT(dataEvento, ' ', horaEvento)) AS tempoRestante 
+				FROM $this->table 
+				WHERE Id_Farmacia_PK = :Id_Farmacia_PK AND CONCAT(dataEvento, ' ', horaEvento) >= NOW()
+				ORDER BY dataEvento ASC 
+				";
+	
+		$stmt = Database::prepare($sql);
+		$stmt->bindParam(':Id_Farmacia_PK', $usuario_id, \PDO::PARAM_INT);
+	
+		$stmt->execute();
+	
+		// Verifica o número de linhas retornadas
+		$rowCount = $stmt->rowCount();
+	
+		if ($rowCount > 0) {
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+	
+			// Filtra os resultados com tempoRestante menor que 1.209.600 segundos (2 semanas)
+			$resultadoFiltrado = array_filter($resultado, function ($value) {
+				return $value["tempoRestante"] < 1209600;
+			});
+	
+			return $resultadoFiltrado;
+		} else {
+			return $retorno;
+		}
+	}
+	
+	public function converterTempoRestante($tempoRestanteEmMinutos) {
+		$dias = floor($tempoRestanteEmMinutos / (60 * 24));
+		$semanas = floor($dias / 7);
+		$horas = number_format(($tempoRestanteEmMinutos % (60 * 24) / 60), 0);
+
+		$resultado = '';
+	
+		if ($semanas > 0) {
+			$resultado .= $semanas . ' semana(s) ';
+		}
+	
+		if ($dias % 7 > 0) {
+			$resultado .= ($dias % 7) . ' dia(s) ';
+		}
+	
+		$resultado .= ($horas > 0) ? $horas . ' hora(s)' : '';
+	
+		return $resultado;
+	}
+	
+	
 	
 	
 	

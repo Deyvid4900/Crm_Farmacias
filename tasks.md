@@ -17,17 +17,21 @@ tem que  ajustar os forms, botar placeholders ;
 <!-- ajustar o link serviços; -->
 <!-- começar o sistema de mensagens para os clientes; -->
 <!-- fazer o controler/class Medico; -->
+Criar a pagina que ve todos os medicos;
+Criar a pagina que ve todos os eventos;
+Criar a pagina que ve todos os Ultimos serviços;
+
 fazer o form consultorio;
 Criar tabela consultorio que vai armazenar as prescrições farmaceuticas e atendimentos;
-ajustar o update e delete da tabela eventos;
+
 <!-- ver como q faz pra saida de doc no bd; -->
+fazer enviar mensagem do zap;
+fazer enviar mensagem do sms;
+fazer enviar mensagem do zap;
 
 adicionar alertas no final dos cadastros;
-fazer o sistema de notificação no sistema;
+<!-- fazer o sistema de notificação no sistema; -->
 fazer o sistema de "lembretes por usuario";
-adicionar a tabela endereço no filtro;
-
-
 <!-- botar hash nas senhas das farmacias; -->
 
 <!-- Padronização -->

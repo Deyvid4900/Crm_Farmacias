@@ -142,3 +142,42 @@ td{
   border-radius: 4px;
   font-weight: 700;
 }
+
+/* notificação */
+
+.boxMensagemTempo{
+  display: none;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: #FFF;
+  width: 355px;
+  height: 300px;
+  z-index: 99;
+  border-radius: 0px 0px 8px 8px;
+  box-shadow: 1px 1px 15px 3px #a0a0a0ee;
+}
+
+.headerMensagem{
+  display: flex;
+  justify-content: end;
+  padding: 0px 20px;
+  width: 100%;
+  font-size: 30pt;
+}
+
+.ativado{
+  display: block;
+}
+.contentMensagem{
+  overflow-y: scroll;
+  height: 210px;
+  padding: 0px 30px;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  display: flex;
+}
+.contentMensagem > ul{
+  list-style: none;
+}

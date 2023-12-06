@@ -1,10 +1,13 @@
-<?php 
+<?php
 session_start();
 include("../lib/vendor/autoload.php");
+
  \Classes\ClassLayout::setHeadDefault("Home"); 
  if (!isset($_SESSION["username"]) ) {
     header('Location: /');
 }
+
+
 ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,13 +16,25 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 <?php 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"]); 
+
+
+include_once ("../models/ClassEvento.php");
+$evt=new \Models\Eventos;
+$tempoRestanteFormatado=new \Models\Eventos;
+$eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
+
+// aqui quero que leia todos os tempos restantes para chegar na hora atual, que vem em minutos e me diga quantos dias,semanas ou horas que falta para tal 
+
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
 \classes\ClassLayout::setSideComponente();
 ?>
+
 <!-- conteudo interno da pagina  -->
 
 
 <?php include "subViews/tableEvento.php" ?>
+<?php include "subViews/notificacaoExibi.php" ?>
+
 <script>
     const mySideBar = document.getElementById('mySidebar')
 

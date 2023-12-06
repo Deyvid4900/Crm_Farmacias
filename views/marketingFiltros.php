@@ -19,9 +19,13 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 
 <?php
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"]);
-\classes\ClassLayout::setSideComponente();
+include_once ("../models/ClassEvento.php");
+$evt=new \Models\Eventos;
+$eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
+
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
+\classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
 

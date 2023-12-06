@@ -4,8 +4,7 @@ $arrayValoresId = explode(',', $_POST["id"]);
 include("../lib/vendor/autoload.php");
 include_once "../models/ClassMensagens.php";
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+
 use \Models\Mensagem;
 
 

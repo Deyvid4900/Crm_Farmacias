@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="../../lib/CSS/formClienteStyles.css">
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- class ativo mostra o form -->
 <section class="formInit-bg w ativo " id="b">
     <div class="form-bg">
         <div class="head">
             <h1>Clientes</h1>
         </div>
-        <form action="../../controllers/controllerClienteCadastro.php" method="POST">
+        <form action="../../controllers/controllerClienteCadastro.php" id="formCLiente" method="POST">
             <div id="styleForm">
                 <div class="flexForm">
                     <input type="number" name='Id_Farmacia_FK ' value="<?php echo $_SESSION["user_id"] ?>" style="display: none;">
@@ -177,3 +177,4 @@
         </form>
     </div>
 </section>
+<script src="../../lib/JS/ajaxCadastroCliente.js"></script>

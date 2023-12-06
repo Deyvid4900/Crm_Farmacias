@@ -107,3 +107,5 @@ $campos = [
 ];
 $enderecoSelecionados = array_intersect_key($_POST, array_flip($enderecoArray));
 $endereco->insertArray(sanitize($enderecoSelecionados, $campos, $filtro), $id);
+
+header('Location: /views/cadastroCliente.php');
