@@ -20,17 +20,17 @@
 .form-bg{
 
     width: 990px;
-    height: 530px;
+    height: 516px;
     border-radius: 8px;
     position: absolute;
-    bottom: -550px;
+    bottom: -525px;
     box-shadow: 1px 1px 15px 3px #a0a0a0ee;
 }
 .form-bg h1{
     display: flex;
     justify-content: center;
     border-radius: 8px 8px 0 0;
-    padding-top: 6px;
+    padding-top: -8px;
     background-color: #247158;
     color: white;
 }
