@@ -4,7 +4,7 @@ ajustar para que quando clique as opções do side bar sumam;
 <!-- tirar o config da side bar; -->
 criar as paginas ou modais da sidebar do header e jogar o menu de configurações lá; 
 fazer a pagina sobre(essa pagina vai falar sobre a gente) no menu do header;
-tem que  ajustar os forms, botar placeholders ;
+<!-- tem que  ajustar os forms, botar placeholders ; -->
 
 
 
@@ -21,7 +21,7 @@ Criar a pagina que ve todos os medicos;
 Criar a pagina que ve todos os eventos;
 Criar a pagina que ve todos os Ultimos serviços;
 
-fazer o form consultorio;
+<!-- fazer o form consultorio; -->
 Criar tabela consultorio que vai armazenar as prescrições farmaceuticas e atendimentos;
 
 <!-- ver como q faz pra saida de doc no bd; -->

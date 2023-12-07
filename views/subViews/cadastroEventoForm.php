@@ -14,7 +14,7 @@
                     <label class="nCliente" for="numero">Data</label>
                     <input type="date" name="dataEvento" id="numero" autocomplete="off" required>
                     <label class="cPf" for="cpf">Horas</label>
-                    <input type="number" placeholder="horario" max="24" name="horaEvento" id="cpf" maxlength="11" autocomplete="off" required>
+                    <input type="time" placeholder="horario" max="24" name="horaEvento" id="cpf" maxlength="11" autocomplete="off" required>
                     <!-- mexer cpf validar formato -->
                 </div>
                 <div class="formAlinhado">

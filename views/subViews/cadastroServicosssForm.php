@@ -19,7 +19,7 @@
                 <form action="" class="formServicos">
                     <div class="inputNome">
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required autocomplete="off">
+                        <input type="text" id="nome" name="nome" required autocomplete="off" placeholder="nome do cliente">
                     </div>
                     <div class="inputGenderOtherFlex">
                         <div class="inputGenderOther">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="inputAge">
                             <label for="age">Idade:</label>
-                            <input type="text" id="age" name="age" required autocomplete="off" maxlength="3">
+                            <input type="text" id="age" name="age" required autocomplete="off" maxlength="3" placeholder="20">
                         </div>
                         <div class="inputPhone">
                             <label for="phone">Telefone:</label>
@@ -41,13 +41,13 @@
                     </div>
                     <div class="inputAdress">
                         <label for="adress">Endereço:</label>
-                        <input type="text" id="adress" name="adress" required autocomplete="off">
+                        <input type="text" id="adress" name="adress" required autocomplete="off" placeholder="Bairro...,  Rua...,   n°">
                     </div>
                     <!-- sep -->
                     <div class="cityOtherFlex">
                         <div class="cityOther">
                             <label for="city">Cidade:</label>
-                            <input type="text" id="city" name="city" required autocomplete="off">
+                            <input type="text" id="city" name="city" required autocomplete="off" placeholder="Cidade">
                         </div>
                         <div class="Uf">
                             <label for="uf">UF</label>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="inputEmail">
                             <label for="email">Email:</label>
-                            <input type="email" name="email" id="email" required autocomplete="off">
+                            <input type="email" name="email" id="email" required autocomplete="off" placeholder="farmacia@meuemail.com">
                         </div>
                     </div>
                     <div class="nomeRespon">
