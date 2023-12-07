@@ -17,7 +17,7 @@ class ClassLayout
     //  CSS 
     $html  .= "<link  href='" . DIRPAGE . "lib/CSS/sideBarStyles.css" . "'>\n";
     $html .= "</head>\n";
-    $html .= "<body>\n";
+    $html .= "<body class='aloBrasil'>\n";
     echo $html;
   }
   public static function setHeadBootstrap($title)

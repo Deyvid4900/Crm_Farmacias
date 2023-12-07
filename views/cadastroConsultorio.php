@@ -12,6 +12,7 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
+<link rel="stylesheet" href="../lib/css/formConsultorioStyle.css">
 <?php 
 
 
@@ -26,9 +27,13 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 <!-- conteudo interno da pagina  -->
 
 
+
 <?php include "subViews/notificacaoExibi.php" ?>
-<h1>consultorio</h1>
-<script>  const mySideBar = document.getElementById('mySidebar')
+<?php include "../views/subViews/cadastroConsultorioForm.php" ?>
+
+<script> 
+const mySideBar = document.getElementById('mySidebar')
+
     function openNav() {
         mySideBar.style.width = '400px';
     }
