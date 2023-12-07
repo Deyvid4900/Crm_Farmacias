@@ -1,0 +1,119 @@
+*{
+    font-family: 'Inria Sans', sans-serif;
+}
+
+label{
+    font-weight: 600;
+}
+
+.molduraForm-Bg{
+    margin: auto;
+    
+}
+
+.formServicoss{
+    margin: auto;
+}
+
+.antesFormb-bg{
+    width: 765px;
+    height: 400px;
+    /* border: 1px solid rgb(43, 43, 43); */
+    border-radius: 8px;
+    margin: 40px auto;
+    overflow: auto;
+    box-shadow: 1px 1px 15px 3px #a0a0a0ee;
+
+}
+
+.seilaa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+    padding-bottom: 6px;
+    background-color: #247158;
+    color: white;
+}
+
+.lado40px{
+    margin-left: 40px;
+}
+
+
+
+/* info cima */
+
+.FlexInfooo{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 24px;
+
+}
+
+.FlexInfooo p{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+/* Nome do farmaceutico */
+
+.infoFlex-Consultorio{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.FlexColum{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* posologia */
+.mg-top{
+    margin-top: 24px;
+    margin-left: 40px;
+}
+
+.alinharCima{
+    display: block;
+}
+
+
+
+/* inputs */
+
+#NameFarm{
+    width: 200px;
+    margin-right: 40px;
+}
+
+#namePaciente{
+    width: 234px;
+}
+
+#prescrito{
+    width: 231px;
+}
+
+#posologiaConsultorio{
+    width: 366px;
+    margin-top: 4px;
+}
+
+.btnImprimir-Consul{
+    background-color: #247158;
+    color: white;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 20px;
+    margin-left: 580px;
+}
