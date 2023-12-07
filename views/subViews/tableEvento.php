@@ -15,6 +15,7 @@ use \Models\Eventos;
 
         $eventos = new Eventos;
         $registros = $eventos->findAll($_SESSION['user_id']);
+
         function compararDatas($a, $b)
         {
             $dataB = strtotime($a['dataEvento']);
@@ -38,12 +39,24 @@ use \Models\Eventos;
             // Obtém o timestamp atual
             $agoraTimestamp = time();
 
-            // Compara os timestamps
-            return $dataTimestamp < $agoraTimestamp;
+            // Verifica se a data já passou (menor que o timestamp atual)
+            return $agoraTimestamp <  $dataTimestamp;
         }
+
         usort($registros, 'compararDatas');
 
-        $resultado = array_slice(array_reverse($registros), 0, 6);
+        $resultado = array_slice(array_reverse($registros), 0,5);
+
+        foreach ($resultado as $key => $value) {
+            // var_dump("Data do Evento: " . $value["dataEvento"]);
+            if (dataJaPassou($value["dataEvento"])) {
+                unset($resultado);
+                $resultado = array_values($resultado);
+            }
+        }
+        
+        // Reindexa o array após remover elementos
+        
 
 
         $table  = '<table>';
@@ -60,7 +73,7 @@ use \Models\Eventos;
         $table .= '<tbody>';
 
         foreach ($resultado as $registro) {
-            
+
             $table .= '<tr>';
             $table .= "<td>" . $registro['id_Evento_PK'] . "</td>";
             $table .= "<td>" . $registro['nomeEvento'] . "</td>";
@@ -78,6 +91,7 @@ use \Models\Eventos;
 
 
         echo $table;
+        // var_dump($resultado)
         ?>
     </div>
     <div id="myModal" class="modal">

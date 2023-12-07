@@ -21,6 +21,7 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 \classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
 \classes\ClassLayout::setSideComponente();
 ?>
+<?php include "subViews/notificacaoExibi.php" ?>
 <!-- conteudo interno da pagina  -->
 
 
