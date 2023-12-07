@@ -1,8 +1,8 @@
-<?php 
+<?php
 session_start();
 include("../lib/vendor/autoload.php");
- \Classes\ClassLayout::setHeadDefault("Home"); 
- if (!isset($_SESSION["username"]) ) {
+\Classes\ClassLayout::setHeadDefault("Home");
+if (!isset($_SESSION["username"])) {
     header('Location: /');
 }
 ?>
@@ -12,18 +12,21 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
-<?php 
-include_once ("../models/ClassEvento.php");
-$evt=new \Models\Eventos;
+<?php
+
+
+include_once("../models/ClassEvento.php");
+$evt = new \Models\Eventos;
+$tempoRestanteFormatado = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
 
 
+<?php include "subViews/notificacaoExibi.php" ?>
 
 <script>
     const mySideBar = document.getElementById('mySidebar')

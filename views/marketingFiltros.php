@@ -1,7 +1,4 @@
 <?php
-
-use Models\Filtros;
-
 session_start();
 include("../lib/vendor/autoload.php");
 \Classes\ClassLayout::setHeadDefault("Home");
@@ -18,11 +15,11 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 
-<?php
+<?php 
 include_once ("../models/ClassEvento.php");
 $evt=new \Models\Eventos;
+$tempoRestanteFormatado=new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
-
 
 \classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
 \classes\ClassLayout::setSideComponente();
@@ -84,12 +81,13 @@ if (isset($_POST['conteudoPesquisa'])) {
         <div class="styleForm">
             <div class="tabela-container">
                 <?php
+                
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     include_once DIRREQ . '/models/ClassFiltro.php';
                     $input = $_POST['conteudoPesquisa'] ?? '';
                     $filtro = $_POST['filtro'] ?? '';
 
-                    $FiltroObj = new Filtros;
+                    $FiltroObj = new Models\Filtros;
                     $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro, $_SESSION["user_id"]);
 
                     if ($resultados !== false && !empty($resultados)) {
@@ -177,7 +175,7 @@ if (isset($_POST['conteudoPesquisa'])) {
     </div>
 </div>
 
-
+<?php include "subViews/notificacaoExibi.php" ?>
 
 <script>
     const mySideBar = document.getElementById('mySidebar')

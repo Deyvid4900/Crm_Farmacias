@@ -17,7 +17,15 @@ fazer a pagina sobre(essa pagina vai falar sobre a gente) no menu do header;
 <!-- ajustar o link serviços; -->
 <!-- começar o sistema de mensagens para os clientes; -->
 <!-- fazer o controler/class Medico; -->
+fazer gerar pdf do serviço prestado com o TCPDF 
+fazer gerar pdf da consulta com o TCPDF 
+
+criar pagina de mensagens predefinidas(desconto de remedios,parabenização de feriados e etc)
+
 Criar a pagina que ve todos os medicos;
+finalizar o sistema de pesquisa(arrumar um jeito de direcionar os linde de sugestão)
+
+
 Criar a pagina que ve todos os eventos;
 Criar a pagina que ve todos os Ultimos serviços;
 
