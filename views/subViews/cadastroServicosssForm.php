@@ -86,7 +86,7 @@
                         </div>
                         <div class="inputEmail">
                             <label for="email">Email:</label>
-                            <input type="email" name="email" id="email" required autocomplete="off" placeholder="farmacia@meuemail.com">
+                            <input type="email" name="email" id="email" required autocomplete="off" placeholder="cliente@email.com">
                         </div>
                     </div>
                     <div class="nomeRespon">

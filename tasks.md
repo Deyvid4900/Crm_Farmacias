@@ -3,7 +3,7 @@
 ajustar para que quando clique as opções do side bar sumam;
 <!-- tirar o config da side bar; -->
 criar as paginas ou modais da sidebar do header e jogar o menu de configurações lá; 
-fazer a pagina sobre(essa pagina vai falar sobre a gente) no menu do header;
+<!-- fazer a pagina sobre(essa pagina vai falar sobre a gente) no menu do header; -->
 <!-- tem que  ajustar os forms, botar placeholders ; -->
 
 

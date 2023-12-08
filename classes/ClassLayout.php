@@ -91,7 +91,7 @@ class ClassLayout
     $head .=  " </div>\n";
     $head .=  " <div class='contentSidebar'>\n";
     $head .=  "   <a href='#'><s>Graficos</s></a>\n";
-    $head .=  "  <a href='#'>Sobre</a>\n";
+    $head .=  "  <a id='sobreMenuHamb' href='/views/sobre.php'>Sobre</a>\n";
     $head .=  "  <a href='#'>Médicos</a>\n";
     $head .= "   <a href='#'>Contatos</a>\n";
     $head .=  "  <a href='#'>Ultimos Serviços</a>\n";
