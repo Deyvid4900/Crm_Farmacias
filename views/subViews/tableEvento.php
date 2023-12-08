@@ -47,16 +47,7 @@ use \Models\Eventos;
 
         $resultado = array_slice(array_reverse($registros), 0,5);
 
-        // foreach ($resultado as $key => $value) {
-        //     // var_dump("Data do Evento: " . $value["dataEvento"]);
-        //     if (dataJaPassou($value["dataEvento"])) {
-        //         unset($resultado);
-        //         $resultado = array_values($resultado);
-        //     }
-        // }
-        
-        // Reindexa o array após remover elementos
-        
+    
 
 
         $table  = '<table>';
