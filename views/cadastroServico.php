@@ -1,8 +1,8 @@
-<?php
+<?php 
 session_start();
 include("../lib/vendor/autoload.php");
-\Classes\ClassLayout::setHeadDefault("Home");
-if (!isset($_SESSION["username"])) {
+ \Classes\ClassLayout::setHeadDefault("Home"); 
+ if (!isset($_SESSION["username"]) ) {
     header('Location: /');
 }
 ?>
@@ -13,16 +13,15 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 <link rel="stylesheet" href="../lib/css/formServicosStyle.css">
-<script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>
-<?php
+<?php 
 
 
-include_once("../models/ClassEvento.php");
-$evt = new \Models\Eventos;
-$tempoRestanteFormatado = new \Models\Eventos;
+include_once ("../models/ClassEvento.php");
+$evt=new \Models\Eventos;
+$tempoRestanteFormatado=new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
@@ -34,15 +33,12 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 
 <script>
     const mySideBar = document.getElementById('mySidebar')
-
     function openNav() {
         mySideBar.style.width = '400px';
     }
-
     function closeNav() {
         mySideBar.style.width = '0';
     }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
-<script src='<?php echo DIRPAGE . "lib/JS/ajaxCadastroServicos.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>

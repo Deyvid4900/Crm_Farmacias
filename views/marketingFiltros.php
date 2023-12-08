@@ -45,7 +45,7 @@ if (isset($_POST['conteudoPesquisa'])) {
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">
         <h1>Filtros</h1>
-        <form action="../../views/marketingFiltros.php" id="FormFiltro" method="POST">
+        <form action="../../views/marketingFiltros.php" method="POST">
             <div id="styleForm">
                 <div>
                     <label for="filtro">Filtrar por :</label>

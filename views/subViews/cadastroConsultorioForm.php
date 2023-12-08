@@ -9,17 +9,15 @@
             <p>Nome da Farmácia</p>
             <p>CNPJ</p>
         </div>
-        <form action="../../controllers//controllerConsultorio.php" method="POST"  class="formServicoss" id="formConsultorio">
+        <form action="" class="formServicoss">
             <div class="infoFlex-Consultorio">
-                <input type="hidden" name="idFarmacia" value="<?php echo $_SESSION['user_id'] ?>">
-                <input type="hidden" name="horaConsulta" value="<?php echo date("H:i:s"); ?>">
                 <div class="lado40px">
                     <label for="NameFarm">Nome do Farmacêutico:</label>
                     <input type="text" name="NameFarm" id="NameFarm">
                 </div>
                 <div>
                     <label for="date">Data</label>
-                    <input type="date" name="date" id="date" autocomplete>
+                    <input type="date" name="date" id="date">
                 </div>
             </div>
 
@@ -44,6 +42,3 @@
         </form>
     </div>
 </section>
-<div id="resultado">
-
-</div>

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../../lib/CSS/formClienteStyles.css">
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- class ativo mostra o form -->
 <section class="formInit-bg w ativo " id="b">
     <div class="form-bg">
@@ -175,9 +175,6 @@
             </div>
             <button type="submit">Cadastrar</button>
         </form>
-        <div id="resultado">
-
-        </div>
     </div>
 </section>
 <script src="../../lib/JS/ajaxCadastroCliente.js"></script>

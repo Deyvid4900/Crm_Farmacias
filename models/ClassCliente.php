@@ -238,32 +238,24 @@ class Cliente extends CRUD
 	Objetivo: Método que insere um cliente
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	 ***************/
-	public function insertArray(array $data, $userID)
-{
-    $sql = "INSERT INTO $this->table 
-      (Id_Farmacia_FK, nome, sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, infoAdic,
+	public function insertArray(array $data,$userID)
+	{
+		$sql = "INSERT INTO $this->table 
+      (Id_Farmacia_FK ,nome, sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, infoAdic,
       celular1, celular2, telFixo, email) 
       VALUES 
-      (:Id_Farmacia_FK, :nome, :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :infoAdic,
+      (:Id_Farmacia_FK ,:nome, :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :infoAdic,
       :celular1, :celular2, :telFixo, :email)";
 
-    $stmt = Database::prepare($sql);
-    $stmt->bindValue(':Id_Farmacia_FK', $userID);
+		$stmt = Database::prepare($sql);
+        $stmt->bindValue(':Id_Farmacia_FK', $userID);
 
-    foreach ($data as $key => $value) {
-        $stmt->bindValue(':' . $key, $value);
-    }
+		foreach ($data as $key => $value) {
+			$stmt->bindValue(':' . $key, $value);
+		}
 
-    try {
-        $stmt->execute();
-        return true; // Successful insertion
-    } catch (\Exception $e) {
-        // Handle the exception if needed, e.g., log or return a more specific error message
-        // For simplicity, I'll just return false here
-        return false; // Failed insertion
-    }
-}
-
+		return $stmt->execute();
+	}
 
 
 	public function insert()
@@ -292,12 +284,14 @@ class Cliente extends CRUD
 		$stmt->bindParam(':raca', $this->raca);
 		$stmt->bindParam(':tipocliente', $this->tipocliente);
 		$stmt->bindParam(':infoAdic', $this->infoAdic);
+
+
 		$stmt->bindParam(':celular1', $this->celular1);
 		$stmt->bindParam(':celular2', $this->celular2);
 		$stmt->bindParam(':telFixo', $this->telFixo);
 		$stmt->bindParam(':email', $this->email);
-		$stmt->execute();
-		return ;
+
+		return $stmt->execute();
 	}
 
 

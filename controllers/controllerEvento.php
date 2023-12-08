@@ -27,11 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verificar se a inserção foi bem-sucedida
     if ($resultado) {
-        $response =  ' dados inseridos com sucesso ';
+        header('Location: /views/home.php');
     } else {
-        $response = 'Falha ao inserir o evento.';
+        echo 'Falha ao inserir o evento.';
     }
 } else {
     echo 'Método não permitido.';
 }
-echo $response;
+?>

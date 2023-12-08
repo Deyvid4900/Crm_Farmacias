@@ -6,7 +6,7 @@
         <div class="head">
             <h1>Eventos</h1>
         </div>
-        <form action="../../controllers/controllerEvento.php" id="cadastroEvento" method="POST">
+        <form action="../../controllers/controllerEvento.php" method="POST">
             <div id="styleForm">
                 <div class="flexForm">
                     <label for="nome">Nome </label>
@@ -40,6 +40,5 @@
 
             <button type="submit">Cadastrar</button>
         </form>
-        <div id="resultado"></div>
     </div>
 </section>
