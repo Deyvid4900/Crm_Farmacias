@@ -43,7 +43,13 @@ use \Models\Eventos;
         }
         usort($registros, 'compararDatas');
 
+
+       
+
+    
+
         $resultado = array_slice(array_reverse($registros), 0, 6);
+
 
 
         $table  = '<table>';
