@@ -14,11 +14,12 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 <link rel="stylesheet" href="../lib/css/formConsultorioStyle.css">
 <?php 
+
+
 include_once ("../models/ClassEvento.php");
 $evt=new \Models\Eventos;
+$tempoRestanteFormatado=new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
-
-
 
 \classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
 \classes\ClassLayout::setSideComponente();
@@ -26,9 +27,13 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 <!-- conteudo interno da pagina  -->
 
 
+
+<?php include "subViews/notificacaoExibi.php" ?>
 <?php include "../views/subViews/cadastroConsultorioForm.php" ?>
+
 <script> 
-    const mySideBar = document.getElementById('mySidebar')
+const mySideBar = document.getElementById('mySidebar')
+
     function openNav() {
         mySideBar.style.width = '400px';
     }

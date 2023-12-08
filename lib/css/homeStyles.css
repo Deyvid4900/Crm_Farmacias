@@ -143,19 +143,19 @@ td{
   font-weight: 700;
 }
 
-/* notificação */
 
 .boxMensagemTempo{
-  display: none;
   position: fixed;
   top: 0px;
   right: 0px;
   background-color: #FFF;
-  width: 355px;
-  height: 300px;
+  width: 0px;
+  height: auto;
+  max-height: 300px;
   z-index: 99;
   border-radius: 0px 0px 8px 8px;
-  box-shadow: 1px 1px 15px 3px #a0a0a0ee;
+  box-shadow: 1px 1px 15px 3px #4444441c;
+  transition: 0.4s;
 }
 
 .headerMensagem{
@@ -170,14 +170,19 @@ td{
   display: block;
 }
 .contentMensagem{
-  overflow-y: scroll;
-  height: 210px;
+  overflow-y: auto;
+  height: auto;
+  max-height: 250px;
   padding: 0px 30px;
   width: 100%;
   align-items: center;
   justify-content: start;
   display: flex;
+  padding-bottom: 40px;
+  padding-top: 100px;
 }
 .contentMensagem > ul{
   list-style: none;
+  height: auto;
+
 }

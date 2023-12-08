@@ -1,6 +1,6 @@
 <?php
 namespace Models;
-include '../models/ClassConexao.php';
+include_once '../models/ClassConexao.php';
 
 class Filtros extends DataBase{
     public function buscarValoresSemelhantes($input, $selecao,$usuario_id) {
