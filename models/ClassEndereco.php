@@ -94,19 +94,29 @@ class Endereco extends CRUD
 
     // Métodos de CRUD
     public function insertArray(array $data, $idCliente)
-    {
-        $sql = "INSERT INTO $this->table 
-      (cliente_id,logradouro,numeroCasa,bairro,complemento,cidade,uf,referencia) 
+{
+    $sql = "INSERT INTO $this->table 
+      (cliente_id, logradouro, numeroCasa, bairro, complemento, cidade, uf, referencia) 
       VALUES 
-      (:cliente_id,:logradouro,:numeroCasa,:bairro,:complemento,:cidade,:uf,:referencia)";
-        $stmt = Database::prepare($sql);
-        $stmt->bindParam(':cliente_id', $idCliente);
-        foreach ($data as $key => $value) {
-            $stmt->bindValue(':' . $key, $value);
-        }
+      (:cliente_id, :logradouro, :numeroCasa, :bairro, :complemento, :cidade, :uf, :referencia)";
 
-        return $stmt->execute();
+    $stmt = Database::prepare($sql);
+    $stmt->bindParam(':cliente_id', $idCliente);
+
+    foreach ($data as $key => $value) {
+        $stmt->bindValue(':' . $key, $value);
     }
+
+    try {
+        $stmt->execute();
+        return true; // Successful insertion
+    } catch (\Exception $e) {
+        // Handle the exception if needed, e.g., log or return a more specific error message
+        // For simplicity, I'll just return false here
+        return false; // Failed insertion
+    }
+}
+
 
 
     public function insert()

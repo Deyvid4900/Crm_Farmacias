@@ -4,7 +4,7 @@
             <h2>Serviços</h2>
         </div>
         <div class="spanInfo">
-            <span>Nome Fantasia</span>
+            <span><?php echo $_SESSION['username'] ?></span>
             <span>Razão Social</span>
             <span>CNPJ</span>
             <span>Endereço</span>
@@ -16,7 +16,7 @@
         </div>
         <div>
             <div style="margin: auto;">
-                <form action="" class="formServicos">
+                <form action="../../controllers/controllerServicos.php" id="formServicos" method="POST" class="formServicos">
                     <div class="inputNome">
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" required autocomplete="off" placeholder="nome do cliente">
@@ -110,10 +110,10 @@
                             </div>
                             <div class="pressao">
                                 <label for="checkGli">Sim</label>
-                                <input type="checkbox" name="checkGli" id="checkGi">
+                                <input type="checkbox" name="checkGli" value="sim" class="GlicemiaCapilar" id="checkGi">
 
                                 <label for="checkNaoGli">Não</label>
-                                <input type="checkbox" name="checkNaoGli" id="checkNaoGli">
+                                <input type="checkbox" checked name="checkGli" value="nao" class="GlicemiaCapilar" id="checkNaoGli">
                             </div>
                             <div class="instrGlic">
                                 <p>Valor normal: 70 a 99 mg/dl</p>
@@ -128,10 +128,10 @@
                                 </div>
                                 <div class="pressaoCheck">
                                     <label for="checkPre">Sim</label>
-                                    <input type="checkbox" name="checkPre" id="checkPre">
+                                    <input type="checkbox" name="checkPre" value="sim"  class="PressaoArterial" id="checkPre">
 
                                     <label for="checkNaoPre">Não</label>
-                                    <input type="checkbox" name="checkNaoPre" id="checkNaoPre">
+                                    <input type="checkbox" name="checkPre"  value="nao"  class="PressaoArterial" checked id="checkNaoPre">
                                 </div>
                                 <div class="instrPre">
                                     <p>Valor normal: 120x < 88 mm/Hg </p>
@@ -146,10 +146,10 @@
                             </div>
                             <div class="tempCheck">
                                 <label for="checkTemp">Sim</label>
-                                <input type="checkbox" name="checkTemp" id="checkTemp">
+                                <input type="checkbox" name="checkTemp" value="sim"  class="Temperatura " id="checkTemp">
 
                                 <label for="checkNaoTemp">Não</label>
-                                <input type="checkbox" name="checkNaoTemp" id="checkNaoTemp">
+                                <input type="checkbox" checked name="checkTemp" value="nao"  class="Temperatura " id="checkNaoTemp">
                             </div>
                             <div class="instrTemp">
                                 <p> Valor normal: 36 a 37°C </p>
@@ -164,9 +164,9 @@
                                 <p>Aplicação de Injetáveis</p>
                                 <div>
                                     <label for="apliInjeta">Sim</label>
-                                    <input type="checkbox" name="apliInjeta" id="apliInjeta">
+                                    <input type="checkbox" class="Injetaveis" value="sim"  name="apliInjeta" id="apliInjeta">
                                     <label for="apliInjetaNao">Não</label>
-                                    <input type="checkbox" name="apliInjetaNao" id="apliInjetaNao">
+                                    <input type="checkbox" checked class="Injetaveis" value="nao"  name="apliInjeta" id="apliInjetaNao">
                                 </div>
                             </div>
                             <div class="othersInjetaveis">
@@ -206,10 +206,10 @@
                                 <p>Inaloterapia</p>
                                 <div>
                                     <label for="inaloCheck">Sim</label>
-                                    <input type="checkbox" name="inaloCheck" id="inaloCheck">
+                                    <input type="checkbox" class="Inaloterapia" value="sim" name="inaloCheck" id="inaloCheck">
 
                                     <label for="inaloCheckNao">Não</label>
-                                    <input type="checkbox" name="inaloCheckNao" id="inaloCheckNao">
+                                    <input type="checkbox" checked class="Inaloterapia" value="nao" name="inaloCheck"  id="inaloCheckNao">
                                 </div>
                             </div>
 
@@ -257,12 +257,12 @@
                     <!-- Parte Brinco -->
                     <div class="colBrincoBg">
                         <div class="colBrincoFlex">
-                            <p>Aplicação de Injetáveis</p>
+                            <p>Aplicação de Brinco/piercing</p>
                             <div>
                                 <label for="brincoCol">Sim</label>
-                                <input type="checkbox" name="brincoCol" id="brincoCol">
+                                <input type="checkbox" class="Brinco" name="brincoCol" value="sim" id="brincoCol">
                                 <label for="brincoColNao">Não</label>
-                                <input type="checkbox" name="brincoColNao" id="brincoColNao">
+                                <input type="checkbox" checked class="Brinco" name="brincoCol" value="nao" id="brincoColNao">
                             </div>
                         </div>
 
@@ -309,10 +309,10 @@
                                 <p>Lado Direito</p>
                                 <div>
                                     <label for="ladoD">Sim</label>
-                                    <input type="checkbox" name="ladoD" id="ladoD">
+                                    <input type="checkbox" class="ladoD" value="sim" name="ladoD" id="ladoD">
 
                                     <label for="ladoDNao">Não</label>
-                                    <input type="checkbox" name="ladoDNao" id="ladoDNao">
+                                    <input type="checkbox" checked class="ladoD" value="nao" name="ladoD" id="ladoDNao">
                                 </div>
                             </div>
 
@@ -320,10 +320,10 @@
                                 <p>Lado Esquerdo</p>
                                 <div>
                                     <label for="ladoE">Sim</label>
-                                    <input type="checkbox" name="ladoE" id="ladoE">
+                                    <input type="checkbox" class="ladoE" value="sim" name="ladoE" id="ladoE">
 
                                     <label for="ladoENao">Não</label>
-                                    <input type="checkbox" name="ladoENao" id="ladoENao">
+                                    <input type="checkbox" checked class="ladoE" value="nao" name="ladoE" id="ladoENao">
                                 </div>
                             </div>
                         </div>
@@ -337,9 +337,9 @@
                             <p>Assistência Farmacêutica Domiciliar</p>
                             <div>
                                 <label for="assCheck">Sim</label>
-                                <input type="checkbox" name="assCheck" id="assCheck">
+                                <input type="checkbox" class="AssistenciaD" value="sim" name="assCheck" id="assCheck">
                                 <label for="assCheckNao">Não</label>
-                                <input type="checkbox" name="assCheckNao" id="assCheckNao">
+                                <input type="checkbox" checked class="AssistenciaD" value="nao" name="assCheck" id="assCheckNao">
                             </div>
                         </div>
 
@@ -347,9 +347,9 @@
                             <p>Acompanhamento Farmacoterapêutico</p>
                             <div>
                                 <label for="acomCheck">Sim</label>
-                                <input type="checkbox" name="acomCheck" id="acomCheck">
+                                <input type="checkbox" class="Farmacoterapeutico" value="sim" name="acomCheck" id="acomCheck">
                                 <label for="acomCheckNao">Não</label>
-                                <input type="checkbox" name="acomCheckNao" id="acomCheckNao">
+                                <input type="checkbox" checked class="Farmacoterapeutico" value="nao" name="acomCheck" id="acomCheckNao">
                             </div>
                             <div class="afastar">
                                 <label for="ficha">N° Ficha</label>
@@ -361,9 +361,9 @@
                             <p>Indicação Farmacêutica em Transtornos Menores</p>
                             <div>
                                 <label for="indiCheck">Sim</label>
-                                <input type="checkbox" name="indiCheck" id="indiCheck">
+                                <input type="checkbox" class="Indicacao" value="sim" name="indiCheck" id="indiCheck">
                                 <label for="indiCheckNao">Não</label>
-                                <input type="checkbox" name="indiCheckNao" id="indiCheckNao">
+                                <input type="checkbox" checked class="Indicacao" value="nao" name="indiCheck" id="indiCheckNao">
                             </div>
                         </div>
                     </div>
@@ -404,28 +404,110 @@
                         </div>
 
                         <div class="plano">
-                            <p>Plano de Acompanhamento(intervalo)</p>
+                            <p>Plano de Acompanhamento (intervalo)</p>
                             <div class="afastrD">
-                                <input type="checkbox" name="doisD" id="doisD">
+                                <input type="checkbox" name="dois" id="doisD" value="2" class="checkbox">
                                 <label for="doisD">2 dias</label>
                             </div>
                             <div class="afastrD">
-                                <input type="checkbox" name="doisQ" i="doisQ">
+                                <input type="checkbox" name="dois" id="doisQ" value="4" class="checkbox">
                                 <label for="doisQ">4 dias</label>
                             </div>
                             <div class="afastrD">
-                                <input type="checkbox" name="doisS" id="doisS">
+                                <input type="checkbox" name="dois" id="doisS" value="6" class="checkbox">
                                 <label for="doisS">6 dias</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="doisO" id="doisO">
+                                <input type="checkbox" name="dois" id="doisO" value="8" class="checkbox">
                                 <label for="doisO">8 dias</label>
                             </div>
                         </div>
+
                     </div>
+            </div >
+            <div style="display: flex; justify-content: end;">
+                <div><button class="buttonImprimir" type="submit">Imprimir</button></div>
+                <div><button class="buttonImprimir">Enviar</button></div>
+                </form>
             </div>
-            <div style="width: 100%; display: flex; justify-content: end; padding-right: 30px;"><button class="buttonImprimir">Imprimir</button></div>
-            </form>
+            <div id="resultado"></div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $('.checkbox').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.checkbox').not(this).prop('checked', false);
+                    }
+                });
+                $('.GlicemiaCapilar').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.GlicemiaCapilar').not(this).prop('checked', false);
+                    }
+                });
+                $('.PressaoArterial').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.PressaoArterial').not(this).prop('checked', false);
+                    }
+                });
+                $('.Temperatura ').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.Temperatura ').not(this).prop('checked', false);
+                    }
+                });
+                $('.Injetaveis').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.Injetaveis').not(this).prop('checked', false);
+                    }
+                });
+                $('.Inaloterapia').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.Inaloterapia').not(this).prop('checked', false);
+                    }
+                });
+                $('.Brinco').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.Brinco').not(this).prop('checked', false);
+                    }
+                });
+                $('.ladoD').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.ladoD').not(this).prop('checked', false);
+                    }
+                });
+                $('.ladoE').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.ladoE').not(this).prop('checked', false);
+                    }
+                });
+                $('.AssistenciaD ').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.AssistenciaD ').not(this).prop('checked', false);
+                    }
+                });
+                $('.Farmacoterapeutico ').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.Farmacoterapeutico ').not(this).prop('checked', false);
+                    }
+                });
+                $('.Indicacao  ').change(function() {
+                    if ($(this).prop('checked')) {
+                        // Desmarca os outros checkboxes
+                        $('.Indicacao  ').not(this).prop('checked', false);
+                    }
+                });
+
+            });
+        </script>
     </div>
 </section>
