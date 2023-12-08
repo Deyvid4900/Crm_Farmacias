@@ -15,7 +15,6 @@ use \Models\Eventos;
 
         $eventos = new Eventos;
         $registros = $eventos->findAll($_SESSION['user_id']);
-
         function compararDatas($a, $b)
         {
             $dataB = strtotime($a['dataEvento']);
@@ -39,15 +38,18 @@ use \Models\Eventos;
             // Obtém o timestamp atual
             $agoraTimestamp = time();
 
-            // Verifica se a data já passou (menor que o timestamp atual)
-            return $agoraTimestamp <  $dataTimestamp;
+            // Compara os timestamps
+            return $dataTimestamp < $agoraTimestamp;
         }
-
         usort($registros, 'compararDatas');
 
-        $resultado = array_slice(array_reverse($registros), 0,5);
+
+       
 
     
+
+        $resultado = array_slice(array_reverse($registros), 0, 6);
+
 
 
         $table  = '<table>';
@@ -64,7 +66,7 @@ use \Models\Eventos;
         $table .= '<tbody>';
 
         foreach ($resultado as $registro) {
-
+            
             $table .= '<tr>';
             $table .= "<td>" . $registro['id_Evento_PK'] . "</td>";
             $table .= "<td>" . $registro['nomeEvento'] . "</td>";
@@ -82,7 +84,6 @@ use \Models\Eventos;
 
 
         echo $table;
-        // var_dump($resultado)
         ?>
     </div>
     <div id="myModal" class="modal">

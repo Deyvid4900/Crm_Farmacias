@@ -13,19 +13,17 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 <?php 
-
-
 include_once ("../models/ClassEvento.php");
 $evt=new \Models\Eventos;
-$tempoRestanteFormatado=new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
+
 
 \classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
 <?php include "subViews/cadastroClienteForm.php" ?>
-<?php include "subViews/notificacaoExibi.php" ?>
+
 
 <script>
     const mySideBar = document.getElementById('mySidebar')
