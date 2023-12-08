@@ -31,7 +31,6 @@ class ClassLayout
 
     $html .= "<title>$title</title>\n";
     $html .= "<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>\n";
-    $html .= "<link href='" . DIRPAGE ."/views/headerStyles.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>\n";
 
     //  Favicon 
     //  CSS
@@ -85,7 +84,7 @@ class ClassLayout
     $head .= "</button>\n";
     $head .=  " </div>\n";
     $head .=  " </div>\n";
-    $head .=  " <div id='mySideBarHeader' class='sidebar'>\n";
+    $head .=  " <div id='mySidebar' class='sidebar'>\n";
     $head .=  "  <div class='headerSidebar'>\n";
     $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
     $head .=  " </div>\n";
@@ -114,7 +113,7 @@ class ClassLayout
     $side = "<section class='sideBar-bg'>\n";
     $side .= "   <div class='childSidebar-bg'>\n";
     $side .= "  <div class='teste sd'>\n";
-    $side .= "    <div class='Cadastro testi' data-menu>\n";
+    $side .= "    <div class='Cadastro testi ' data-menu>\n";
     $side .= "    <a href='' class='addSeta'>\n";
     $side .= "<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='currentColor' class='bi bi-person-fill-add' viewBox='0 0 16 16'>
         <path d='M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0'/>
@@ -177,6 +176,11 @@ class ClassLayout
     $side .= "  <p>\n";
     $side .= "    <a href='/views/cadastroCliente.php'>Clientes</a>\n";
     $side .= " </p>\n";
+    $side .= "  </div>\n";
+    $side .= "  <div class='boxCadastro'>\n";
+    $side .= "  <div id='linkMedico'>\n";
+    $side .= "      <p><a href='/views/cadastroMedico.php'>CRM <br> Médico</a> </p>\n";
+    $side .= "  </div>\n";
     $side .= "  </div>\n";
     $side .= "  <div class='boxCadastro'>\n";
     $side .= "  <div id='LinkEvento'>\n";

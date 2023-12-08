@@ -75,7 +75,6 @@
         border: none;
         background-color: transparent;
         max-width: max-content;
-        margin-right: 20px;
     }
 
     .img-search {
@@ -185,5 +184,3 @@
         border: 1px solid #ccc;
         background-color: #ffff
       }
-    
-    
