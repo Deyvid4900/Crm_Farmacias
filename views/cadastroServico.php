@@ -1,8 +1,8 @@
-<?php 
+<?php
 session_start();
 include("../lib/vendor/autoload.php");
- \Classes\ClassLayout::setHeadDefault("Home"); 
- if (!isset($_SESSION["username"]) ) {
+\Classes\ClassLayout::setHeadDefault("Home");
+if (!isset($_SESSION["username"])) {
     header('Location: /');
 }
 ?>
@@ -30,12 +30,15 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 
 <script>
     const mySideBar = document.getElementById('mySidebar')
+
     function openNav() {
         mySideBar.style.width = '400px';
     }
+
     function closeNav() {
         mySideBar.style.width = '0';
     }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
+<script src='<?php echo DIRPAGE . "lib/JS/ajaxCadastroServicos.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>
