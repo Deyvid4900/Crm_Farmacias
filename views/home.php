@@ -23,6 +23,8 @@ $evt=new \Models\Eventos;
 $tempoRestanteFormatado=new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
+// aqui quero que leia todos os tempos restantes para chegar na hora atual, que vem em minutos e me diga quantos dias,semanas ou horas que falta para tal 
+
 \classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
 \classes\ClassLayout::setSideComponente();
 ?>
@@ -34,7 +36,15 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 <?php include "subViews/notificacaoExibi.php" ?>
 
 <script>
-   
+    const mySideBar = document.getElementById('mySidebar')
+
+    function openNav() {
+        mySideBar.style.width = '400px';
+    }
+
+    function closeNav() {
+        mySideBar.style.width = '0';
+    }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>
