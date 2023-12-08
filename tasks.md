@@ -1,6 +1,6 @@
 <!-- mais faceis  -->
 <!-- alinhar os forms na vertical, ta um mais pra cima q outro kk -->
-ajustar para que quando clique as opções do side bar sumam;
+ajustar para que quando clique as opções do side bar sumam; (esqueci como faz kkkk)
 <!-- tirar o config da side bar; -->
 criar as paginas ou modais da sidebar do header e jogar o menu de configurações lá; 
 <!-- fazer a pagina sobre(essa pagina vai falar sobre a gente) no menu do header; -->
