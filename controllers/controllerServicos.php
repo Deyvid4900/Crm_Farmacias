@@ -1,18 +1,13 @@
 <?php
 include_once("../lib/vendor/autoload.php");
 include_once("../models/ClassServicos.php");
+include_once("../models/ClassPDF.php");
+use \Models\PDFCriar;
 use \Models\Servicos;
 
 session_start();
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-
-    $servico = new Servicos;
-    $idFarmacia = $_SESSION["user_id"];
-    $servico->setIdFarmacia($idFarmacia);
-
-
+    // var_dump($_POST);
     $nome = $_POST["nome"];
     $genero = $_POST["gender"];
     $idade = $_POST["age"];
@@ -81,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Data
     $data = date("Y-m-d H:i:s");
 
+    $servico = new Servicos;
     // Set the attributes in the $servico object
     $servico->setNome($nome);
     $servico->setGenero($genero);
@@ -145,16 +141,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Data
     $servico->setData($data);
 
+    if ($_POST["buttonClicked"] === 'submit') {
+        // Código para lidar com o botão Enviar
+        
+        $idFarmacia = $_SESSION["user_id"];
+        $servico->setIdFarmacia($idFarmacia);
 
 
-    
-    // $servico->mostrarAtributos();
-    if ($servico->insertServico()) {
+        $_POST["submit"] = 'false';
+        // $servico->mostrarAtributos();
+        if ($servico->insertServico()) {
             $response =  'Dados inseridos com sucesso';
+        } else {
+            $response = 'Falha ao inserir o evento';
+        }
+    } elseif ($_POST["buttonClicked"] === 'imprimir') {
+        // Código para lidar com o botão Imprimir
+        // ... (sua lógica de geração de PDF)
+
+        // Exemplo simples para criar um PDF usando TCPDF
+        $objPDF = new PDFCriar;
+        $response = $objPDF->CriarPDF($_POST);
+
+        echo json_encode($response);  // Saída como JSON
+
+        exit();
     } else {
-        $response = 'Falha ao inserir o evento';
+        // Se nenhum botão válido foi pressionado, retorne uma mensagem de erro
+        $response = array(
+            'status' => 'error',
+            'message' => 'Ação inválida',
+        );
+
+        echo json_encode($response);  // Saída como JSON
     }
 } else {
-    echo 'Método não permitido.';
+    $response = 'Método não permitido.';
 }
+
 echo $response;
