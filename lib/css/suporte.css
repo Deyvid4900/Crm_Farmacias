@@ -1,0 +1,49 @@
+*{
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.pagCentro{
+    display: flex;
+    justify-content: center;
+}
+.textH1{
+    font-size: 34px;
+}
+.centro{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 32px;
+}
+
+.centro img{
+    width: 28px;
+    margin-top: 8px;
+}
+
+
+.contatoCentro, .contatoCentroLast{
+    margin-top: 50px;
+    margin-left: 260px;
+}
+
+
+.contatoCentro h3{
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.contatoCentroLast h3{
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+.contatoCentro p{
+    width: 650px;
+    font-weight: 600;
+}
+
+.contatoCentroLast p{
+    width: 650px;
+    font-weight: 600;
+    margin-top: 3px;
+}
