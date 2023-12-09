@@ -35,11 +35,20 @@
                 </div>
 
             </div>
-
-
-
             <button type="submit">Cadastrar</button>
+            <div class="cs-loader" id="loader">
+                        <div class="cs-loader-inner">
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                        </div>
+                </div>
+
+
+            
         </form>
-        <div id="resultado"></div>
     </div>
 </section>

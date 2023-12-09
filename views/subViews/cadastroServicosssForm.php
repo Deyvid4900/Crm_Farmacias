@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <section class="molduraForm">
     <div class="bg-antesForm">
         <div class="seila">
@@ -429,10 +430,25 @@
                 <div><button class="buttonImprimir" type="submit">Imprimir</button></div>
                 <div><button class="buttonImprimir">Enviar</button></div>
                 </form>
+                
             </div>
-            <div id="resultado"></div>
+            <div class="cs-loader" id="loader">
+                        <div class="cs-loader-inner">
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                        </div>
+                </div>
+            
         </div>
-        <script>
+        
+    </div>
+</section>
+<div id="resultado"></div>
+<script>
             $(document).ready(function() {
                 $('.checkbox').change(function() {
                     if ($(this).prop('checked')) {
@@ -509,5 +525,3 @@
 
             });
         </script>
-    </div>
-</section>

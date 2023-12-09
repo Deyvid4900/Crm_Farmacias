@@ -16,6 +16,7 @@ class ClassLayout
     //  Favicon 
     //  CSS 
     $html  .= "<link  href='" . DIRPAGE . "lib/CSS/sideBarStyles.css" . "'>\n";
+    $html  .= "<script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>";
     $html .= "</head>\n";
     $html .= "<body class='aloBrasil'>\n";
     echo $html;

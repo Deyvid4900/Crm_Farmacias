@@ -150,9 +150,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // $servico->mostrarAtributos();
     if ($servico->insertServico()) {
-            $response =  ' dados inseridos com sucesso ';
+            $response =  'Dados inseridos com sucesso';
     } else {
-        $response = 'Falha ao inserir o evento.';
+        $response = 'Falha ao inserir o evento';
     }
 } else {
     echo 'Método não permitido.';
