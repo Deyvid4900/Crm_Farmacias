@@ -2,7 +2,7 @@
 session_start();
 include("../lib/vendor/autoload.php");
 
- \Classes\ClassLayout::setHeadDefault("Sobre"); 
+ \Classes\ClassLayout::setHeadDefault("Home"); 
  if (!isset($_SESSION["username"]) ) {
     header('Location: /');
 }
@@ -25,11 +25,11 @@ $tempoRestanteFormatado=new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
 \classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
-// \classes\ClassLayout::setSideComponente();
+\classes\ClassLayout::setSideComponente();
 ?>
 
 <!-- conteudo interno da pagina  -->
-
+<?php include "subViews/notificacaoExibi.php" ?>
 <section class="pagSobre-bg">
     <div class="imgSobre">
         <img src="/img/SoluçõesMenor.png" alt="">
@@ -41,7 +41,6 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
         </div>
     </div>
 </section>
-
 <script>
    
 </script>

@@ -29,6 +29,7 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 
 
 <?php include "subViews/notificacaoExibi.php" ?>
+<?php include "subViews/alerta.php" ?>
 <?php include "../views/subViews/cadastroConsultorioForm.php" ?>
 
 <script> 
@@ -42,6 +43,5 @@ const mySideBar = document.getElementById('mySidebar')
     }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
-<script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>
 <script src='<?php echo DIRPAGE . "lib/JS/ajaxCadastroConsultorio.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>

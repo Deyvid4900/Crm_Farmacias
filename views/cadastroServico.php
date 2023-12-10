@@ -13,7 +13,7 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 <link rel="stylesheet" href="../lib/css/formServicosStyle.css">
-<script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>
+<link rel="stylesheet" href="/lib/css/Alerta.css">
 <?php
 
 
@@ -27,9 +27,9 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 ?>
 <!-- conteudo interno da pagina  -->
 
-<?php include "../views/subViews/cadastroServicosssForm.php" ?>
-<?php include "subViews/notificacaoExibi.php" ?>
-
+<?php include_once "../views/subViews/alerta.php" ?>
+<?php include_once "../views/subViews/cadastroServicosssForm.php" ?>
+<?php include_once "subViews/notificacaoExibi.php" ?>
 
 
 <script>

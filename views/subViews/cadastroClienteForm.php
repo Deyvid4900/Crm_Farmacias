@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../../lib/CSS/formClienteStyles.css">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <!-- class ativo mostra o form -->
 <section class="formInit-bg w ativo " id="b">
     <div class="form-bg">
@@ -15,7 +15,7 @@
                     <label class="nCliente" for="numero">N° Cliente</label>
                     <input type="text" name="numero" placeholder="Numero do Cliente" id="numero" autocomplete="off">
                     <label class="cPf" for="cpf">CPF</label>
-                    <input type="text" name="cpf" placeholder="cpf do cliente" id="cpf" maxlength="11" autocomplete="off">
+                    <input type="text" name="cpf" placeholder="cpf do cliente" id="cpf" maxlength="15" autocomplete="off">
                     <!-- mexer cpf validar formato -->
                 </div>
                 <div class="formAlinhado">
@@ -36,7 +36,7 @@
                             <input type="text" name="religiao" id="religiao" placeholder="Religião do cliente" autocomplete="off">
                         </div>
                         <div style="display: flex; height: 30px; width: 100%;justify-content: end;">
-                            <label for="timeFut" class="arelig" style="margin-right:6px;" >Time</label>
+                            <label for="timeFut" class="arelig" style="margin-right:6px;">Time</label>
                             <input type="text" name="timeFut" id="timeFut" placeholder="time de futbol" autocomplete="off">
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <div>
                             <label class="escolaridadee" for="escolaridade">Escolaridade</label>
                             <select name="escolaridade" id="escolaridade">
-                               
+
                                 <option value="ensinoFundInc">Ensino Fundamental Incompleto</option>
                                 <option value="ensinoFundComp">Ensino Fundamental Completo</option>
                                 <option value="ensinoMedInc">Ensino Médio Incompleto</option>
@@ -114,7 +114,7 @@
                         <input type="text" name="cidade" id="cidade" placeholder="Cidade" autocomplete="off">
                         <label for="uf">UF</label>
                         <select name="uf" id="uf">
-                            
+
                             <option value="ac">AC</option>
                             <option value="al">AL</option>
                             <option value="ap">AP</option>
@@ -172,12 +172,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="boxBtn">
+                    
+                    <button type="submit">Cadastrar</button>
+                </div>
+                <div class="cs-loader" id="loader">
+                        <div class="cs-loader-inner">
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                        </div>
+                </div>
             </div>
-            <button type="submit">Cadastrar</button>
         </form>
-        <div id="resultado">
-
-        </div>
     </div>
 </section>
-<script src="../../lib/JS/ajaxCadastroCliente.js"></script>

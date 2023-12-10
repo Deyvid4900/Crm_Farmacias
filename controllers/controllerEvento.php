@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verificar se a inserção foi bem-sucedida
     if ($resultado) {
-        $response =  ' dados inseridos com sucesso ';
+        $response =  'Dados inseridos com sucesso';
     } else {
-        $response = 'Falha ao inserir o evento.';
+        $response = 'Falha ao inserir o evento';
     }
 } else {
     echo 'Método não permitido.';

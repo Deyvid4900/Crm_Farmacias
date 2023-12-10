@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <section class="molduraForm">
     <div class="bg-antesForm">
         <div class="seila">
@@ -128,10 +129,10 @@
                                 </div>
                                 <div class="pressaoCheck">
                                     <label for="checkPre">Sim</label>
-                                    <input type="checkbox" name="checkPre" value="sim"  class="PressaoArterial" id="checkPre">
+                                    <input type="checkbox" name="checkPre" value="sim" class="PressaoArterial" id="checkPre">
 
                                     <label for="checkNaoPre">Não</label>
-                                    <input type="checkbox" name="checkPre"  value="nao"  class="PressaoArterial" checked id="checkNaoPre">
+                                    <input type="checkbox" name="checkPre" value="nao" class="PressaoArterial" checked id="checkNaoPre">
                                 </div>
                                 <div class="instrPre">
                                     <p>Valor normal: 120x < 88 mm/Hg </p>
@@ -146,10 +147,10 @@
                             </div>
                             <div class="tempCheck">
                                 <label for="checkTemp">Sim</label>
-                                <input type="checkbox" name="checkTemp" value="sim"  class="Temperatura " id="checkTemp">
+                                <input type="checkbox" name="checkTemp" value="sim" class="Temperatura " id="checkTemp">
 
                                 <label for="checkNaoTemp">Não</label>
-                                <input type="checkbox" checked name="checkTemp" value="nao"  class="Temperatura " id="checkNaoTemp">
+                                <input type="checkbox" checked name="checkTemp" value="nao" class="Temperatura " id="checkNaoTemp">
                             </div>
                             <div class="instrTemp">
                                 <p> Valor normal: 36 a 37°C </p>
@@ -164,9 +165,9 @@
                                 <p>Aplicação de Injetáveis</p>
                                 <div>
                                     <label for="apliInjeta">Sim</label>
-                                    <input type="checkbox" class="Injetaveis" value="sim"  name="apliInjeta" id="apliInjeta">
+                                    <input type="checkbox" class="Injetaveis" value="sim" name="apliInjeta" id="apliInjeta">
                                     <label for="apliInjetaNao">Não</label>
-                                    <input type="checkbox" checked class="Injetaveis" value="nao"  name="apliInjeta" id="apliInjetaNao">
+                                    <input type="checkbox" checked class="Injetaveis" value="nao" name="apliInjeta" id="apliInjetaNao">
                                 </div>
                             </div>
                             <div class="othersInjetaveis">
@@ -209,7 +210,7 @@
                                     <input type="checkbox" class="Inaloterapia" value="sim" name="inaloCheck" id="inaloCheck">
 
                                     <label for="inaloCheckNao">Não</label>
-                                    <input type="checkbox" checked class="Inaloterapia" value="nao" name="inaloCheck"  id="inaloCheckNao">
+                                    <input type="checkbox" checked class="Inaloterapia" value="nao" name="inaloCheck" id="inaloCheckNao">
                                 </div>
                             </div>
 
@@ -423,91 +424,109 @@
                             </div>
                         </div>
 
-                    </div>
-            </div >
-            <div style="display: flex; justify-content: end;">
-                <div><button class="buttonImprimir" type="submit">Imprimir</button></div>
-                <div><button class="buttonImprimir">Enviar</button></div>
-                </form>
-            </div>
-            <div id="resultado"></div>
-        </div>
-        <script>
-            $(document).ready(function() {
-                $('.checkbox').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.checkbox').not(this).prop('checked', false);
-                    }
-                });
-                $('.GlicemiaCapilar').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.GlicemiaCapilar').not(this).prop('checked', false);
-                    }
-                });
-                $('.PressaoArterial').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.PressaoArterial').not(this).prop('checked', false);
-                    }
-                });
-                $('.Temperatura ').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.Temperatura ').not(this).prop('checked', false);
-                    }
-                });
-                $('.Injetaveis').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.Injetaveis').not(this).prop('checked', false);
-                    }
-                });
-                $('.Inaloterapia').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.Inaloterapia').not(this).prop('checked', false);
-                    }
-                });
-                $('.Brinco').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.Brinco').not(this).prop('checked', false);
-                    }
-                });
-                $('.ladoD').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.ladoD').not(this).prop('checked', false);
-                    }
-                });
-                $('.ladoE').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.ladoE').not(this).prop('checked', false);
-                    }
-                });
-                $('.AssistenciaD ').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.AssistenciaD ').not(this).prop('checked', false);
-                    }
-                });
-                $('.Farmacoterapeutico ').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.Farmacoterapeutico ').not(this).prop('checked', false);
-                    }
-                });
-                $('.Indicacao  ').change(function() {
-                    if ($(this).prop('checked')) {
-                        // Desmarca os outros checkboxes
-                        $('.Indicacao  ').not(this).prop('checked', false);
-                    }
-                });
 
-            });
-        </script>
+                    </div>
+            </div>
+            <div style="display: flex; justify-content: end;">
+                <div>
+                    <button class="buttonImprimir" type="submit" name="imprimir" value="imprimir" id="btnImprimir">Imprimir</button>
+                </div>
+                <div>
+                    <button class="buttonImprimir" type="submit" name="submit" value="submit" id="btnEnviar">Enviar</button>
+                </div>
+                </form>
+
+            </div>
+            <div class="cs-loader" id="loader">
+                <div class="cs-loader-inner">
+                    <label>●</label>
+                    <label>●</label>
+                    <label>●</label>
+                    <label>●</label>
+                    <label>●</label>
+                    <label>●</label>
+                </div>
+                <div id="linke"></div>
+            </div>
+
+        </div>
+
     </div>
 </section>
+<script>
+    $(document).ready(function() {
+        $('.checkbox').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.checkbox').not(this).prop('checked', false);
+            }
+        });
+        $('.GlicemiaCapilar').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.GlicemiaCapilar').not(this).prop('checked', false);
+            }
+        });
+        $('.PressaoArterial').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.PressaoArterial').not(this).prop('checked', false);
+            }
+        });
+        $('.Temperatura ').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.Temperatura ').not(this).prop('checked', false);
+            }
+        });
+        $('.Injetaveis').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.Injetaveis').not(this).prop('checked', false);
+            }
+        });
+        $('.Inaloterapia').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.Inaloterapia').not(this).prop('checked', false);
+            }
+        });
+        $('.Brinco').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.Brinco').not(this).prop('checked', false);
+            }
+        });
+        $('.ladoD').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.ladoD').not(this).prop('checked', false);
+            }
+        });
+        $('.ladoE').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.ladoE').not(this).prop('checked', false);
+            }
+        });
+        $('.AssistenciaD ').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.AssistenciaD ').not(this).prop('checked', false);
+            }
+        });
+        $('.Farmacoterapeutico ').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.Farmacoterapeutico ').not(this).prop('checked', false);
+            }
+        });
+        $('.Indicacao  ').change(function() {
+            if ($(this).prop('checked')) {
+                // Desmarca os outros checkboxes
+                $('.Indicacao  ').not(this).prop('checked', false);
+            }
+        });
+
+    });
+</script>

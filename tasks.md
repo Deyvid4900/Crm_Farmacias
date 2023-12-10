@@ -7,7 +7,7 @@ criar as paginas ou modais da sidebar do header e jogar o menu de configuraçõe
 <!-- tem que  ajustar os forms, botar placeholders ; -->
 
 
-
+ajustar cadastro evento aceitando valor nulo 
 
 <!-- mais dificil -->
 
@@ -23,21 +23,21 @@ fazer gerar pdf da consulta com o TCPDF
 criar pagina de mensagens predefinidas(desconto de remedios,parabenização de feriados e etc)
 
 Criar a pagina que ve todos os medicos;
-finalizar o sistema de pesquisa(arrumar um jeito de direcionar os linde de sugestão)
+finalizar o sistema de pesquisa(arrumar um jeito de direcionar os link de sugestão)
 
 
 Criar a pagina que ve todos os eventos;
 Criar a pagina que ve todos os Ultimos serviços;
 
 <!-- fazer o form consultorio; -->
-Criar tabela consultorio que vai armazenar as prescrições farmaceuticas e atendimentos;
+<!-- Criar tabela consultorio que vai armazenar as prescrições farmaceuticas e atendimentos; -->
 
 <!-- ver como q faz pra saida de doc no bd; -->
 fazer enviar mensagem do zap;
 fazer enviar mensagem do sms;
 fazer enviar mensagem do zap;
 
-adicionar alertas no final dos cadastros;
+<!-- adicionar alertas no final dos cadastros; -->
 <!-- fazer o sistema de notificação no sistema; -->
 fazer o sistema de "lembretes por usuario";
 <!-- botar hash nas senhas das farmacias; -->

@@ -25,6 +25,7 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 
 <?php include "subViews/cadastroEventoForm.php" ?>
 <?php include "subViews/notificacaoExibi.php" ?>
+<?php include "subViews/alerta.php" ?>
 <!-- conteudo interno da pagina  -->
 
 
@@ -38,6 +39,5 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
     }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
-<script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>
 <script src='<?php echo DIRPAGE . "lib/JS/ajaxCadastroEvento.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>

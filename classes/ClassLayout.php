@@ -16,6 +16,7 @@ class ClassLayout
     //  Favicon 
     //  CSS 
     $html  .= "<link  href='" . DIRPAGE . "lib/CSS/sideBarStyles.css" . "'>\n";
+    $html  .= "<script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>";
     $html .= "</head>\n";
     $html .= "<body class='aloBrasil'>\n";
     echo $html;
@@ -90,11 +91,10 @@ class ClassLayout
     $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
     $head .=  " </div>\n";
     $head .=  " <div class='contentSidebar'>\n";
+    $head .=  "   <a href='#'><s>Graficos</s></a>\n";
     $head .=  "  <a href='#'>Médicos</a>\n";
     $head .=  "  <a href='#'>Ultimos Serviços</a>\n";
-    $head .=  "   <a href='#'><s>Graficos</s></a>\n";
     $head .=  "  <a href='#'>Tabela de Eventos</a>\n";
-    // $head .= "   <a href='#'>Contatos</a>\n";
     $head .=  "   <a href='/views/suporte.php'>Suporte</a>\n";
     $head .=  "  <a id='sobreMenuHamb' href='/views/sobre.php'>Sobre</a>\n";
     $head .=  "   <a href='#'>Configurações</a>\n";
