@@ -45,5 +45,5 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 <script>
    
 </script>
-<!-- <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
-<?php \classes\ClassLayout::setFooter(); ?> -->
+<script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
+<?php \classes\ClassLayout::setFooter(); ?>
