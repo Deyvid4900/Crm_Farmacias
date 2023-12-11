@@ -93,7 +93,7 @@ class ClassLayout
     $head .=  " <div class='contentSidebar'>\n";
     $head .=  "  <a href='/views/CadastroMedico.php'>Médicos</a>\n";
     $head .=  "   <a href='/views/medicoFiltro.php'>Encontre Médico</a>\n";
-    $head .=  "  <a href='#'>Ultimos Serviços</a>\n";
+    $head .=  "  <a href='/views/ultimosServicos.php'>Ultimos Serviços</a>\n";
     $head .=  "  <a href='#'>Tabela de Eventos</a>\n";
     $head .=  "   <a href='/views/suporte.php'>Suporte</a>\n";
     $head .=  "  <a id='sobreMenuHamb' href='/views/sobre.php'>Sobre</a>\n";

@@ -1,9 +1,9 @@
 <div id="boxMensagemTempo" class="boxMensagemTempo">
     <div class="headerMensagem" id="closeNotificacao">
-        <div style="cursor: pointer;">&times;</div>
+        <div style="cursor: pointer; color: white">&times;</div>
     </div>
     <div class="contentMensagem">
-        <ul style="width: 100%; height: 100%;">
+        <ul style="width: 100%;height: 100%;margin-top: 18px;">
             <?php
 
             // Função para ordenar o array por data e hora
@@ -33,7 +33,7 @@
             // Exemplo de uso
             foreach ($eventosProximos as $evento) {
                 $tempoRestante = calcularTempoRestante($evento['tempoRestante']);
-                echo "<br>Evento: {$evento['nomeEvento']} - Faltam:{$tempoRestante['semanas']} semanas, {$tempoRestante['dias']} dias e {$tempoRestante['horas']} horas.<br>\n";
+                echo " <div class='linhaBaixo'> <br>Evento: {$evento['nomeEvento']} - Faltam:{$tempoRestante['semanas']} semanas, {$tempoRestante['dias']} dias e {$tempoRestante['horas']} horas.<br> </div>\n";
             }
 
             ?>

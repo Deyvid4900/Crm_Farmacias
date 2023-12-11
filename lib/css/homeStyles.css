@@ -159,11 +159,12 @@ td{
 }
 
 .headerMensagem{
-  display: flex;
-  justify-content: end;
-  padding: 0px 20px;
-  width: 100%;
-  font-size: 30pt;
+    display: flex;
+    justify-content: end;
+    padding: 0px 20px;
+    width: 100%;
+    font-size: 30pt;
+    background-color: #247158;
 }
 
 .ativado{
@@ -173,16 +174,33 @@ td{
   overflow-y: auto;
   height: auto;
   max-height: 250px;
-  padding: 0px 30px;
+  padding: 11px 30px;
   width: 100%;
   align-items: center;
   justify-content: start;
   display: flex;
   padding-bottom: 40px;
-  padding-top: 100px;
+  padding-top: 27px;
 }
 .contentMensagem > ul{
   list-style: none;
   height: auto;
 
+}
+
+.linhaBaixo{
+  /* border-bottom: 5px solid #247158; */
+  /* border-radius: 4px; */
+  margin-top: -7px;
+  /* width: 95%; */
+}
+
+.linhaBaixo::after{
+  content: '';
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 8px;
+  height: 5px;
+  background-color: #247158;
 }
