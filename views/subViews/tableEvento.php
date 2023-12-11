@@ -41,12 +41,31 @@ use \Models\Eventos;
             // Compara os timestamps
             return $dataTimestamp < $agoraTimestamp;
         }
+
+
+        foreach ($registros as $key => $value) {
+            // String com a data
+            $dataRegistro = $value["dataEvento"];
+        
+            // Convertendo a string para um objeto DateTime
+            $dataInformada = new DateTime($dataRegistro);
+        
+            // Obtendo a data atual
+            $dataAtual = new DateTime();
+        
+            // Comparando as datas
+            if ($dataInformada <= $dataAtual) {
+                // Remove o item do array se a condição for atendida
+                unset($registros[$key]);
+            }
+        }
+
         usort($registros, 'compararDatas');
 
 
-       
 
-    
+
+
 
         $resultado = array_slice(array_reverse($registros), 0, 6);
 
@@ -66,7 +85,7 @@ use \Models\Eventos;
         $table .= '<tbody>';
 
         foreach ($resultado as $registro) {
-            
+
             $table .= '<tr>';
             $table .= "<td>" . $registro['id_Evento_PK'] . "</td>";
             $table .= "<td>" . $registro['nomeEvento'] . "</td>";
