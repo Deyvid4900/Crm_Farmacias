@@ -14,7 +14,6 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/diasContado.css" ?>">
 
 <?php 
 include_once ("../models/ClassEvento.php");
@@ -45,16 +44,17 @@ if (isset($_POST['conteudoPesquisa'])) {
 <!-- class ativo mostra o form -->
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">
-        <h1>Lembrete</h1>
+        <h1>Filtros Médico</h1>
         <form action="../../views/marketingFiltros.php" id="FormFiltro" method="POST">
             <div id="styleForm">
                 <div>
                     <label for="filtro">Filtrar por :</label>
                     <select name="filtro" id="filtro">
-                        <option value="id">Id</option>
-                        <option value="nome" selected>nome</option>
-                        <option value="cpf">Cpf</option>
-                        
+                        <option value="especialidade" selected>Especialidade</option>
+                        <option value="atuacao">Atuação</option>
+                        <option value="hospital">Hospital que atua</option>
+                        <!-- <option value="estadoCivil">estado Civil</option> -->
+
                     </select>
                 </div>
                 <div>
@@ -112,27 +112,6 @@ if (isset($_POST['conteudoPesquisa'])) {
                 ?>
             </div>
         </div>
-
-        <div id="styleFormm">
-            <div class="linhaaa">
-                <p id="textFreq">Com que frequência você quer enviar mensagens ao seu cliente?</p>
-            </div>
-            <div class="flexLembre">
-                <div class="alignCenter">
-                    <label class="textLal" for="semanal">Semanal</label>
-                    <input type="checkbox" name="semanal" id="semanal">
-                </div>
-                <div class="alignCenter">
-                    <label class="textLal" for="quinzenal">Quinzenal</label>
-                    <input type="checkbox" name="quinzenal" id="quinzenal">
-                </div>
-                <div class="alignCenter">
-                    <label class="textLal" for="mensal">Mensal</label>
-                    <input type="checkbox" name="mensal" id="mensal">
-                </div>
-            </div>
-        </div>
-
         <div class="mensagemTipoDiv">
             <div style="display:flex;gap: 20px;">
                 <button id="emailBtn" class="mensagemTipo title btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" type="submit">Email</button>
@@ -140,7 +119,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                 <button id="whatsBtn" title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo  title btnTipoMensagens" type="submit">WhatsApp</button>
             </div>
             <div>
-                <button class="mensagemTipo" id="MaracarTodos" type="submit">Enviar para Todos</button>
+                <button class="mensagemTipo" id="MaracarTodos" type="submit">Marcar Todos</button>
             </div>
         </div>
     </div>

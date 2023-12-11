@@ -91,8 +91,8 @@ class ClassLayout
     $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
     $head .=  " </div>\n";
     $head .=  " <div class='contentSidebar'>\n";
-    $head .=  "   <a href='#'><s>Graficos</s></a>\n";
-    $head .=  "  <a href='#'>Médicos</a>\n";
+    $head .=  "  <a href='/views/CadastroMedico.php'>Médicos</a>\n";
+    $head .=  "   <a href='/views/medicoFiltro.php'>Encontre Médico</a>\n";
     $head .=  "  <a href='#'>Ultimos Serviços</a>\n";
     $head .=  "  <a href='#'>Tabela de Eventos</a>\n";
     $head .=  "   <a href='/views/suporte.php'>Suporte</a>\n";

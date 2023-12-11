@@ -1,0 +1,25 @@
+.linhaaa{
+    margin-bottom: 12px;
+}
+
+#textFreq{
+    font-weight: 600;
+    font-size: 16.6px;
+}
+
+.flexLembre{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.textLal{
+    font-weight: 500;
+    font-size: 16.3px;
+}
+
+.alignCenter{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
