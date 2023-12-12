@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("../lib/vendor/autoload.php");
-\Classes\ClassLayout::setHeadDefault("Home");
+\Classes\ClassLayout::setHeadDefault("Filtro de Cliente");
 if (!isset($_SESSION["username"])) {
     header('Location: /');
 }
@@ -44,7 +44,7 @@ if (isset($_POST['conteudoPesquisa'])) {
 <!-- class ativo mostra o form -->
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">
-        <h1>Filtros</h1>
+        <h1>Filtro de Cliente</h1>
         <form action="../../views/marketingFiltros.php" id="FormFiltro" method="POST">
             <div id="styleForm">
                 <div>

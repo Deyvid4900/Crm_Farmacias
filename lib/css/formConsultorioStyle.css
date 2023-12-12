@@ -17,7 +17,8 @@ label{
 
 .antesFormb-bg{
     width: 765px;
-    height: 400px;
+    min-height: 350px;
+    height: auto;
     /* border: 1px solid rgb(43, 43, 43); */
     border-radius: 8px;
     margin: 40px auto;
@@ -70,15 +71,13 @@ label{
 .FlexColum{
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 8px;
+    align-items: start;
+    justify-content: start;
+    height: 200px;
+    gap: 25px;
 }
 
 /* posologia */
-.mg-top{
-    margin-top: 24px;
-    margin-left: 40px;
-}
 
 .alinharCima{
     display: block;
@@ -90,7 +89,7 @@ label{
 
 #NameFarm{
     width: 200px;
-    margin-right: 40px;
+    
 }
 
 #namePaciente{
@@ -102,10 +101,13 @@ label{
 }
 
 #posologiaConsultorio{
-    width: 366px;
     margin-top: 4px;
 }
-
+.btnEnviarBox{
+    display: flex;
+    justify-content: end;
+    padding-right: 45px;
+}
 .btnImprimir-Consul{
     background-color: #247158;
     color: white;
@@ -113,7 +115,19 @@ label{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 10px;
-    margin-top: 20px;
-    margin-left: 580px;
+    margin: 20px;
+
+}
+.box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.ladoEsquerdo{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    height: 200px;
 }

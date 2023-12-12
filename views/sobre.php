@@ -2,7 +2,7 @@
 session_start();
 include("../lib/vendor/autoload.php");
 
- \Classes\ClassLayout::setHeadDefault("Home"); 
+ \Classes\ClassLayout::setHeadDefault("Sobre"); 
  if (!isset($_SESSION["username"]) ) {
     header('Location: /');
 }

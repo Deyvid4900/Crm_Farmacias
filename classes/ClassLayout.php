@@ -49,7 +49,7 @@ class ClassLayout
     $head .= "<div class='content_header'>\n";
     $head .= "<div class='header-bg cao' id='cao'>\n";
     $head .= "<div class='nomeFarmacia' style='color: #ffff;'>\n";
-    $head .= "<h1>" . $farmaciaNome . " </h1>\n";
+    $head .= "<h1 style='padding-left:10px;'>" . $farmaciaNome . " </h1>\n";
     $head .= "</div>\n";
     $head .= "<div style='color: white;'>\n";
     $head .= " <a id='linkMain' href='" . DIRPAGE . "views/home.php" . "'>\n";
@@ -76,7 +76,10 @@ class ClassLayout
     $head .= "<div class='bellImg' id='bell' style='cursor: pointer;'>\n";
     $head .= " <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-bell-fill' viewBox='0 0 16 16'>
                      <path d='M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z' />\n";
-    $head .=  " </svg><span class='notificacao'>".$qtnMensagem."</span>\n";
+    if ($qtnMensagem != 0 ) {
+      $head .=  " </svg><span class='notificacao'>".$qtnMensagem."</span>\n";
+    }
+    
     $head .= " </div>\n";
     $head .=  " <div>\n";
     $head .= "<button class='btnList' onclick='openNav()' style='margin-left:20px;'>\n";
@@ -91,13 +94,13 @@ class ClassLayout
     $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
     $head .=  " </div>\n";
     $head .=  " <div class='contentSidebar'>\n";
-    $head .=  "  <a href='/views/CadastroMedico.php'>Médicos</a>\n";
+    $head .=  "  <a href='/views/CadastroMedico.php'>Cadastrar Médicos</a>\n";
     $head .=  "   <a href='/views/medicoFiltro.php'>Encontre Médico</a>\n";
     $head .=  "  <a href='/views/ultimosServicos.php'>Ultimos Serviços</a>\n";
     $head .=  "  <a href='#'>Tabela de Eventos</a>\n";
     $head .=  "   <a href='/views/suporte.php'>Suporte</a>\n";
     $head .=  "  <a id='sobreMenuHamb' href='/views/sobre.php'>Sobre</a>\n";
-    $head .=  "   <a href='#'>Configurações</a>\n";
+    $head .=  "   <a href='/views/configuracaoFarmacia.php'>Configurações</a>\n";
     $head .=  "   <a href='/' id='LogOut'>Sair</a>\n";
     $head .=  "</div>\n";
     $head .=  " </div>\n";

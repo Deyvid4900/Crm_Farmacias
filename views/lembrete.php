@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("../lib/vendor/autoload.php");
-\Classes\ClassLayout::setHeadDefault("Home");
+\Classes\ClassLayout::setHeadDefault("Lembretes");
 if (!isset($_SESSION["username"])) {
     header('Location: /');
 }
