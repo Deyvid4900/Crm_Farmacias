@@ -15,14 +15,14 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/diasContado.css" ?>">
-
-<?php 
-include_once ("../models/ClassEvento.php");
-$evt=new \Models\Eventos;
-$tempoRestanteFormatado=new \Models\Eventos;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+<?php
+include_once("../models/ClassEvento.php");
+$evt = new \Models\Eventos;
+$tempoRestanteFormatado = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
@@ -40,13 +40,13 @@ if (isset($_POST['conteudoPesquisa'])) {
 
 
 ?>
-<link rel="stylesheet" href="../lib/CSS/formFiltroStyles.css">
+<link rel="stylesheet" href="../lib/CSS/lembrete.css">
 
 <!-- class ativo mostra o form -->
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">
         <h1>Lembrete</h1>
-        <form action="../../views/marketingFiltros.php" id="FormFiltro" method="POST">
+        <form action="../../views/lembrete.php" id="FormFiltro" method="POST">
             <div id="styleForm">
                 <div>
                     <label for="filtro">Filtrar por :</label>
@@ -54,7 +54,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                         <option value="id">Id</option>
                         <option value="nome" selected>nome</option>
                         <option value="cpf">Cpf</option>
-                        
+
                     </select>
                 </div>
                 <div>
@@ -69,13 +69,13 @@ if (isset($_POST['conteudoPesquisa'])) {
         <div class="styleForm">
             <div class="tabela-container">
                 <?php
-                
+
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    include_once DIRREQ . '/models/ClassFiltro.php';
+                    include_once DIRREQ . '/models/ClassLembrete.php';
                     $input = $_POST['conteudoPesquisa'] ?? '';
                     $filtro = $_POST['filtro'] ?? '';
 
-                    $FiltroObj = new Models\Filtros;
+                    $FiltroObj = new Models\Lembrete;
                     $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro, $_SESSION["user_id"]);
 
                     if ($resultados !== false && !empty($resultados)) {
@@ -117,18 +117,22 @@ if (isset($_POST['conteudoPesquisa'])) {
             <div class="linhaaa">
                 <p id="textFreq">Com que frequência você quer enviar mensagens ao seu cliente?</p>
             </div>
-            <div class="flexLembre">
+            <div class="flexLembre ">
                 <div class="alignCenter">
                     <label class="textLal" for="semanal">Semanal</label>
-                    <input type="checkbox" name="semanal" id="semanal">
+                    <input type="checkbox" name="semanal" class="checkbox" id="semanal">
                 </div>
                 <div class="alignCenter">
                     <label class="textLal" for="quinzenal">Quinzenal</label>
-                    <input type="checkbox" name="quinzenal" id="quinzenal">
+                    <input type="checkbox" name="quinzenal" class="checkbox" id="quinzenal">
                 </div>
                 <div class="alignCenter">
                     <label class="textLal" for="mensal">Mensal</label>
-                    <input type="checkbox" name="mensal" id="mensal">
+                    <input type="checkbox" name="mensal" class="checkbox" id="mensal">
+                </div>
+                <div class="alignCenter">
+                    <label class="textLal" title="De X em X dias ">Data Personalizada</label>
+                    <input type="number" name="mensal" max="31" style="width: 40px;" maxlength="2">
                 </div>
             </div>
         </div>
@@ -136,7 +140,6 @@ if (isset($_POST['conteudoPesquisa'])) {
         <div class="mensagemTipoDiv">
             <div style="display:flex;gap: 20px;">
                 <button id="emailBtn" class="mensagemTipo title btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" type="submit">Email</button>
-                <button id="smsBtn" title="Mande mensagem por SMS para todos os que estão marcado" class="mensagemTipo title btnTipoMensagens" type="submit">SMS</button>
                 <button id="whatsBtn" title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo  title btnTipoMensagens" type="submit">WhatsApp</button>
             </div>
             <div>
@@ -151,11 +154,11 @@ if (isset($_POST['conteudoPesquisa'])) {
         <span class="fechar-modal" id="fecharModal">&times;</span>
         <h2>Escreva a mensagem que deseja enviar para os clientes selecionados</h2>
         <div class="mensagemTipoDiv">
-            <form id="formMensagem" action="../controllers/controllerMensagem.php" method="post" style="width: 100%;">
+            <form id="formMensagem" action="../controllers/controllerLembrete.php" method="post" style="width: 100%;">
                 <div style="display: flex; padding: 20px; align-items: start; justify-content: space-around;">
                     <div>
                         <input id="content" name="id" type="hidden" value="">
-                        <input  id="tipo" name="tipo" type="hidden" value="">
+                        <input id="tipo" name="tipo" type="hidden" value="">
                     </div>
                     <div class="boxInput">
                         <label for="Assunto">
@@ -172,7 +175,7 @@ if (isset($_POST['conteudoPesquisa'])) {
 
                         </textarea>
                     </div>
-                    
+
                     <div style="display: flex;justify-content: end;">
 
                         <button id="btnEnviarFormMensagens" class="mensagemTipo btnTipoMensagens" type="submit">enviar</button>
@@ -198,6 +201,14 @@ if (isset($_POST['conteudoPesquisa'])) {
     }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
-<script src='<?php echo DIRPAGE . "lib/JS/filtro.js" ?>'></script>
+<script src='<?php echo DIRPAGE . "lib/JS/Lembrete.js" ?>'></script>
+<script>
+    $('.checkbox').change(function() {
+        if ($(this).prop('checked')) {
+            // Desmarca os outros checkboxes
+            $('.checkbox').not(this).prop('checked', false);
+        }
+    });
+</script>
 
 <?php \classes\ClassLayout::setFooter(); ?>

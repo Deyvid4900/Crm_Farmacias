@@ -24,16 +24,16 @@
                     </div>
                     <div class="inputGenderOtherFlex">
                         <div class="inputGenderOther">
-                            <label for="gender">Genero:</label>
-                            <select name="gender" id="gender" required>
+                            <label for="gender">Sexo:</label>
+                            <select name="sexo" id="gender" required>
                                 <option value=""></option>
                                 <option value="man">Homem</option>
                                 <option value="woman">Mulher</option>
                             </select>
                         </div>
                         <div class="inputAge">
-                            <label for="age">Idade:</label>
-                            <input type="text" id="age" name="age" required autocomplete="off" maxlength="3" placeholder="20">
+                            <label for="age">Data de Nascimento</label>
+                            <input type="date" id="age" name="dataNasc" required autocomplete="off" maxlength="3" placeholder="20">
                         </div>
                         <div class="inputPhone">
                             <label for="phone">Telefone:</label>

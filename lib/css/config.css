@@ -186,3 +186,27 @@ body{
     height: auto;
   
   }
+
+  .titulos{
+    font-weight: bold;
+    font-size: 16pt;
+    margin-bottom: 10px;
+    color: #000;
+  }
+  .content{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 40px;
+    color: #afafaf;
+  }
+  input{
+    width: 400px;
+    border: none; 
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 14pt;
+  }
+  .campoAjustarNome{
+   padding:  10px; 
+  }

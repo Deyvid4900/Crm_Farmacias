@@ -2,15 +2,31 @@
 include_once("../lib/vendor/autoload.php");
 include_once("../models/ClassServicos.php");
 include_once("../models/ClassPDF.php");
+include_once("../models/ClassCliente.php");
 use \Models\PDFCriar;
 use \Models\Servicos;
+use \Models\Cliente;
 
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // var_dump($_POST);
     $nome = $_POST["nome"];
-    $genero = $_POST["gender"];
-    $idade = $_POST["age"];
+
+    $objCliente= new Cliente;
+    $idExaminado = $objCliente->getIdByName($nome);
+    if ($idExaminado == "" || $idExaminado == null || $idExaminado == false) {
+    
+
+        
+        var_dump($objCliente->insertArray($_POST,$_SESSION['user_id']));
+
+    }
+
+
+
+
+    $genero = $_POST["sexo"];
+    $idade = $_POST["dataNasc"];
     $telefone = $_POST["phone"];
     $endereco = $_POST["adress"];
     $cidade = $_POST["city"];
@@ -141,6 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Data
     $servico->setData($data);
 
+    $servico->setIdCliente($idExaminado);
     if ($_POST["buttonClicked"] === 'submit') {
         // Código para lidar com o botão Enviar
         

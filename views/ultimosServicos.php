@@ -15,13 +15,13 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
 
-<?php 
-include_once ("../models/ClassEvento.php");
-$evt=new \Models\Eventos;
-$tempoRestanteFormatado=new \Models\Eventos;
+<?php
+include_once("../models/ClassEvento.php");
+$evt = new \Models\Eventos;
+$tempoRestanteFormatado = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
+\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
@@ -45,16 +45,14 @@ if (isset($_POST['conteudoPesquisa'])) {
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">
         <h1> Serviços</h1>
-        <form action="../../views/marketingFiltros.php" id="FormFiltro" method="POST">
+        <form action="../../views/ultimosServicos.php" id="FormFiltro" method="POST">
             <div id="styleForm">
                 <div>
                     <label for="filtro">Filtrar por :</label>
                     <select name="filtro" id="filtro">
-                        <option value="especialidade" selected>Serviços</option>
-                        <option value="atuacao">Data</option>
-                        <!-- <option value="hospital">Hospital que atua</option> -->
-                        <!-- <option value="estadoCivil">estado Civil</option> -->
-
+                        <option value="id_servicos_PK">ID</option>
+                        <option value="id_Farmacia_FK">Farmácia</option>
+                        <option value="id_cliente_FK">Cliente</option>
                     </select>
                 </div>
                 <div>
@@ -69,42 +67,43 @@ if (isset($_POST['conteudoPesquisa'])) {
         <div class="styleForm">
             <div class="tabela-container">
                 <?php
-                
+
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    include_once DIRREQ . '/models/ClassFiltro.php';
+                    include_once DIRREQ . '/models/ClassServicos.php';
+
+                    
                     $input = $_POST['conteudoPesquisa'] ?? '';
                     $filtro = $_POST['filtro'] ?? '';
 
-                    $FiltroObj = new Models\Filtros;
+                    $FiltroObj = new Models\Servicos;
                     $resultados = $FiltroObj->buscarValoresSemelhantes($input, $filtro, $_SESSION["user_id"]);
+                    
 
+                
+                    
                     if ($resultados !== false && !empty($resultados)) {
                         echo '<table >
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Sexo</th>
-                                    <th>celular1</th>
-                                    <th>telFixo</th>
-                                    <th>email</th>
-                                    <th>Selecionar</th>
+                                    <th>Indicação Farmaceutica</th>
+                                    <th>Data</th>
+                                  
 
                                     <!-- Adicione mais colunas conforme necessário -->
                                 </tr>';
 
                         foreach ($resultados as $pessoa) {
+                            var_dump($pessoa);
                             echo '<tr>';
-                            echo '<td>' . $pessoa['id'] . '</td>';
-                            echo '<td>' . $pessoa['nome'] . '</td>';
-                            echo '<td>' . $pessoa['sexo'] . '</td>';
-                            echo '<td>' . $pessoa['celular1'] . '</td>';
-                            echo '<td>' . $pessoa['telFixo'] . '</td>';
-                            echo '<td>' . $pessoa['email'] . '</td>';
-                            echo '<td><input type="checkbox" class="checkboxFiltro" id=' . $pessoa['id'] . '></td>';
+                            echo '<td>' . $pessoa['nome_responsavel'] . '</td>';
+                            echo '<td>' . $pessoa['id_cliente_FK'] . '</td>';
+                            echo '<td>' . $pessoa['data'] . '</td>';
+
                             echo '</tr>';
                         }
 
                         echo '</table>';
+                       
                     } else {
                         echo 'Nenhum resultado encontrado.';
                     }
@@ -112,7 +111,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                 ?>
             </div>
         </div>
-    
+
     </div>
 </section>
 <div id="meuModal" class="modal">
@@ -125,7 +124,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                 <div style="display: flex; padding: 20px; align-items: start; justify-content: space-around;">
                     <div>
                         <input id="content" name="id" type="hidden" value="">
-                        <input  id="tipo" name="tipo" type="hidden" value="">
+                        <input id="tipo" name="tipo" type="hidden" value="">
                     </div>
                     <div class="boxInput">
                         <label for="Assunto">
@@ -142,7 +141,7 @@ if (isset($_POST['conteudoPesquisa'])) {
 
                         </textarea>
                     </div>
-                    
+
                     <div style="display: flex;justify-content: end;">
 
                         <button id="btnEnviarFormMensagens" class="mensagemTipo btnTipoMensagens" type="submit">enviar</button>

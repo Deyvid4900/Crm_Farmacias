@@ -2,7 +2,6 @@
     font-family: 'Inria Sans', sans-serif;
 }
 
-
 .padDown{
     margin-bottom: 1.1px;
 }
@@ -19,18 +18,19 @@
 
 .form-bg{
 
-    width: 990px;
+    width: 850px;
     height: auto;
     border-radius: 8px;
-    position: absolute;
-    bottom: -557px;
+    margin: 25px  auto;
+    bottom: 300px;
+
     box-shadow: 1px 1px 15px 3px #a0a0a0ee;
 }
 .form-bg h1{
     display: flex;
     justify-content: center;
     border-radius: 8px 8px 0 0;
-    padding-top: -8px;
+    padding-top: 6px;
     background-color: #247158;
     color: white;
 }
@@ -64,12 +64,15 @@
     align-items: self-start;
 }
 
-#sx{
-    width: 143px;
+#hospitalAtual, #especiaLidade{
+    width: 160px;
     margin-left: 0px;
 }
+#atuacao{
+    width: 172px;
+}
 .aaaa{
-    margin-left: 65px;
+    margin-left: 9px;
 }
 .aprof{
     margin-left: 34px;
@@ -83,7 +86,8 @@
     margin-left: 18px
 }
 #cpf{
-    width: 172px;
+    width: 80px;
+    text-align: end;
 }
 .nCliente{
     margin-left: 1px;
@@ -91,6 +95,7 @@
 
 .formAlinhado{
     display: flex;
+    margin: 0px 70px;
 }
 
 .flexCol2{
@@ -135,12 +140,40 @@
 }
 
 /* nem sei */
-
-#styleForm{
+.mensagemTipoDiv{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    overflow-x: auto;
+    align-items: center;
     margin: 14px;
     margin-bottom: 6px;
-    padding-bottom: 10px;
+    padding: 10px;
     border-radius: 4px;
+    border: 2px solid #0c4b36;
+}
+#styleForm,.styleForm{
+    display: flex;
+    overflow-x: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 14px;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid #0c4b36;
+    
+}
+#styleFormm{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 14px;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-radius: 4px;
+    height: auto;
     border: 2px solid #0c4b36;
 }
 #styleForm1{
@@ -155,7 +188,7 @@
 #styleForm2{
     margin: 14px;
     margin-top: 4px !important;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     padding-top: 10px;
     border-radius: 4px;
     border: 2px solid #0c4b36;
@@ -252,6 +285,7 @@
 }
 
 
+
 /* edit form input */
 
 #b input[type="text"], input[type="date"] {
@@ -282,12 +316,79 @@ button[type="submit"]{
 
     cursor: pointer;
 }
-.boxBtn{
-    width: 100%;
+
+
+#filtro ,#conteudo{
+    width: 200px;
+    padding: 3px;
+}
+.divBdContent{
+    display:flex;
+    gap: 10px;
+}
+.divBdContent>div{
     display: flex;
     align-items: center;
-    justify-content: end;
-    padding: 10px;
+}
+td{
+    font-size: 10pt;
+    padding: 0px;
+    text-align: center;
+}
+table{
+    width: 100%;
 }
 
+.modal {
+    display: none; /* O modal é inicialmente oculto */
+    position: fixed;
+    z-index: 88;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro para destacar o modal */
+}
 
+.modal-conteudo {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Estilos do Botão de Fechar */
+.fechar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fechar-modal:hover,
+.fechar-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.inputMensagemFiltro{
+    width: 200px;
+    height: 30px;
+    padding: 10px
+}
+.boxInput{
+    display: flex;
+    gap: 5px;
+}
+.tabela-container {
+    max-height: 200px;
+    width: 100%; /* Altura fixa desejada, ajuste conforme necessário */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+}
+.title:hover{
+    cursor: help;
+}

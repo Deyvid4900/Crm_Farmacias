@@ -1,7 +1,7 @@
 <?php
 namespace Models;
-include '../models/ClassConexao.php';
-include '../models/ClassCrud.php';
+include_once '../models/ClassConexao.php';
+include_once '../models/ClassCrud.php';
 
 
 
