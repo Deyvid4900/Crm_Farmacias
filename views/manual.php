@@ -35,12 +35,14 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
     <div class="titulo-Inicio">
         <div class="titulo">
             <h1>Como funciona</h1>
-
             <p>Principais funcionalidades de como o sistema funciona</p>
         </div>
     </div>
-    <div>
-
+    <div class="imgExplicaçãoMkt">
+        <div>
+            <h3>Marketing</h3>
+            <img src="/img/marketing.png" alt="">
+        </div>
     </div>
 </div>
 
