@@ -100,6 +100,7 @@ class ClassLayout
     $head .=  "  <a href='/views/tabelaCliente.php'>Tabelas de Clientes</a>\n";
     $head .=  "   <a href='/views/suporte.php'>Suporte</a>\n";
     $head .=  "  <a id='sobreMenuHamb' href='/views/sobre.php'>Sobre</a>\n";
+    $head .=  "  <a  href='/views/manual.php'>Como Funciona</a>\n";
     $head .=  "   <a href='/views/configuracaoFarmacia.php'>Configurações</a>\n";
     $head .=  "   <a href='/' id='LogOut'>Sair</a>\n";
     $head .=  "</div>\n";

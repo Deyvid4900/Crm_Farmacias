@@ -1,0 +1,21 @@
+*{
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.titulo-Inicio{
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.titulo p{
+    text-align: center;
+    font-size: 17px;
+}
