@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../lib/vendor/autoload.php");
+include_once("../lib/vendor/autoload.php");
 
 \Classes\ClassLayout::setHeadDefault("Home");
 if (!isset($_SESSION["username"])) {
