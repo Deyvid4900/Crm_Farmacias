@@ -1,22 +1,21 @@
 <link rel="stylesheet" href="../../lib/CSS/formMedicoStyles.css">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">
         <div class="head">
             <h1>Médicos</h1>
         </div>
-        <form method="POST" action="../../controllers/controllerMedicoCadastro.php">
+        <form method="POST" id='MedicoForm' action="../../controllers/controllerMedicoCadastro.php">
             <div id="styleForm">
                 <div class="flexForm">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" autocomplete="off" required placeholder="Nome do médico">
                     <label class="cPf" for="cpf">CPF</label>
-                    <input type="text" name="cpf" id="cpf" maxlength="11" autocomplete="off" required placeholder="000.000.000-00">
+                    <input type="text" name="cpf" id="cpf" maxlength="15" autocomplete="off" required placeholder="000.000.000-00">
 
                     <label for="sx" class="aaaa">Sexo</label>
                     <select name="sexo" id="sx">
-                        <option value=""></option>
-                        <option value="masculino">Masculino</option>
+                        <option value="masculino" selected>Masculino</option>
                         <option value="feminino">Feminino</option>
                     </select>
                 </div>
@@ -109,13 +108,13 @@
                 <div id="styleForm2">
                     <div class="padDown1">
                         <label class="Cel1" for="cel1">Celular 1</label>
-                        <input type="text" name="celular1" id="cel1" placeholder=" (DDD) 99999-9999" autocomplete="off" required>
+                        <input type="text" name="celular1" id="cel1" placeholder=" (DDD) 99999-9999" autocomplete="off" >
                         <label for="cel2">Celular 2</label>
-                        <input type="text" name="celular2" id="cel2" placeholder=" (DDD) 99999-9999" autocomplete="off" required>
+                        <input type="text" name="celular2" id="cel2" placeholder=" (DDD) 99999-9999" autocomplete="off" >
                         <label for="tel1">Tel Fixo 1</label>
-                        <input type="text" name="tel1" id="tel1" placeholder=" (DDD) 3500-0000" autocomplete="off" required>
+                        <input type="text" name="tel1" id="tel1" placeholder=" (DDD) 3500-0000" autocomplete="off" >
                         <label for="tel2">Tel Fixo 2</label>
-                        <input type="text" name="tel2" id="tel2" placeholder=" (DDD) 3500-0000" autocomplete="off" required>
+                        <input type="text" name="tel2" id="tel2" placeholder=" (DDD) 3500-0000" autocomplete="off" >
                     </div>
                     <div class="padDown1">
                         <label class="zap1" for="possuiZap">Possui Whatsapp</label>
@@ -142,6 +141,16 @@
                 </div>
             </div>
             <button type="submit">Cadastrar</button>
+            <div class="cs-loader" id="loader">
+                        <div class="cs-loader-inner">
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                            <label>●</label>
+                        </div>
+                </div>
         </form>
     </div>
 </section>

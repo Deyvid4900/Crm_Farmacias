@@ -12,8 +12,8 @@
                     <input type="number" name='Id_Farmacia_FK ' value="<?php echo $_SESSION["user_id"] ?>" style="display: none;">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" placeholder="Nome do Cliente" id="nome" autocomplete="off">
-                    <label class="nCliente" for="numero">N° Cliente</label>
-                    <input type="text" name="numero" placeholder="Numero do Cliente" id="numero" autocomplete="off">
+                    <label class="nCliente" for="numero"></label>
+                    <input type="hidden" name="numero" placeholder="Numero do Cliente" id="numero" autocomplete="off">
                     <label class="cPf" for="cpf">CPF</label>
                     <input type="text" name="cpf" placeholder="cpf do cliente" id="cpf" maxlength="15" autocomplete="off">
                     <!-- mexer cpf validar formato -->

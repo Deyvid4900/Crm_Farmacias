@@ -1,5 +1,7 @@
 <?php
+
 namespace Models;
+
 include_once '../models/ClassConexao.php';
 include_once '../models/ClassCrud.php';
 
@@ -239,30 +241,30 @@ class Cliente extends CRUD
 	Parâmetro de saída: Retorna true em caso de sucesso ou false em caso de falha.
 	 ***************/
 	public function insertArray(array $data, $userID)
-{
-    $sql = "INSERT INTO $this->table 
+	{
+		$sql = "INSERT INTO $this->table 
       (Id_Farmacia_FK, nome, sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, infoAdic,
       celular1, celular2, telFixo, email) 
       VALUES 
       (:Id_Farmacia_FK, :nome, :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :infoAdic,
       :celular1, :celular2, :telFixo, :email)";
 
-    $stmt = Database::prepare($sql);
-    $stmt->bindValue(':Id_Farmacia_FK', $userID);
+		$stmt = Database::prepare($sql);
+		$stmt->bindValue(':Id_Farmacia_FK', $userID);
 
-    foreach ($data as $key => $value) {
-        $stmt->bindValue(':' . $key, $value);
-    }
+		foreach ($data as $key => $value) {
+			$stmt->bindValue(':' . $key, $value);
+		}
 
-    try {
-        $stmt->execute();
-        return true; // Successful insertion
-    } catch (\Exception $e) {
-        // Handle the exception if needed, e.g., log or return a more specific error message
-        // For simplicity, I'll just return false here
-        return false; // Failed insertion
-    }
-}
+		try {
+			$stmt->execute();
+			return true; // Successful insertion
+		} catch (\Exception $e) {
+			// Handle the exception if needed, e.g., log or return a more specific error message
+			// For simplicity, I'll just return false here
+			return false; // Failed insertion
+		}
+	}
 
 
 
@@ -297,7 +299,7 @@ class Cliente extends CRUD
 		$stmt->bindParam(':telFixo', $this->telFixo);
 		$stmt->bindParam(':email', $this->email);
 		$stmt->execute();
-		return ;
+		return;
 	}
 
 
@@ -361,14 +363,15 @@ class Cliente extends CRUD
 
 		return $stmt->execute();
 	}
-	public function getIdByName($name){
+	public function getIdByName($name)
+	{
 		$sql = 'SELECT id FROM clientes WHERE nome = :nome';
 		$stmt = Database::prepare($sql);
-		$stmt->execute(['nome'=>$name]);
+		$stmt->execute(['nome' => $name]);
 		$result = $stmt->fetch();
 		return $result ? $result->id : null;
-	 }
-	 
+	}
+
 
 	public function  findAll()
 	{
@@ -377,6 +380,53 @@ class Cliente extends CRUD
 		$stmt->execute();
 		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
 		return $stmt->fetchAll(\PDO::FETCH_BOTH);
+	}
+	public function findAllAdress($idCliente)
+	{
+		$sql = "SELECT * FROM enderecos WHERE cliente_id =:cliente_id ";
+		$stmt = Database::prepare($sql);
+		$stmt->bindParam(':cliente_id', $idCliente, \PDO::PARAM_INT);
+		$stmt->execute();
+		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
+		return $stmt->fetchAll(\PDO::FETCH_BOTH);
+	}
+	public function findAllAdressWithClientName()
+	{
+		$sql = "SELECT e.*, c.nome AS nome
+				FROM enderecos e
+				INNER JOIN clientes c ON e.cliente_id = c.id
+				WHERE
+				 e.logradouro IS NOT NULL or e.logradouro != ''
+				AND e.bairro IS NOT NULL or e.bairro != ''
+				AND e.numeroCasa IS NOT NULL or e.numeroCasa != ''
+				AND e.cidade IS NOT NULL or e.cidade != ''
+				AND c.nome IS NOT NULL or c.nome != ''
+			   ";
+
+		$stmt = Database::prepare($sql);
+		$stmt->execute();
+
+		// Retorna um array associativo com os registros da tabela
+		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+	}
+	public function findAllContatosWithClientName()
+	{
+		$sql = "SELECT e.*, c.nome AS nome
+				FROM enderecos e
+				INNER JOIN clientes c ON e.cliente_id = c.id
+				WHERE
+				 e.logradouro IS NOT NULL or e.logradouro != ''
+				AND e.bairro IS NOT NULL or e.bairro != ''
+				AND e.numeroCasa IS NOT NULL or e.numeroCasa != ''
+				AND e.cidade IS NOT NULL or e.cidade != ''
+				AND c.nome IS NOT NULL or c.nome != ''
+			   ";
+
+		$stmt = Database::prepare($sql);
+		$stmt->execute();
+
+		// Retorna um array associativo com os registros da tabela
+		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 	}
 
 	public function  find($id)
@@ -397,38 +447,42 @@ class Cliente extends CRUD
 	public function adicionarEnderco($cliente_Id)
 	{
 	}
-    
 }
-trait Funcionario {
-	
+trait Funcionario
+{
+
 	private $matricula;
-		
-		
+
+
 	/********Início dos métodos sets e gets*********/
-	public function setmatricula($matricula){
+	public function setmatricula($matricula)
+	{
 		$this->matricula = $matricula;
 	}
-	public function getmatricula(){
+	public function getmatricula()
+	{
 		return $this->matricula;
 	}
 
 	/********Fim dos métodos sets e gets*********/
-	
 }
 
 
 //poderia ter usado interface, no entanto não é possível criar atributo, apenas MÉTODOS
 // Adiciona atributos ou metodos para a instancia
-trait Pessoa {
-	
+trait Pessoa
+{
+
 	private $cpf;
-		
-		
+
+
 	/********Início dos métodos sets e gets*********/
-	public function setcpf($cpf){
+	public function setcpf($cpf)
+	{
 		$this->cpf = $cpf;
 	}
-	public function getcpf(){
+	public function getcpf()
+	{
 		return $this->cpf;
 	}
 

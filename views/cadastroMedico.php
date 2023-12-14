@@ -22,10 +22,12 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 \classes\ClassLayout::setSideComponente();
 ?>
 <?php include "subViews/notificacaoExibi.php" ?>
+<?php include "subViews/alerta.php" ?>
+<?php include "subViews/cadastroMedicoForm.php" ?>
 <!-- conteudo interno da pagina  -->
 
 
-<?php include "subViews/cadastroMedicoForm.php" ?>
+
 <script>
     const mySideBar = document.getElementById('mySidebar')
     function openNav() {
@@ -36,4 +38,5 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
     }
 </script>
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
+<script src='<?php echo DIRPAGE . "lib/JS/ajaxCadastroMedico.js" ?>'></script>
 <?php \classes\ClassLayout::setFooter(); ?>

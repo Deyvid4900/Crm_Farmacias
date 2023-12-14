@@ -113,6 +113,7 @@ class Farmacia extends DataBase
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_BOTH);
     }
+    
 
     public function getIdFromNome($nome) {
         $sql = "SELECT id_PK FROM $this->table WHERE nomeFarmacia = :nomeFarmacia";

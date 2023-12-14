@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $farmaciaObj->validatePass($senhaFarmaciaDesejada,$hash) &&
         $farmaciaObj->findAcessPass($codigoFarmaciaDesejada)
     ) {
+        $todosRegistros = $farmaciaObj->getRegistroFromNome($nomeFarmacia);
         $registro = $farmaciaObj->getRegistroFromNome($nomeFarmacia);
         $email = $registro['emailFarmacia'];
         $telefoneFarmacia = $registro['numeroFarmacia'];
@@ -37,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $farmaciaObj->getNomeFarmacia();
         $_SESSION['email'] = $email;
         $_SESSION['tell'] = $telefoneFarmacia;
+        $_SESSION['cnpj'] = $todosRegistros["cnpjFarmacia"];
         header('Location: /views/home.php');
         exit();
     } else {

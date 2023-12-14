@@ -6,8 +6,8 @@
 
 
         <div class="FlexInfooo">
-            <p>Nome da Farmácia</p>
-            <p>CNPJ</p>
+            <p>Farmacia : <?php echo $_SESSION['username'] ?></p>
+            <p>Cnpj : <?php echo $_SESSION['cnpj'] ?></p>
         </div>
         <form action="../../controllers//controllerConsultorio.php" method="POST" class="formServicoss" id="formConsultorio">
             <div class="infoFlex-Consultorio">

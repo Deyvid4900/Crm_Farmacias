@@ -1,7 +1,6 @@
 <?php
 include("../lib/vendor/autoload.php");
 include_once "../models/ClassFiltro.php";
-use \Models\Filtro;
 use Models\Filtros;
 
 session_start();

@@ -1,0 +1,458 @@
+*{
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.molduraForm{
+    margin: auto;
+    
+}
+.formServicos{
+    margin: auto;
+    
+}
+
+.bg-antesForm{
+    width: 775px;
+    height: auto;
+    /* border: 1px solid rgb(43, 43, 43); */
+    border-radius: 8px;
+    margin: 40px auto;
+    overflow: auto;
+    box-shadow: 1px 1px 15px 3px #a0a0a0ee;
+
+}
+
+.seila{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+    padding-bottom: 6px;
+    background-color: #247158;
+    color: white;
+}
+
+/* info do PDF */
+
+.spanInfo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+}
+.spanInfo span{
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* declaração */
+.tituloAntesForm h2{
+    font-size: 17px;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 16px;
+    border-bottom: 2px solid black;
+    
+}
+
+/* form */
+label{
+    font-weight: 600;
+}
+
+/* input nome */
+.inputNome{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+#nome{
+    width: 593px;
+}
+
+/* input abaixo do nome */
+.inputGenderOtherFlex{
+    display: flex;
+    align-items: center;
+}
+
+.inputGenderOther{
+    margin-left: 40px;
+    margin-top: 12px;
+}
+.inputAge, .inputPhone{
+    margin-top: 12px;
+    margin-left: 60px;
+}
+#gender{
+    width: 120px;
+}
+
+/* age */
+#age{
+    width: 80px;
+}
+
+/* phone */
+#phone{
+    width: 150px;
+}
+
+/* adress */
+.inputAdress{
+    margin-left: 40px;
+    margin-top: 12px;
+}
+#adress{
+    width: 569px;
+}
+
+/* city others */
+
+.cityOtherFlex{
+    display: flex;
+    align-items: center;
+}
+
+.cityOther{
+    margin-top: 12px;
+    margin-left: 40px;
+}
+
+.Uf, .inputEmail{
+    margin-top: 12px;
+    margin-left: 60px;
+}
+
+#email{
+    width: 214px;
+}
+
+/* ultimo de cima */
+.nomeRespon{
+    margin-left: 40px;
+    margin-top: 12px;
+}
+
+#respo{
+    width: 481px;
+}
+
+.bb{
+    margin: auto;
+    width:90%;
+    border-radius: 2px;
+    border: 2px solid #8B8B8B;
+}
+
+/* cuidados Farmaceuticos */
+
+.cuidadosFarm h2{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 16px;
+}
+.cuidadosFarm span{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.glicemiaOtherFlex, .pressaoArtFlex, .pressaoTempFlex{
+    display: flex; 
+    align-items: center;
+}
+.glicemia, .pressaoArt, .tempCorporal{
+    margin-left: 40px;
+    margin-top: 16px;
+}
+.pressao, .pressaoCheck, .tempCheck{
+    margin-left: 40px;
+    margin-top: 16px;
+}
+
+.instrGlic p, .instrPre p, .instrTemp p{
+    color: #6F6F6F;
+    font-size: 15px;
+}
+
+#checkGi, #checkPre, #checkTemp{
+    margin-right: 6px;
+}
+
+#pressao{
+    width: 142px;
+}
+
+#temp{
+    width: 54px;
+}
+
+/* Injetaveis */
+
+.injetaveisFlex p, .inaloterapiaCheckFlex p, .colBrincoFlex p, .FlexInfoBrinco p, .FlexInfoBrincoE p {
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.injetaveisFlex, .inaloterapiaCheckFlex, .colBrincoFlex, .FlexInfoBrinco{
+    display: flex;
+    align-items: center;
+}
+.injetaveisFlex{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-left: 12%;
+    width: 100%;
+    justify-content: start;
+}
+
+.FlexInfoBrincoE{
+    display: flex;
+    align-items: center;
+    margin-left: 28px;
+    margin-top: 20px;
+}
+
+#apliInjeta, #inaloCheck{
+    margin-right: 6px;
+}
+
+.othersInjetaveis, .othersInalo, .othersBrinco{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.Flexteste, .FlextesteInalo, .FlextesteBrinco{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.loteFlexBrinco{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.nomePres, .precritoIna{
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 12%;
+}
+
+#medicamento, #medicamentoIna{
+    width: 206px;
+}
+
+#medicamentoIna{
+    margin-bottom: 1px;
+}
+.loteFlex, .valFlex, .posologiaFlex, .valFlexBrinco{
+    display: flex;
+    flex-direction: column;
+}
+
+/* inaloterapia */
+.loteFlexIna, .valFlexInalo, .posologiaFlexInalo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+.viaAdmFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+#lote, #loteInalo, #loteBrinco{
+    width: 35px;
+}
+
+#loteInalo, #validadeInalo{
+    margin-bottom: 1px;
+}
+
+#validade, #validadeInalo{
+    width: 65px;
+}
+
+#posologia{
+    width: 75px;
+}
+
+#viaAdm{
+    width: 160px;
+}
+
+#precristor{
+    width: 200px;
+}
+
+#posologiaInalo{
+    width: 249px;
+    margin-bottom: 1px;
+}
+
+#prescritorIna{
+    width: 187px;
+}
+
+
+.precritoIna{
+    display: flex;
+    align-items: center;
+}
+
+.CRMCRO{
+    margin-left: 12px;
+}
+
+#crm{
+    width: 176px;
+}
+
+#medicamentoBrinco{
+    width: 206px;
+}
+
+#validadeBrinco{
+    width: 323px;
+}
+
+.ladoJogar{
+    margin-left: 141px;
+}
+
+.altura{
+    margin-top: -1px;
+}
+
+.colBrincoBg, .parteFora{
+    margin-top: 50px;
+}
+
+.checkLadoBrincoFlex{
+    display: flex;
+    align-items: center;
+}
+
+#ladoD, #ladoE{
+    margin-right: 6px;
+}
+
+.checkLadoBrincoFlex{
+    margin-top: -10px;
+}
+
+
+/* info */
+
+.envInfo{
+    margin-top: 40px;
+}
+.Assistencia, .acompanhamento, .indicacao{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.Assistencia p, .acompanhamento p, .indicacao p, .plano p{
+    font-weight: 600;
+    margin-right: 12px; 
+}
+
+#ficha{
+    width: 131px;
+}
+
+#assCheck, #acomCheck, #indiCheck{
+    margin-right: 6px;
+}
+
+.afastar{
+    margin-left: 10px;
+}
+
+/* sinais */
+
+.Sinais p{
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: -9px;
+}
+
+.Sinais, .plano{
+   margin-left: 40px; 
+}
+
+.plano{
+    display: flex;
+    align-items: center;
+}
+
+.afastrD{
+    margin-right: 8px;
+}
+
+.buttonImprimir{
+    background-color: #247158;
+    color: white;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+
+.divInputBox{
+    padding-left: 14%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+.divInputBox input{
+    width: 70%;
+}
+.divInputBox label{
+    width: 60px;
+}
+
+.boxDivs{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.suBoxDiv{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    width: 590px;
+    gap: 5px;
+    margin: 3px 10px;
+    
+}
+.itensDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

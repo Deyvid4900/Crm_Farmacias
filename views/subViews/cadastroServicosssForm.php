@@ -31,60 +31,15 @@
                                 <option value="woman">Mulher</option>
                             </select>
                         </div>
-                        <div class="inputAge">
+                        <div class="inputAge"  style="margin-left: 20px;">
                             <label for="age">Data de Nascimento</label>
                             <input type="date" id="age" name="dataNasc" required autocomplete="off" maxlength="3" placeholder="20">
                         </div>
-                        <div class="inputPhone">
+                        <div class="inputPhone" style="margin-left: 20px;">
                             <label for="phone">Telefone:</label>
                             <input type="text" id="phone" name="phone" required autocomplete="off" placeholder="  (ddd) 99999-9999">
                         </div>
                     </div>
-                    <div class="inputAdress">
-                        <label for="adress">Endereço:</label>
-                        <input type="text" id="adress" name="adress" required autocomplete="off" placeholder="Bairro...,  Rua...,   n°">
-                    </div>
-                    <!-- sep -->
-                    <div class="cityOtherFlex">
-                        <div class="cityOther">
-                            <label for="city">Cidade:</label>
-                            <input type="text" id="city" name="city" required autocomplete="off" placeholder="Cidade">
-                        </div>
-                        <div class="Uf">
-                            <label for="uf">UF</label>
-
-                            <select name="uf" id="uf" required>
-
-                                <option value="ac">AC</option>
-                                <option value="al">AL</option>
-                                <option value="ap">AP</option>
-                                <option value="am">AM</option>
-                                <option value="ba">BA</option>
-                                <option value="ce">CE</option>
-                                <option value="df">DF</option>
-                                <option value="es">ES</option>
-                                <option value="go">GO</option>
-                                <option value="ma">MA</option>
-                                <option value="mt">MT</option>
-                                <option value="ms">MS</option>
-                                <option value="mg">MG</option>
-                                <option value="pa">PA</option>
-                                <option value="pb">PB</option>
-                                <option value="pr">PR</option>
-                                <option value="pe">PE</option>
-                                <option value="pi">PI</option>
-                                <option value="rj">RJ</option>
-                                <option value="rn">RN</option>
-                                <option value="rs">RS</option>
-                                <option value="ro">RO</option>
-                                <option value="rr">RR</option>
-                                <option value="sc">SC</option>
-                                <option value="sp">SP</option>
-                                <option value="se">SE</option>
-                                <option value="to">TO</option>
-                            </select>
-
-                        </div>
                         <div class="inputEmail">
                             <label for="email">Email:</label>
                             <input type="email" name="email" id="email" required autocomplete="off" placeholder="cliente@email.com">

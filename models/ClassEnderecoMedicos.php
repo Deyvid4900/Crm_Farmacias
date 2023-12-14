@@ -105,7 +105,14 @@ class EnderecoMedico extends CRUD
             $stmt->bindValue(':' . $key, $value);
         }
 
-        return $stmt->execute();
+        try {
+            $stmt->execute();
+            return true; // Successful insertion
+        } catch (\Exception $e) {
+            // Handle the exception if needed, e.g., log or return a more specific error message
+            // For simplicity, I'll just return false here
+            return false; // Failed insertion
+        }
     }
 
 

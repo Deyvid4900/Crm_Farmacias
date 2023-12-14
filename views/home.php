@@ -15,6 +15,7 @@ include("../lib/vendor/autoload.php");
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
+<!-- <link rel="stylesheet" href="../lib/css/formServicosStyle.css"> -->
 <?php 
 
 
@@ -32,6 +33,7 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 
 <?php include "subViews/tableEvento.php" ?>
 <?php include "subViews/notificacaoExibi.php" ?>
+
 
 <script>
    

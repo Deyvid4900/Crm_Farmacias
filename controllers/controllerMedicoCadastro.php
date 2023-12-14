@@ -112,13 +112,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Insira no banco de dados
     $endereco->insertArray($idMedico,sanitize($enderecoSelecionados, array_keys($campos), $filtroEndereco));
     
-    header("Location: /views/cadastroMedico.php");
-    echo "Cadastro de médico realizado com sucesso!";
+    if ($medico == true && $endereco == true ) {
+        $response = 'Dados inseridos no banco de dados';
+    } else {
+        $response = 'Dados não inseridos no banco de dados';
+    }
 } else {
-    header("Location: /views/cadastroMedico.php");
-    exit();
+    $response = "Erro: Método de requisição inválido.";
 }
-
 
 function sanitize(array $inputs, array $fields, array $filters): array
 {
@@ -126,4 +127,6 @@ function sanitize(array $inputs, array $fields, array $filters): array
     $options = array_combine($fields, $options); // Garante que as chaves são strings
     return filter_var_array($inputs, $options);
 }
+
+echo $response;
 ?>

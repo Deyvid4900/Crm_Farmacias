@@ -3,6 +3,7 @@ include_once("../lib/vendor/autoload.php");
 include_once("../models/ClassServicos.php");
 include_once("../models/ClassPDF.php");
 include_once("../models/ClassCliente.php");
+
 use \Models\PDFCriar;
 use \Models\Servicos;
 use \Models\Cliente;
@@ -12,15 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // var_dump($_POST);
     $nome = $_POST["nome"];
 
-    $objCliente= new Cliente;
+    $objCliente = new Cliente;
     $idExaminado = $objCliente->getIdByName($nome);
-    if ($idExaminado == "" || $idExaminado == null || $idExaminado == false) {
-    
 
-        
-        var_dump($objCliente->insertArray($_POST,$_SESSION['user_id']));
-
-    }
 
 
 
@@ -159,8 +154,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $servico->setIdCliente($idExaminado);
     if ($_POST["buttonClicked"] === 'submit') {
+        if ($idExaminado == "" || $idExaminado == null || $idExaminado == false) {
+            
+            $objCliente->insertArray($_POST, $_SESSION['user_id']);
+        }
         // Código para lidar com o botão Enviar
-        
+
         $idFarmacia = $_SESSION["user_id"];
         $servico->setIdFarmacia($idFarmacia);
 
@@ -173,6 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $response = 'Falha ao inserir o evento';
         }
     } elseif ($_POST["buttonClicked"] === 'imprimir') {
+        
         // Código para lidar com o botão Imprimir
         // ... (sua lógica de geração de PDF)
 
