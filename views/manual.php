@@ -39,12 +39,51 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
         </div>
     </div>
     <div class="imgExplicaçãoMkt">
-        <div>
+        <div class="textEImgMkt">
             <h3>Marketing</h3>
             <img src="/img/marketing.png" alt="">
         </div>
     </div>
+    <div class="paraExpDaImg">
+        <div class="flexP">
+            <p class="pUmExpImg">Como pode ser observado na imagem acima, ao clicar em Marketing e depois em Mensagem Livre será aberto um filtro de clientes onde será possivel filtrar clientes por nome, cpf, id, email e entre outros filtros, onde irá ser adicionado no conteúdo o filtro que você escolher. Caso não escolha nenhum filtro irá aparecer todos os clientes cadastrado no sistema</p>
+        </div>
+        <div class="flexP">
+            <p class="pDoisExpImg">Logo após escolher o cliente desejado aparecerá um quadrado para selecionar o cliente ou pode marcar todos os clientes, e logo após qual forma deseja enviar sua mensagem se é por Email, Mensagem ou Whatsapp</p>
+        </div>
+    </div>
+
+    <!-- lembrete -->
+    <div class="lembrete-Bg">
+        <div class="titLembrete">
+            <h3>Lembrete</h3>
+            <img src="/img/lembretes.png" alt="">
+        </div>
+    </div>
+    <div class="textLembrete">
+        <div class="flexP">
+            <p class="textlembPUm">Clicando em lembrete será possível visualizar um campo de filtro, clicando em "Filtrar por:", é possível filtrar seu cliente já cadastrado no sistema por 'nome', 'cpf' e 'id', onde irá ser adicionado no conteúdo o filtro que você escolher. Caso não escolha nenhum filtro irá aparecer todos os clientes cadastrado no sistema </p>
+        </div>
+        <div class="flexP">
+            <p class="textlembPDois">Abaixo é possível ser feita a escolha de 'com que frequência deseja enviar a mensagem ao seu cliente', isso deverá ser selecionado caso seu cleinte compre recorrentemente e também no caso se ele gostaria de ser avisado caso o remédio dele tenha chegado ou esteja perto de comprar novamente </p>
+        </div>
+    </div>
+
+    <!-- serviços -->
+    <div class="servicos-Bg">
+        <div class="titServicos">
+            <h3>Serviços</h3>
+            <img src="/img/servicos.png" alt="">
+        </div>
+    </div>
+        <div class="textServicos">
+            <div class="flexP">
+                <p class="textPServicos">Ao clicar em 'Serviços' abrirá um formulario de 'Declaração de Serviço Farmacêutico', ao atender um paciente é necessário preencher esse formulário comprovando todos os procedimentos e orientações realizadas pelo responsável técnico durante a prestação do serviço farmacêutico, onde será possível imprimir caso necessário para o paciente</p>
+            </div>
+        </div>
 </div>
+
+
 
 <?php include "subViews/notificacaoExibi.php" ?>
 

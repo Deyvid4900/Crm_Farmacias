@@ -20,12 +20,35 @@
     font-size: 17px;
 }
 
-.imgExplicaçãoMkt{
+.imgExplicaçãoMkt, .lembrete-Bg, .servicos-Bg{
     display: flex;
     justify-content: center;
-    margin-top: 32px;
+    margin-top: 40px;
 }
 
-.imgExplicaçãoMkt img{
+.imgExplicaçãoMkt img, .titLembrete img, .titServicos img{
     width: 950px;
+    border-radius: 6px;
 }
+
+.textEImgMkt h3, .titLembrete h3, .titServicos h3{
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.flexP{
+    display: flex;
+    justify-content: center;
+}
+.paraExpDaImg, .textLembrete, .textServicos {
+    margin-top: 16px;
+
+}
+
+.pUmExpImg, .pDoisExpImg, .textlembPUm, .textlembPDois, .textPServicos{
+    font-weight: 600;
+    width: 950px;
+    margin-bottom: 6px;
+}
+
