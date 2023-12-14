@@ -93,11 +93,11 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
                 // Adicionar a classe 'selected' apenas ao elemento clicado
                 $(this).addClass('selected');
             });
-            $("#ContatosCliente")
-
+           
+            
+            $("#filtroBox").hide()
             $("#tabelaEnderecosCliente").hide()
             $("#ContatosCliente").hide()
-            $("#tabelaDados").hide()
 
             $("#Endereco").click(() => {
                 $("#tabelaEnderecosCliente").show()
