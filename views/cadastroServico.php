@@ -12,28 +12,47 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
-<link rel="stylesheet" href="../lib/css/formServicosStyle.css">
+<link rel="stylesheet" href="../lib/css/ImprimirServicosStyle.css">
 <link rel="stylesheet" href="/lib/css/Alerta.css">
-<?php
+<style>
+    
 
+    @media print {
 
-include_once("../models/ClassEvento.php");
-$evt = new \Models\Eventos;
-$tempoRestanteFormatado = new \Models\Eventos;
-$eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
+        #loader,
+        #btnImprimir,
+        #btnEnviar,
+        #notificacaoDivi,
+        #componentesDiv {
+            display: none;
+        }
+    }
+</style>
+<div id="componentesDiv">
+    <?php
+    include_once("../models/ClassEvento.php");
+    $evt = new \Models\Eventos;
+    $tempoRestanteFormatado = new \Models\Eventos;
+    $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
-\classes\ClassLayout::setSideComponente();
-?>
+    \classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
+    \classes\ClassLayout::setSideComponente();
+    ?>
+</div>
 <!-- conteudo interno da pagina  -->
 
 <?php include_once "../views/subViews/alerta.php" ?>
 <?php include_once "../views/subViews/cadastroServicosssForm.php" ?>
 
-<?php include_once "subViews/notificacaoExibi.php" ?>
-
+<div id="notificacaoDivi">
+    <?php include_once "subViews/notificacaoExibi.php" ?>
+</div>
 
 <script>
+    $('#btnImprimir').click(function(e) {
+        e.preventDefault();
+        window.print()
+    });
     const mySideBar = document.getElementById('mySidebar')
 
     function openNav() {

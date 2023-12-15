@@ -174,25 +174,26 @@
                                     <label for="medicamentoIna">Medicamento / Concentração</label>
                                     <input type="text" name="medicamentoIna" id="medicamentoIna">
                                     <input type="text" name="medicamentoIna" id="medicamentoIna">
-                                    <input type="text" name="medicamentoIna" id="medicamentoIna">
+                                    
+                                    
                                 </div>
                                 <div class="loteFlexIna">
                                     <label for="loteInalo">Lote</label>
                                     <input type="text" name="loteInalo" id="loteInalo">
                                     <input type="text" name="loteInalo" id="loteInalo">
-                                    <input type="text" name="loteInalo" id="loteInalo">
+                                    
                                 </div>
                                 <div class="valFlexInalo">
                                     <label for="validadeInalo">Validade</label>
                                     <input type="text" id="validadeInalo" name="validadeInalo">
                                     <input type="text" id="validadeInalo" name="validadeInalo">
-                                    <input type="text" id="validadeInalo" name="validadeInalo">
+                                  
                                 </div>
                                 <div class="posologiaFlexInalo">
                                     <label for="posologiaInalo">Posologia</label>
                                     <input type="text" id="posologiaInalo" name="posologiaInalo">
                                     <input type="text" id="posologiaInalo" name="posologiaInalo">
-                                    <input type="text" id="posologiaInalo" name="posologiaInalo">
+                                    
                                 </div>
 
                             </div>
@@ -335,25 +336,25 @@
                                 <label for="medicamentoIna">Medicamento / Concentração</label>
                                 <input type="text" name="medicamentoIna" id="medicamentoIna">
                                 <input type="text" name="medicamentoIna" id="medicamentoIna">
-                                <input type="text" name="medicamentoIna" id="medicamentoIna">
+                                
                             </div>
                             <div class="loteFlexIna">
                                 <label for="loteInalo">Lote</label>
                                 <input type="text" name="loteInalo" id="loteInalo">
                                 <input type="text" name="loteInalo" id="loteInalo">
-                                <input type="text" name="loteInalo" id="loteInalo">
+                                
                             </div>
                             <div class="valFlexInalo">
                                 <label for="validadeInalo">Validade</label>
                                 <input type="text" id="validadeInalo" name="validadeInalo">
                                 <input type="text" id="validadeInalo" name="validadeInalo">
-                                <input type="text" id="validadeInalo" name="validadeInalo">
+                                
                             </div>
                             <div class="posologiaFlexInalo">
                                 <label for="posologiaInalo">Posologia</label>
                                 <input type="text" id="posologiaInalo" name="posologiaInalo">
                                 <input type="text" id="posologiaInalo" name="posologiaInalo">
-                                <input type="text" id="posologiaInalo" name="posologiaInalo">
+                                
                             </div>
 
 
@@ -382,9 +383,9 @@
 
                     </div>
             </div>
-            <div style="display: flex; justify-content: end;">
+            <div id="todosBtns" style="display: flex; justify-content: end;">
                 <div>
-                    <button class="buttonImprimir" type="submit" name="imprimir" value="imprimir" id="btnImprimir">Imprimir</button>
+                    <button  class="buttonImprimir"  name="imprimir" value="imprimir" id="btnImprimir">Imprimir</button>
                 </div>
                 <div>
                     <button class="buttonImprimir" type="submit" name="submit" value="submit" id="btnEnviar">Enviar</button>

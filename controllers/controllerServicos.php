@@ -4,7 +4,7 @@ include_once("../models/ClassServicos.php");
 include_once("../models/ClassPDF.php");
 include_once("../models/ClassCliente.php");
 
-use \Models\PDFCriar;
+
 use \Models\Servicos;
 use \Models\Cliente;
 
@@ -23,9 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $genero = $_POST["sexo"];
     $idade = $_POST["dataNasc"];
     $telefone = $_POST["phone"];
-    $endereco = $_POST["adress"];
-    $cidade = $_POST["city"];
-    $uf = $_POST["uf"];
     $email = $_POST["email"];
     $nomeResponsavel = $_POST["respo"];
 
@@ -93,9 +90,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servico->setGenero($genero);
     $servico->setIdade($idade);
     $servico->setTelefone($telefone);
-    $servico->setEndereco($endereco);
-    $servico->setCidade($cidade);
-    $servico->setUf($uf);
     $servico->setEmail($email);
     $servico->setNomeResponsavel($nomeResponsavel);
 
@@ -153,47 +147,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servico->setData($data);
 
     $servico->setIdCliente($idExaminado);
-    if ($_POST["buttonClicked"] === 'submit') {
-        if ($idExaminado == "" || $idExaminado == null || $idExaminado == false) {
-            
-            $objCliente->insertArray($_POST, $_SESSION['user_id']);
-        }
-        // Código para lidar com o botão Enviar
+    if ($idExaminado == "" || $idExaminado == null || $idExaminado == false) {
 
-        $idFarmacia = $_SESSION["user_id"];
-        $servico->setIdFarmacia($idFarmacia);
+        $objCliente->insertArray($_POST, $_SESSION['user_id']);
+    }
+    // Código para lidar com o botão Enviar
+
+    $idFarmacia = $_SESSION["user_id"];
+    $servico->setIdFarmacia($idFarmacia);
 
 
-        $_POST["submit"] = 'false';
-        // $servico->mostrarAtributos();
-        if ($servico->insertServico()) {
-            $response =  'Dados inseridos com sucesso';
-        } else {
-            $response = 'Falha ao inserir o evento';
-        }
-    } elseif ($_POST["buttonClicked"] === 'imprimir') {
-        
-        // Código para lidar com o botão Imprimir
-        // ... (sua lógica de geração de PDF)
-
-        // Exemplo simples para criar um PDF usando TCPDF
-        $objPDF = new PDFCriar;
-        $response = $objPDF->CriarPDF($_POST);
-
-        echo json_encode($response);  // Saída como JSON
-
-        exit();
+    $_POST["submit"] = 'false';
+    // $servico->mostrarAtributos();
+    if ($servico->insertServico()) {
+        $response =  'Dados inseridos com sucesso';
     } else {
-        // Se nenhum botão válido foi pressionado, retorne uma mensagem de erro
-        $response = array(
-            'status' => 'error',
-            'message' => 'Ação inválida',
-        );
-
-        echo json_encode($response);  // Saída como JSON
+        $response = 'Falha ao inserir o evento';
     }
 } else {
-    $response = 'Método não permitido.';
+    // Se nenhum botão válido foi pressionado, retorne uma mensagem de erro
+    $response = array(
+        "error no Cadastro"
+    );
+
+    // Saída como JSON
 }
+
+
 
 echo $response;

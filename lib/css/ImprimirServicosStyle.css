@@ -12,13 +12,13 @@
 }
 
 .bg-antesForm{
-    width: 775px;
+    width: 765px;
     height: auto;
-    /* border: 1px solid rgb(43, 43, 43); */
+    border: 1px solid rgb(175, 175, 175);
     border-radius: 8px;
-    margin: 40px auto;
+    margin: 10px auto;
     overflow: auto;
-    box-shadow: 1px 1px 15px 3px #a0a0a0ee;
+    /* box-shadow: 1px 1px 15px 3px #a0a0a0ee; */
 
 }
 
@@ -36,8 +36,11 @@
 
 .spanInfo{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     margin-top: 8px;
 }
 .spanInfo span{
@@ -65,7 +68,7 @@ label{
 
 /* input nome */
 .inputNome{
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 40px;
 }
 #nome{
@@ -84,7 +87,7 @@ label{
 }
 .inputAge, .inputPhone{
     margin-top: 12px;
-    margin-left: 60px;
+    margin-left: 19px;
 }
 #gender{
     width: 120px;
@@ -123,7 +126,7 @@ label{
 
 .Uf, .inputEmail{
     margin-top: 12px;
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 #email{
@@ -141,8 +144,9 @@ label{
 }
 
 .bb{
-    margin: auto;
-    width:90%;
+    margin-left: 20px;
+    margin-top: 14px;
+    width: 680px;
     border-radius: 2px;
     border: 2px solid #8B8B8B;
 }
@@ -174,7 +178,10 @@ label{
     margin-left: 40px;
     margin-top: 16px;
 }
-
+.instrGlic, .instrPre, .instrTemp{
+    margin-left: 30px;
+    margin-top: 16px;
+}
 .instrGlic p, .instrPre p, .instrTemp p{
     color: #6F6F6F;
     font-size: 15px;
@@ -202,13 +209,8 @@ label{
 .injetaveisFlex, .inaloterapiaCheckFlex, .colBrincoFlex, .FlexInfoBrinco{
     display: flex;
     align-items: center;
-}
-.injetaveisFlex{
-    margin-top: 30px;
-    margin-bottom: 10px;
-    padding-left: 12%;
-    width: 100%;
-    justify-content: start;
+    margin-left: 40px;
+    margin-top: 20px;
 }
 
 .FlexInfoBrincoE{
@@ -225,27 +227,28 @@ label{
 .othersInjetaveis, .othersInalo, .othersBrinco{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
 }
 
 .Flexteste, .FlextesteInalo, .FlextesteBrinco{
     display: flex;
     flex-direction: column;
-    
+    margin-left: 40px;
+    margin-right: 12px;
+    margin-top: 12px;
 }
 
 .loteFlexBrinco{
     display: flex;
     flex-direction: column;
-
+    margin-right: 12px;
+    margin-top: 12px;
 }
 
 
 .nomePres, .precritoIna{
-    width: 100%;
-    margin-top: 20px;
-    padding-left: 12%;
+    margin-left: 40px;
+    margin-top: 12px;
+    margin-right: 12px;
 }
 
 #medicamento, #medicamentoIna{
@@ -258,6 +261,8 @@ label{
 .loteFlex, .valFlex, .posologiaFlex, .valFlexBrinco{
     display: flex;
     flex-direction: column;
+    margin-top: 12px;
+    margin-right: 12px;
 }
 
 /* inaloterapia */
@@ -271,6 +276,7 @@ label{
 .viaAdmFlex{
     display: flex;
     flex-direction: column;
+    margin-top: 12px;
 }
 
 #lote, #loteInalo, #loteBrinco{
@@ -337,7 +343,7 @@ label{
 }
 
 .colBrincoBg, .parteFora{
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 .checkLadoBrincoFlex{
@@ -357,7 +363,7 @@ label{
 /* info */
 
 .envInfo{
-    margin-top: 40px;
+    margin-top: 15px;
 }
 .Assistencia, .acompanhamento, .indicacao{
     display: flex;
@@ -386,7 +392,7 @@ label{
 
 .Sinais p{
     font-weight: 600;
-    margin-top: 40px;
+    margin-top: 15px;
     margin-bottom: -9px;
 }
 
@@ -397,6 +403,7 @@ label{
 .plano{
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .afastrD{
@@ -411,48 +418,4 @@ label{
     border-radius: 4px;
     cursor: pointer;
     margin: 10px;
-}
-
-
-.divInputBox{
-    padding-left: 14%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-}
-.divInputBox input{
-    width: 70%;
-}
-.divInputBox label{
-    width: 60px;
-}
-
-.boxDivs{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
-.suBoxDiv{
-    display: flex;
-    align-items: center;
-    justify-content:flex-start;
-    width: 590px;
-    gap: 5px;
-    margin: 3px 10px;
-    
-}
-.itensDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
 }
