@@ -11,7 +11,7 @@ if (isset($_SESSION["user_id"]) ) {
 include("../lib/vendor/autoload.php");
 Classes\ClassLayout::setHeadBootstrap("login");
 ?>
-<link rel="stylesheet" href="../lib/CSS/loginStyles.css">
+<link rel="stylesheet" href="../lib/css/loginStyles.css">
 <div class="container-fluid">
     <div class="row vh-100">
         <div class=" col-12">

@@ -2,7 +2,7 @@
 
 </style>
 
-<link rel="stylesheet" href="../lib/CSS/modalFiltroStyles.css">
+<link rel="stylesheet" href="../lib/css/modalFiltroStyles.css">
 
 <section id="filtroBox" class="formInit-bg aala ativo" id="b">
     <div class="form-bg ">

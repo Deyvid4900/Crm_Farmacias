@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../lib/CSS/formEventoStyles.css">
+<link rel="stylesheet" href="../../lib/css/formEventoStyles.css">
 
 <!-- class ativo mostra o form -->
 <section class="formInit-bg aala ativo" id="b">

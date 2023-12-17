@@ -12,9 +12,9 @@ if (!isset($_SESSION["username"])) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/Alerta.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/headerStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/sideBarStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/Alerta.css" ?>">
 <style>
     span {
         color: #fff;

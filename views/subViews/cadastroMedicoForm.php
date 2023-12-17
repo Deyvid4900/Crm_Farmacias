@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../lib/CSS/formMedicoStyles.css">
+<link rel="stylesheet" href="../../lib/css/formMedicoStyles.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <section class="formInit-bg aala ativo" id="b">
     <div class="form-bg">

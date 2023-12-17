@@ -11,9 +11,9 @@ if (!isset($_SESSION["username"])) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/headerStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/sideBarStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/homeStyles.css" ?>">
 
 <?php 
 include_once ("../models/ClassEvento.php");
@@ -39,7 +39,7 @@ if (isset($_POST['conteudoPesquisa'])) {
 
 
 ?>
-<link rel="stylesheet" href="../lib/CSS/formFiltroStyles.css">
+<link rel="stylesheet" href="../lib/css/formFiltroStyles.css">
 
 <!-- class ativo mostra o form -->
 <section class="formInit-bg aala ativo" id="b">

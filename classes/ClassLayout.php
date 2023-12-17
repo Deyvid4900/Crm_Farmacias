@@ -42,7 +42,7 @@ class ClassLayout
     echo $html;
   }
 
-  public static function setHeaderComponente($farmaciaNome = "farmacia", $urlImg = "null", $qtnMensagem)
+  public static function setHeaderComponente( $qtnMensagem,$farmaciaNome = "farmacia", $urlImg = "null")
   {
 
     $head  = "<header id='a'>\n\n";
@@ -94,7 +94,7 @@ class ClassLayout
     $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
     $head .=  " </div>\n";
     $head .=  " <div class='contentSidebar'>\n";
-    $head .=  "  <a href='/views/CadastroMedico.php'>Cadastrar Médicos</a>\n";
+    $head .=  "  <a href='/views/cadastroMedico.php'>Cadastrar Médicos</a>\n";
     $head .=  "   <a href='/views/medicoFiltro.php'>Encontre Médico</a>\n";
     $head .=  "  <a href='/views/ultimosServicos.php'>Ultimos Serviços</a>\n";
     $head .=  "  <a href='/views/tabelaCliente.php'>Tabelas de Clientes</a>\n";

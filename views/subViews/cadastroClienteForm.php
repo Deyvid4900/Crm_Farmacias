@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../lib/CSS/formClienteStyles.css">
+<link rel="stylesheet" href="../../lib/css/formClienteStyles.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <!-- class ativo mostra o form -->
 <section class="formInit-bg w ativo " id="b">

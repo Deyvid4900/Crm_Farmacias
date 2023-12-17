@@ -11,10 +11,10 @@ if (!isset($_SESSION["username"])) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/headerStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/sideBarStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/homeStyles.css" ?>">
-<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/CSS/diasContado.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/headerStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/sideBarStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/homeStyles.css" ?>">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/diasContado.css" ?>">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <?php
 include_once("../models/ClassEvento.php");
@@ -40,7 +40,7 @@ if (isset($_POST['conteudoPesquisa'])) {
 
 
 ?>
-<link rel="stylesheet" href="../lib/CSS/lembrete.css">
+<link rel="stylesheet" href="../lib/css/lembrete.css">
 
 <!-- class ativo mostra o form -->
 <section class="formInit-bg aala ativo" id="b">
