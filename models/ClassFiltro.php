@@ -24,5 +24,26 @@ class Filtros extends DataBase{
             return false;
         }
     }
+    public function buscarValoresByIdFarmacia($usuario_id){
+        try {
+            $query = "SELECT * FROM clientes WHERE Id_Farmacia_FK = :user_id";
+            $stmt = DataBase::prepare($query);
+            $stmt->bindParam(':user_id', $usuario_id, \PDO::PARAM_INT);
+            $stmt->execute(); 
+            $resultados = $stmt->fetchAll(\PDO::FETCH_ASSOC); 
+    
+            if ($resultados) {
+                return $resultados;
+            } else {
+                return []; // Retorna um array vazio quando nenhum resultado é encontrado
+            }
+        } catch (\PDOException $erro){
+            // Log do erro em um arquivo de log ou outra ação apropriada
+            error_log("Erro na consulta SQL: " . $erro->getMessage(), 0);
+            // Lança a exceção novamente para tratamento em níveis superiores, se necessário
+            throw $erro;
+        }
+    }
+    
 }
 ?>

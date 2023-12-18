@@ -21,7 +21,7 @@ $evt=new \Models\Eventos;
 $tempoRestanteFormatado=new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
+\classes\ClassLayout::setHeaderComponente(count($eventosProximos), $_SESSION["username"],''); 
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
@@ -68,8 +68,9 @@ if (isset($_POST['conteudoPesquisa'])) {
 
         <div class="styleForm">
             <div class="tabela-container">
+           
                 <?php
-                
+                include_once "subViews/notificacaoExibi.php";
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     include_once DIRREQ . '/models/ClassFiltro.php';
                     $input = $_POST['conteudoPesquisa'] ?? '';
@@ -163,7 +164,7 @@ if (isset($_POST['conteudoPesquisa'])) {
     </div>
 </div>
 
-<?php include "subViews/notificacaoExibi.php" ?>
+
 
 <script>
     const mySideBar = document.getElementById('mySidebar')

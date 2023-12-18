@@ -1,11 +1,11 @@
+<script src='<?php echo DIRPAGE . "lib/JS/ajaxBuscaCliente.js" ?>'></script>
 <?php
 include_once "../lib/vendor/autoload.php";
 include_once '../models/ClassCliente.php';
 
 use \Models\Cliente;
-
 $cliente = new Cliente;
-$registros = $cliente->findAll($_SESSION['user_id']);
+$registros = $cliente->findAllByFarmaciaId($_SESSION['user_id']);
 
 ?>
 
@@ -41,26 +41,5 @@ $registros = $cliente->findAll($_SESSION['user_id']);
             </tbody>
         </table>
     </div>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <form action="">
-                <i>
-                    <h1>Editar dados</h1>
-                </i>
-                <br>
-                <div class="modalAjuste">
-                    <?php for ($i = 0; $i < 5; $i++) : ?>
-                        <label for="nome">
-                            <h3>Nome</h3>
-                        </label>
-                        <input type="text" name="nome">
-                    <?php endfor; ?>
-                </div>
-                <div class="btnDivModalAlterar">
-                    <button>Alterar</button>
-                </div>
-            </form>
-        </div>
-    </div>
+   
 </div>

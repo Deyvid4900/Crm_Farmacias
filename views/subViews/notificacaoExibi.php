@@ -4,6 +4,8 @@
     </div>
     <div class="contentMensagem">
         <ul style="width: 100%;height: 100%;margin-top: 18px;">
+        <!-- 
+Fatal error: Cannot redeclare ordenarPorDataHora() (previously declared in C:\xampp\htdocs\Projetos\Crm_Farmacias\views\subViews\notificacaoExibi.php:10) in C:\xampp\htdocs\Projetos\Crm_Farmacias\views\subViews\notificacaoExibi.php on line 15 -->
             <?php
 
             // Função para ordenar o array por data e hora
@@ -14,6 +16,7 @@
 
                 return $dataA - $dataB;
             }
+            
 
             // Ordenar o array
             usort($eventosProximos, 'ordenarPorDataHora');

@@ -1,6 +1,3 @@
-<style>
-
-</style>
 
 <link rel="stylesheet" href="../lib/css/modalFiltroStyles.css">
 

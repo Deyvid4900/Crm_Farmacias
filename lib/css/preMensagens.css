@@ -1,0 +1,57 @@
+.contentBox{
+    width: 100%;
+    height: auto;
+    padding-left: 10%;
+    padding-right: 6%;
+    /* background-color: red; */
+    margin-top: 40px;
+}
+.escolhasBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: 20px;
+   
+    gap: 20px;
+}
+.preMensagens{
+    width: 340px;
+    height: 110px;
+    border-radius: 10px;
+    font-size: 18pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.aa{
+    background-color: #6ea8fe;
+}
+.bb{
+    background-color: #75b798;
+}
+.cc{
+    background-color: #ea868f;
+}
+.dd{
+    background-color: #ffda6a;
+}
+
+
+.aa:hover{
+    background-color: #418dff;
+}
+.bb:hover{
+    background-color: #3cb87e;
+}
+.cc:hover{
+    background-color: #d44955;
+}
+.dd:hover{
+    background-color: #cfa937;
+}

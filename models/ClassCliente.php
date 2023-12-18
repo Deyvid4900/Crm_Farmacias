@@ -381,6 +381,15 @@ class Cliente extends CRUD
 		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
 		return $stmt->fetchAll(\PDO::FETCH_BOTH);
 	}
+	public function  findAllByFarmaciaId($userid)
+	{
+		$sql = "SELECT * FROM $this->table WHERE Id_Farmacia_FK = $userid ";
+
+		$stmt = Database::prepare($sql);
+		$stmt->execute();
+		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
+		return $stmt->fetchAll(\PDO::FETCH_BOTH);
+	}
 	public function findAllAdress($idCliente)
 	{
 		$sql = "SELECT * FROM enderecos WHERE cliente_id =:cliente_id ";
@@ -390,18 +399,17 @@ class Cliente extends CRUD
 		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
 		return $stmt->fetchAll(\PDO::FETCH_BOTH);
 	}
-	public function findAllAdressWithClientName()
+	public function findAllAdressWithClientName($userid)
 	{
 		$sql = "SELECT e.*, c.nome AS nome
-				FROM enderecos e
-				INNER JOIN clientes c ON e.cliente_id = c.id
-				WHERE
-				 e.logradouro IS NOT NULL or e.logradouro != ''
-				AND e.bairro IS NOT NULL or e.bairro != ''
-				AND e.numeroCasa IS NOT NULL or e.numeroCasa != ''
-				AND e.cidade IS NOT NULL or e.cidade != ''
-				AND c.nome IS NOT NULL or c.nome != ''
-			   ";
+        FROM enderecos e
+        INNER JOIN clientes c ON e.cliente_id = c.id
+        WHERE c.Id_Farmacia_FK = $userid 
+          AND (e.logradouro IS NOT NULL OR e.logradouro != '')
+          AND (e.bairro IS NOT NULL OR e.bairro != '')
+          AND (e.numeroCasa IS NOT NULL OR e.numeroCasa != '')
+          AND (e.cidade IS NOT NULL OR e.cidade != '')
+          AND (c.nome IS NOT NULL OR c.nome != '')";
 
 		$stmt = Database::prepare($sql);
 		$stmt->execute();

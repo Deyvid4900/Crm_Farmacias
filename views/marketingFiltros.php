@@ -15,13 +15,13 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/homeStyles.css" ?>">
 
-<?php 
-include_once ("../models/ClassEvento.php");
-$evt=new \Models\Eventos;
-$tempoRestanteFormatado=new \Models\Eventos;
+<?php
+include_once("../models/ClassEvento.php");
+$evt = new \Models\Eventos;
+$tempoRestanteFormatado = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"],'',count($eventosProximos)); 
+\classes\ClassLayout::setHeaderComponente(count($eventosProximos), $_SESSION["username"], '');
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->
@@ -47,6 +47,12 @@ if (isset($_POST['conteudoPesquisa'])) {
         <h1>Filtro de Cliente</h1>
         <form action="../../views/marketingFiltros.php" id="FormFiltro" method="POST">
             <div id="styleForm">
+                <div style="display: flex;align-items: center; justify-content: center; cursor: help;" title="Para que os emails sejam enviados corretamentes é necessario que a sua conta de email esteja devidamente configurada, saiba como configura-la na aba 'Como Funciona' no menu lista ao lado do sino de notificações. ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-exclamation-octagon" viewBox="0 0 16 16">
+                        <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z" />
+                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                    </svg>
+                </div>
                 <div>
                     <label for="filtro">Filtrar por :</label>
                     <select name="filtro" id="filtro">
@@ -81,7 +87,7 @@ if (isset($_POST['conteudoPesquisa'])) {
         <div class="styleForm">
             <div class="tabela-container">
                 <?php
-                
+
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     include_once DIRREQ . '/models/ClassFiltro.php';
                     $input = $_POST['conteudoPesquisa'] ?? '';
@@ -146,7 +152,7 @@ if (isset($_POST['conteudoPesquisa'])) {
                 <div style="display: flex; padding: 20px; align-items: start; justify-content: space-around;">
                     <div>
                         <input id="content" name="id" type="hidden" value="">
-                        <input  id="tipo" name="tipo" type="hidden" value="">
+                        <input id="tipo" name="tipo" type="hidden" value="">
                     </div>
                     <div class="boxInput">
                         <label for="Assunto">
@@ -163,7 +169,7 @@ if (isset($_POST['conteudoPesquisa'])) {
 
                         </textarea>
                     </div>
-                    
+
                     <div style="display: flex;justify-content: end;">
 
                         <button id="btnEnviarFormMensagens" class="mensagemTipo btnTipoMensagens" type="submit">enviar</button>

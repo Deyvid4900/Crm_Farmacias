@@ -25,13 +25,14 @@ $evt = new \Models\Eventos;
 $tempoRestanteFormatado = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
+\classes\ClassLayout::setHeaderComponente(count($eventosProximos), $_SESSION["username"], '');
 
 ?>
 
 <!-- conteudo interno da pagina  -->
 
 <div>
+
     <div class="titulo-Inicio">
         <div class="titulo">
             <h1>Como funciona</h1>
@@ -76,11 +77,15 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
             <img src="/img/servicos.png" alt="">
         </div>
     </div>
-        <div class="textServicos">
-            <div class="flexP">
-                <p class="textPServicos">Ao clicar em 'Serviços' abrirá um formulario de 'Declaração de Serviço Farmacêutico', ao atender um paciente é necessário preencher esse formulário comprovando todos os procedimentos e orientações realizadas pelo responsável técnico durante a prestação do serviço farmacêutico, onde será possível imprimir caso necessário para o paciente</p>
-            </div>
+    <div class="textServicos">
+        <div class="flexP">
+            <p class="textPServicos">Ao clicar em 'Serviços' abrirá um formulario de 'Declaração de Serviço Farmacêutico', ao atender um paciente é necessário preencher esse formulário comprovando todos os procedimentos e orientações realizadas pelo responsável técnico durante a prestação do serviço farmacêutico, onde será possível imprimir caso necessário para o paciente</p>
         </div>
+    </div>
+
+
+
+
 </div>
 
 

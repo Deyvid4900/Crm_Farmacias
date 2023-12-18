@@ -48,7 +48,7 @@ $evt = new \Models\Eventos;
 $tempoRestanteFormatado = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
+\classes\ClassLayout::setHeaderComponente(count($eventosProximos), $_SESSION["username"],''); 
 
 ?>
 
@@ -74,7 +74,7 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
     <?php include "subViews/notificacaoExibi.php" ?>
 
     <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
-   
+    <script src='<?php echo DIRPAGE . "lib/JS/ajaxBuscaInfoContatoCliente.js" ?>'></script>
     <script>
         $(document).ready(function() {
             let loader = $('#loader');
@@ -125,6 +125,8 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
             })
          
         });
-    </script> <script src='<?php echo DIRPAGE . "lib/JS/ajaxBuscaCliente.js" ?>'></script>
+        </script>
+ 
+    
 
 <?php \classes\ClassLayout::setFooter(); ?>

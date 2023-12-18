@@ -1,7 +1,9 @@
 *{
     font-family: 'Inria Sans', sans-serif;
 }
-
+i{
+    color: #a5a5a5;
+}
 .titulo-Inicio{
     display: flex;
     justify-content: center;

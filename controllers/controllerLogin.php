@@ -32,11 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $todosRegistros = $farmaciaObj->getRegistroFromNome($nomeFarmacia);
         $registro = $farmaciaObj->getRegistroFromNome($nomeFarmacia);
         $email = $registro['emailFarmacia'];
+        $senhaEmail = $registro['senhaEmail'];
         $telefoneFarmacia = $registro['numeroFarmacia'];
         // Login bem-sucedido
         $_SESSION['user_id'] = $id;
         $_SESSION['username'] = $farmaciaObj->getNomeFarmacia();
         $_SESSION['email'] = $email;
+        $_SESSION['senhaEmail'] = $senhaEmail;
         $_SESSION['tell'] = $telefoneFarmacia;
         $_SESSION['cnpj'] = $todosRegistros["cnpjFarmacia"];
         header('Location: /views/home.php');

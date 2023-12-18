@@ -18,7 +18,7 @@ $evt = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
 
-\classes\ClassLayout::setHeaderComponente($_SESSION["username"], '', count($eventosProximos));
+\classes\ClassLayout::setHeaderComponente(count($eventosProximos), $_SESSION["username"],''); 
 \classes\ClassLayout::setSideComponente();
 ?>
 <?php include "subViews/notificacaoExibi.php" ?>
