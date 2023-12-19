@@ -1,4 +1,7 @@
 <?php
+
+use Models\Consultorio;
+
 session_start();
 include("../lib/vendor/autoload.php");
 \Classes\ClassLayout::setHeadDefault("Lembretes");
@@ -18,11 +21,14 @@ if (!isset($_SESSION["username"])) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 <?php
 include_once("../models/ClassEvento.php");
+include_once ("../models/ClassConsultorio.php");
+$consulta =new Consultorio;
+$dataRetorno = $consulta->findAllDataRetorno($_SESSION['user_id']);
 $evt = new \Models\Eventos;
 $tempoRestanteFormatado = new \Models\Eventos;
 $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]);
 
-\classes\ClassLayout::setHeaderComponente(count($eventosProximos), $_SESSION["username"],''); 
+\classes\ClassLayout::setHeaderComponente(count($eventosProximos), $_SESSION["username"],'',count($dataRetorno)); 
 \classes\ClassLayout::setSideComponente();
 ?>
 <!-- conteudo interno da pagina  -->

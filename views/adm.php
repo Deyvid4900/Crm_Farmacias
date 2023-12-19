@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 $url = $_SERVER['REQUEST_URI'];
 if ($url != '/') {
@@ -33,4 +33,4 @@ Classes\ClassLayout::setHeadBootstrap("login");
             </div>
         </div>
     </div>
-<?php \classes\ClassLayout::setFooter(); ?>
+<?php \classes\ClassLayout::setFooter(); ?> -->

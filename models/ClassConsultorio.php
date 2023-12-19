@@ -1,4 +1,5 @@
 <?php
+
 namespace Models;
 
 include_once '../models/ClassConexao.php';
@@ -74,7 +75,7 @@ class Consultorio extends CRUD
     {
         return $this->posologiaConsultorio;
     }
-    
+
     public function insertConsultorio($id)
     {
         $sql = "INSERT INTO $this->table 
@@ -127,6 +128,24 @@ class Consultorio extends CRUD
         // Retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
         return $stmt->fetchAll(\PDO::FETCH_BOTH);
     }
+     public function findAllDataRetorno($idFarmacia)
+    {
+        // Obtém a data atual
+        $currentDate = date('Y-m-d');
+
+        // Calcula a data para os próximos 15 dias
+        $endDate = date('Y-m-d', strtotime('+15 days', strtotime($currentDate)));
+
+        // Constrói a consulta SQL para selecionar as datas no intervalo
+        $sql = "SELECT dataConsulta FROM $this->table WHERE id_Farmacia_FK = $idFarmacia AND dataConsulta BETWEEN :currentDate AND :endDate ORDER BY dataConsulta";
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':currentDate', $currentDate);
+        $stmt->bindParam(':endDate', $endDate);
+        $stmt->execute();
+
+        // Retorna um array com as datas ordenadas
+        return $stmt->fetchAll(\PDO::FETCH_COLUMN);
+    }
 
     public function find($id)
     {
@@ -164,4 +183,3 @@ class Consultorio extends CRUD
         return $stmt->execute();
     }
 }
-

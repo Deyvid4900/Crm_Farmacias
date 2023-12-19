@@ -3,11 +3,10 @@
         <div style="cursor: pointer; color: white">&times;</div>
     </div>
     <div class="contentMensagem">
-        <ul style="width: 100%;height: 100%;margin-top: 18px;">
-        <!-- 
-Fatal error: Cannot redeclare ordenarPorDataHora() (previously declared in C:\xampp\htdocs\Projetos\Crm_Farmacias\views\subViews\notificacaoExibi.php:10) in C:\xampp\htdocs\Projetos\Crm_Farmacias\views\subViews\notificacaoExibi.php on line 15 -->
-            <?php
+        <ul style="width: 100%;height: 100%; margin-top: 175px;">
 
+            <?php
+            
             // Função para ordenar o array por data e hora
             function ordenarPorDataHora($a, $b)
             {
@@ -16,10 +15,13 @@ Fatal error: Cannot redeclare ordenarPorDataHora() (previously declared in C:\xa
 
                 return $dataA - $dataB;
             }
-            
-
+            $sumArrays = function ($a, $b) {
+                return $a + $b;
+            };
+    
             // Ordenar o array
             usort($eventosProximos, 'ordenarPorDataHora');
+            // usort($dataRetorno, 'ordenarPorDataHora');
 
             // Função para calcular o tempo restante
             function calcularTempoRestante($tempoRestante)
@@ -34,11 +36,17 @@ Fatal error: Cannot redeclare ordenarPorDataHora() (previously declared in C:\xa
             }
 
             // Exemplo de uso
+            $html = '';
+            foreach ($dataRetorno as $key=>$value ) {
+                $html .= '<div class="linhaBaixo">consulta marcada para: '.$value . '</div><br>';
+            }
             foreach ($eventosProximos as $evento) {
                 $tempoRestante = calcularTempoRestante($evento['tempoRestante']);
-                echo " <div class='linhaBaixo'> <br>Evento: {$evento['nomeEvento']} - Faltam:{$tempoRestante['semanas']} semanas, {$tempoRestante['dias']} dias e {$tempoRestante['horas']} horas.<br> </div>\n";
+                
+                $html .= " <div class='linhaBaixo'> <br>Evento: {$evento['nomeEvento']} - Faltam:{$tempoRestante['semanas']} semanas, {$tempoRestante['dias']} dias e {$tempoRestante['horas']} horas.<br> </div>\n";
+                
             }
-
+            echo $html;
             ?>
         </ul>
     </div>

@@ -4,14 +4,16 @@ use Models\Consultorio;
 include("../lib/vendor/autoload.php");
 include_once "../models/ClassConsultorio.php";
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
     // Recebe os dados do formulário
     $id = $_POST['idFarmacia'];
     $nameFarm = $_POST['NameFarm'];
     $namePaciente = $_POST['namePaciente'];
     $prescrito = $_POST['prescrito'];
     $posologiaConsultorio = $_POST['posologiaConsultorio'];
-    $date = $_POST['date'];
+    $date = $_POST['dataRetorno'];
     $horaConsulta = $_POST['horaConsulta'];
     
     // Aqui você pode realizar qualquer lógica de processamento necessária
