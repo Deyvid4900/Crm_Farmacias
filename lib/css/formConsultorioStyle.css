@@ -17,7 +17,7 @@ label{
 
 .antesFormb-bg{
     width: 765px;
-    min-height: 350px;
+    min-height: 305px;
     height: auto;
     /* border: 1px solid rgb(43, 43, 43); */
     border-radius: 8px;
@@ -73,7 +73,7 @@ label{
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    height: 200px;
+    /* height: 200px; */
     gap: 25px;
 }
 
@@ -106,7 +106,7 @@ label{
 .btnEnviarBox{
     display: flex;
     justify-content: end;
-    padding-right: 45px;
+    
 }
 .btnImprimir-Consul{
     background-color: #247158;
@@ -129,5 +129,5 @@ label{
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    height: 200px;
+    /* height: 200px; */
 }

@@ -29,6 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<br>para: " . $value['email'];
                 echo "<br>Assunto: " . $assunto;
                 echo "<br>mensagem: " . $mensagem;
+
+
+
+
+                
             }
 
             break;

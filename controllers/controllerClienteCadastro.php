@@ -14,6 +14,9 @@ const FILTERS = [
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    
+
     $filtro = [
         'string' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
         'email' => FILTER_SANITIZE_EMAIL,
@@ -33,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
     $contatosArray = [
         'nome',
+
+        'nomeRemedioControl',
         'sexo',
         'estadoCivil',
         'dataNasc',
@@ -57,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $fields = [
         'nome' => 'string',
+        'nomeRemedioControl' => 'string',
         'sexo' => 'string',
         'estadoCivil' => 'string',
         'dataNasc' => 'string',
@@ -83,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sanitizedData = sanitize($selectedFields, $fields, $filtro);
 
     $cliente = new Cliente;
+
     $respostaCliente = $cliente->insertArray($sanitizedData, $_SESSION["user_id"]);
 
 
@@ -116,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-    if ($respostaCliente == true && $respostaEndereco == true ) {
+    if ($respostaCliente == true && $respostaEndereco == true) {
         $response = 'Dados inseridos no banco de dados';
     } else {
         $response = 'Dados não inseridos no banco de dados';

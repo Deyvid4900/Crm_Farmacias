@@ -33,18 +33,20 @@
                 </div>
                 <div class="ladoEsquerdo">
                     <div>
-                        <label for="date">Data </label>
-                        <input type="date" name="date" id="date" autocomplete>
+                        <label for="date">Data de Retorno</label>
+                        <input type="date" name="dataRetorno" id="date" autocomplete>
                     </div>
                     <div class="mg-top">
                         <label class="alinharCima" for="posologiaConsultorio">Posologia</label>
-                        <textarea name="posologiaConsultorio" id="posologiaConsultorio" cols="30" rows="5"></textarea>
+                        <textarea name="posologiaConsultorio" id="posologiaConsultorio" cols="35" rows="4"></textarea>
                     </div>
 
                 </div>
             </div>
-
-            <div class="btnEnviarBox"><button class="btnImprimir-Consul">Enviar</button></div>
+            <div id="boxa" style="display: flex; width: 100%; justify-content: end;">
+                <div class="btnEnviarBox"><button class="btnImprimir-Consul" id="btnImprimir">imprimir</button></div>
+                <div class="btnEnviarBox"><button class="btnImprimir-Consul" id="btnEnviar">Enviar</button></div>
+            </div>
             <div class="cs-loader" id="loader">
                 <div class="cs-loader-inner">
                     <label>●</label>

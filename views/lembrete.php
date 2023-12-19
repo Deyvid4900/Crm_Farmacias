@@ -81,11 +81,11 @@ if (isset($_POST['conteudoPesquisa'])) {
                     if ($resultados !== false && !empty($resultados)) {
                         echo '<table >
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Nome do Remedio</th>
                                     <th>Nome</th>
                                     <th>Sexo</th>
                                     <th>celular1</th>
-                                    <th>telFixo</th>
+                                    
                                     <th>email</th>
                                     <th>Selecionar</th>
 
@@ -94,11 +94,12 @@ if (isset($_POST['conteudoPesquisa'])) {
 
                         foreach ($resultados as $pessoa) {
                             echo '<tr>';
-                            echo '<td>' . $pessoa['id'] . '</td>';
+
+                            echo '<td>' . $pessoa['nomeRemedioControl'] . '</td>';
                             echo '<td>' . $pessoa['nome'] . '</td>';
                             echo '<td>' . $pessoa['sexo'] . '</td>';
                             echo '<td>' . $pessoa['celular1'] . '</td>';
-                            echo '<td>' . $pessoa['telFixo'] . '</td>';
+                        
                             echo '<td>' . $pessoa['email'] . '</td>';
                             echo '<td><input type="checkbox" class="checkboxFiltro" id=' . $pessoa['id'] . '></td>';
                             echo '</tr>';
@@ -132,8 +133,17 @@ if (isset($_POST['conteudoPesquisa'])) {
                 </div>
                 <div class="alignCenter">
                     <label class="textLal" title="De X em X dias ">Data Personalizada</label>
-                    <input type="number" name="mensal" max="31" style="width: 40px;" maxlength="2">
+                    <input type="number" name="mensal" max="31" min='7' style="width: 40px;"  maxlength="2">
                 </div>
+            </div>
+        </div>
+        <div id="styleFormm">
+            <div class="linhaaa">
+                <p id="textFreq">Chegada de Itens de interece do cliente</p>
+            </div>
+            <div class="flexLembre ">
+                <label for="">Nome do Item</label>
+                <input type="text">
             </div>
         </div>
 

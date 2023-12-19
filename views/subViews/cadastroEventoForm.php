@@ -19,9 +19,9 @@
                 </div>
                 <div class="formAlinhado">
                     <div class="flexCol1">
-                        <div class="padDown" style="display: flex;align-items: start;">
-                            <label for="hospitalAtual" class="aaaa">Descrição:  </label>
-                            <textarea rows="3" cols="3" type="text" name="desc" placeholder="Descrição" id="hospitalAtual"></textarea>
+                        <div class="padDown" style="display: flex;align-items: end;">
+                            <label for="hospitalAtual" class="aaaa">Descrição</label>
+                            <textarea rows="1" cols="45" type="text" name="desc" placeholder="Descrição" ></textarea>
                         </div>
 
                     </div>

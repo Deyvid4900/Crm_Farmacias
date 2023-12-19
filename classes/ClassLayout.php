@@ -94,6 +94,7 @@ class ClassLayout
     $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
     $head .=  " </div>\n";
     $head .=  " <div class='contentSidebar'>\n";
+    $head .=  "  <a href='#'>Adminstração</a>\n";
     $head .=  "  <a href='/views/cadastroMedico.php'>Cadastrar Médicos</a>\n";
     $head .=  "   <a href='/views/medicoFiltro.php'>Encontre Médico</a>\n";
     $head .=  "  <a href='/views/ultimosServicos.php'>Ultimos Serviços</a>\n";
@@ -194,13 +195,13 @@ class ClassLayout
 
 
     $side .= "  <section>\n";
-    $side .= "  <div class='sideBar-infoMarketing'>\n";
-    $side .= " <div class='boxMarketing'>\n";
+    $side .= "  <div class='sideBar-infoMarketing' >\n";
+    $side .= " <div class='boxMarketing' >\n";
     $side .= "     <p><a href='/views/marketingFiltros.php'>Mensagem<br>Livre</a></p>\n";
     $side .= " </div>\n";
-    $side .= " <div class='boxMarketing'>\n";
-    $side .= "     <p><a href='/views/preMensagens.php'>Pre-Mensagens</a></p>\n";
-    $side .= " </div>\n";
+    // $side .= " <div class='boxMarketing' style='background-color:#8d8d8dee;cursor: default !important;'>\n";
+    // $side .= "     <p><a href='#'>Pre-Mensagens</a></p>\n";
+    // $side .= " </div>\n";
     $side .= " </div>\n";
     $side .= "  </section>\n";
     echo $side;

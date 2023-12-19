@@ -244,10 +244,10 @@ class Cliente extends CRUD
 	{
 		$sql = "INSERT INTO $this->table 
       (Id_Farmacia_FK, nome, sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, infoAdic,
-      celular1, celular2, telFixo, email) 
+      celular1, celular2, telFixo, email, nomeRemedioControl) 
       VALUES 
       (:Id_Farmacia_FK, :nome, :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :infoAdic,
-      :celular1, :celular2, :telFixo, :email)";
+      :celular1, :celular2, :telFixo, :email, :nomeRemedioControl)";
 
 		$stmt = Database::prepare($sql);
 		$stmt->bindValue(':Id_Farmacia_FK', $userID);
