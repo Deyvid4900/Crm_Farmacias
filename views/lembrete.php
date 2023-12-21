@@ -156,7 +156,7 @@ if (isset($_POST['conteudoPesquisa'])) {
         <div class="mensagemTipoDiv">
             <div style="display:flex;gap: 20px;">
                 <button id="emailBtn" class="mensagemTipo title btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" type="submit">Email</button>
-                <button id="whatsBtn" title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo  title btnTipoMensagens" type="submit">WhatsApp</button>
+                <button id="" title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo  title btnTipoMensagens" style="background-color: #8d8d8d;" type="submit">WhatsApp</button>
             </div>
             <div>
                 <button class="mensagemTipo" id="MaracarTodos" type="submit">Enviar para Todos</button>

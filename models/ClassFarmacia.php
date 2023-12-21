@@ -9,18 +9,111 @@ class Farmacia extends DataBase
     use Pessoa, Funcionario;
 
     protected $table = 'farmacia';
+
     private $nomeFarmacia;
+    private $razaoSocial;
+    private $emailFarmacia;
+    private $numeroFarmacia;
+    private $dataCriacaoFarmacia;
+    private $cnpjFarmacia;
+    private $telefoneFarmacia;
+    private $senhaEmail;
     private $senhaFarmacia;
     private $codigo;
+
+    // Getter e Setter para $nomeFarmacia
+
+    public function getNomeFarmacia()
+    {
+        return $this->nomeFarmacia;
+    }
 
     public function setNomeFarmacia($nomeFarmacia)
     {
         $this->nomeFarmacia = $nomeFarmacia;
     }
 
-    public function getNomeFarmacia()
+    // Getter e Setter para $razaoSocial
+    public function getRazaoSocial()
     {
-        return $this->nomeFarmacia;
+        return $this->razaoSocial;
+    }
+
+    public function setRazaoSocial($razaoSocial)
+    {
+        $this->razaoSocial = $razaoSocial;
+    }
+
+    // Getter e Setter para $emailFarmacia
+    public function getEmailFarmacia()
+    {
+        return $this->emailFarmacia;
+    }
+
+    public function setEmailFarmacia($emailFarmacia)
+    {
+        $this->emailFarmacia = $emailFarmacia;
+    }
+
+    // Getter e Setter para $numeroFarmacia
+    public function getNumeroFarmacia()
+    {
+        return $this->numeroFarmacia;
+    }
+
+    public function setNumeroFarmacia($numeroFarmacia)
+    {
+        $this->numeroFarmacia = $numeroFarmacia;
+    }
+
+    // Getter e Setter para $dataCriacaoFarmacia
+    public function getDataCriacaoFarmacia()
+    {
+        return $this->dataCriacaoFarmacia;
+    }
+
+    public function setDataCriacaoFarmacia($dataCriacaoFarmacia)
+    {
+        $this->dataCriacaoFarmacia = $dataCriacaoFarmacia;
+    }
+
+    // Getter e Setter para $cnpjFarmacia
+    public function getCnpjFarmacia()
+    {
+        return $this->cnpjFarmacia;
+    }
+
+    public function setCnpjFarmacia($cnpjFarmacia)
+    {
+        $this->cnpjFarmacia = $cnpjFarmacia;
+    }
+
+    // Getter e Setter para $telefoneFarmacia
+    public function getTelefoneFarmacia()
+    {
+        return $this->telefoneFarmacia;
+    }
+
+    public function setTelefoneFarmacia($telefoneFarmacia)
+    {
+        $this->telefoneFarmacia = $telefoneFarmacia;
+    }
+
+    // Getter e Setter para $senhaEmail
+    public function getSenhaEmail()
+    {
+        return $this->senhaEmail;
+    }
+
+    public function setSenhaEmail($senhaEmail)
+    {
+        $this->senhaEmail = $senhaEmail;
+    }
+
+    // Getter e Setter para $senhaFarmacia
+    public function getSenhaFarmacia()
+    {
+        return $this->senhaFarmacia;
     }
 
     public function setSenhaFarmacia($senhaFarmacia)
@@ -28,19 +121,15 @@ class Farmacia extends DataBase
         $this->senhaFarmacia = $senhaFarmacia;
     }
 
-    public function getSenhaFarmacia()
+    // Getter e Setter para $codigo
+    public function getCodigo()
     {
-        return $this->senhaFarmacia;
+        return $this->codigo;
     }
 
     public function setCodigo($codigo)
     {
         $this->codigo = $codigo;
-    }
-
-    public function getCodigo()
-    {
-        return $this->codigo;
     }
 
     public function insert($nomeFarmacia,$senhaFarmacia,$emailFarmacia,$numeroFarmacia)
@@ -61,23 +150,49 @@ class Farmacia extends DataBase
 }
 
 
-    public function update($id)
-    {
-        $sql = "UPDATE $this->table SET 
-                nomeFarmacia = :nomeFarmacia, 
-                senhaFarmacia = :senhaFarmacia, 
-                codigo = :codigo 
-                WHERE id = :id";
+public function update($id, $colunas = [])
+{
+    // Lista de colunas permitidas
+    $colunasPermitidas = [
+        'nomeFarmacia',
+        'razaoSocial',
+        'emailFarmacia',
+        'numeroFarmacia',
+        'dataCriacaoFarmacia',
+        'cnpjFarmacia',
+        'telefoneFarmacia',
+        'senhaEmail'
+    ];
 
-        $stmt = DataBase::prepare($sql);
+    // Filtra as colunas fornecidas para garantir que apenas as permitidas sejam usadas
+    $colunas = array_intersect($colunas, $colunasPermitidas);
 
-        $stmt->bindParam(':nomeFarmacia', $this->nomeFarmacia);
-        $stmt->bindParam(':senhaFarmacia', $this->senhaFarmacia);
-        $stmt->bindParam(':codigo', $this->codigo);
-        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
-
-        return $stmt->execute();
+    // Verifica se há pelo menos uma coluna para atualizar
+    if (empty($colunas)) {
+        return false; // Nada para atualizar
     }
+
+    // Constrói a parte SET da consulta SQL
+    $setPart = implode(', ', array_map(function ($coluna) {
+        return "$coluna = :$coluna";
+    }, $colunas));
+
+    $sql = "UPDATE $this->table SET $setPart WHERE id_PK = :id";
+
+    $stmt = DataBase::prepare($sql);
+
+    // Associa os parâmetros
+    foreach ($colunas as $coluna) {
+        $stmt->bindParam(":$coluna", $this->$coluna);
+    }
+
+    $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+
+    return $stmt->execute();
+}
+
+
+
     public function findAll()
     {
         $sql = "SELECT * FROM $this->table";

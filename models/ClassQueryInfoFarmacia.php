@@ -29,5 +29,5 @@ if (!empty($farmacias)) {
     // Retornando os resultados como JSON
     
 } else {
-    echo "Nenhum resultado encontrado.";
+    echo "Nenhum resultado de Endereço de farmacia encontrado.";
 }

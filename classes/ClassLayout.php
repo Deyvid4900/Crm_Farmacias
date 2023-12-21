@@ -199,9 +199,9 @@ class ClassLayout
     $side .= " <div class='boxMarketing' >\n";
     $side .= "     <p><a href='/views/marketingFiltros.php'>Mensagem<br>Livre</a></p>\n";
     $side .= " </div>\n";
-    // $side .= " <div class='boxMarketing' style='background-color:#8d8d8dee;cursor: default !important;'>\n";
-    // $side .= "     <p><a href='#'>Pre-Mensagens</a></p>\n";
-    // $side .= " </div>\n";
+    $side .= " <div class='boxMarketing' style='background-color:#8d8d8dee;cursor: default !important;'>\n";
+    $side .= "     <p><a href='#'>Pre-Mensagens</a></p>\n";
+    $side .= " </div>\n";
     $side .= " </div>\n";
     $side .= "  </section>\n";
     echo $side;

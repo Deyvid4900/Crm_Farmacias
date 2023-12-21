@@ -105,6 +105,15 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
             $("#tabelaEnderecosCliente").hide()
             $("#ContatosCliente").hide()
 
+            $("#excluir").click((e) => {
+                e.preventDefault()
+                $("#meuModal").show()
+            })
+            $("#cancelarDelecao").click((e) => {
+                e.preventDefault()
+                $("#meuModal").hide()
+            })
+
             $("#Endereco").click(() => {
                 $("#tabelaEnderecosCliente").show()
                 $('#tabelaDados').hide()

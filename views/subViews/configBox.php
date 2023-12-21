@@ -9,21 +9,21 @@ include_once '../models/ClassQueryInfoFarmacia.php';
     <div class="head">
         <h1>Configurações</h1>
     </div>
-    <form action="/controllers/controllerConfigFarmacia.php" method="POST">
+    <form action="/controllers/controllerConfigFarmacia.php" id="formUpdateConfig" method="POST">
         <div class="content">
             <div class="divInformacaoBasicas">
                 <span class="titulos">Informações Básicas</span>
                 <div class="campoAjustarNome">
                     <label for="nome">Nome:</label><br>
-                    <input type="text" id="nome" name="nome" placeholder="<?php echo empty($farmacias["nomeFarmacia"]) ? 'Digite o nome da sua farmácia' : $farmacias["nomeFarmacia"]; ?>">
+                    <input type="text" id="nome" name="nomeFarmacia" placeholder="<?php echo empty($farmacias["nomeFarmacia"]) ? 'Digite o nome da sua farmácia' : $farmacias["nomeFarmacia"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
                     <label for="email">E-mail:</label><br>
-                    <input type="email" id="email" name="email" placeholder="<?php echo empty($farmacias["emailFarmacia"]) ? 'Digite o email da sua farmácia' : $farmacias["emailFarmacia"]; ?>">
+                    <input type="email" id="email" name="emailFarmacia" placeholder="<?php echo empty($farmacias["emailFarmacia"]) ? 'Digite o email da sua farmácia' : $farmacias["emailFarmacia"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
                     <label for="cnpj">CNPJ:</label><br>
-                    <input type="text" id="cnpj" name="cnpj" placeholder="<?php echo empty($farmacias["cnpjFarmacia"]) ? 'Digite o CNPJ da sua farmácia' : $farmacias["cnpjFarmacia"]; ?>">
+                    <input type="text" id="cnpj" name="cnpjFarmacia" placeholder="<?php echo empty($farmacias["cnpjFarmacia"]) ? 'Digite o CNPJ da sua farmácia' : $farmacias["cnpjFarmacia"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
                     <label for="razaoSocial">Razão Social:</label>
@@ -31,15 +31,19 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                 </div>
                 <div class="campoAjustarNome">
                     <label for="celular">Celular:</label><br>
-                    <input type="tel" id="celular" name="celular" placeholder="<?php echo empty($farmacias["numeroFarmacia"]) ? 'Digite o numero de Celular da sua farmácia' : $farmacias["numeroFarmacia"]; ?>">
+                    <input type="tel" id="celular" name="numeroFarmacia" placeholder="<?php echo empty($farmacias["numeroFarmacia"]) ? 'Digite o numero de Celular da sua farmácia' : $farmacias["numeroFarmacia"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
                     <label for="telefone">Telefone:</label><br>
-                    <input type="tel" id="telefone" name="telefone" placeholder="<?php echo empty($farmacias["telefoneFarmacia"]) ? 'Digite o numero de telefone da sua farmácia' : $farmacias["telefoneFarmacia"]; ?>">
+                    <input type="tel" id="telefone" name="telefoneFarmacia" placeholder="<?php echo empty($farmacias["telefoneFarmacia"]) ? 'Digite o numero de telefone da sua farmácia' : $farmacias["telefoneFarmacia"]; ?>">
+                </div>
+                <div class="campoAjustarNome">
+                    <label for="dataCriacao">Senha Gmail</label>
+                    <input type="text" id="dataCriacao" name="senhaEmail" placeholder="Coloque aqui sua senha de app gmail configurada">
                 </div>
                 <div class="campoAjustarNome">
                     <label for="dataCriacao">Data de criação da empresa:</label>
-                    <input type="date" id="dataCriacao" name="dataCriacao">
+                    <input type="date" id="dataCriacao" name="dataCriacaoFarmacia">
                 </div>
             </div>
             <div class="divInformacaoEnderecos">
@@ -68,7 +72,7 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                 <div class="campoAjustarNome">
                     <label for="uf">UF</label>
                     <select name="uf" id="uf">
-                        <?php echo empty($farmacias["cidade"]) ?
+                        <?php echo empty($farmacias["uf"]) ?
                             '<option value="ac">AC</option>
                          <option value="al">AL</option>
                          <option value="ap">AP</option>
@@ -96,7 +100,33 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                          <option value="sp">SP</option>
                          <option value="se">SE</option>
                          <option value="to">TO</option>'
-                            : '<option value="' . $farmacias["uf"] . '">' . $farmacias["uf"] . '</option>;' ?>
+                            : '<option value="' . $farmacias["uf"] . '">' . $farmacias["uf"] . '</option><option value="ac">AC</option>
+                            <option value="al">AL</option>
+                            <option value="ap">AP</option>
+                            <option value="am">AM</option>
+                            <option value="ba">BA</option>
+                            <option value="ce">CE</option>
+                            <option value="df">DF</option>
+                            <option value="es">ES</option>
+                            <option value="go">GO</option>
+                            <option value="ma">MA</option>
+                            <option value="mt">MT</option>
+                            <option value="ms">MS</option>
+                            <option value="mg">MG</option>
+                            <option value="pa">PA</option>
+                            <option value="pb">PB</option>
+                            <option value="pr">PR</option>
+                            <option value="pe">PE</option>
+                            <option value="pi">PI</option>
+                            <option value="rj">RJ</option>
+                            <option value="rn">RN</option>
+                            <option value="rs">RS</option>
+                            <option value="ro">RO</option>
+                            <option value="rr">RR</option>
+                            <option value="sc">SC</option>
+                            <option value="sp">SP</option>
+                            <option value="se">SE</option>
+                            <option value="to">TO</option>' ?>
 
                     </select>
                 </div>
@@ -109,6 +139,7 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                 <!-- Adicione mais campos conforme necessário -->
             </div>
         </div>
-        <button><?php echo  !$atualizar ? 'Adicionar' : 'Atualizar'; ?> </button>
+        <div style="width: 100%; display: flex; justify-content: end;padding: 10px;"><button style="background-color: #0c4b36; padding: 10px 20px; border: none; color: #fff; cursor: pointer; border-radius: 3px;"><?php echo  !$atualizar ? 'Adicionar' : 'Atualizar'; ?> </button></div>
     </form>
 </div>
+<!-- <script src="/lib/JS/configFetch.js"></script> -->

@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="../lib/css/modalFiltroStyles.css">
 
 <section id="filtroBox" class="formInit-bg aala ativo" id="b">
@@ -46,43 +45,59 @@
             </div>
 
         </form>
+        <form action="" method="post">
+            <div class="styleForm">
+                <div class="tabela-container">
+                    <style>
+                        td {
+                            text-align: center;
+                        }
+                    </style>
 
-        <div class="styleForm">
-            <div class="tabela-container">
-                <style>
-                    td {
-                        text-align: center;
-                    }
-                </style>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Sexo</th>
+                                <th>celular1</th>
+                                <th>telFixo</th>
+                                <th>email</th>
+                                <th>Selecionar</th>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Sexo</th>
-                            <th>celular1</th>
-                            <th>telFixo</th>
-                            <th>email</th>
-                            <th>Selecionar</th>
+                                <!-- Adicione mais colunas conforme necessário -->
+                            </tr>
+                        </thead>
+                        <tbody id="resultadoQueryCliente">
 
-                            <!-- Adicione mais colunas conforme necessário -->
-                        </tr>
-                    </thead>
-                    <tbody id="resultadoQueryCliente">
-
-                    </tbody>
+                        </tbody>
 
 
-                </table>
+                    </table>
 
+                </div>
             </div>
-        </div>
-        <div class="mensagemTipoDiv">
-            <div>
-                <button class="mensagemTipo" id="MaracarTodos" style="background-color: rgb(235 87 87);" type="submit">Excluir</button>
-                <button class="mensagemTipo" id="MaracarTodos" type="submit">Alterar</button>
+            <div class="mensagemTipoDiv">
+                <div style="display: flex; gap: 20px;">
+                    <button class="mensagemTipo" id="excluir" style="background-color: rgb(235 87 87);" type="submit">Excluir</button>
+
+                    <button class="mensagemTipo" id="MaracarTodos" type="submit">Alterar</button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
+<div id="meuModal" class="modal" style="z-index: 99999;">
+    <!-- Conteúdo do Modal -->
+    <div class="modal-conteudo" style="width: 40%;">
+        <h2>Tem certeza que deseja excluir esse registro ?</h2>
+        <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+            <form id="formMensagem" action="../controllers/controllerMensagem.php" method="post" style="width: 100%;">
+                <div style="display: flex;justify-content: center;gap: 40px; margin-top: 20px;">
+                    <button id="cancelarDelecao" style="background-color:#677571;"  class="mensagemTipo btnTipoMensagens" type="submit" >Cancelar</button>
+                    <button id="btnEnviarFormMensagens" style="background-color: rgb(235 87 87);" class="mensagemTipo btnTipoMensagens" type="submit">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
