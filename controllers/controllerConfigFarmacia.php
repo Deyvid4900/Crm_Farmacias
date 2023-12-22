@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $controle = [];
 
 
+
     function obterCamposFormulario()
     {
         $camposFormulario = [];
@@ -66,10 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $controle[] = $key;
         }
     }
-    
 
 
-    if ($obj->update($_SESSION['user_id'],$controle)) {
+
+    if ($obj->update($_SESSION['user_id'], $controle)) {
         $response = 'Dados Atualizados!';
     } else {
         $response = 'Não foi possivel atualizar os dados';

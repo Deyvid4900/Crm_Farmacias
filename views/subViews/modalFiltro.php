@@ -90,7 +90,7 @@
 <div id="meuModal" class="modal" style="z-index: 99999;">
     <!-- Conteúdo do Modal -->
     <div class="modal-conteudo" style="width: 40%;">
-        <h2>Tem certeza que deseja excluir esse registro ?</h2>
+        <h2>Essa ação é irreversível,tem certeza que deseja excluir esse registro? </h2>
         <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
             <form id="formMensagem" action="../controllers/controllerMensagem.php" method="post" style="width: 100%;">
                 <div style="display: flex;justify-content: center;gap: 40px; margin-top: 20px;">

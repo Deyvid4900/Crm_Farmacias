@@ -10,8 +10,13 @@ include_once '../models/ClassQueryInfoFarmacia.php';
         <h1>Configurações</h1>
     </div>
     <form action="/controllers/controllerConfigFarmacia.php" id="formUpdateConfig" method="POST">
+        <div style="width: 100%;text-align: center;">
+            <i style="color:#afafaf;">Após atualizar os dados re-logue na conta para atualização no app</i>
+        </div>
         <div class="content">
+
             <div class="divInformacaoBasicas">
+
                 <span class="titulos">Informações Básicas</span>
                 <div class="campoAjustarNome">
                     <label for="nome">Nome:</label><br>
@@ -26,7 +31,7 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                     <input type="text" id="cnpj" name="cnpjFarmacia" placeholder="<?php echo empty($farmacias["cnpjFarmacia"]) ? 'Digite o CNPJ da sua farmácia' : $farmacias["cnpjFarmacia"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
-                    <label for="razaoSocial">Razão Social:</label>
+                    <label for="razaoSocial">Razão Social:</label><br>
                     <input type="text" id="razaoSocial" name="razaoSocial" placeholder="<?php echo empty($farmacias["razaoSocial"]) ? 'Digite a Razão Social da sua farmácia' : $farmacias["razaoSocial"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
@@ -38,35 +43,36 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                     <input type="tel" id="telefone" name="telefoneFarmacia" placeholder="<?php echo empty($farmacias["telefoneFarmacia"]) ? 'Digite o numero de telefone da sua farmácia' : $farmacias["telefoneFarmacia"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
-                    <label for="dataCriacao">Senha Gmail</label>
+                    <label for="dataCriacao">Senha Gmail</label><br>
                     <input type="text" id="dataCriacao" name="senhaEmail" placeholder="Coloque aqui sua senha de app gmail configurada">
                 </div>
                 <div class="campoAjustarNome">
-                    <label for="dataCriacao">Data de criação da empresa:</label>
+                    <label for="dataCriacao">Data de criação da empresa:</label><br>
                     <input type="date" id="dataCriacao" name="dataCriacaoFarmacia">
                 </div>
             </div>
+
             <div class="divInformacaoEnderecos">
                 <span class="titulos">Endereço</span>
                 <div class="campoAjustarNome">
-                    <label class="logra" for="logradouro">Logradouro</label>
+                    <label class="logra" for="logradouro">Logradouro</label><br>
                     <input type="text" name="logradouro" id="logradouro" placeholder="<?php echo empty($farmacias["logradouro"]) ? 'Digite o logradouro...' : $farmacias["logradouro"]; ?>" autocomplete="off">
                 </div>
                 <div class="campoAjustarNome">
-                    <label class="cepNumber" for="numeroCep">Número</label>
+                    <label class="cepNumber" for="numeroCep">Número</label><br>
                     <input type="number" name="numeroCasa" placeholder="<?php echo empty($farmacias["numeroCasa"]) ? 'Digite o Número da casa' : $farmacias["numeroCasa"]; ?>" id="numeroCep" autocomplete="off">
                 </div>
                 <div class="campoAjustarNome">
-                    <label class="bairroStyle" for="bairro">Bairro</label>
+                    <label class="bairroStyle" for="bairro">Bairro</label><br>
                     <input type="text" name="bairro" id="bairro" placeholder="<?php echo empty($farmacias["bairro"]) ? 'Digite o Bairro' : $farmacias["bairro"]; ?>" autocomplete="off">
                 </div>
 
                 <div class="campoAjustarNome">
-                    <label class="comple" for="complemento">Complemento</label>
+                    <label class="comple" for="complemento">Complemento</label><br>
                     <input type="text" name="complemento" id="complemento" placeholder="<?php echo empty($farmacias["complemento"]) ? 'Digite o Complemento' : $farmacias["complemento"]; ?>" autocomplete="off">
                 </div>
                 <div class="campoAjustarNome">
-                    <label class="cidad" for="cidade">Cidade</label>
+                    <label class="cidad" for="cidade">Cidade</label><br>
                     <input type="text" name="cidade" id="cidade" placeholder="<?php echo empty($farmacias["cidade"]) ? ' Digite a Cidade' : $farmacias["cidade"]; ?>" autocomplete="off">
                 </div>
                 <div class="campoAjustarNome">
@@ -132,11 +138,43 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                 </div>
 
                 <div class="campoAjustarNome">
-                    <label class="referenStyle" for="referencia">Referência</label>
+                    <label class="referenStyle" for="referencia">Referência</label><br>
                     <input type="text" name="referencia" id="referencia" placeholder="<?php echo empty($farmacias["referencia"]) ? 'Próximo a..., perto de...' : $farmacias["referencia"]; ?>" autocomplete="off">
                 </div>
 
+
                 <!-- Adicione mais campos conforme necessário -->
+            </div>
+
+            <!-- <div class="divInformacaoBasicas" style="margin-top: 40px;">
+                <span class="titulos">Usabilidade</span>
+                <div class="campoAjustarNome">
+                    <label for="nome">Mostrar Notificação</label>
+                   
+                        <div class="divCheck" id="checks" style="gap: 10px;">
+                            <div class="divCheck">
+                                <p>Eventos</p><input type="checkbox" name="eventosChek" id="">
+                            </div>
+                            <div class="divCheck">
+                                <p>Retorno de consultas</p><input type="checkbox" name="dataConsultaCheck" id="">
+                            </div >
+                            <div class="divCheck">
+                                <p>Lembretes</p><input type="checkbox" name="lembretesCheck" id="">
+                            </div>
+                        </div>
+                    
+                </div>
+            </div> -->
+
+        </div>
+        <div class="cs-loader" id="loader">
+            <div class="cs-loader-inner">
+                <label>●</label>
+                <label>●</label>
+                <label>●</label>
+                <label>●</label>
+                <label>●</label>
+                <label>●</label>
             </div>
         </div>
         <div style="width: 100%; display: flex; justify-content: end;padding: 10px;"><button style="background-color: #0c4b36; padding: 10px 20px; border: none; color: #fff; cursor: pointer; border-radius: 3px;"><?php echo  !$atualizar ? 'Adicionar' : 'Atualizar'; ?> </button></div>

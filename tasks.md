@@ -3,15 +3,21 @@
 <!-- fazer o filtro medico -->
 <!-- somar as datas de retorno consultorio no bell -->
 fazer a deleção e atualização de cliente
+
 ajustar o config 
+
 Criar a pagina que ve e edita tudo  medicos/evento/consultorio/serviços (administração);
-fazer enviar mensagem do sms;
-fazer enviar mensagem do zap;
+
+<!-- fazer enviar mensagem do sms; -->
+<!-- fazer enviar mensagem do zap; -->
+
 fazer o sistema de "lembretes por usuario";
+
 somar os lembretes no bell 
 
 <!-- Ao acabar -->
 documentar as classes para a manutenção posterior;
+
 padronizar os dados do banco de dados e as entradas dos formularios para coerencia do sistema;
 
 
@@ -56,3 +62,7 @@ padronizar os dados do banco de dados e as entradas dos formularios para coerenc
 <!-- botar hash nas senhas das farmacias; -->
 
 <!-- Padronização -->
+
+
+
+

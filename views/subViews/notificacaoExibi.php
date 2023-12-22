@@ -38,12 +38,12 @@
             // Exemplo de uso
             $html = '';
             foreach ($dataRetorno as $key=>$value ) {
-                $html .= '<div class="linhaBaixo">consulta marcada para: '.$value . '</div><br>';
+                $html .= '<div id="consultaMarcada" class="linhaBaixo consulta">consulta marcada para: '.$value . '</div><br>';
             }
             foreach ($eventosProximos as $evento) {
                 $tempoRestante = calcularTempoRestante($evento['tempoRestante']);
                 
-                $html .= " <div class='linhaBaixo'> <br>Evento: {$evento['nomeEvento']} - Faltam:{$tempoRestante['semanas']} semanas, {$tempoRestante['dias']} dias e {$tempoRestante['horas']} horas.<br> </div>\n";
+                $html .= " <div id='eventoMarcado' class='linhaBaixo evento'> <br>Evento: {$evento['nomeEvento']} - Faltam:{$tempoRestante['semanas']} semanas, {$tempoRestante['dias']} dias e {$tempoRestante['horas']} horas.<br> </div>\n";
                 
             }
             echo $html;

@@ -74,7 +74,7 @@ use \Models\Eventos;
         $table  = '<table>';
         $table .= '<thead>';
         $table .= '<tr>';
-        $table .= '<td>id</td>';
+    
         $table .= '<td>Nome do Evento</td>';
         $table .= '<td title="ano/mes/dia">Data</td>';
         $table .= '<td>Hora</td>';
@@ -87,7 +87,7 @@ use \Models\Eventos;
         foreach ($resultado as $registro) {
 
             $table .= '<tr>';
-            $table .= "<td>" . $registro['id_Evento_PK'] . "</td>";
+            
             $table .= "<td>" . $registro['nomeEvento'] . "</td>";
             $table .= "<td>" . $registro['dataEvento'] . "</td>";
             $table .= "<td>" . $registro['horaEvento'] . "</td>";

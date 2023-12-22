@@ -53,7 +53,7 @@ if (isset($_POST['conteudoPesquisa'])) {
         <h1>Filtro de Cliente</h1>
         <form action="../../views/marketingFiltros.php" id="FormFiltro" method="POST">
             <div id="styleForm">
-                <div style="display: flex;align-items: center; justify-content: center; cursor: help;" title="(Somente para enviar para gmails, para outros endereços eletronicos não é necessario configuração ) Para que os emails sejam enviados corretamentes é necessario que a sua conta de email esteja devidamente configurada, saiba como configura-la na aba 'Configuração do Gmail' no menu lista ao lado do sino de notificações. ">
+                <div style="display: flex;align-items: center; justify-content: center; cursor: help;" title=" Para que os emails sejam enviados corretamentes é necessario que a sua conta de email esteja devidamente configurada, saiba como configura-la na aba 'Configuração do Gmail' no menu lista ao lado do sino de notificações.(Somente para gmails, para outros endereços eletronicos não é necessario configuração ) ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-exclamation-octagon" viewBox="0 0 16 16">
                         <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z" />
                         <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
@@ -138,12 +138,14 @@ if (isset($_POST['conteudoPesquisa'])) {
         </div>
         <div class="mensagemTipoDiv">
             <div style="display:flex;gap: 20px;">
-                <button id="emailBtn" class="mensagemTipo title btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" type="submit">Email</button>
-                <button id="smsBtn" title="Mande mensagem por SMS para todos os que estão marcado" class="mensagemTipo title btnTipoMensagens" type="submit">SMS</button>
-                <button id="whatsBtn" title="Mande mensagem por WhatsApp para todos os que estão marcado" class="mensagemTipo  title btnTipoMensagens" type="submit">WhatsApp</button>
+                <button id="emailBtn" class="mensagemTipo title btnTipoMensagens" title="Mande mensagem por email para todos os que estão marcado" style="cursor: pointer;" type="submit">Email</button>
+
+                <button id="smsBtn" title="(Liberado somente na 2° versão)Mande mensagem por SMS para todos os que estão marcado" class="mensagemTipo title btnTipoMensagens"  style="background-color: #8d8d8d;"  type="submit">SMS</button>
+
+                <button id="whatsBtn" title="(Liberado somente na 2° versão) Mande mensagem  por WhatsApp para todos os que estão marcado" class="mensagemTipo  title btnTipoMensagens" style="background-color: #8d8d8d;" type="submit">WhatsApp</button>
             </div>
             <div>
-                <button class="mensagemTipo" id="MaracarTodos" type="submit">Marcar Todos</button>
+                <button class="mensagemTipo" id="MaracarTodos"  type="submit">Marcar Todos</button>
             </div>
         </div>
     </div>
@@ -191,6 +193,12 @@ if (isset($_POST['conteudoPesquisa'])) {
 
 <script>
     const mySideBar = document.getElementById('mySidebar')
+    $('#smsBtn').click((e)=>{
+        e.preventDefault()
+    })
+    $('#whatsBtn').click((e)=>{
+        e.preventDefault()
+    })
 
     function openNav() {
         mySideBar.style.width = '400px';
