@@ -11,6 +11,7 @@ if (isset($_SESSION["user_id"]) ) {
 Classes\ClassLayout::setHeadBootstrap("login");
 ?>
 <link rel="stylesheet" href="http://marketingpharmat.byethost7.com/lib/css/loginStyles.css">
+<link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/loginStyles.css" ?>">
 
 <div class="container-fluid">
     <div class="row vh-100">

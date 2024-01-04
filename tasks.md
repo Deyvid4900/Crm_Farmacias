@@ -2,7 +2,7 @@
 
 <!-- fazer o filtro medico -->
 <!-- somar as datas de retorno consultorio no bell -->
-fazer a deleção e atualização de cliente
+<!-- fazer a deleção e atualização de cliente -->
 
 ajustar o config 
 
@@ -12,8 +12,8 @@ Criar a pagina que ve e edita tudo  medicos/evento/consultorio/serviços (admini
 <!-- fazer enviar mensagem do zap; -->
 
 fazer o sistema de "lembretes por usuario";
-
 somar os lembretes no bell 
+
 
 <!-- Ao acabar -->
 documentar as classes para a manutenção posterior;

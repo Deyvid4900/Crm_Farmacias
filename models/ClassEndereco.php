@@ -149,7 +149,7 @@ class Endereco extends CRUD
                cidade = :cidade, 
                uf = :uf, 
                referencia = :referencia 
-               WHERE id = :id";
+               WHERE cliente_id = :id";
 
         $stmt = Database::prepare($sql);
 
@@ -184,7 +184,7 @@ class Endereco extends CRUD
 
     public function delete($id)
     {
-        $sql = "DELETE FROM $this->table WHERE id = :id";
+        $sql = "DELETE FROM $this->table WHERE cliente_id = :id";
         $stmt = Database::prepare($sql);
         $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
         return $stmt->execute();

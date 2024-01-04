@@ -29,16 +29,7 @@ $registros = $cliente->findAllByFarmaciaId($_SESSION['user_id']);
             </thead>
 
             <tbody id="resultadoQueryContato">
-            <div class="cs-loader" id="loader">
-                    <div class="cs-loader-inner">
-                        <label>●</label>
-                        <label>●</label>
-                        <label>●</label>
-                        <label>●</label>
-                        <label>●</label>
-                        <label>●</label>
-                    </div>
-                </div>
+
             </tbody>
 
 

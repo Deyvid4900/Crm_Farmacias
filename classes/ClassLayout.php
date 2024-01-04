@@ -42,7 +42,7 @@ class ClassLayout
     echo $html;
   }
 
-  public static function setHeaderComponente( $qtnMensagem,$farmaciaNome = "farmacia", $urlImg = "null",$qtnConsultas = 0)
+  public static function setHeaderComponente( $qtnMensagem,$farmaciaNome = "farmacia", $urlImg = "null",$qtnConsultas = 0, $qtnLembretes)
   {
     
     $head  = "<header id='a'>\n\n";
@@ -77,7 +77,7 @@ class ClassLayout
     $head .= " <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-bell-fill' viewBox='0 0 16 16'>
                      <path d='M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z' />\n";
     if ($qtnMensagem != 0 ) {
-      $head .=  "</svg><span class='notificacao'>".$qtnMensagem + $qtnConsultas."</span>\n";
+      $head .=  "</svg><span class='notificacao'>".$qtnMensagem + $qtnConsultas + $qtnLembretes."</span>\n";
     }
     
     $head .= " </div>\n";
@@ -94,7 +94,7 @@ class ClassLayout
     $head .=  " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>\n";
     $head .=  " </div>\n";
     $head .=  " <div class='contentSidebar'>\n";
-    $head .=  "  <a href='#'>Adminstração</a>\n";
+    $head .=  "  <a href='/views/administracao.php'>Adminstração</a>\n";
     $head .=  "  <a href='/views/cadastroMedico.php'>Cadastrar Médicos</a>\n";
     $head .=  "   <a href='/views/medicoFiltro.php'>Encontre Médico</a>\n";
     // $head .=  "  <a href='/views/ultimosServicos.php'>Ultimos Serviços</a>\n";

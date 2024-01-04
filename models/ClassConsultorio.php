@@ -159,7 +159,7 @@ class Consultorio extends CRUD
 
     public function delete($id)
     {
-        $sql = "DELETE FROM $this->table WHERE id = :id";
+        $sql = "DELETE FROM $this->table WHERE id_consulta_PK = :id";
         $stmt = Database::prepare($sql);
         $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
 

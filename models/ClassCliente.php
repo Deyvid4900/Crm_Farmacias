@@ -312,7 +312,6 @@ class Cliente extends CRUD
 	{
 		$sql = "UPDATE $this->table SET 
 				nome = :nome, 
-				idade = :idade, 
 				sexo = :sexo, 
 				estadoCivil = :estadoCivil, 
 				dataNasc = :dataNasc, 
@@ -323,15 +322,7 @@ class Cliente extends CRUD
 				religiao = :religiao, 
 				timeFut = :timeFut, 
 				raca = :raca, 
-				tipocliente = :tipocliente, 
 				infoAdic = :infoAdic,
-				logradouro = :logradouro, 
-				numeroCasa = :numeroCasa, 
-				bairro = :bairro, 
-				complemento = :complemento, 
-				cidade = :cidade, 
-				uf = :uf, 
-				referencia = :referencia,
 				celular1 = :celular1, 
 				celular2 = :celular2, 
 				telFixo = :telFixo, 
@@ -351,10 +342,7 @@ class Cliente extends CRUD
 		$stmt->bindParam(':religiao', $this->religiao);
 		$stmt->bindParam(':timeFut', $this->timeFut);
 		$stmt->bindParam(':raca', $this->raca);
-		$stmt->bindParam(':tipocliente', $this->tipocliente, \PDO::PARAM_INT);
 		$stmt->bindParam(':infoAdic', $this->infoAdic);
-
-
 		$stmt->bindParam(':celular1', $this->celular1);
 		$stmt->bindParam(':celular2', $this->celular2);
 		$stmt->bindParam(':telFixo', $this->telFixo);

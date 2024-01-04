@@ -24,6 +24,48 @@ class Filtros extends DataBase{
             return false;
         }
     }
+    public function buscarValoresConsultasSemelhantes($input, $selecao,$usuario_id) {
+        try {
+            $query = "SELECT * FROM consultas WHERE id_Farmacia_FK = :user_id AND LOWER($selecao) LIKE LOWER(:valorInput)";
+            $stmt = DataBase::prepare($query);
+            $valorInput = '%' . strtolower($input) . '%'; // Converte para minúsculas para correspondência insensível a maiúsculas e minúsculas
+            $stmt->bindParam(':user_id', $usuario_id, \PDO::PARAM_INT);
+            $stmt->bindParam(':valorInput', $valorInput);
+            $stmt->execute(); 
+            $resultados = $stmt->fetchAll(\PDO::FETCH_ASSOC); 
+            if ($resultados) {
+                return $resultados;
+            } else {
+                return false; // Nenhum resultado encontrado
+            }
+        } catch (\PDOException $erro) {
+            echo $input;
+            echo $selecao;
+            echo $erro->getMessage();
+            return false;
+        }
+    }
+    public function buscarValoresServicosSemelhantes($input, $selecao,$usuario_id) {
+        try {
+            $query = "SELECT * FROM servicos WHERE id_Farmacia_FK = :user_id AND LOWER($selecao) LIKE LOWER(:valorInput)";
+            $stmt = DataBase::prepare($query);
+            $valorInput = '%' . strtolower($input) . '%'; // Converte para minúsculas para correspondência insensível a maiúsculas e minúsculas
+            $stmt->bindParam(':user_id', $usuario_id, \PDO::PARAM_INT);
+            $stmt->bindParam(':valorInput', $valorInput);
+            $stmt->execute(); 
+            $resultados = $stmt->fetchAll(\PDO::FETCH_ASSOC); 
+            if ($resultados) {
+                return $resultados;
+            } else {
+                return false; // Nenhum resultado encontrado
+            }
+        } catch (\PDOException $erro) {
+            echo $input;
+            echo $selecao;
+            echo $erro->getMessage();
+            return false;
+        }
+    }
     public function buscarValoresSemelhantesMedico($input, $selecao,$usuario_id) {
         try {
             $query = "SELECT * FROM medicos WHERE Id_Farmacia_FK = :user_id AND LOWER($selecao) LIKE LOWER(:valorInput)";

@@ -10,3 +10,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 
 # Regra de reescrita: redireciona todas as requisições para o arquivo index.php
 RewriteRule ^(.*)$ $1.php [L,QSA]
+
+

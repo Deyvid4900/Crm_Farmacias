@@ -67,46 +67,45 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 <link rel="stylesheet" href="/lib/css/tabelaClienteDadosPessoais.css">
 <div class="btns">
     <div style="display: flex;">
-        <div class="selected btnLinkTabelas " id="dado"><span>Dados Pessoais</span>
+        <div class="btnLinkTabelas " id="Consultas"><span>Consultas</span>
         </div>
-        <div class="btnLinkTabelas" id="Endereco"><span>Endereços</span></div>
-        <div class="btnLinkTabelas" id="contato"><span>Contatos</span></div>
-    </div>
-    <div style="display: flex;">
-        <div class="btnLinkTabelas" id="editar"><span>Selecionar Item</span></div>
+        <div class="selected btnLinkTabelas" id="Servicos"><span>Serviços</span></div>
     </div>
 </div>
 
-<?php include_once "subViews/tabelaClienteDadosPessoais.php" ?>
-<?php include_once "subViews/tabelaClienteMarketing.php" ?>
-<?php include_once "subViews/tabelaClienteEnderecos.php" ?>
-<?php include_once "subViews/modalFiltro.php" ?>
+
+
 <?php include_once "subViews/notificacaoExibi.php" ?>
+<?php include_once "subViews/filtroServicos.php" ?>
+<?php include_once "subViews/modalFiltro.php" ?>
 
 <script src='<?php echo DIRPAGE . "lib/JS/sideBar.js" ?>'></script>
-<script src='<?php echo DIRPAGE . "lib/JS/ajaxBuscaInfoContatoCliente.js" ?>'></script>
+
 <script>
     $(document).ready(function() {
         // Adicione o evento de clique nos elementos .btnLinkTabelas aqui
-        $('.btnLinkTabelas').click(function() {
-            // Remover a classe 'selected' de todos os elementos
-            $('.btnLinkTabelas').removeClass('selected');
+        $('#Consultas').click(function() {
+            var urlAtual = window.location.href;
 
-            // Adicionar a classe 'selected' apenas ao elemento clicado
-            $(this).addClass('selected');
+            // Substitua '/administracaoServicos.php' por algo diferente
+            var novaParteDaURL = '/administracao.php';
+            var novaURL = urlAtual.replace('/administracaoServicos.php', novaParteDaURL);
+
+            // Atualize a URL
+            window.location.href = novaURL;
         });
-        $('.btnLinkTabelas').click(function() {
-            // Remover a classe 'selected' de todos os elementos
-            $('.btnLinkTabelas').removeClass('selected');
+        $('#Servicos').click(function() {
+            var urlAtual = window.location.href;
 
-            // Adicionar a classe 'selected' apenas ao elemento clicado
-            $(this).addClass('selected');
+            // Substitua '/administracaoServicos.php' por algo diferente
+            var novaParteDaURL = '/administracaoServicos.php';
+            var novaURL = urlAtual.replace('/administracao.php', novaParteDaURL);
+
+            // Atualize a URL
+            window.location.href = novaURL;
         });
-
 
         $("#filtroBox").hide()
-        $("#tabelaEnderecosCliente").hide()
-        $("#ContatosCliente").hide()
 
 
         //Modal de Excluir
@@ -129,31 +128,10 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
             e.preventDefault()
             $("#meuModalAlterar").hide()
         })
-
-        $("#Endereco").click(() => {
-            $("#tabelaEnderecosCliente").show()
-            $('#tabelaDados').hide()
-            $("#ContatosCliente").hide()
-            $('#filtroBox').hide()
-        })
-        $("#dado").click(() => {
-            $("#tabelaDados").show()
-            $('#tabelaEnderecosCliente').hide()
-            $("#ContatosCliente").hide()
-            $('#filtroBox').hide()
-        })
-        $("#contato").click(() => {
-            $("#ContatosCliente").show()
-            $("#tabelaDados").hide()
-            $('#tabelaEnderecosCliente').hide()
-            $('#filtroBox').hide()
-        })
-        $("#editar").click(() => {
-            $("#ContatosCliente").hide()
-            $("#tabelaDados").hide()
-            $('#tabelaEnderecosCliente').hide()
-            $('#filtroBox').show()
-        })
+    
+       
+    
+    
 
     });
 </script>

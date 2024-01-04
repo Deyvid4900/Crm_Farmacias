@@ -680,7 +680,7 @@ class Servicos
     }
     public function deleteServico($id)
     {
-        $sql = "DELETE FROM tabela_servicos WHERE id = :id";
+        $sql = "DELETE FROM servicos WHERE id_servicos_PK = :id";
         $stmt = Database::prepare($sql);
 
         // Bind parameters

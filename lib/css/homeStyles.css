@@ -12,7 +12,8 @@ main {
     margin-left: auto;
     margin-right: auto;
 
-    height: 450px;
+    
+    max-height: 450px;
     width: 75%;
     border-radius: 8px;
     box-shadow: 1px 1px 15px 3px #a0a0a0ee;
@@ -25,7 +26,7 @@ main {
     padding-top: 6px;
     background-color: #247158;
     color: white;
-    height: 41px;
+    height: 45px;
 }
 
 
@@ -146,12 +147,14 @@ td{
 
 .boxMensagemTempo{
   position: fixed;
+  display: flex;
+  flex-direction: column;
   top: 0px;
   right: 0px;
   background-color: #FFF;
   width: 0px;
   height: auto;
-  max-height: 300px;
+  max-height: 335px;
   z-index: 99;
   border-radius: 0px 0px 8px 8px;
   box-shadow: 1px 1px 15px 3px #4444441c;
@@ -162,6 +165,7 @@ td{
     display: flex;
     justify-content: end;
     padding: 0px 20px;
+    height: 50px;
     width: 100%;
     font-size: 30pt;
     background-color: #247158;
@@ -174,25 +178,25 @@ td{
   overflow-y: auto;
   height: auto;
   max-height: 250px;
-  padding: 11px 30px;
+  padding: 0px 30px;
   width: 100%;
   align-items: center;
   justify-content: start;
   display: flex;
-  padding-bottom: 40px;
-  padding-top: 27px;
+  flex-direction: column;
+  
 }
 .contentMensagem > ul{
   list-style: none;
-  height: auto;
-
+  height: 500px;
+  
 }
 
 .linhaBaixo{
   /* border-bottom: 5px solid #247158; */
   /* border-radius: 4px; */
-  margin-top: -7px;
-  /* width: 95%; */
+  /* margin-top: -7px; */
+  width: 100%;
 }
 
 .linhaBaixo::after{
