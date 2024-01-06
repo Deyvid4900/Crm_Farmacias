@@ -6,7 +6,7 @@ include_once '../models/ClassLembrete.php';
 use Models\Lembrete;
 
 ?>
-<div class="container" style="margin-bottom: 20px;">
+<div class="container" style="margin-bottom: 20px;max-height: 425px;">
     <div class="head">
         <h1>Lembretes Proximos</h1>
     </div>
@@ -67,7 +67,7 @@ use Models\Lembrete;
 
 
 
-        $resultado = array_slice(array_reverse($registros), 0, 9);
+        $resultado = array_slice(array_reverse($registros), 0, 5);
 
 
 
