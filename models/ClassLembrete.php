@@ -80,7 +80,7 @@ class Lembrete extends DataBase
 
     public function findAll($id)
     {
-        $sql = "SELECT * FROM lembretes WHERE id_Farmacia_Fk = :id_Farmacia_FK ";
+        $sql = "SELECT * FROM lembretes WHERE id_Farmacia_FK = :id_Farmacia_FK ";
         $stmt = Database::prepare($sql);
         $stmt->bindParam(':id_Farmacia_FK', $id);
         $stmt->execute();

@@ -100,21 +100,21 @@ class Consultorio extends CRUD
     public function update($id)
     {
         $sql = "UPDATE $this->table SET 
-                nameFarm = :nameFarm, 
-                date = :date, 
-                namePaciente = :namePaciente, 
-                prescrito = :prescrito, 
-                posologiaConsultorio = :posologiaConsultorio
-                WHERE id = :id";
+                nomeFarmaceutico = :nameFarm, 
+                dataConsulta = :dataConsulta, 
+                nomePaciente = :namePaciente, 
+                remediosPrescritos = :prescrito, 
+                Posologia = :posologiaConsultorio
+                WHERE id_consulta_PK = :id";
 
         $stmt = Database::prepare($sql);
 
         $stmt->bindParam(':nameFarm', $this->nameFarm);
-        $stmt->bindParam(':date', $this->date);
+        $stmt->bindParam(':dataConsulta', $this->date);
         $stmt->bindParam(':namePaciente', $this->namePaciente);
         $stmt->bindParam(':prescrito', $this->prescrito);
         $stmt->bindParam(':posologiaConsultorio', $this->posologiaConsultorio);
-        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id);
 
         return $stmt->execute();
     }
@@ -149,7 +149,7 @@ class Consultorio extends CRUD
 
     public function find($id)
     {
-        $sql = "SELECT * FROM $this->table WHERE id = :id";
+        $sql = "SELECT * FROM $this->table WHERE id_consulta_PK = :id";
         $stmt = Database::prepare($sql);
         $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
         $stmt->execute();

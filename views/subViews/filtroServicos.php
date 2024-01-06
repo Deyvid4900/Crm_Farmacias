@@ -46,6 +46,7 @@
                         echo '<table >
                                 <tr>
                                 <th>Id</th>
+                                <th>Nome do Paciente</th>
                                 <th>Nome do Responsavel</th>
                                 <th>Sinais/Sintomas</th>
                                 <th>Data do Serviço</th>
@@ -56,9 +57,10 @@
                         foreach ($resultados as $pessoa) {
                             echo '<tr>';
                             echo '<td>' . $pessoa['id_servicos_PK'] . '</td>';
+                            echo '<td>' . $pessoa['nomePaciente'] . '</td>';
                             echo '<td>' . $pessoa['nome_responsavel'] . '</td>';
                             echo '<td>' . $pessoa['sinais_sintomas'] . '</td>';
-                            echo '<td>' . $pessoa['data'] . '</td>';
+                            echo '<td>' . $pessoa['dataServicos'] . '</td>';
                             echo '<td><input type="checkbox" class="checkboxFiltro" id=' . $pessoa['id_servicos_PK'] . '></td>';
                             echo '</tr>';
                         }

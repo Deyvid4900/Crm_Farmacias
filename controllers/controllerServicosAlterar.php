@@ -148,22 +148,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Data
     $servico->setData($data);
 
-    $servico->setIdCliente($idExaminado);
-    if ($idExaminado == "" || $idExaminado == null || $idExaminado == false) {
+    // $servico->setIdCliente($idExaminado);
 
-        $objCliente->insertArray($_POST, $_SESSION['user_id']);
-    }
-    // Código para lidar com o botão Enviar
+    // if ($idExaminado == "" || $idExaminado == null || $idExaminado == false) {
 
-    $idFarmacia = $_SESSION["user_id"];
-    $servico->setIdFarmacia($idFarmacia);
+    //     $objCliente->insertArray($_POST, $_SESSION['user_id']);
+    // }
+    // // Código para lidar com o botão Enviar
+
+    // $idFarmacia = $_SESSION["user_id"];
+    // $servico->setIdFarmacia($idFarmacia);
 
 
-    $_POST["submit"] = 'false';
+    // $_POST["submit"] = 'false';
     // $servico->mostrarAtributos();
-    if ($servico->insertServico()) {
+    if ($servico->updateServico($_POST['id_servicos_PK'])) {
         $response =  'Dados inseridos com sucesso';
     } else {
+        var_dump($_POST);
         $response = 'Falha ao inserir o evento';
     }
 } else {

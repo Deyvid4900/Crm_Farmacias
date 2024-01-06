@@ -19,6 +19,7 @@ if (!isset($_SESSION["username"])) {
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/headerStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/sideBarStyles.css" ?>">
 <link rel="stylesheet" href="<?php echo DIRPAGE . "lib/css/Alerta.css" ?>">
+
 <style>
     span {
         color: #fff;
@@ -83,6 +84,24 @@ $eventosProximos = $evt->getProximosEventosComTempoRestante($_SESSION["user_id"]
 
 <script>
     $(document).ready(function() {
+        $('#Alterar').click(() => {
+    // Obter todos os checkboxes marcados
+    var checkboxesMarcados = $('input[type="checkbox"]:checked');
+
+    // Array para armazenar os IDs dos checkboxes marcados
+    var idsCheckboxMarcados = [];
+
+    // Iterar sobre os checkboxes marcados e obter os IDs
+    checkboxesMarcados.each(function () {
+        idsCheckboxMarcados.push($(this).attr('id'));
+    });
+
+    // Criar a string de parâmetros da URL
+    var parametrosURL = idsCheckboxMarcados.join(',');
+
+    // Redirecionar para a página de alteração com os IDs na URL
+    window.location.href = "/views/AlterarConsultas.php?ids=" + parametrosURL;
+});
         // Adicione o evento de clique nos elementos .btnLinkTabelas aqui
         $('#Consultas').click(function() {
             var urlAtual = window.location.href;

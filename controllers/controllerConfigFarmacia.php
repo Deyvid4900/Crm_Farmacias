@@ -1,16 +1,18 @@
 <?php
 
+use Models\EnderecoFarmacia;
 use Models\Farmacia;
 
-include("../lib/vendor/autoload.php");
+include_once("../lib/vendor/autoload.php");
 include_once "../models/ClassFarmacia.php";
-
+include_once "../models/ClassEnderecoFarmacia.php";
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $obj = new Farmacia;
+    $objEndereco = new EnderecoFarmacia;
     $controle = [];
 
 
@@ -66,12 +68,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $obj->setSenhaEmail($_POST['senhaEmail']);
             $controle[] = $key;
         }
+        if ($key == "logradouro") {
+            $objEndereco->setLogradouro($_POST['logradouro']);
+            $controle[] = $key;
+        }
+        if ($key == "numeroCasa") {
+            $objEndereco->setNumeroCasa($_POST['numeroCasa']);
+            $controle[] = $key;
+        }
+        if ($key == "bairro") {
+            $objEndereco->setBairro($_POST['bairro']);
+            $controle[] = $key;
+        }
+        if ($key == "complemento") {
+            $objEndereco->setComplemento($_POST['complemento']);
+            $controle[] = $key;
+        }
+        if ($key == "cidade") {
+            $objEndereco->setCidade($_POST['cidade']);
+            $controle[] = $key;
+        }
+        if ($key == "uf") {
+            $objEndereco->setUf($_POST['uf']);
+            $controle[] = $key;
+        }
+        if ($key == "referencia") {
+            $objEndereco->setReferencia($_POST['referencia']);
+            $controle[] = $key;
+        }
+
     }
 
 
 
     if ($obj->update($_SESSION['user_id'], $controle)) {
-        $response = 'Dados Atualizados!';
+        if ($objEndereco->update($_SESSION['user_id'])) {
+               $response = 'Dados Atualizados!';    
+        }        
     } else {
         $response = 'Não foi possivel atualizar os dados';
     }

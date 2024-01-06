@@ -149,7 +149,7 @@ class EnderecoFarmacia
                cidade = :cidade, 
                uf = :uf, 
                referencia = :referencia 
-               WHERE id = :id";
+               WHERE farmacia_id = :id";
 
         $stmt = Database::prepare($sql);
 
@@ -175,7 +175,7 @@ class EnderecoFarmacia
 
     public function find($id)
     {
-        $sql = "SELECT * FROM $this->table WHERE id = :id";
+        $sql = "SELECT * FROM $this->table WHERE farmacia_id = :id";
         $stmt = Database::prepare($sql);
         $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
         $stmt->execute();

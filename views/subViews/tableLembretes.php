@@ -44,17 +44,17 @@ use Models\Lembrete;
 
 
         foreach ($registros as $key => $value) {
-            // String com a data
-            $dataRegistro = $value["dataLembrete"];
+            // String com a data e hora
+            $dataHoraRegistro = $value["dataLembrete"] . ' ' . $value["horaLembrete"];
         
             // Convertendo a string para um objeto DateTime
-            $dataInformada = new DateTime($dataRegistro);
+            $dataHoraInformada = new DateTime($dataHoraRegistro);
         
-            // Obtendo a data atual
-            $dataAtual = new DateTime();
+            // Obtendo a data e hora atual
+            $dataHoraAtual = new DateTime();
         
-            // Comparando as datas
-            if ($dataInformada <= $dataAtual) {
+            // Comparando as datas e horas
+            if ($dataHoraInformada <= $dataHoraAtual) {
                 // Remove o item do array se a condição for atendida
                 unset($registros[$key]);
             }

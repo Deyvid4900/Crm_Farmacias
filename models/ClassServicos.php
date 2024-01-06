@@ -475,6 +475,10 @@ class Servicos
         $sql = "INSERT INTO servicos (
             id_Farmacia_FK,
             id_cliente_FK,
+            nomePaciente,
+            telefone,
+            email,
+            dataNasc,
             nome_responsavel,
             glicemia_capilar,
             pressao_arterial,
@@ -505,10 +509,14 @@ class Servicos
             indicacao_farmaceutica,
             sinais_sintomas,
             plano_acompanhamento,
-            data
+            dataServicos
         ) VALUES (
             :id_Farmacia_FK,
             :id_cliente_FK,
+            :nomePaciente,
+            :telefone,
+            :email,
+            :dataNasc,
             :nome_responsavel,
             :glicemia_capilar,
             :pressao_arterial,
@@ -539,13 +547,17 @@ class Servicos
             :indicacao_farmaceutica,
             :sinais_sintomas,
             :plano_acompanhamento,
-            :data
+            :dataServicos
         )";
 
         $stmt = Database::prepare($sql);
         // Bind parameters
-        $stmt->bindValue(':id_Farmacia_FK', $this->idFarmacia);
         $stmt->bindValue(':id_cliente_FK', $this->idCliente);
+        $stmt->bindValue(':id_Farmacia_FK', $this->idFarmacia);
+        $stmt->bindValue(':nomePaciente', $this->nome);
+        $stmt->bindValue(':telefone', $this->telefone);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':dataNasc', $this->idade);
         $stmt->bindValue(':nome_responsavel', $this->nomeResponsavel);
         $stmt->bindValue(':glicemia_capilar', $this->glicemiaCapilar);
         $stmt->bindValue(':pressao_arterial', $this->pressaoArterial);
@@ -576,7 +588,7 @@ class Servicos
         $stmt->bindValue(':indicacao_farmaceutica', $this->indicacaoFarmaceutica);
         $stmt->bindValue(':sinais_sintomas', $this->sinaisSintomas);
         $stmt->bindValue(':plano_acompanhamento', $this->planoAcompanhamento);
-        $stmt->bindValue(':data', $this->data);
+        $stmt->bindValue(':dataServicos', $this->data);
 
 
         try {
@@ -587,57 +599,51 @@ class Servicos
         }
     }
     public function updateServico($id)
-    {
-        $sql = "UPDATE tabela_servicos SET 
-                    nome = :nome, 
-                    genero = :genero, 
-                    idade = :idade, 
-                    telefone = :telefone, 
-                    endereco = :endereco, 
-                    cidade = :cidade, 
-                    uf = :uf, 
-                    email = :email, 
-                    responsavel = :responsavel, 
-                    glicemia = :glicemia, 
-                    pressaoArterial = :pressaoArterial, 
-                    temperatura = :temperatura, 
-                    aplicacaoInjetaveis = :aplicacaoInjetaveis, 
-                    medicamentoInjetaveis = :medicamentoInjetaveis, 
-                    loteInjetaveis = :loteInjetaveis, 
-                    validadeInjetaveis = :validadeInjetaveis, 
-                    posologiaInjetaveis = :posologiaInjetaveis, 
-                    viaAdministracaoInjetaveis = :viaAdministracaoInjetaveis, 
-                    prescritorInjetaveis = :prescritorInjetaveis, 
-                    inaloterapia = :inaloterapia, 
-                    medicamentoInaloterapia = :medicamentoInaloterapia, 
-                    loteInaloterapia = :loteInaloterapia, 
-                    validadeInaloterapia = :validadeInaloterapia, 
-                    posologiaInaloterapia = :posologiaInaloterapia, 
-                    prescritorInaloterapia = :prescritorInaloterapia, 
-                    cuidadosBrinco = :cuidadosBrinco, 
-                    aplicacaoBrinco = :aplicacaoBrinco, 
-                    pistolaBrinco = :pistolaBrinco, 
-                    loteBrinco = :loteBrinco, 
-                    cnpjBrinco = :cnpjBrinco, 
-                    ladoDireitoBrinco = :ladoDireitoBrinco, 
-                    ladoEsquerdoBrinco = :ladoEsquerdoBrinco, 
-                    assistenciaFarmaceutica = :assistenciaFarmaceutica, 
-                    acompanhamentoFarmacoterapeutico = :acompanhamentoFarmacoterapeutico, 
-                    numeroFichaFarmacoterapeutico = :numeroFichaFarmacoterapeutico, 
-                    indicacaoFarmaceutica = :indicacaoFarmaceutica, 
-                    sinaisSintomas = :sinaisSintomas, 
-                    medicamentoSinaisSintomas = :medicamentoSinaisSintomas, 
-                    loteSinaisSintomas = :loteSinaisSintomas, 
-                    validadeSinaisSintomas = :validadeSinaisSintomas, 
-                    posologiaSinaisSintomas = :posologiaSinaisSintomas, 
-                    planoAcompanhamento = :planoAcompanhamento 
-                WHERE id = :id";
+{
+    $sql = "UPDATE servicos SET
+        nomePaciente = :nomePaciente,
+        telefone = :telefone,
+        email = :email,
+        dataNasc = :dataNasc,
+        nome_responsavel = :nome_responsavel,
+        glicemia_capilar = :glicemia_capilar,
+        pressao_arterial = :pressao_arterial,
+        temperatura_corporal = :temperatura_corporal,
+        aplicacao_injetaveis = :aplicacao_injetaveis,
+        medicamento_injetavel = :medicamento_injetavel,
+        lote_injetavel = :lote_injetavel,
+        validade_injetavel = :validade_injetavel,
+        posologia_injetavel = :posologia_injetavel,
+        via_administracao_injetavel = :via_administracao_injetavel,
+        nome_prescritor_injetavel = :nome_prescritor_injetavel,
+        inaloterapia = :inaloterapia,
+        medicamento_inaloterapia = :medicamento_inaloterapia,
+        lote_inaloterapia = :lote_inaloterapia,
+        validade_inaloterapia = :validade_inaloterapia,
+        posologia_inaloterapia = :posologia_inaloterapia,
+        nome_prescritor_inaloterapia = :nome_prescritor_inaloterapia,
+        crm_cro_inaloterapia = :crm_cro_inaloterapia,
+        aplicacao_brinco = :aplicacao_brinco,
+        pistola_brinco = :pistola_brinco,
+        lote_brinco = :lote_brinco,
+        cnpj_brinco = :cnpj_brinco,
+        lado_direito = :lado_direito,
+        lado_esquerdo = :lado_esquerdo,
+        assistencia_domiciliar = :assistencia_domiciliar,
+        acompanhamento_farmacoterapeutico = :acompanhamento_farmacoterapeutico,
+        numero_ficha = :numero_ficha,
+        indicacao_farmaceutica = :indicacao_farmaceutica,
+        sinais_sintomas = :sinais_sintomas,
+        plano_acompanhamento = :plano_acompanhamento,
+        dataServicos = :dataServicos
+    WHERE id_servicos_PK = :id";
 
-        $stmt = Database::prepare($sql);
-
-        // Bind parameters
-        $stmt->bindValue(':id_Farmacia_FK', $this->idFarmacia);
-        $stmt->bindValue(':id_cliente_FK', $this->idCliente);
+    $stmt = Database::prepare($sql);
+    // Bind parameters
+        $stmt->bindValue(':nomePaciente', $this->nome);
+        $stmt->bindValue(':telefone', $this->telefone);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':dataNasc', $this->idade);
         $stmt->bindValue(':nome_responsavel', $this->nomeResponsavel);
         $stmt->bindValue(':glicemia_capilar', $this->glicemiaCapilar);
         $stmt->bindValue(':pressao_arterial', $this->pressaoArterial);
@@ -668,16 +674,17 @@ class Servicos
         $stmt->bindValue(':indicacao_farmaceutica', $this->indicacaoFarmaceutica);
         $stmt->bindValue(':sinais_sintomas', $this->sinaisSintomas);
         $stmt->bindValue(':plano_acompanhamento', $this->planoAcompanhamento);
-        $stmt->bindValue(':data', $this->data);
+        $stmt->bindValue(':dataServicos', $this->data);
+        $stmt->bindValue(':id', $id);
 
-        try {
-            $stmt->execute();
-            return true; // Successful update
-        } catch (\Exception $e) {
-            // Handle the exception if needed
-            return false; // Failed update
-        }
+    try {
+        $stmt->execute();
+        return true;
+    } catch (\Throwable $th) {
+        return false;
     }
+}
+
     public function deleteServico($id)
     {
         $sql = "DELETE FROM servicos WHERE id_servicos_PK = :id";
@@ -696,7 +703,7 @@ class Servicos
     }
     public function findAllServicos()
     {
-        $sql = "SELECT * FROM tabela_servicos";
+        $sql = "SELECT * FROM servicos";
         $stmt = Database::prepare($sql);
 
         try {
@@ -708,6 +715,16 @@ class Servicos
             return []; // Return an empty array in case of an error
         }
     }
+    public function find($id)
+    {
+        $sql = "SELECT * FROM servicos WHERE id_servicos_PK = :id";
+        $stmt = Database::prepare($sql);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(\PDO::FETCH_BOTH);
+    }
+
     public function mostrarAtributos()
     {
         // Use a função get_object_vars para obter todos os atributos do objeto
