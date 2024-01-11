@@ -369,6 +369,24 @@ class Cliente extends CRUD
 		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
 		return $stmt->fetchAll(\PDO::FETCH_BOTH);
 	}
+	public function findQtn($coluna,$valor,$id_farmacia)
+	{
+		$sql = "SELECT COUNT(*) as quantidade FROM $this->table WHERE Id_Farmacia_FK = $id_farmacia AND $coluna = '$valor' ";
+		$stmt = Database::prepare($sql);
+		$stmt->execute();
+
+		return $stmt->fetchColumn();
+	}
+	public function findQtnFeminino()
+	{
+		$sql = "SELECT COUNT(*) as quantidade FROM $this->table WHERE sexo = 'feminino' ";
+		$stmt = Database::prepare($sql);
+		$stmt->execute();
+
+		return $stmt->fetchColumn();
+	}
+
+
 	public function  findAllByFarmaciaId($userid)
 	{
 		$sql = "SELECT * FROM $this->table WHERE Id_Farmacia_FK = $userid ";
@@ -387,6 +405,7 @@ class Cliente extends CRUD
 		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
 		return $stmt->fetchAll(\PDO::FETCH_BOTH);
 	}
+
 	public function findAllAdressWithClientName($userid)
 	{
 		$sql = "SELECT e.*, c.nome AS nome
