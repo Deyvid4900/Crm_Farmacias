@@ -95,12 +95,12 @@ label{
 
 /* age */
 #age{
-    width: 80px;
+    width: 110px;
 }
 
 /* phone */
 #phone{
-    width: 150px;
+    width: 120px;
 }
 
 /* adress */
@@ -144,8 +144,7 @@ label{
 }
 
 .bb{
-    margin-left: 20px;
-    margin-top: 14px;
+    margin: 14px auto;
     width: 680px;
     border-radius: 2px;
     border: 2px solid #8B8B8B;

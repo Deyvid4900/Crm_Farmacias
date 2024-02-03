@@ -28,6 +28,9 @@ if (!isset($_SESSION["username"])) {
         #componentesDiv {
             display: none;
         }
+        .bb{
+            display: none;
+        }
     }
 </style>
 <div id="componentesDiv">
@@ -35,6 +38,7 @@ if (!isset($_SESSION["username"])) {
     include_once("../models/ClassEvento.php");
     include_once("../models/ClassConsultorio.php");
     include_once("../models/ClassLembrete.php");
+    
     $obj = new Lembrete;
     $lembretes = $obj->findNextWeekReminders($_SESSION['user_id']);
 
@@ -52,6 +56,7 @@ if (!isset($_SESSION["username"])) {
 
 <?php include_once "../views/subViews/alerta.php" ?>
 <?php include_once "../views/subViews/cadastroServicosssForm.php" ?>
+
 
 <div id="notificacaoDivi">
     <?php include_once "subViews/notificacaoExibi.php" ?>

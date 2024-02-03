@@ -28,7 +28,7 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                 </div>
                 <div class="campoAjustarNome">
                     <label for="cnpj">CNPJ:</label><br>
-                    <input type="number" id="cnpj" minlength="8"  name="cnpjFarmacia" placeholder="<?php echo empty($farmacias["cnpjFarmacia"]) ? 'Digite o CNPJ da sua farmácia' : $farmacias["cnpjFarmacia"]; ?>">
+                    <input type="number" id="cnpj" minlength="8" name="cnpjFarmacia" placeholder="<?php echo empty($farmacias["cnpjFarmacia"]) ? 'Digite o CNPJ da sua farmácia' : $farmacias["cnpjFarmacia"]; ?>">
                 </div>
                 <div class="campoAjustarNome">
                     <label for="razaoSocial">Razão Social:</label><br>
@@ -51,7 +51,7 @@ include_once '../models/ClassQueryInfoFarmacia.php';
                     <input type="date" id="dataCriacao" name="dataCriacaoFarmacia">
                 </div>
             </div>
-                <!-- Enderecos -->
+            <!-- Enderecos -->
             <div class="divInformacaoEnderecos">
                 <span class="titulos">Endereço</span>
                 <div class="campoAjustarNome">

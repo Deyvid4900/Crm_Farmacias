@@ -113,7 +113,7 @@ a{
 .Cadastro::after{
     content: '';
     display: inline;
-    background-image: url('../../../crm/assets/icons/seta.svg');
+    /* background-image: url('../../../crm/assets/icons/seta.svg'); */
     width: 18px;
     height: 18px;
     left: 68px;
@@ -144,7 +144,7 @@ a{
 .Servicos::after{
     content: '';
     display: inline;
-    background-image: url('../../../crm/assets/icons/seta.svg');
+    /* background-image: url('../../../crm/assets/icons/seta.svg'); */
     width: 18px;
     height: 18px;
     left: 68px;
@@ -179,7 +179,7 @@ a{
 .Marketing::after{
     content: '';
     display: inline;
-    background-image: url('../../../crm/assets/icons/seta.svg');
+    /* background-image: url('../../../crm/assets/icons/seta.svg'); */
     width: 18px;
     height: 18px;
     left: 68px;

@@ -301,6 +301,38 @@ class Cliente extends CRUD
 		$stmt->execute();
 		return;
 	}
+	public function insertSimple($userid)
+	{
+		$sql = "INSERT INTO $this->table 
+            (id_Farmacia_FK, nome, sexo, estadoCivil, dataNasc, profissao, faixaSalarial, cpf, escolaridade, religiao, timeFut, raca, infoAdic,
+            celular1, celular2, telFixo, email) 
+            VALUES 
+            (:id_Farmacia_FK, :nome, :sexo, :estadoCivil, :dataNasc, :profissao, :faixaSalarial, :cpf, :escolaridade, :religiao, :timeFut, :raca, :infoAdic,
+            :celular1, :celular2, :telFixo, :email)";
+
+		$stmt = Database::prepare($sql);
+
+		$stmt->bindParam(':id_Farmacia_FK', $userid);
+		$stmt->bindParam(':nome', $this->nome);
+		$stmt->bindParam(':sexo', $this->sexo);
+		$stmt->bindParam(':estadoCivil', $this->estadoCivil);
+		$stmt->bindParam(':dataNasc', $this->dataNasc);
+		$stmt->bindParam(':profissao', $this->profissao);
+		$stmt->bindParam(':faixaSalarial', $this->faixaSalarial);
+		$stmt->bindParam(':cpf', $this->cpf);
+		$stmt->bindParam(':escolaridade', $this->escolaridade);
+		$stmt->bindParam(':religiao', $this->religiao);
+		$stmt->bindParam(':timeFut', $this->timeFut);
+		$stmt->bindParam(':raca', $this->raca);
+		$stmt->bindParam(':infoAdic', $this->infoAdic);
+		$stmt->bindParam(':celular1', $this->celular1);
+		$stmt->bindParam(':celular2', $this->celular2);
+		$stmt->bindParam(':telFixo', $this->telFixo);
+		$stmt->bindParam(':email', $this->email);
+		$stmt->execute();
+		return;
+	}
+
 
 
 	/***************
@@ -369,7 +401,7 @@ class Cliente extends CRUD
 		//retorna um array com os registros da tabela indexado pelo nome da coluna da tabela e por um número
 		return $stmt->fetchAll(\PDO::FETCH_BOTH);
 	}
-	public function findQtn($coluna,$valor,$id_farmacia)
+	public function findQtn($coluna, $valor, $id_farmacia)
 	{
 		$sql = "SELECT COUNT(*) as quantidade FROM $this->table WHERE Id_Farmacia_FK = $id_farmacia AND $coluna = '$valor' ";
 		$stmt = Database::prepare($sql);
@@ -385,6 +417,25 @@ class Cliente extends CRUD
 
 		return $stmt->fetchColumn();
 	}
+
+	public function findClienteSemelhante($nome, $userid)
+	{
+		$sql = "SELECT * FROM clientes WHERE nome = :nome AND id_Farmacia_FK = :id_Farmacia_FK ";
+
+		$stmt = Database::prepare($sql);
+		$stmt->bindParam(':id_Farmacia_FK', $userid);
+		$stmt->bindParam(':nome', $this->nome);
+		$stmt->execute();
+
+		// Retorna um array com os registros da tabela indexado pelo nome da coluna da tabela
+		$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+		if (!empty($result)) {
+			return $result;
+		} else {
+			return []; // Retorna um array vazio quando nenhum cliente é encontrado
+		}
+	}
+
 
 
 	public function  findAllByFarmaciaId($userid)

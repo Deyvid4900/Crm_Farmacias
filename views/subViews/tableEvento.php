@@ -5,7 +5,7 @@ include_once '../models/ClassEvento.php';
 use \Models\Eventos;
 
 ?>
-<link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="style.css"> -->
 <div class="container">
     <div class="head">
         <h1>Eventos Proximos</h1>
